@@ -12,7 +12,7 @@
 
 :outbox_tray: 2021 Goals: create a new project and find a new job.
 
-[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=LINK_GIT)](LINK_GIT)
+[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=https://github.com/ricardo-gsilva)](https://github.com/ricardo-gsilva)
 
 
 ![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link= LINK_LINKEDIN)
@@ -31,6 +31,8 @@
  
 
 ## Baixe o App
+
+	![Play Store](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)
 
 <a href=”https://play.google.com/store/apps/details?id=br.com.rgsdreammobile.exemplifica”><img align="left" width="170" height="60" src="https://user-images.githubusercontent.com/54490243/129788967-2d74a139-434d-42ea-a1d9-0344f36c6c0b.png">
 
