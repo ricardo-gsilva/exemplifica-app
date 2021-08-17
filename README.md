@@ -2,7 +2,7 @@
 
 ## Meu nome é Ricardo e sou desenvolvedor Flutter. 
 
-:computer: I'm Front-End Developer!
+:computer: Esse é um projeto pessoal do qual desenvolvi com o intuito de ajudar pessoas que sentem dificuldades com matemática. Contém informações básicas de regras de matemática e algumas calculadoras desenvolvidas especificamente para o app. 
 
 :house_with_garden: I’m from Brazil.
 
