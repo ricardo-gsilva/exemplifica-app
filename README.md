@@ -1,3 +1,4 @@
+![pt-br_badge_web_generic](https://user-images.githubusercontent.com/54490243/129788967-2d74a139-434d-42ea-a1d9-0344f36c6c0b.png)
 # Bem Vindo ao meu repositório! 
 
 ## Meu nome é Ricardo e sou desenvolvedor Flutter. 
