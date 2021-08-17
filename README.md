@@ -1,4 +1,4 @@
-:computer: O Exemplifica é um projeto pessoal do qual desenvolvi com o intuito de ajudar pessoas que sentem dificuldades com matemática. Contém informações básicas de regras de matemática e algumas calculadoras desenvolvidas especificamente para o aplicativo que se encontra disponível na Playstore.
+:computer: O Exemplifica é um projeto pessoal que desenvolvi com o intuito de ajudar pessoas que sentem dificuldades com matemática. Contém informações básicas de regras de matemática e algumas calculadoras desenvolvidas especificamente para o aplicativo que se encontra disponível na Playstore.
 
 ## Baixe o App
 
