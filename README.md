@@ -16,6 +16,7 @@
 
 ## About me
 
+<img align="right" width="400" height="400" src="https://www.gstatic.com/android/market_images/web/play_prism_hlock_2x.png">
 [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=LINK_GIT)](LINK_GIT)
 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link= LINK_LINKEDIN)]( LINK_LINKEDIN)
