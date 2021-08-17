@@ -2,9 +2,11 @@
 
 ## Meu nome é Ricardo e sou desenvolvedor Flutter. 
 
-:computer: Esse é um projeto pessoal do qual desenvolvi com o intuito de ajudar pessoas que sentem dificuldades com matemática. Contém informações básicas de regras de matemática e algumas calculadoras desenvolvidas especificamente para o app. 
+:house_with_garden: Sou de São Paulo-SP, Brasil.
 
-:house_with_garden: I’m from Brazil.
+:computer: Esse é um projeto pessoal do qual desenvolvi com o intuito de ajudar pessoas que sentem dificuldades com matemática. Contém informações básicas de regras de matemática e algumas calculadoras desenvolvidas especificamente para o aplicativo que se encontra disponível na Playstore
+
+
 
 :books: I’m currently learning everything.
 
