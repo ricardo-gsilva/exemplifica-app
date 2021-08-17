@@ -1,16 +1,25 @@
-# exemplifica_git
+# Bem Vindo ao meu repositório! 
 
-A new Flutter project.
+## Meu nome é Ricardo e sou desenvolvedor Flutter. 
 
-## Getting Started
+:computer: I'm Front-End Developer!
 
-This project is a starting point for a Flutter application.
+:house_with_garden: I’m from Brazil.
 
-A few resources to get you started if this is your first Flutter project:
+:books: I’m currently learning everything.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+:outbox_tray: 2021 Goals: create a new project and find a new job.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+ 
+
+## About me
+
+[![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=LINK_GIT)](LINK_GIT)
+
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link= LINK_LINKEDIN)]( LINK_LINKEDIN)
+
+
+
+- Thanks for visiting.
+
+- Enjoy it!! o/
