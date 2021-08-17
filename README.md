@@ -17,7 +17,7 @@
 
 ## About me
 
-<img align="right" width="200" height="80" src="https://user-images.githubusercontent.com/54490243/129788967-2d74a139-434d-42ea-a1d9-0344f36c6c0b.png">
+<img align="left" width="160" height="55" src="https://user-images.githubusercontent.com/54490243/129788967-2d74a139-434d-42ea-a1d9-0344f36c6c0b.png">
 [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=LINK_GIT)](LINK_GIT)
 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link= LINK_LINKEDIN)]( LINK_LINKEDIN)
