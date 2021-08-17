@@ -26,7 +26,7 @@
 
 ## Baixe o App
 
-<img align="left" width="170" height="60" src="https://user-images.githubusercontent.com/54490243/129788967-2d74a139-434d-42ea-a1d9-0344f36c6c0b.png"></a>(https://play.google.com/store/apps/details?id=br.com.rgsdreammobile.exemplifica)
+<a href=”https://play.google.com/store/apps/details?id=br.com.rgsdreammobile.exemplifica”><img align="left" width="170" height="60" src="https://user-images.githubusercontent.com/54490243/129788967-2d74a139-434d-42ea-a1d9-0344f36c6c0b.png">
 
 ##Teste
 <a href=”https://play.google.com/store/apps/details?id=br.com.rgsdreammobile.exemplifica”><img align="left" width="170" height="60" src="https://user-images.githubusercontent.com/54490243/129788967-2d74a139-434d-42ea-a1d9-0344f36c6c0b.png"></a>
