@@ -15,8 +15,7 @@
 [![Github Badge](https://img.shields.io/badge/-Github-000?style=flat-square&logo=Github&logoColor=white&link=LINK_GIT)](LINK_GIT)
 ![Linkedin Badge]({https://www.linkedin.com/in/ricardo-gomess/})
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link= https://www.linkedin.com/in/ricardo-gomess/)]( https://www.linkedin.com/in/ricardo-gomess/)
-
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link= LINK_LINKEDIN)]( LINK_LINKEDIN)
 
 
 - Thanks for visiting.
