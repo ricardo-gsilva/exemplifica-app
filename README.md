@@ -17,8 +17,6 @@
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/ricardo-gomess/)](https://www.linkedin.com/in/ricardo-gomess/)
 
 
-![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
-
 
 
 
@@ -31,7 +29,8 @@
 
 ## Baixe o App
 
-	![Play Store](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)
+![Play Store](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)
+[![Play Store](https://user-images.githubusercontent.com/54490243/129788967-2d74a139-434d-42ea-a1d9-0344f36c6c0b.png=https://play.google.com/store/apps/details?id=br.com.rgsdreammobile.exemplifica)](https://play.google.com/store/apps/details?id=br.com.rgsdreammobile.exemplifica)
 
 <a href=”https://play.google.com/store/apps/details?id=br.com.rgsdreammobile.exemplifica”><img align="left" width="170" height="60" src="https://user-images.githubusercontent.com/54490243/129788967-2d74a139-434d-42ea-a1d9-0344f36c6c0b.png">
 
