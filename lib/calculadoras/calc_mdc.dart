@@ -11,7 +11,7 @@ class CalcMdc extends StatefulWidget {
 
 class _CalcMdcState extends State<CalcMdc> {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
   
   final ModelMdc modelMdc = ModelMdc();
 
@@ -183,7 +183,7 @@ class _CalcMdcState extends State<CalcMdc> {
                 ),
               ),
             ),
-            bottomNavigationBar: BannerAdMob(),
+            // bottomNavigationBar: BannerAdMob(),
           ),
         )
     );

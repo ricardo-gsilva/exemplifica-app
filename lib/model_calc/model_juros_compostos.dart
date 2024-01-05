@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 
 class ModelJurosCompostos {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   TextEditingController c = TextEditingController();
   TextEditingController i = TextEditingController();
@@ -43,7 +43,7 @@ class ModelJurosCompostos {
     } else {
       resultjC = "";
       jurosCompostos();
-      adMob.showInstersticial();
+      // adMob.showInstersticial();
     }    
   }
 

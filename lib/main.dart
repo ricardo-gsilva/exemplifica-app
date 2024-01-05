@@ -1,4 +1,5 @@
-import 'package:admob_flutter/admob_flutter.dart';
+// import 'package:admob_flutter/admob_flutter.dart';
+import 'package:exemplifica_git/screens/teste.dart';
 import 'package:exemplifica_git/ui/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 void main() {
 WidgetsFlutterBinding.ensureInitialized();
   // Initialize without device test ids
-Admob.initialize();
+// Admob.initialize();
 
 runApp(ScreenExemplifica());
 }
@@ -36,7 +37,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void splashScreen() {
     Future.delayed(Duration(seconds: 5), (){
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => HomePage()));
+      // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => HomePage()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => Teste()));
     });
   }
 

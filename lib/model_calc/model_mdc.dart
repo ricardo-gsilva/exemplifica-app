@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class ModelMdc {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
   
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
@@ -29,7 +29,7 @@ class ModelMdc {
       resultMdc1 = "";
       resultMdc2 = "";
       mdc();
-      adMob.showInstersticial();
+      // adMob.showInstersticial();
     }
   }
 

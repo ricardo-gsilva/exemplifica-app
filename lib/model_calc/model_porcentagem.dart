@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 class ModelPorcentagem {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
     TextEditingController val1 = TextEditingController();
     TextEditingController val2 = TextEditingController();
@@ -23,7 +23,7 @@ class ModelPorcentagem {
       } else {
         resultPorcent = "";
         porcentagem();
-        adMob.showInstersticial();
+        // adMob.showInstersticial();
       }
     }
 

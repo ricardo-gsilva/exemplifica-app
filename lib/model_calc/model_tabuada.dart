@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class ModelTabuada {   
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   TextEditingController nTabuada = TextEditingController();
 
@@ -17,7 +17,7 @@ class ModelTabuada {
         infoText = "Por favor, preencha os campos!";       
       } else {
         calcular();
-        adMob.showInstersticial();
+        // adMob.showInstersticial();
       }
      
     }
@@ -53,7 +53,7 @@ class ModelTabuada {
                 " somado por ele mesmo.";
           }
         }      
-        adMob.showInstersticial(); 
+        // adMob.showInstersticial(); 
       
   }
   

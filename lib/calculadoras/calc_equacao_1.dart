@@ -12,7 +12,7 @@ class CalcEquacao1 extends StatefulWidget {
 
 class _CalcEquacao1State extends State<CalcEquacao1> {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   final ModelEquacao1 modelCalc1 = ModelEquacao1();
 
@@ -191,7 +191,7 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
                 ),
               ),
             ),
-            bottomNavigationBar: BannerAdMob(),
+            // bottomNavigationBar: BannerAdMob(),
           ),
         )
     );

@@ -13,7 +13,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   // void showInstersticial(){  
   //   click++;

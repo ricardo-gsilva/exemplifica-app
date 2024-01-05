@@ -21,7 +21,7 @@ class Calculadoras extends StatefulWidget {
 
 class _CalculadorasState extends State<Calculadoras> {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,7 @@ class _CalculadorasState extends State<Calculadoras> {
                                   onPrimary: Colors.white, // foreground
                       ),
                     onPressed: (){
-                      adMob.showInstersticial();
+                      // adMob.showInstersticial();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -100,7 +100,7 @@ class _CalculadorasState extends State<Calculadoras> {
                                   onPrimary: Colors.white,
                                 ),
                     onPressed: (){
-                      adMob.showInstersticial();
+                      // adMob.showInstersticial();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -126,7 +126,7 @@ class _CalculadorasState extends State<Calculadoras> {
                                   onPrimary: Colors.white, // foreground
                                 ),
                     onPressed: (){
-                      adMob.showInstersticial();
+                      // adMob.showInstersticial();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -152,7 +152,7 @@ class _CalculadorasState extends State<Calculadoras> {
                                   onPrimary: Colors.white, // foreground
                                 ),
                     onPressed: (){
-                      adMob.showInstersticial();
+                      // adMob.showInstersticial();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -178,7 +178,7 @@ class _CalculadorasState extends State<Calculadoras> {
                                   onPrimary: Colors.white, // foreground
                                 ),
                     onPressed: (){
-                      adMob.showInstersticial();
+                      // adMob.showInstersticial();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -204,7 +204,7 @@ class _CalculadorasState extends State<Calculadoras> {
                                   onPrimary: Colors.white, // foreground
                                 ),
                     onPressed: (){
-                      adMob.showInstersticial();
+                      // adMob.showInstersticial();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -230,7 +230,7 @@ class _CalculadorasState extends State<Calculadoras> {
                                   onPrimary: Colors.white, // foreground
                                 ),
                     onPressed: (){
-                      adMob.showInstersticial();
+                      // adMob.showInstersticial();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -256,7 +256,7 @@ class _CalculadorasState extends State<Calculadoras> {
                                   onPrimary: Colors.white, // foreground
                                 ),
                     onPressed: (){
-                      adMob.showInstersticial();
+                      // adMob.showInstersticial();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -281,7 +281,7 @@ class _CalculadorasState extends State<Calculadoras> {
                                   onPrimary: Colors.white, // foreground
                                 ),
                     onPressed: (){
-                      adMob.showInstersticial();
+                      // adMob.showInstersticial();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -307,7 +307,7 @@ class _CalculadorasState extends State<Calculadoras> {
                                   onPrimary: Colors.white, // foreground
                                 ),
                     onPressed: () {
-                      adMob.showInstersticial();
+                      // adMob.showInstersticial();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -333,7 +333,7 @@ class _CalculadorasState extends State<Calculadoras> {
                                   onPrimary: Colors.white, // foreground
                                 ),
                     onPressed: () {
-                      adMob.showInstersticial();
+                      // adMob.showInstersticial();
                       Navigator.push(
                           context,
                           MaterialPageRoute(

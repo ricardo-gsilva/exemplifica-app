@@ -11,7 +11,7 @@ class CalcRegraDe3 extends StatefulWidget {
 
 class _CalcRegraDe3State extends State<CalcRegraDe3> {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   final ModelRegraDe3 modelRegraDe3 = ModelRegraDe3();
 
@@ -209,7 +209,7 @@ class _CalcRegraDe3State extends State<CalcRegraDe3> {
                   ),
                 ),
               ),
-              bottomNavigationBar: BannerAdMob(),
+              // bottomNavigationBar: BannerAdMob(),
             )
         )
     );

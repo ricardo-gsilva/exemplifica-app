@@ -11,7 +11,7 @@ class CalcFatorial extends StatefulWidget {
 
 class _CalcFatorialState extends State<CalcFatorial> {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   final ModelFatorial modelFatorial = ModelFatorial();
 
@@ -162,7 +162,7 @@ class _CalcFatorialState extends State<CalcFatorial> {
                 ),
               ),
             ),
-            bottomNavigationBar: BannerAdMob(),
+            // bottomNavigationBar: BannerAdMob(),
           ),
         )
     );

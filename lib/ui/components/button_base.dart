@@ -2,13 +2,13 @@ import 'package:exemplifica_git/ad_mob/ad_mob.dart';
 import 'package:flutter/material.dart';
 
 class ButtonBase extends StatelessWidget {
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   ButtonBase({this.title, this.page, this.primaryColor});
 
-  String title;
-  Color primaryColor;
-  Widget page;
+  String? title;
+  Color? primaryColor;
+  Widget? page;
 
   Widget build(BuildContext context) {
     return Padding(
@@ -22,12 +22,12 @@ class ButtonBase extends StatelessWidget {
             onPrimary: Colors.white,
           ),
           onPressed: () {
-            adMob.showInstersticial();
+            // adMob.showInstersticial();
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => page));
+                context, MaterialPageRoute(builder: (context) => page!));
           },
           child: Text(
-            title,
+            title!,
             style: TextStyle(color: Colors.white, fontSize: 22.0),
           ),
         ),

@@ -11,7 +11,7 @@ class CalcPorcentagem extends StatefulWidget {
 
 class _CalcPorcentagemState extends State<CalcPorcentagem> {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   final ModelPorcentagem modelPorcentagem = ModelPorcentagem();
 
@@ -197,7 +197,7 @@ class _CalcPorcentagemState extends State<CalcPorcentagem> {
                   ),
                 ),
               ),
-              bottomNavigationBar: BannerAdMob(),
+              // bottomNavigationBar: BannerAdMob(),
             )
         )
     );

@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 class ModelEquacao1 {
 
-  final AdMob adMob = AdMob();  
+  // final AdMob adMob = AdMob();  
 
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
@@ -16,7 +16,7 @@ class ModelEquacao1 {
       resultEq1_1 = "Por favor, preencha os campos!";
     } else {
       _equacao1_1();
-      adMob.showInstersticial();
+      // adMob.showInstersticial();
     }
   }
 

@@ -14,7 +14,7 @@ class PageSection extends StatefulWidget {
 
 class _PageSectionState extends State<PageSection> {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   @override
   Widget build(BuildContext context) {

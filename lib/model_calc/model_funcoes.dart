@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 class ModelFuncoes {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   TextEditingController a = TextEditingController();
   TextEditingController b = TextEditingController();
@@ -34,7 +34,7 @@ class ModelFuncoes {
     } else {
       resultF = "";
       funcoes();
-      adMob.showInstersticial();
+      // adMob.showInstersticial();
     }
   }
 

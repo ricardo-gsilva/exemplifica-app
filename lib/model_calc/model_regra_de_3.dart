@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 class ModelRegraDe3 {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
@@ -25,7 +25,7 @@ class ModelRegraDe3 {
     } else {
       resultRegra3 = "";
       regra3();
-      adMob.showInstersticial();
+      // adMob.showInstersticial();
     }
   }
 

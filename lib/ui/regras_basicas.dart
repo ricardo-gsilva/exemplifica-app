@@ -16,7 +16,7 @@ class RegrasBasicas extends StatefulWidget {
 
 class _RegrasBasicasState extends State<RegrasBasicas> {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
  
   @override
   Widget build(BuildContext context) {

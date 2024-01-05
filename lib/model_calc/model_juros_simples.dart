@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 class ModelJurosSimples {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   TextEditingController c = TextEditingController();
   TextEditingController i = TextEditingController();
@@ -50,7 +50,7 @@ class ModelJurosSimples {
         resultjS_1 = "";
         resultjS_2 = "";
         jurosSimples();
-        adMob.showInstersticial();
+        // adMob.showInstersticial();
     }
   }
 

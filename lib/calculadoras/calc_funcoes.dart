@@ -11,7 +11,7 @@ class CalcFuncoes extends StatefulWidget {
 
 class _CalcFuncoesState extends State<CalcFuncoes> {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   final ModelFuncoes modelFuncoes = ModelFuncoes();
 
@@ -249,7 +249,7 @@ class _CalcFuncoesState extends State<CalcFuncoes> {
                             ])
                     )
                 ),
-                bottomNavigationBar: BannerAdMob(),
+                // bottomNavigationBar: BannerAdMob(),
             )
         )
     );

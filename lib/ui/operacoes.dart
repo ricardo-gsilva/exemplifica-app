@@ -20,7 +20,7 @@ class Operacoes extends StatefulWidget {
 }
 
 class _OperacoesState extends State<Operacoes> {
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   @override
   Widget build(BuildContext context) {

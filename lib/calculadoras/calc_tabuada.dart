@@ -10,7 +10,7 @@ class CalcTabuada extends StatefulWidget {
 }
 
 class _CalcTabuadaState extends State<CalcTabuada> {
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   final _modelTabuada = ModelTabuada();
 
@@ -152,7 +152,7 @@ class _CalcTabuadaState extends State<CalcTabuada> {
                   ]),
                 ),
               ),
-              bottomNavigationBar: BannerAdMob(),
+              // bottomNavigationBar: BannerAdMob(),
             )
         )
     );

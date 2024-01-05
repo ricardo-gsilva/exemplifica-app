@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 class ButtonHome extends StatelessWidget {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   ButtonHome({this.page, this.title});
 
-  String title;
-  Widget page;
+  String? title;
+  Widget? page;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +25,12 @@ class ButtonHome extends StatelessWidget {
             shadowColor: Colors.blue,
           ),
           onPressed: () {
-            adMob.showInstersticialHome();
+            // adMob.showInstersticialHome();
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => page));
+                context, MaterialPageRoute(builder: (context) => page!));
           },
           child: Text(
-            title,
+            title!,
             style: TextStyle(fontSize: 20.0),
           ),
         ),

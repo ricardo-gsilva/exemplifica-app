@@ -11,7 +11,7 @@ class CalcJurosC extends StatefulWidget {
 
 class _CalcJurosCState extends State<CalcJurosC> {
 
-  final AdMob adMob = AdMob();
+  // final AdMob adMob = AdMob();
 
   final ModelJurosCompostos modelJurosCompostos = ModelJurosCompostos();
 
@@ -256,7 +256,7 @@ class _CalcJurosCState extends State<CalcJurosC> {
                             ])
                     )
                 ),
-                bottomNavigationBar: BannerAdMob(),
+                // bottomNavigationBar: BannerAdMob(),
             )
         )
     );
