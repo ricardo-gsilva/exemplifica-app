@@ -9,6 +9,7 @@ import 'package:exemplifica_git/calculadoras/calc_mmc.dart';
 import 'package:exemplifica_git/calculadoras/calc_porcentagem.dart';
 import 'package:exemplifica_git/calculadoras/calc_regra_de_3.dart';
 import 'package:exemplifica_git/calculadoras/calc_tabuada.dart';
+import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:flutter/material.dart';
 
 class Calculadoras extends StatefulWidget {
@@ -35,7 +36,7 @@ class _CalculadorasState extends State<Calculadoras> {
             Navigator.pop(context);
           },
         ),
-        title: Text('Calculadoras', style: TextStyle(color: Colors.black),),
+        title: Text(CoreStrings.titleCalculadoras, style: TextStyle(color: Colors.black),),
       ),
       body: SingleChildScrollView(
         child: Column(children: <Widget>[

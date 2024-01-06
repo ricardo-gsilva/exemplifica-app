@@ -6,6 +6,9 @@ import 'package:exemplifica_git/screens/equacao_1.dart';
 import 'package:exemplifica_git/screens/equacao_2.dart';
 import 'package:exemplifica_git/screens/fatorial.dart';
 import 'package:exemplifica_git/screens/funcoes.dart';
+import 'package:exemplifica_git/screens/juros_compostos.dart';
+import 'package:exemplifica_git/screens/juros_simples.dart';
+import 'package:exemplifica_git/screens/regras_basicas.dart';
 import 'package:flutter/material.dart';
 
 class Teste extends StatefulWidget {
@@ -26,77 +29,86 @@ class _TesteState extends State<Teste> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60),
         child: AppBar(
-            backgroundColor: Colors.lightBlue,
+            backgroundColor: Colors.lightBlue.shade700,
             elevation: 2,
+            centerTitle: true,
             title: Image.asset(
               'images/exemplo_3.png',
-              height: 50,
+              height: 45,
             )),
       ),
       body: CustomScrollView(
         slivers: [
           SliverFillRemaining(
             hasScrollBody: false,
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    SizedBox(                      
-                      height: height * 0.20,
-                      width: MediaQuery.of(context).size.width * 0.50,
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                            context, MaterialPageRoute(builder: (_) => Calculadoras())
-                          );
-                        },
-                        child: Card(
-                          color: Colors.lightBlue.shade400,
-                          child: Center(
-                            child: ListTile(
-                              title: Icon(
-                                color: Colors.black,
-                                size: 50,
-                                Person.calc,
-                              ),
-                              subtitle: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Calculadoras',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),                    
-                    SizedBox(                      
-                      height: height * 0.20,
-                      width: MediaQuery.of(context).size.width * 0.5,
-                      child: InkWell(
-                        child: Card(
-                          color: Colors.lightBlue.shade400,
-                          child: Center(
-                            child: ListTile(
-                              title: Icon(
+            child: Padding(
+              padding: const EdgeInsets.all(10),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      SizedBox(                      
+                        height: height * 0.20,
+                        width: MediaQuery.of(context).size.width * 0.47,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context, MaterialPageRoute(builder: (_) => Calculadoras())
+                            );
+                          },
+                          child: Card(
+                            color: Colors.lightBlue.shade200,
+                            child: Center(
+                              child: ListTile(
+                                title: Icon(
                                   color: Colors.black,
-                                  size: 50,
-                                  Person.attention),
-                              subtitle: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text(
-                                  'Regras Básicas',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontSize: 18,
+                                  size: 45,
+                                  Person.calc,
+                                ),
+                                subtitle: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'Calculadoras',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),                    
+                      SizedBox(                      
+                        height: height * 0.20,
+                        width: MediaQuery.of(context).size.width * 0.47,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context, MaterialPageRoute(builder: (_) => RegrasBasicas())
+                            );
+                          },
+                          child: Card(
+                            color: Colors.lightBlue.shade200,
+                            child: Center(
+                              child: ListTile(
+                                title: Icon(
                                     color: Colors.black,
-                                    fontWeight: FontWeight.bold
+                                    size: 45,
+                                    Person.attention),
+                                subtitle: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    'Regras Básicas',
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontSize: 17,
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold
+                                    ),
                                   ),
                                 ),
                               ),
@@ -104,79 +116,87 @@ class _TesteState extends State<Teste> {
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                RowOperations(
-                  height: height,
-                  titleFirst: CoreStrings.titleEquacao1,
-                  titleSecond: CoreStrings.titleEquacao2,
-                  onTapFirst: () {
-                    Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => Equacao_1())
-                    );
-                  },
-                  onTapSecond: () {
-                    Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => Equacao_2())
-                    );
-                  },
-                ),
-                RowOperations(
-                  height: height,
-                  titleFirst: 'Fatorial',
-                  titleSecond: 'Funções',
-                  onTapFirst: () {
-                    Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => Fatorial())
-                    );
-                  },
-                  onTapSecond: () {
-                    Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => Funcoes())
-                    );
-                  },
-                ),
-                RowOperations(
-                  height: height,
-                  titleFirst: 'Juros Compostos',
-                  titleSecond: 'Juros Simples',
-                  onTapFirst: null,
-                  onTapSecond: null,
-                ),
-                RowOperations(
-                  height: height,
-                  titleFirst: 'M.M.C',
-                  titleSecond: 'M.D.C',
-                  onTapFirst: null,
-                  onTapSecond: null,
-                ),
-                RowOperations(
-                  height: height,
-                  titleFirst: 'Porcentagem',
-                  titleSecond: 'Regra de 3',
-                  onTapFirst: null,
-                  onTapSecond: null,
-                ),
-                SizedBox(
-                  height: height * 0.10,
-                  width: MediaQuery.of(context).size.width,
-                  child: InkWell(
-                    child: Card(
-                      color: Colors.lightBlue.shade400,
-                      child: Center(
-                        child: Text(
-                          'Tabuada',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold),
+                    ],
+                  ),
+                  RowOperations(
+                    height: height,
+                    titleFirst: CoreStrings.titleEquacao1,
+                    titleSecond: CoreStrings.titleEquacao2,
+                    onTapFirst: () {
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => Equacao_1())
+                      );
+                    },
+                    onTapSecond: () {
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => Equacao_2())
+                      );
+                    },
+                  ),
+                  RowOperations(
+                    height: height,
+                    titleFirst: 'Fatorial',
+                    titleSecond: 'Funções',
+                    onTapFirst: () {
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => Fatorial())
+                      );
+                    },
+                    onTapSecond: () {
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => Funcoes())
+                      );
+                    },
+                  ),
+                  RowOperations(
+                    height: height,
+                    titleFirst: 'Juros Compostos',
+                    titleSecond: 'Juros Simples',
+                    onTapFirst: () {
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => JurosCompostos())
+                      );
+                    },
+                    onTapSecond: () {
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => JurosSimples())
+                      );
+                    },
+                  ),
+                  RowOperations(
+                    height: height,
+                    titleFirst: 'M.M.C',
+                    titleSecond: 'M.D.C',
+                    onTapFirst: null,
+                    onTapSecond: null,
+                  ),
+                  RowOperations(
+                    height: height,
+                    titleFirst: 'Porcentagem',
+                    titleSecond: 'Regra de 3',
+                    onTapFirst: null,
+                    onTapSecond: null,
+                  ),
+                  SizedBox(
+                    height: height * 0.10,
+                    width: MediaQuery.of(context).size.width,
+                    child: InkWell(
+                      child: Card(
+                        color: Colors.lightBlue.shade200,
+                        child: Center(
+                          child: Text(
+                            'Tabuada',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           )
         ],

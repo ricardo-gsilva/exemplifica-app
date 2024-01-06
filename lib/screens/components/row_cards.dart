@@ -17,12 +17,13 @@ class RowOperations extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color color = Colors.lightBlue.shade400;
+    Color color = Colors.lightBlue.shade200;
+    double width = MediaQuery.of(context).size.width * 0.47;
     return Row(
       children: [
         SizedBox(    
           height: height! * 0.10,
-          width: MediaQuery.of(context).size.width * 0.5,
+          width: width,
           child: InkWell(
             onTap: onTapFirst,
             child: Card(
@@ -32,7 +33,7 @@ class RowOperations extends StatelessWidget {
                   titleFirst,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 15,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold),
                 ),
               ),
@@ -41,7 +42,7 @@ class RowOperations extends StatelessWidget {
         ),
         SizedBox(
           height: height! * 0.10,
-          width: MediaQuery.of(context).size.width * 0.5,
+          width: width,
           child: InkWell(
             onTap: onTapSecond,
             child: Card(
@@ -51,7 +52,7 @@ class RowOperations extends StatelessWidget {
                   titleSecond,
                   style: TextStyle(
                     color: Colors.black,
-                    fontSize: 15,
+                    fontSize: 16,
                     fontWeight: FontWeight.bold),
                 ),
               ),

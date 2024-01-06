@@ -2,12 +2,9 @@
 import 'package:exemplifica_git/screens/teste.dart';
 import 'package:exemplifica_git/ui/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 void main() {
 WidgetsFlutterBinding.ensureInitialized();
-  // Initialize without device test ids
-// Admob.initialize();
 
 runApp(ScreenExemplifica());
 }
