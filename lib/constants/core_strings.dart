@@ -5,6 +5,11 @@ class CoreStrings {
   static const String titleFatorial = 'Fatorial';
   static const String titleFuncoes = 'Funções';
   static const String titleJurosCompostos = 'Juros Compostos';
+  static const String titleMmc = 'M.M.C';
+  static const String titleMdc = 'M.D.C';
+  static const String titlePorcentagem = 'Porcentagem';
+  static const String titleRegraDe3 = 'Regra de 3';
+  static const String titleTabuada = 'Tabuada';
   static const String titleJurosSimples = 'Juros Simples';
   static const String titleRegrasBasicas = 'Regras Básicas';
   static const String titleCalculadoras = 'Calculadoras';
@@ -282,10 +287,206 @@ class CoreStrings {
   static const String text8_JurosSimples = "Qual o valor do montante gerado por um capital de R\$1.650,00 que é aplicado "
               "no regime de juros simples a uma taxa mensal de 3.5% durante 8 meses?";
   static const String text9_JurosSimples = "O montante produzido é de R\$2.112,00.";
-  static const String text10_JurosSimples = '';
-  static const String text11_JurosSimples = '';
-  static const String text12_JurosSimples = '';
-  static const String text13_JurosSimples = '';
-  static const String text14_JurosSimples = '';
-  static const String text15_JurosSimples = '';
+
+  //MMC
+  static const String text1_mmc = 
+                "MMC significa 'mínimo múltiplo comum' e corresponde ao menor número inteiro positivo, "
+                "diferente de zero que é múltiplo ao mesmo tempo de dois ou mais números. Para saber "
+                "se um número é múltiplo de um outro, é necessário descobrir se um desses números é "
+                "divisível pelo outro. Veja um exemplo simples, o número 9 é múltiplo de 3, pois ele "
+                "também é divisível por 3.";
+  static const String text2_mmc = 
+                "Para encontrar o MMC de 2 números, pode ser usada a tabuada desse números. O MMC de "
+                "2 e 5 pode ser encontrado na própria tabuada desses mesmos números. Na tabuada do 2, "
+                "você irá encontrar 2 x 5 = 10 e na tabuada do 5, iremos encontrar 5 x 2 = 10. Logo "
+                "podemos definir que o mínimo múltiplo comum (MMC) de 2 e 5 é o número 10. Mas essa "
+                "é uma maneira que só pode ser utilizada com valores pequenos, não funcionando bem "
+                "com números grandes. Vamos tentar encontrar o MMC de 30 e 22. Para conseguir "
+                "encontrar o MMC deles, iremos colocar os valores um ao lado do outro e fazer uma "
+                "divisão, até que se chegue ao menor valor da divisão deles que é o 1. Veja como é "
+                "feito:";
+  static const String text3_mmc = 
+                "Não é complicado de se resolver. Primeiramente é feito a divisão dos valores por 2, "
+                "no próximo passo não foi possível dividir 11 e 15 por 2, então seguimos para o "
+                "próximo número que é o 3. Como é possível dividir o 15 por 3, então conseguimos "
+                "aplicar esse valor. Mas caso nenhum fosse divisível por 3, iríamos para o próximo "
+                "número que seria 4 ou até outro número que fosse divísivel. Como foi possível "
+                "ver, essa regra foi aplicada até que os valores finais fossem 1 para os dois números "
+                "iniciais. Entãos pegamos os valores que foram usados para a divisão e fazemos a "
+                "multiplicação de todos eles, assim encontramos o valor final de 220 que é o MMC dos "
+                "números 22 e 30.";
+  static const String text4_mmc = 
+                "Também é preciso lembrar que temos o mínimo múltiplo comum com frações, para que seja "
+                "possível somar ou subtrair frações é preciso que os denominadores sejam iguais. "
+                "Então iremos calcular o MMC entre os denominadores e então teremos o novo "
+                "denominador das frações. Veja o exemplo:";
+  static const String text5_mmc = 
+                "Como é possível ver os denominadores 4 e 9 são diferentes e precisamos calcular o MMC "
+                "deles para dar continuidade. Iremos fatorar da seguinte forma:";
+  static const String text6_mmc = 
+                "Agora que temos o MMC desses valores, seguimos da seguinte forma:";
+  static const String text7_mmc = 
+                "Pegamos o valor do numerador que é o 3 e multiplicamos pelos denominadores iniciais "
+                "Teremos os valores 12 e 27, então faremos as somas desses valores e iremos dividir "
+                "pelo novo denominador encontrado que é o 36. Teremos 39/36 que pode ser simplificado "
+                "por 3 já que tanto o valor 39, quanto o valor 36 podem ser divididos por 3 e teremos "
+                "um valor final de 13/12. A princípio pode parecer difícil, mas com um pouco de "
+                "prática logo fica simples de ser compreendido.";
+
+  //MDC
+  static const String text1_mdc =   
+              "A sigla MDC significa 'máximo divisor comum' que nada mais é do que o maior "
+              "número divisível entre dois ou mais números inteiros. Um número natural possui "
+              "divisores, o menor divisor de um número será sempre o número 1, enquanto que "
+              "o maior divisor será o próprio número.";
+  static const String text2_mdc = 
+              'Obs: É importante lembrar que nenhum número pode ser dividido por 0.';
+  static const String text3_mdc = 
+              "Vamos ver alguns exemplos de como encontrar o MDC de alguns números. Os números "
+              "do exemplo serão 15 e 30:";
+  static const String text4_mdc = 
+              "Como podemos ver, o máximo divisor comum entre os números 15 e 30, é o próprio "
+              "número 15. Quando fatoramos para encontrar o MDC, diferente do MMC que pega "
+              "todos os números que foram encontrados na fatoração e faz uma multiplicação "
+              "de todos eles, no MDC só iremos multiplicar os valores que podem dividir ambos "
+              "os números ao mesmo tempo. O 3 e o 5 podem dividir os dois valores. Mas o "
+              "número 2 só pode dividir um deles, por essa razão ele não entra na parte final "
+              "da multiplicação para encontrar o MDC. Depois de encontrar esses números "
+              "divisores, basta multiplicar e assim encontrará o maior divisor comum. Veja "
+              "outro exemplo com os números 12 e 18:";
+  static const String text5_mdc = 
+              "Nesse exemplo o nosso MDC é o número 6, o número 2 da primeira linha que divide "
+              "12 e 18 e o número 3 que divide o 3 e o 9 são os divisores comuns. Tendo os "
+              "dois números, nós os multiplicamos e assim iremos encontrar o número 6 como o máximo divisor "
+              "comum entre o número 12 e 18. Simples não é mesmo?";
+  static const String text6_mdc = '';
+
+  //Porcentagem
+  static const String text1_porcentagem = 
+                  "A porcentagem é uma razão de denominador 100. O símbolo utilizado é o '%' e também é "
+                  "conhecido como razão percentual ou centesimal, é muito utilizado para matemática "
+                  "financeira, por essa razão é importante saber como utilizar. Vamos aos exemplos:";
+  static const String text2_porcentagem = 
+                  "Imagine que você tenha 250 reais e que precisa tirar 40% do valor desse dinheiro "
+                  "para o pagamento de uma dívida. Para encontrar o valor da dívida seguiremos com a "
+                  "regra de 3 que pode ser aplicada facilmente nessas condições de porcentagem. Veja "
+                  "a resolução:";
+  static const String text3_porcentagem = 
+                  "Após montar a de regra de 3, seguimos para a resolução que é bem simples. "
+                  "Iremos multiplicar o valor de 250 pelos 40% e o 'x' pelos 100%.";
+  static const String text4_porcentagem = 
+                  "Podemos tirar os sinais de '%' para simplificar a questão e evitar qualquer confusão.";
+  static const String text5_porcentagem = 
+                  "Agora seguimos isolando o 'x' e depois resolvemos o restante para obter o valor da "
+                  "dívida.";
+  static const String text6_porcentagem = 
+                  "O valor que representa os 40% da dívida é de 100 reais. Bem simples não é mesmo?";
+  static const String text7_porcentagem = 
+                  "Podemos também usar como exemplo uma possível situação onde você terá que encontrar "
+                  "um valor de ganho ou aumento em porcentagem. Vamos para um exemplo:";
+  static const String text8_porcentagem = 
+                  "Imagine que você tenha que utilizar 900ml de água para fazer uma receita qualquer. Mas "
+                  "conforme você vai preparando a receita, descobre que irá precisar de mais 30% de água "
+                  "para a parte final da sua receita. Quantos ml de água serão necessários para terminar "
+                  "a receita? Se atente ao fato de que o valor foi passado em porcentagem. Vamos resolver "
+                  "essa questão utilizazando a regra de 3.";
+  static const String text9_porcentagem = 
+                  "Seguindo com a mesma resolução anterior, temos:";
+  static const String text10_porcentagem = 
+                  "Temos o resultado de 270ml. Então precisaremos de mais 270ml de água para terminar a "
+                  "receita. Existe uma outra forma de resolver que irá mostrar a quantidade total de "
+                  "água que será utilizada na receita e não somente os 30% que serão utilizados na "
+                  "parte final. Essa outra maneira de resolver a questão é feita da seguinte forma:";
+  static const String text11_porcentagem = 
+                  "Somamos a quantidade que precisamos com o total que temos em % e seguimos com a "
+                  "seguinte resolução:";
+  static const String text12_porcentagem = 
+                  "Temos o total de 1170ml de água para fazer a receita. Se formos pegar o resultado "
+                  "anterior de 900ml + os outros 270ml que serão utilizados na parte final da receita, "
+                  "teremos os mesmos 1170ml de água.";
+
+  //Regra de 3
+  static const String text1_regraDe3 = 
+                      "A regra de 3 é encontrada em duas formas, que são: Simples e Composta. Elas definem "
+                      "a proporção entre grandezas, podendo ir de velocidade, distância, peso, altura e "
+                      "qualquer outra grandeza que possamos definir. Esse método é utilizado para encontrar "
+                      "um valor desconhecido, quando temos duas ou mais grandezas declaradas. Não é "
+                      "complicado de entender! Vamos aos exemplos.";
+  static const String text2_regraDe3 = 
+                      "Regra de 3: Simples";
+  static const String text3_regraDe3 = 
+                      "Seguindo com a regra de 3, apenas devemos multiplicar os valores na "
+                      "diagonal. Iremos multiplicar o 5 por 1000g e o 6 pelo 'x'. Ficará assim:";
+  static const String text4_regraDe3 = 
+                      "Obs: Nas explicações mais simples sobre matemática, mantivemos o 'x' como o símbolo "
+                      "da multiplicação. Mas em conceitos um pouco mais avançados de matemática, você "
+                      "poderá encontrar o 'x' sendo um dos elementos da equação que estiver estudando, como "
+                      "pode ser visto no caso de equação de 1º grau. Então iremos utilizar o símbolo mais "
+                      "comum encontrado que é o '.', mas você também poderá encontrar casos com o "
+                      "asterísco '*'.";
+  static const String text5_regraDe3 = 
+                      "Dando continuidade a resolução dessa questão, seguimos com a multiplicação do '5.1000g' "
+                      "e logo depois teremos a expressão '6x = 5000g' e então iremos inverter o lado que está "
+                      "o 6, deixando o 'x' isolado. Vejamos a seguir:";
+  static const String text6_regraDe3 = 
+                      "Como já foi explicado anteriormente, quando um número está de um lado e passa para o "
+                      "outro lado da expressão, o sinal dele muda. Sinal de '+' muda para '-', sinal de '*' muda "
+                      "para '/' e vice-versa. Assim dividimos o valor de 5000 por 6 e temos o valor "
+                      "de 'x' que é:";
+  static const String text7_regraDe3 = 
+                      "Então para fazer a porção correta de arroz para as 5 pessoas, você terá que usar "
+                      "833,3 gramas de arroz, sem que faça comida em excesso.";
+  static const String text8_regraDe3 = 
+                      "A Regra de 3 composta é feita com base em três grandezas ou mais grandezas que podem "
+                      "ser inversamente proporcionais. Vamos ao exemplo:";
+  static const String text9_regraDe3 = 
+                      "Imagine que temos 6 pedreiros que irão trabalhar durante 7 horas para erguer 3 muros. "
+                      "Mas o dono do local decidiu que será necessário fazer 5 muros em 10 horas. Quantos "
+                      "pedreiros serão necessários para que os 5 muros sejam erguidos em 10 horas?";
+  static const String text10_regraDe3 = 'Regra de 3: Composta';
+  static const String text11_regraDe3 = 
+                      "Para resolver a situação e encontrar o número de pedreiros necessários, iremos seguir "
+                      "com a seguinte equação matemática:";
+  static const String text12_regraDe3 = 
+                      "Isolamos os pedreiros e multiplicamos as duas outras grandezas que são horas e muros "
+                      "para obter um único resultado.";
+  static const String text13_regraDe3 = 
+                      "Agora seguimos com a mesma maneira que resolvemos a regra de 3 simples. Multiplicamos "
+                      "o 50 com o 6 e o 'x' com o 21.";
+  static const String text14_regraDe3 = 
+                      "Agora iremos isolar o 'x' e passaremos o 21 para o outro lado dividindo, já que ele "
+                      "está multiplicando.";
+  static const String text15_regraDe3 = 
+                      "Com isso teremos o resultado de 'x' que é o número de pedreiros necessários para "
+                      "fazer a obra no tempo proposto.";
+  static const String text16_regraDe3 = 
+                      "Esse valor pode ser arredondado para 14 e assim teremos a resposta de quantos pedreiros, "
+                      "são necessários para levantar os 5 muros nas 10 horas que foram estipuladas.";
+                      
+  //Tabuada
+  static const String text1_tabuada = 
+                "Tabuada pode ser considerada, uma tortura para muitos. Mas não é algo complicado de se "
+                "entender! Iremos usar como exemplo as tabuadas do 1 e do 2, para mostrar como "
+                "funciona o processo. Assim todos poderão ter uma noção bem rápida de como resolver "
+                "tabuadas de forma simples e sem dor de cabeça. ";
+  static const String text2_tabuada = 
+                "Em uma tabuada o primeiro número representa o número referente aquela tabuada. Por "
+                "exemplo:";
+  static const String text3_tabuada = 
+                "O primeiro 1 é referente a tabuada do 1 e o segundo 1 é referente ao número de vezes "
+                "que ele é múltiplicado. Logo 1x1 = 1 já que o 1 multiplicado uma única vez por ele "
+                "mesmo, só pode ter o resultado 1.";
+  static const String text4_tabuada = 
+                "Continuando com o próximo exemplo, para fortalecer as informações que foram passadas.";
+  static const String text5_tabuada = 
+                "O 1 é multiplicado 2x nessa situação, seria o mesmo que 1 + 1. Conseguem entender essa "
+                "ligação com a soma? A operação 1 x 2 é o mesmo que 1 + 1, ou seja, o número de "
+                "multiplicações nada mais é do que o número de vezes que aquele número é somado por "
+                "ele mesmo. Entenderam?";
+  static const String text6_tabuada = 
+                "Percebem que o número de vezes que o número está sendo somado é o mesmo número de "
+                "vezes na múltiplicação? É simples! A tabuada funciona dessa forma, se você tem "
+                "dificuldade para fazer multiplicações, tente usar a soma como um auxílio. Dessa "
+                "forma e com um pouco de prática, você mentalmente conseguirá fazer a tabuada sem que "
+                "tenha dificuldades.";
 }

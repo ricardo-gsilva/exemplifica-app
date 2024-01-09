@@ -16,7 +16,10 @@ class _JurosSimplesState extends State<JurosSimples> {
         appBar: AppBar(
           backgroundColor: Colors.lightBlue,
           automaticallyImplyLeading: false,
-          title: Text(CoreStrings.titleJurosSimples),
+          title: Text(
+            CoreStrings.titleJurosSimples,
+            style: TextStyle(color: Colors.black),
+          ),
           leading: IconButton(
             icon: Icon(
               Icons.reply,

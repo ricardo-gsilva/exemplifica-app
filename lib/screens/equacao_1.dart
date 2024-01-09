@@ -17,7 +17,10 @@ class _Equacao_1State extends State<Equacao_1> {
       backgroundColor: Colors.lightBlue.shade50,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
-        title: Text(CoreStrings.titleEquacao1, style: TextStyle(color: Colors.black),),
+        title: Text(
+          CoreStrings.titleEquacao1,
+          style: TextStyle(color: Colors.black),
+        ),
         automaticallyImplyLeading: false,
         centerTitle: true,
         leading: IconButton(

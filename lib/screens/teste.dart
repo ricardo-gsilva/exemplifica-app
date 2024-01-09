@@ -8,7 +8,12 @@ import 'package:exemplifica_git/screens/fatorial.dart';
 import 'package:exemplifica_git/screens/funcoes.dart';
 import 'package:exemplifica_git/screens/juros_compostos.dart';
 import 'package:exemplifica_git/screens/juros_simples.dart';
+import 'package:exemplifica_git/screens/mdc.dart';
+import 'package:exemplifica_git/screens/mmc.dart';
+import 'package:exemplifica_git/screens/porcentagem.dart';
+import 'package:exemplifica_git/screens/regra_de_3.dart';
 import 'package:exemplifica_git/screens/regras_basicas.dart';
+import 'package:exemplifica_git/screens/tabuada.dart';
 import 'package:flutter/material.dart';
 
 class Teste extends StatefulWidget {
@@ -44,7 +49,7 @@ class _TesteState extends State<Teste> {
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: Column(
-                children: [
+                children: [                  
                   Row(
                     children: [
                       SizedBox(                      
@@ -167,20 +172,41 @@ class _TesteState extends State<Teste> {
                     height: height,
                     titleFirst: 'M.M.C',
                     titleSecond: 'M.D.C',
-                    onTapFirst: null,
-                    onTapSecond: null,
+                    onTapFirst: () {
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => Mmc())
+                      );
+                    },
+                    onTapSecond: () {
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => Mdc())
+                      );
+                    },
                   ),
                   RowOperations(
                     height: height,
                     titleFirst: 'Porcentagem',
                     titleSecond: 'Regra de 3',
-                    onTapFirst: null,
-                    onTapSecond: null,
+                    onTapFirst: () {
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => Porcentagem())
+                      );
+                    },
+                    onTapSecond: () {
+                      Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => RegraDe3())
+                      );
+                    },
                   ),
                   SizedBox(
                     height: height * 0.10,
                     width: MediaQuery.of(context).size.width,
                     child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context, MaterialPageRoute(builder: (_) => Tabuada())
+                        );
+                      },
                       child: Card(
                         color: Colors.lightBlue.shade200,
                         child: Center(
