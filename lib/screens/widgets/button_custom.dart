@@ -4,19 +4,19 @@ import 'package:flutter/material.dart';
 
 class ButtonBase extends StatelessWidget {
   double? height;
+  double? width;
   String? title;
   void Function()? onTap;
 
-  ButtonBase({this.height, this.title, required this.onTap});
+  ButtonBase({this.height, this.width, this.title, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     Color color = Colors.lightBlue.shade200;
-    double width = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.only(top: 2, left: 15, right: 15),
       child: SizedBox(    
-        height: height! * 0.10,
+        height: height,
         width: width,
         child: InkWell(
           onTap: onTap,

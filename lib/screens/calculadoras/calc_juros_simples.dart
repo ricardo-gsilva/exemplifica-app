@@ -1,9 +1,8 @@
-import 'package:exemplifica_git/ad_mob/ad_mob.dart';
-import 'package:exemplifica_git/ad_mob/banner_ad_mob.dart';
-import 'package:exemplifica_git/components/drawer_comp/drawer_page.dart';
+import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/model_calc/model_juros_simples.dart';
+import 'package:exemplifica_git/screens/teste.dart';
+import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
-
 
 class CalcJurosS extends StatefulWidget {
   @override
@@ -11,283 +10,255 @@ class CalcJurosS extends StatefulWidget {
 }
 
 class _CalcJurosSState extends State<CalcJurosS> {
-
-  // final AdMob adMob = AdMob();
-
   final ModelJurosSimples modelJurosSimples = ModelJurosSimples();
+  double height = 0;
+  double width = 0;
+  bool visible = false;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("images/backapp.png"),
-                    fit: BoxFit.cover)),
-            child: Scaffold(
-                appBar: AppBar(
-                  actions: <Widget>[
-                    IconButton(
-                      icon: Icon(Icons.reply),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
+    width = MediaQuery.of(context).size.width * 0.35;
+    height = MediaQuery.of(context).size.height * 0.1;
+    return Scaffold(
+      backgroundColor: Colors.lightBlue.shade50,
+      appBar: AppBar(
+        backgroundColor: Colors.lightBlue,
+        title: Text(
+          CoreStrings.titleJurosSimples,
+          style: TextStyle(color: Colors.black),
+        ),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: Icon(
+            Icons.reply,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.home,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => Teste()),
+                  (Route<dynamic> route) => false);
+            },
+          ),
+        ],
+      ),
+      body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: SingleChildScrollView(
+              child: Column(children: <Widget>[
+            Padding(
+              padding: EdgeInsets.all(10.0),
+              child: Text(
+                "Digite os valores. Preencha ao menos 3 campos!",
+                style: TextStyle(fontSize: 20.0),
+              ),
+            ),
+            Column(
+              children: <Widget>[                
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(right: 5,left: 5),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Capital:",
+                            style: TextStyle(
+                                fontSize: 20.0,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * .3,
+                            child: TextField(
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                  hintText: "capital(R\$)",
+                                  labelText: "",
+                                  labelStyle: TextStyle(color: Colors.black87)),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.black, fontSize: 23.0),
+                              controller: modelJurosSimples.c,
+                              maxLength: 9,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 5,left: 5),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Taxa:",
+                            style: TextStyle(
+                                fontSize: 20.0,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width * .3,
+                            child: TextField(
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                  hintText: "% a.m",
+                                  labelText: "",
+                                  labelStyle: TextStyle(color: Colors.black87)),
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.black, fontSize: 23.0),
+                              controller: modelJurosSimples.i,
+                              maxLength: 4,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),                
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(right: 5,left: 5),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Meses:",
+                            style: TextStyle(
+                                fontSize: 20.0,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * .3,
+                        child: TextField(
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                              hintText: "Tempo",
+                              labelText: "",
+                              labelStyle: TextStyle(color: Colors.black87)),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.black, fontSize: 23.0),
+                          controller: modelJurosSimples.t,
+                          maxLength: 3,
+                        ),
+                      ),                    
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 5,left: 5),
+                      child: Column(
+                        children: [
+                          Text(
+                            "Juros:",
+                            style: TextStyle(
+                                fontSize: 20.0,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * .3,
+                        child: TextField(
+                          keyboardType: TextInputType.number,
+                          decoration: InputDecoration(
+                              hintText: "%",
+                              labelText: "",
+                              labelStyle: TextStyle(color: Colors.black87)),
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.black, fontSize: 23.0),
+                          controller: modelJurosSimples.j,
+                          maxLength: 9,
+                        ),
+                      ),
+                        ],
+                      ),
                     )
                   ],
                 ),
-                drawer: DrawerPage(),
-                backgroundColor: Colors.transparent,
-                body: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height,
-                    child: SingleChildScrollView(
-                        child: Column(
-                            children: <Widget>[
-                              Padding(
-                                padding: EdgeInsets.only(
-                                    left: 0.0, top: 15.0, right: 0.0, bottom: 5.0),
-                                child: Image.asset(
-                                    "images/calculadoras/calc_jurosSimples.png"),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.all(10.0),
-                                child: Text(
-                                  "Digite os valores de Capital, taxa mensal de juros, tempo em meses ou mesmo"
-                                      " juros. Preencha ao menos 3 campos.",
-                                  style: TextStyle(fontSize: 25.0, color: Colors.red),
-                                ),
-                              ),
-                              Column(
-                                children: <Widget>[
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            top: 20.0, bottom: 5.0, right: 5.0, left: 5.0),
-                                        child: Container(
-                                          height: MediaQuery.of(context).size.height * .07,
-                                          width: MediaQuery.of(context).size.width * .35,
-                                          child: ElevatedButton(
-                                            style: ElevatedButton.styleFrom(
-                                              primary: Colors.lightBlueAccent,
-                                              onPrimary: Colors.white,
-                                            ),
-                                            onPressed: () {
-                                              setState(() {
-                                                modelJurosSimples.verificarCampos();
-                                              });
-                                            },
-                                            child: Text(
-                                              "Calcular",
-                                              style: TextStyle(
-                                                  color: Colors.white, fontSize: 22.0),
-                                            ),
-                                            /* color: Colors.blueAccent, */
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                            top: 20.0, bottom: 5.0, right: 5.0, left: 5),
-                                        child: Container(
-                                          height: MediaQuery.of(context).size.height * .07,
-                                          width: MediaQuery.of(context).size.width * .35,
-                                          child: ElevatedButton(
-                                            style: ElevatedButton.styleFrom(
-                                              primary: Colors.lightBlueAccent,
-                                              onPrimary: Colors.white,
-                                            ),
-                                            onPressed: () {
-                                              setState(() {
-                                                modelJurosSimples.resetCampos();
-                                              });
-                                            },
-                                            child: Text(
-                                              "Limpar",
-                                              style: TextStyle(
-                                                  color: Colors.white, fontSize: 22.0),
-                                            ),
-                                            /* color: Colors.lightBlueAccent, */
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(left: 12, top: 10, bottom: 5),
-                                        child: Text(
-                                          "Capital:",
-                                          style: TextStyle(
-                                              fontSize: 25.0,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(right: 0, left: 10, top: 5, bottom: 5),
-                                        child: SizedBox(
-                                          width: MediaQuery.of(context).size.width * .3,
-                                          child: TextField(
-                                            keyboardType: TextInputType.number,
-                                            decoration: InputDecoration(
-                                                hintText: "capital(R\$)",
-                                                labelText: "",
-                                                labelStyle: TextStyle(color: Colors.black87)),
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                                color: Colors.black, fontSize: 23.0),
-                                            controller: modelJurosSimples.c,
-                                            maxLength: 9,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[                                      
-                                      Padding(
-                                        padding: EdgeInsets.only(left: 12, top: 5, bottom: 5),
-                                        child: Text(
-                                          "Taxa:",
-                                          style: TextStyle(
-                                              fontSize: 25.0,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(right: 0, left: 10, top: 5, bottom: 5),
-                                        child: SizedBox(
-                                          width: MediaQuery.of(context).size.width * .3,
-                                          child: TextField(
-                                            keyboardType: TextInputType.number,
-                                            decoration: InputDecoration(
-                                                hintText: "% a.m",
-                                                labelText: "",
-                                                labelStyle: TextStyle(color: Colors.black87)),
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                                color: Colors.black, fontSize: 23.0),
-                                            controller: modelJurosSimples.i,
-                                            maxLength: 4,
-                                          ),
-                                        ),
-                                      ),                                      
-                                    ],
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: EdgeInsets.only(left: 12, top: 5, bottom: 5),
-                                        child: Text(
-                                          "Meses:",
-                                          style: TextStyle(
-                                              fontSize: 25.0,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(right: 0, left: 10, bottom: 5, top: 5),
-                                        child: SizedBox(
-                                          width: MediaQuery.of(context).size.width * .3,
-                                          child: TextField(
-                                            keyboardType: TextInputType.number,
-                                            decoration: InputDecoration(
-                                                hintText: "Tempo",
-                                                labelText: "",
-                                                labelStyle: TextStyle(color: Colors.black87)),
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                                color: Colors.black, fontSize: 23.0),
-                                            controller: modelJurosSimples.t,
-                                            maxLength: 3,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: <Widget>[
-                                      Padding(
-                                        padding: EdgeInsets.only(left: 12, top: 5, bottom: 5),
-                                        child: Text(
-                                          "Juros:",
-                                          style: TextStyle(
-                                              fontSize: 25.0,
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.only(right: 0, left: 10, top: 5, bottom: 5),
-                                        child: SizedBox(
-                                          width: MediaQuery.of(context).size.width * .3,
-                                          child: TextField(
-                                            keyboardType: TextInputType.number,
-                                            decoration: InputDecoration(
-                                                hintText: "%",
-                                                labelText: "",
-                                                labelStyle: TextStyle(color: Colors.black87)),
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                                color: Colors.black, fontSize: 23.0),
-                                            controller: modelJurosSimples.j,
-                                            maxLength: 9,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                        left: 10, right: 10, bottom: 3, top: 30),
-                                    child: Text(
-                                      modelJurosSimples.resultjS,
-                                      textAlign: TextAlign.left,
-                                      style: TextStyle(color: Colors.black, fontSize: 21.0),
-                                    ),
-                                  ),
-                                ],
-                              ),
-
-/* -------------------------------------------JurosSimples-----------------------------------------------*/
-
-                              Padding(
-                                padding: EdgeInsets.only(left: 10, right: 10, top: 5),
-                                child: Text(
-                                 modelJurosSimples.resultjS_1,
-                                  style: TextStyle(
-                                      fontSize: 35.0,
-                                      color: Colors.red,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(
-                                    left: 10, right: 10, bottom: 30, top: 15),
-                                child: Text(
-                                  modelJurosSimples.resultjS_2,
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(color: Colors.black, fontSize: 21.0),
-                                ),
-                              ),
-                            ])
-                    )
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    ButtonBase(
+                      onTap: (() {
+                        setState(() {
+                          modelJurosSimples.verificarCampos();
+                          visible = !visible;
+                        });
+                      }),
+                      title: 'Calcular',
+                      height: height,
+                      width: width,
+                    ),
+                    ButtonBase(
+                      onTap: (() {
+                        setState(() {
+                          modelJurosSimples.resetCampos();
+                          visible = !visible;
+                        });
+                      }),
+                      title: 'Limpar',
+                      height: height,
+                      width: width,
+                    ),
+                  ],
                 ),
-                // bottomNavigationBar: BannerAdMob(),
+                Padding(
+                  padding:
+                      EdgeInsets.only(left: 10, right: 10, bottom: 3, top: 30),
+                  child: Text(
+                    modelJurosSimples.resultjS,
+                    textAlign: TextAlign.left,
+                    style: TextStyle(color: Colors.black, fontSize: 20.0),
+                  ),
+                ),
+              ],
+            ),
+            Visibility(
+              visible: visible,
+              child: Column(
+                children: [
+                  Padding(
+                padding: EdgeInsets.only(left: 10, right: 10, top: 5),
+                child: Text(
+                  modelJurosSimples.resultjS_1,
+                  style: TextStyle(
+                      fontSize: 25.0,
+                      color: Colors.red,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Padding(
+                padding:
+                    EdgeInsets.only(left: 10, right: 10, bottom: 30, top: 15),
+                child: Text(
+                  modelJurosSimples.resultjS_2,
+                  textAlign: TextAlign.left,
+                  style: TextStyle(color: Colors.black, fontSize: 20.0),
+                ),
+              ),
+                ],
+              ),
             )
-        )
+          ]))),
+      bottomNavigationBar: Container(
+          color: Colors.black,
+          height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

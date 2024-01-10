@@ -28,7 +28,7 @@ class _TesteState extends State<Teste> {
 
   @override
   Widget build(BuildContext context) {
-    height = MediaQuery.of(context).size.height;
+    height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade50,
       appBar: PreferredSize(
@@ -47,13 +47,13 @@ class _TesteState extends State<Teste> {
           SliverFillRemaining(
             hasScrollBody: false,
             child: Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.only(left: 10, right: 10, top: 5),
               child: Column(
                 children: [                  
                   Row(
                     children: [
                       SizedBox(                      
-                        height: height * 0.20,
+                        height: height * 2.2,
                         width: MediaQuery.of(context).size.width * 0.47,
                         child: InkWell(
                           onTap: () {
@@ -88,7 +88,7 @@ class _TesteState extends State<Teste> {
                         ),
                       ),                    
                       SizedBox(                      
-                        height: height * 0.20,
+                        height: height * 2.2,
                         width: MediaQuery.of(context).size.width * 0.47,
                         child: InkWell(
                           onTap: () {
@@ -199,7 +199,7 @@ class _TesteState extends State<Teste> {
                     },
                   ),
                   SizedBox(
-                    height: height * 0.10,
+                    height: height,
                     width: MediaQuery.of(context).size.width,
                     child: InkWell(
                       onTap: () {

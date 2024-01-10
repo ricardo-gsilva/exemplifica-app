@@ -1,3 +1,4 @@
+// import 'package:exemplifica_git/calculadoras/calc_funcoes.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/screens/calculadoras/calc_equacao_1.dart';
 import 'package:exemplifica_git/screens/calculadoras/calc_equacao_2.dart';
@@ -10,7 +11,7 @@ import 'package:exemplifica_git/screens/calculadoras/calc_regra_de_3.dart';
 import 'package:exemplifica_git/screens/calculadoras/cald_fatorial.dart';
 import 'package:exemplifica_git/screens/calculadoras/cald_mdc.dart';
 import 'package:exemplifica_git/screens/calculadoras/cald_tabuada.dart';
-import 'package:exemplifica_git/screens/components/button_custom.dart';
+import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:exemplifica_git/screens/components/row_cards.dart';
 import 'package:flutter/material.dart';
 
@@ -21,10 +22,12 @@ class Calculadoras extends StatefulWidget {
 
 class _CalculadorasState extends State<Calculadoras> {
   double height = 0;
+  double width = 0;
 
   @override
   Widget build(BuildContext context) {
-    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width * 0.4;
+    height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade50,
       appBar: AppBar(

@@ -1,5 +1,5 @@
 import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/screens/components/button_custom.dart';
+import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:exemplifica_git/screens/expoentes.dart';
 import 'package:exemplifica_git/screens/mult_div.dart';
 import 'package:exemplifica_git/screens/parentesis.dart';

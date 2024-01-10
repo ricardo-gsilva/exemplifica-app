@@ -1,5 +1,7 @@
-import 'package:exemplifica_git/components/drawer_comp/drawer_page.dart';
+import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/model_calc/model_equacao_2.dart';
+import 'package:exemplifica_git/screens/teste.dart';
+import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
 class CalcEquacao2 extends StatefulWidget {
@@ -9,235 +11,237 @@ class CalcEquacao2 extends StatefulWidget {
 
 class _CalcEquacao2State extends State<CalcEquacao2> {
   final ModelEquacao2 modelEquacao2 = ModelEquacao2();
+  bool visible = false;
+  double height = 0;
+  double width = 0;
 
   @override
   Widget build(BuildContext context) {
+    width = MediaQuery.of(context).size.width * 0.35;
+    height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
+      backgroundColor: Colors.lightBlue.shade50,
       appBar: AppBar(
-        actions: <Widget>[
+        backgroundColor: Colors.lightBlue,
+        title: Text(
+          CoreStrings.titleEquacao2,
+          style: TextStyle(color: Colors.black),
+        ),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: Icon(
+            Icons.reply,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        actions: [
           IconButton(
-            icon: Icon(Icons.reply),
+            icon: Icon(
+              Icons.home,
+              color: Colors.black,
+            ),
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => Teste()),
+                  (Route<dynamic> route) => false);
             },
-          )
+          ),
         ],
       ),
-      drawer: DrawerPage(),
-      backgroundColor: Colors.transparent,
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(
-                    left: 0.0, top: 5.0, right: 0.0, bottom: 5.0),
-                child: Image.asset("images/calculadoras/calc_eq2.png"),
-              ),
-              Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Text(
-                  "Digite os valores de a, b e c para montar a equação. O valor máximo é de 999 para cada campo.",
-                  style: TextStyle(fontSize: 25.0, color: Colors.red),
+          child: Padding(
+            padding:
+                const EdgeInsets.only(top: 10, left: 6, right: 6, bottom: 15),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  "Digite os valores de 'a', 'b' e 'c' para montar a equação. O valor máximo é de 999 para cada campo.",
+                  style: TextStyle(fontSize: 18.0),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Text(
+                Text(
                   "ax² + bx + c = 0",
                   style: TextStyle(
                       fontSize: 25.0,
                       color: Colors.red,
                       fontWeight: FontWeight.bold),
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.only(right: 2, left: 15),
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width * .18,
-                      child: TextField(
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                            hintText: "a",
-                            labelText: "",
-                            labelStyle: TextStyle(color: Colors.black87)),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.black, fontSize: 21.0),
-                        controller: modelEquacao2.val1,
-                        maxLength: 3,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsets.only(left: 2, right: 2, top: 5, bottom: 10),
-                    child: Text(
-                      "X² + ",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(color: Colors.black, fontSize: 20.0),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(right: 2, left: 2),
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width * .18,
-                      child: TextField(
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                            hintText: "b",
-                            labelText: "",
-                            labelStyle: TextStyle(color: Colors.black87)),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.black, fontSize: 21.0),
-                        controller: modelEquacao2.val2,
-                        maxLength: 3,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsets.only(left: 2, right: 2, top: 5, bottom: 10),
-                    child: Text(
-                      "X + ",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(color: Colors.black, fontSize: 20.0),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(right: 2, left: 2),
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width * .18,
-                      child: TextField(
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                            hintText: "c",
-                            labelText: "",
-                            labelStyle: TextStyle(color: Colors.black87)),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.black, fontSize: 21.0),
-                        controller: modelEquacao2.val3,
-                        maxLength: 3,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsets.only(left: 2, right: 10, top: 5, bottom: 10),
-                    child: Text(
-                      " = 0",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(color: Colors.black, fontSize: 20.0),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding:
-                        EdgeInsets.only(top: 20.0, bottom: 5.0, right: 5.0),
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * .07,
-                      width: MediaQuery.of(context).size.width * .35,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.lightBlueAccent,
-                          onPrimary: Colors.white,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Valor de "a":'),
+                            Padding(
+                              padding: EdgeInsets.only(right: 2, left: 15),
+                              child: SizedBox(
+                                width: MediaQuery.of(context).size.width * .18,
+                                child: TextField(
+                                  keyboardType: TextInputType.number,
+                                  decoration: InputDecoration(
+                                      hintText: "a",
+                                      labelText: "",
+                                      labelStyle:
+                                          TextStyle(color: Colors.black87)),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 21.0),
+                                  controller: modelEquacao2.val1,
+                                  maxLength: 3,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        onPressed: () {
-                          setState(() {
-                            modelEquacao2.verificarCampo();
-                          });
-                        },
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Valor de "b":'),
+                            Padding(
+                              padding: EdgeInsets.only(right: 2, left: 15),
+                              child: SizedBox(
+                                width: MediaQuery.of(context).size.width * .18,
+                                child: TextField(
+                                  keyboardType: TextInputType.number,
+                                  decoration: InputDecoration(
+                                      hintText: "b",
+                                      labelText: "",
+                                      labelStyle:
+                                          TextStyle(color: Colors.black87)),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 21.0),
+                                  controller: modelEquacao2.val2,
+                                  maxLength: 3,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('Valor de "c":'),
+                            Padding(
+                              padding: EdgeInsets.only(right: 2, left: 15),
+                              child: SizedBox(
+                                width: MediaQuery.of(context).size.width * .18,
+                                child: TextField(
+                                  keyboardType: TextInputType.number,
+                                  decoration: InputDecoration(
+                                      hintText: "c",
+                                      labelText: "",
+                                      labelStyle:
+                                          TextStyle(color: Colors.black87)),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      color: Colors.black, fontSize: 21.0),
+                                  controller: modelEquacao2.val3,
+                                  maxLength: 3,
+                                ),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        ButtonBase(
+                          onTap: (() {
+                            setState(() {
+                              modelEquacao2.verificarCampo();
+                              visible = !visible;
+                            });
+                          }),
+                          title: 'Calcular',
+                          height: height,
+                          width: width,
+                        ),
+                        ButtonBase(
+                          onTap: (() {
+                            setState(() {
+                              modelEquacao2.resetCampos();
+                              visible = !visible;
+                            });
+                          }),
+                          title: 'Limpar',
+                          height: height,
+                          width: width,
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                Visibility(
+                  visible: visible,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 10, right: 10, top: 10, bottom: 5),
                         child: Text(
-                          "Calcular",
-                          style: TextStyle(color: Colors.white, fontSize: 22.0),
+                          modelEquacao2.resultEq2,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(color: Colors.black, fontSize: 21.0),
                         ),
-                        /* color: Colors.blueAccent, */
                       ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 20.0, bottom: 5.0, left: 5.0),
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * .07,
-                      width: MediaQuery.of(context).size.width * .35,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: Colors.lightBlueAccent,
-                          onPrimary: Colors.white,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            modelEquacao2.resetCampos();
-                          });
-                        },
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 10, right: 10, top: 5, bottom: 5),
                         child: Text(
-                          "Limpar",
-                          style: TextStyle(color: Colors.white, fontSize: 22.0),
+                          modelEquacao2.resultEq2_1,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(color: Colors.black, fontSize: 21.0),
                         ),
-                        /* color: Colors.lightBlueAccent, */
                       ),
-                    ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 10, right: 10, top: 5, bottom: 5),
+                        child: Text(
+                          modelEquacao2.resultEq2_2,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(color: Colors.black, fontSize: 21.0),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 10, right: 10, top: 5, bottom: 5),
+                        child: Text(
+                          modelEquacao2.resultEq2_3,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(color: Colors.black, fontSize: 21.0),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(
+                            left: 10, right: 10, top: 5, bottom: 5),
+                        child: Text(
+                          modelEquacao2.resultEq2_4,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(color: Colors.black, fontSize: 21.0),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 5),
-                child: Text(
-                  modelEquacao2.resultEq2,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.black, fontSize: 21.0),
-                ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
-                child: Text(
-                  modelEquacao2.resultEq2_1,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.black, fontSize: 21.0),
-                ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
-                child: Text(
-                  modelEquacao2.resultEq2_2,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.black, fontSize: 21.0),
-                ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
-                child: Text(
-                  modelEquacao2.resultEq2_3,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.black, fontSize: 21.0),
-                ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 5),
-                child: Text(
-                  modelEquacao2.resultEq2_4,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.black, fontSize: 21.0),
-                ),
-              ),
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),
-      // bottomNavigationBar: BannerAdMob(),
+      bottomNavigationBar: Container(
+          color: Colors.black,
+          height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

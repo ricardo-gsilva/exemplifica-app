@@ -23,7 +23,7 @@ class RowCards extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          height: height! * 0.10,
+          height: height,
           width: width,
           child: InkWell(
             onTap: onTapFirst,
@@ -42,7 +42,7 @@ class RowCards extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: height! * 0.10,
+          height: height,
           width: width,
           child: InkWell(
             onTap: onTapSecond,

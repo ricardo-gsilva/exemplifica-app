@@ -1,5 +1,7 @@
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/model_calc/model_equacao_1.dart';
+import 'package:exemplifica_git/screens/teste.dart';
+import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
 class CalcEquacao1 extends StatefulWidget {
@@ -9,25 +11,44 @@ class CalcEquacao1 extends StatefulWidget {
 
 class _CalcEquacao1State extends State<CalcEquacao1> {
   final ModelEquacao1 modelCalc1 = ModelEquacao1();
+  double height = 0;
+  double width = 0;
 
   @override
   Widget build(BuildContext context) {
+    width = MediaQuery.of(context).size.width * 0.4;
+    height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade50,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
         title: Text(
-          CoreStrings.titleCalcEquacao1,
+          CoreStrings.titleEquacao1,
           style: TextStyle(color: Colors.black),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
         leading: IconButton(
-          icon: Icon(Icons.reply),
+          icon: Icon(
+            Icons.reply,
+            color: Colors.black,
+          ),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.home,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
+                Teste()), (Route<dynamic> route) => false);
+            },
+          ),
+        ],
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -104,41 +125,36 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
                     ],
                   )
                 ],
-              ),              
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.lightBlue),
-                        onPressed: () {
-                          setState(() {
-                            modelCalc1.verificarCampo();
-                          });
-                        },
-                        child: Text(
-                          'Calcular',
-                          style: TextStyle(color: Colors.black),
-                        )),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                     ButtonBase(
+                  onTap: (() {
+                      setState(() {
+                        modelCalc1.verificarCampo();
+                      });
+                    }
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.lightBlue),
-                        onPressed: () {
-                          setState(() {
-                            modelCalc1.resetCampos();
-                          });
-                        },
-                        child: Text(
-                          'Limpar',
-                          style: TextStyle(color: Colors.black),
-                        )),
+                  title: 'Calcular',
+                  height: height,
+                  width: width,
+                ),
+                ButtonBase(
+                  onTap: (() {
+                      setState(() {
+                        modelCalc1.resetCampos();
+                      });
+                    }
                   ),
-                ],
+                  title: 'Limpar',
+                  height: height,
+                  width: width,
+                ),
+                  ],
+                ),
               ),
               Padding(
                 padding:
