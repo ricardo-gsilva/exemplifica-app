@@ -1,18 +1,18 @@
-import 'package:exemplifica_git/ad_mob/ad_mob.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class ModelEquacao1 {
-
-  // final AdMob adMob = AdMob();  
+  // final AdMob adMob = AdMob();
 
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
 
   String resultEq1_1 = "";
+  String valA = '';
+  String valB = '';
 
-  void verificarCampo(){
-    if (val1.text.isEmpty || val2.text.isEmpty){
+  void verificarCampo() {
+    if (val1.text.isEmpty || val2.text.isEmpty) {
       resultEq1_1 = "Por favor, preencha os campos!";
     } else {
       _equacao1_1();
@@ -26,7 +26,7 @@ class ModelEquacao1 {
     resultEq1_1 = "";
   }
 
-  void _equacao1_1() {    
+  void _equacao1_1() {
     NumberFormat dfEq1_1 = new NumberFormat("0");
     NumberFormat dfEq1_2 = new NumberFormat(" 0.00");
     NumberFormat dfEq1_3 = new NumberFormat("");
@@ -90,8 +90,39 @@ class ModelEquacao1 {
       valorX = dfEq1_2.format((x));
     }
 
-    resultEq1_1 = f_a + "x" + " + " + "(" + f_b + ")" + " = " + f_r + "\n" + f_a + "x " +
-        f_b2 + " = " + f_r + "\n" + f_a + "x" + " = " + f_r + " " + f_b1 + "\n" + f_a + "x" +
-        " = " + f_rb + "\n" + "x = " + f_rb + " / " + f_a + "\n" + "x = " + valorX;
+    resultEq1_1 = f_a +
+        "x" +
+        " + " +
+        "(" +
+        f_b +
+        ")" +
+        " = " +
+        f_r +
+        "\n" +
+        f_a +
+        "x " +
+        f_b2 +
+        " = " +
+        f_r +
+        "\n" +
+        f_a +
+        "x" +
+        " = " +
+        f_r +
+        " " +
+        f_b1 +
+        "\n" +
+        f_a +
+        "x" +
+        " = " +
+        f_rb +
+        "\n" +
+        "x = " +
+        f_rb +
+        " / " +
+        f_a +
+        "\n" +
+        "x = " +
+        valorX;
   }
 }

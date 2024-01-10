@@ -2,13 +2,13 @@
 
 import 'package:flutter/material.dart';
 
-class RowOperations extends StatelessWidget {
+class RowCards extends StatelessWidget {
   double? height;
   String titleFirst;
   String titleSecond;
   void Function()? onTapFirst;
   void Function()? onTapSecond;
-  RowOperations({
+  RowCards({
     required this.titleFirst,
     required this.titleSecond,
     required this.onTapFirst,
@@ -20,8 +20,9 @@ class RowOperations extends StatelessWidget {
     Color color = Colors.lightBlue.shade200;
     double width = MediaQuery.of(context).size.width * 0.47;
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(    
+        SizedBox(
           height: height! * 0.10,
           width: width,
           child: InkWell(

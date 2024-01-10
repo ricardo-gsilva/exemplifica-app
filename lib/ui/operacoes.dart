@@ -63,61 +63,61 @@ class _OperacoesState extends State<Operacoes> {
 
               //-------------- BOTÕES ------------//
               
-              ButtonBase(
-                title: "Equação 1º",
-                page: Equacao_1(),
-                primaryColor: Colors.blue.shade700,
-              ),
-              ButtonBase(
-                title: "Equação 2º",
-                page: Equacao_2(),
-                primaryColor: Colors.blue.shade600,
-              ),
-              ButtonBase(
-                title: "Fatorial",
-                page: Fatorial(),
-                primaryColor: Colors.blue.shade500,
-              ),
-              ButtonBase(
-                title: "Funções",
-                page: Funcoes(),
-                primaryColor: Colors.blue.shade400,
-              ),
-              ButtonBase(
-                title: "Juros Compostos",
-                page: JurosCompostos(),
-                primaryColor: Colors.blue.shade300,
-              ),
-              ButtonBase(
-                title: "Juros Simples",
-                page: JurosSimples(),
-                primaryColor: Colors.blue.shade200,
-              ),
-              ButtonBase(
-                title: "MDC",
-                page: Mdc(),
-                primaryColor: Colors.blue.shade300,
-              ),
-              ButtonBase(
-                title: "MMC",
-                page: Mmc(),
-                primaryColor: Colors.blue.shade400,
-              ),
-              ButtonBase(
-                title: "Porcentagem",
-                page: Porcentagem(),
-                primaryColor: Colors.blue.shade500,
-              ),
-              ButtonBase(
-                title: "Regra de 3",
-                page: RegraDe3(),
-                primaryColor: Colors.blue.shade600,
-              ),
-              ButtonBase(
-                title: "Tabuada",
-                page: Tabuada(),
-                primaryColor: Colors.blue.shade700,
-              ),
+              // ButtonBase(
+              //   title: "Equação 1º",
+              //   page: Equacao_1(),
+              //   primaryColor: Colors.blue.shade700,
+              // ),
+              // ButtonBase(
+              //   title: "Equação 2º",
+              //   page: Equacao_2(),
+              //   primaryColor: Colors.blue.shade600,
+              // ),
+              // ButtonBase(
+              //   title: "Fatorial",
+              //   page: Fatorial(),
+              //   primaryColor: Colors.blue.shade500,
+              // ),
+              // ButtonBase(
+              //   title: "Funções",
+              //   page: Funcoes(),
+              //   primaryColor: Colors.blue.shade400,
+              // ),
+              // ButtonBase(
+              //   title: "Juros Compostos",
+              //   page: JurosCompostos(),
+              //   primaryColor: Colors.blue.shade300,
+              // ),
+              // ButtonBase(
+              //   title: "Juros Simples",
+              //   page: JurosSimples(),
+              //   primaryColor: Colors.blue.shade200,
+              // ),
+              // ButtonBase(
+              //   title: "MDC",
+              //   page: Mdc(),
+              //   primaryColor: Colors.blue.shade300,
+              // ),
+              // ButtonBase(
+              //   title: "MMC",
+              //   page: Mmc(),
+              //   primaryColor: Colors.blue.shade400,
+              // ),
+              // ButtonBase(
+              //   title: "Porcentagem",
+              //   page: Porcentagem(),
+              //   primaryColor: Colors.blue.shade500,
+              // ),
+              // ButtonBase(
+              //   title: "Regra de 3",
+              //   page: RegraDe3(),
+              //   primaryColor: Colors.blue.shade600,
+              // ),
+              // ButtonBase(
+              //   title: "Tabuada",
+              //   page: Tabuada(),
+              //   primaryColor: Colors.blue.shade700,
+              // ),
               Divider(height: 15,)
             ]),
           ),

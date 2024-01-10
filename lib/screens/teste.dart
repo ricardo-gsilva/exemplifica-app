@@ -123,7 +123,7 @@ class _TesteState extends State<Teste> {
                       ),
                     ],
                   ),
-                  RowOperations(
+                  RowCards(
                     height: height,
                     titleFirst: CoreStrings.titleEquacao1,
                     titleSecond: CoreStrings.titleEquacao2,
@@ -138,7 +138,7 @@ class _TesteState extends State<Teste> {
                       );
                     },
                   ),
-                  RowOperations(
+                  RowCards(
                     height: height,
                     titleFirst: 'Fatorial',
                     titleSecond: 'Funções',
@@ -153,7 +153,7 @@ class _TesteState extends State<Teste> {
                       );
                     },
                   ),
-                  RowOperations(
+                  RowCards(
                     height: height,
                     titleFirst: 'Juros Compostos',
                     titleSecond: 'Juros Simples',
@@ -168,7 +168,7 @@ class _TesteState extends State<Teste> {
                       );
                     },
                   ),
-                  RowOperations(
+                  RowCards(
                     height: height,
                     titleFirst: 'M.M.C',
                     titleSecond: 'M.D.C',
@@ -183,7 +183,7 @@ class _TesteState extends State<Teste> {
                       );
                     },
                   ),
-                  RowOperations(
+                  RowCards(
                     height: height,
                     titleFirst: 'Porcentagem',
                     titleSecond: 'Regra de 3',

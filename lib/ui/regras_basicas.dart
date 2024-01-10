@@ -62,31 +62,31 @@ class _RegrasBasicasState extends State<RegrasBasicas> {
                     style: TextStyle(fontSize: 20.0),
                   ),
                 ),                
-                ButtonBase(
-                  title: "1º Parêntesis",
-                  page: Parentesis(),
-                  primaryColor: Colors.blue.shade600,
-                ),
-                ButtonBase(
-                  title: "2º Expoentes",
-                  page: Expoentes(),
-                  primaryColor: Colors.blue.shade400,
-                ),
-                ButtonBase(
-                  title: "3º Multiplicações e Divisões",
-                  page: MultiplicaDiv(),
-                  primaryColor: Colors.blue.shade200,
-                ),
-                ButtonBase(
-                  title: "4º Somas e Subtrações",
-                  page: SomaSubtracao(),
-                  primaryColor: Colors.blue.shade400,
-                ),
-                ButtonBase(
-                  title: "Regras de Sinais",
-                  page: RegrasSinais(),
-                  primaryColor: Colors.blue.shade600,
-                )                
+                // ButtonBase(
+                //   title: "1º Parêntesis",
+                //   page: Parentesis(),
+                //   primaryColor: Colors.blue.shade600,
+                // ),
+                // ButtonBase(
+                //   title: "2º Expoentes",
+                //   page: Expoentes(),
+                //   primaryColor: Colors.blue.shade400,
+                // ),
+                // ButtonBase(
+                //   title: "3º Multiplicações e Divisões",
+                //   page: MultiplicaDiv(),
+                //   primaryColor: Colors.blue.shade200,
+                // ),
+                // ButtonBase(
+                //   title: "4º Somas e Subtrações",
+                //   page: SomaSubtracao(),
+                //   primaryColor: Colors.blue.shade400,
+                // ),
+                // ButtonBase(
+                //   title: "Regras de Sinais",
+                //   page: RegrasSinais(),
+                //   primaryColor: Colors.blue.shade600,
+                // )                
               ],
             ),
           ),

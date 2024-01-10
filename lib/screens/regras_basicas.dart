@@ -1,10 +1,10 @@
 import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/regras/expoentes.dart';
-import 'package:exemplifica_git/regras/mult_div.dart';
-import 'package:exemplifica_git/regras/parentesis.dart';
-import 'package:exemplifica_git/regras/regras_sinal.dart';
-import 'package:exemplifica_git/regras/soma_sub.dart';
-import 'package:exemplifica_git/ui/components/button_base.dart';
+import 'package:exemplifica_git/screens/components/button_custom.dart';
+import 'package:exemplifica_git/screens/expoentes.dart';
+import 'package:exemplifica_git/screens/mult_div.dart';
+import 'package:exemplifica_git/screens/parentesis.dart';
+import 'package:exemplifica_git/screens/regra_sinal.dart';
+import 'package:exemplifica_git/screens/soma_sub.dart';
 import 'package:flutter/material.dart';
 
 class RegrasBasicas extends StatefulWidget {
@@ -13,8 +13,11 @@ class RegrasBasicas extends StatefulWidget {
 }
 
 class _RegrasBasicasState extends State<RegrasBasicas> {
+  double height = 0.0;
+
   @override
   Widget build(BuildContext context) {
+    height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade50,
       appBar: AppBar(
@@ -41,42 +44,57 @@ class _RegrasBasicasState extends State<RegrasBasicas> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Text(
-                "Para ter bons resultados em matemática, é necessário compreender as regras"
-                " básicas para a resolução dos problemas. Abaixo estão listadas algumas dessas regras,"
-                " clique em uma delas para conhecer.",
-                style: TextStyle(fontSize: 20.0),
+              padding: const EdgeInsets.only(top: 10),
+              child: ButtonBase(
+                height: height,
+                title: "1º Parêntesis",
+                onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => Parentesis())
+                  );
+                },
               ),
             ),
             ButtonBase(
-              title: "1º Parêntesis",
-              page: Parentesis(),
-              primaryColor: Colors.blue.shade600,
-            ),
-            ButtonBase(
+              height: height,
               title: "2º Expoentes",
-              page: Expoentes(),
-              primaryColor: Colors.blue.shade400,
+              onTap: () {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => Expoentes())
+                );
+              },
             ),
             ButtonBase(
-              title: "3º Multiplicações e Divisões",
-              page: MultiplicaDiv(),
-              primaryColor: Colors.blue.shade200,
+              height: height,
+              title: "Analisar >>>3º Multiplicações e Divisões",
+              onTap: () {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => MultiplicaDiv())
+                );
+              },
             ),
             ButtonBase(
+              height: height,
               title: "4º Somas e Subtrações",
-              page: SomaSubtracao(),
-              primaryColor: Colors.blue.shade400,
+              onTap: () {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => SomaSubtracao())
+                );
+              },
             ),
             ButtonBase(
+              height: height,
               title: "Regras de Sinais",
-              page: RegrasSinais(),
-              primaryColor: Colors.blue.shade600,
-            )
+              onTap: () {
+                Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => RegrasSinais())
+                );
+              },
+            ),            
           ],
         ),
       ),
+      bottomNavigationBar: SizedBox(height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

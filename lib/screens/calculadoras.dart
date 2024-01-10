@@ -1,15 +1,17 @@
-import 'package:exemplifica_git/calculadoras/calc_equacao_1.dart';
-import 'package:exemplifica_git/calculadoras/calc_equacao_2.dart';
-import 'package:exemplifica_git/calculadoras/calc_fatorial.dart';
-import 'package:exemplifica_git/calculadoras/calc_funcoes.dart';
-import 'package:exemplifica_git/calculadoras/calc_juros_compostos.dart';
-import 'package:exemplifica_git/calculadoras/calc_juros_simples.dart';
-import 'package:exemplifica_git/calculadoras/calc_mdc.dart';
-import 'package:exemplifica_git/calculadoras/calc_mmc.dart';
-import 'package:exemplifica_git/calculadoras/calc_porcentagem.dart';
-import 'package:exemplifica_git/calculadoras/calc_regra_de_3.dart';
-import 'package:exemplifica_git/calculadoras/calc_tabuada.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
+import 'package:exemplifica_git/screens/calculadoras/calc_equacao_1.dart';
+import 'package:exemplifica_git/screens/calculadoras/calc_equacao_2.dart';
+import 'package:exemplifica_git/screens/calculadoras/calc_funcoes.dart';
+import 'package:exemplifica_git/screens/calculadoras/calc_juros_compostos.dart';
+import 'package:exemplifica_git/screens/calculadoras/calc_juros_simples.dart';
+import 'package:exemplifica_git/screens/calculadoras/calc_mmc.dart';
+import 'package:exemplifica_git/screens/calculadoras/calc_porcentagem.dart';
+import 'package:exemplifica_git/screens/calculadoras/calc_regra_de_3.dart';
+import 'package:exemplifica_git/screens/calculadoras/cald_fatorial.dart';
+import 'package:exemplifica_git/screens/calculadoras/cald_mdc.dart';
+import 'package:exemplifica_git/screens/calculadoras/cald_tabuada.dart';
+import 'package:exemplifica_git/screens/components/button_custom.dart';
+import 'package:exemplifica_git/screens/components/row_cards.dart';
 import 'package:flutter/material.dart';
 
 class Calculadoras extends StatefulWidget {
@@ -18,9 +20,11 @@ class Calculadoras extends StatefulWidget {
 }
 
 class _CalculadorasState extends State<Calculadoras> {
+  double height = 0;
 
   @override
   Widget build(BuildContext context) {
+    height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade50,
       appBar: AppBar(
@@ -36,268 +40,95 @@ class _CalculadorasState extends State<Calculadoras> {
             Navigator.pop(context);
           },
         ),
-        title: Text(CoreStrings.titleCalculadoras, style: TextStyle(color: Colors.black),),
+        title: Text(
+          CoreStrings.titleCalculadoras,
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(children: <Widget>[
           Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Text(
-              "Escolha uma das calculadoras para que você possa resolver suas questões matemáticas.",
-              style: TextStyle(fontSize: 20.0),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 10.0, bottom: 3),
-            child: Container(
-              width: MediaQuery.of(context).size.width * .8,
-              height: 40,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade700, // background
-                  onPrimary: Colors.white, // foreground
-                ),
-                onPressed: () {
-                  // adMob.showInstersticial();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CalcEquacao1()));
-                },
-                child: Text(
-                  "Equação de 1º grau",
-                  style: TextStyle(color: Colors.white, fontSize: 22.0),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 0.5, bottom: 3),
-            child: Container(
-              width: MediaQuery.of(context).size.width * .8,
-              height: 40,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade600, // background
-                  onPrimary: Colors.white,
-                ),
-                onPressed: () {
-                  // adMob.showInstersticial();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CalcEquacao2()));
-                },
-                child: Text(
-                  "Equação de 2º grau",
-                  style: TextStyle(color: Colors.white, fontSize: 22.0),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 0.5, bottom: 3),
-            child: Container(
-              width: MediaQuery.of(context).size.width * .8,
-              height: 40,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade400, // background
-                  onPrimary: Colors.white, // foreground
-                ),
-                onPressed: () {
-                  // adMob.showInstersticial();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CalcFatorial()));
-                },
-                child: Text(
-                  "Fatorial",
-                  style: TextStyle(color: Colors.white, fontSize: 22.0),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 0.5, bottom: 3),
-            child: Container(
-              width: MediaQuery.of(context).size.width * .8,
-              height: 40,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade300, // background
-                  onPrimary: Colors.white, // foreground
-                ),
-                onPressed: () {
-                  // adMob.showInstersticial();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CalcFuncoes()));
-                },
-                child: Text(
-                  "Funções",
-                  style: TextStyle(color: Colors.white, fontSize: 22.0),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 0.5, bottom: 3),
-            child: Container(
-              width: MediaQuery.of(context).size.width * .8,
-              height: 40,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade300, // background
-                  onPrimary: Colors.white, // foreground
-                ),
-                onPressed: () {
-                  // adMob.showInstersticial();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CalcJurosC()));
-                },
-                child: Text(
-                  "Juros Compostos",
-                  style: TextStyle(color: Colors.white, fontSize: 22.0),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 0.5, bottom: 3),
-            child: Container(
-              width: MediaQuery.of(context).size.width * .8,
-              height: 40,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade200, // background
-                  onPrimary: Colors.white, // foreground
-                ),
-                onPressed: () {
-                  // adMob.showInstersticial();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CalcJurosS()));
-                },
-                child: Text(
-                  "Juros Simples",
-                  style: TextStyle(color: Colors.white, fontSize: 22.0),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 0.5, bottom: 3),
-            child: Container(
-              width: MediaQuery.of(context).size.width * .8,
-              height: 40,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade300, // background
-                  onPrimary: Colors.white, // foreground
-                ),
-                onPressed: () {
-                  // adMob.showInstersticial();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CalcMdc()));
-                },
-                child: Text(
-                  "M.D.C",
-                  style: TextStyle(color: Colors.white, fontSize: 22.0),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 0.5, bottom: 3),
-            child: Container(
-              width: MediaQuery.of(context).size.width * .8,
-              height: 40,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade400, // background
-                  onPrimary: Colors.white, // foreground
-                ),
-                onPressed: () {
-                  // adMob.showInstersticial();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CalcMmc()));
-                },
-                child: Text(
-                  "M.M.C",
-                  style: TextStyle(color: Colors.white, fontSize: 22.0),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 0.5, bottom: 3),
-            child: Container(
-              width: MediaQuery.of(context).size.width * .8,
-              height: 40,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade500, // background
-                  onPrimary: Colors.white, // foreground
-                ),
-                onPressed: () {
-                  // adMob.showInstersticial();
+            padding: const EdgeInsets.only(top: 10),
+            child: RowCards(
+              titleFirst: "Equação de 1º Grau",
+              titleSecond: "Equação de 2º Grau",
+              onTapFirst: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => CalcPorcentagem()));
-                },
-                child: Text(
-                  "Porcentagem",
-                  style: TextStyle(color: Colors.white, fontSize: 22.0),
-                ),
-              ),
+                      context, MaterialPageRoute(builder: (_) => CalcEquacao1()));
+              },
+              onTapSecond: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => CalcEquacao2()));
+              },
+              height: height
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 0.5, bottom: 3),
-            child: Container(
-              width: MediaQuery.of(context).size.width * .8,
-              height: 40,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade600, // background
-                  onPrimary: Colors.white, // foreground
-                ),
-                onPressed: () {
-                  // adMob.showInstersticial();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CalcRegraDe3()));
-                },
-                child: Text(
-                  "Regra de 3",
-                  style: TextStyle(color: Colors.white, fontSize: 22.0),
-                ),
-              ),
-            ),
+          ButtonBase(
+            height: height,
+            title: "Fatorial",
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => CalcFatorial()));
+            },
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 0.5, bottom: 15.5),
-            child: Container(
-              width: MediaQuery.of(context).size.width * .8,
-              height: 40,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.blue.shade700, // background
-                  onPrimary: Colors.white, // foreground
-                ),
-                onPressed: () {
-                  // adMob.showInstersticial();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CalcTabuada()));
-                },
-                child: Text(
-                  "Tabuada",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22.0,
-                  ),
-                ),
-              ),
-            ),
+          RowCards(
+            titleFirst: "Funções",
+            titleSecond: "Juros Compostos",
+            onTapFirst: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => CalcFuncoes()));
+            },
+            onTapSecond: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => CalcJurosC()));
+            },
+            height: height
+          ),          
+          ButtonBase(
+            height: height,
+            title: "Juros Simples",
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => CalcJurosS()));
+            },
+          ),
+          RowCards(
+            titleFirst: "M.D.C",
+            titleSecond: "M.M.C",
+            onTapFirst: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => CalcMdc()));
+            },
+            onTapSecond: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => CalcMmc()));
+            },
+            height: height
+          ),   
+          ButtonBase(
+            height: height,
+            title: "Porcentagem",
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => CalcPorcentagem()));
+            },
+          ),
+          RowCards(
+            titleFirst: "Regra de 3",
+            titleSecond: "Tabuada",
+            onTapFirst: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => CalcRegraDe3()));
+            },
+            onTapSecond: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => CalcTabuada()));
+            },
+            height: height
           ),
         ]),
       ),
+      bottomNavigationBar: Container(height: MediaQuery.of(context).size.height * 0.1, color: Colors.black,),
     );
   }
 }
-
-class CalcEquacao1D {}

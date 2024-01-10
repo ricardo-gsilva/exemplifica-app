@@ -13,6 +13,12 @@ class CoreStrings {
   static const String titleJurosSimples = 'Juros Simples';
   static const String titleRegrasBasicas = 'Regras Básicas';
   static const String titleCalculadoras = 'Calculadoras';
+  static const String titleParentesis = 'Parêntesis';
+  static const String titleExpoentes = 'Expoentes';
+  static const String titleMultipDiv = 'Multiplicação e Divisão';
+  static const String titleSomaSub = 'Somas e Subtrações';
+  static const String titleRegraSinal = 'Regras de Sinais';
+  static const String titleCalcEquacao1 = 'Equação de 1º Grau';
 
   //'Equação de 1º Grau'
   static const String text1_Equacao1 = "A equação de 1º grau é uma sentença matemática que estabelece igualdade entre "
@@ -489,4 +495,109 @@ class CoreStrings {
                 "dificuldade para fazer multiplicações, tente usar a soma como um auxílio. Dessa "
                 "forma e com um pouco de prática, você mentalmente conseguirá fazer a tabuada sem que "
                 "tenha dificuldades.";
+
+  //Parêntesis
+  static const String text1_parentesis = 
+                "Compreender essa regra é extremamente importante, pois ela pode ajudar a resolver "
+                "contas muito simples que erramos apenas por não utilizar os parêntesis. Abaixo "
+                "mostraremos um exemplo de como resolver uma equação matemática com parêntesis.";
+  static const String text2_parentesis = 
+                "Primeiramente devemos resolver a operação dentro dos parêntesis para então dar continuidade a "
+                "resolução da questão. Devemos nos atentar ao sinal negativo antes do parêntesis, isso significa "
+                "que existe uma multiplicação. Sempre que existir uma operação matemática com um sinal de "
+                "positivo ou negativo antes dos parêntesis, significa que esse sinal está multiplicando o "
+                "valor que se encontra dentro dos parêntesis. Para simplificar, caso não tenha entendido, insira "
+                "o número 1 antes do parêntesis junto do sinal de multiplicação, deixando dessa "
+                "forma '-1 x ( 8 + 2 - 3)'. Fazendo isso, terá apenas que multiplicar o resultado que irá obter "
+                "dentro dos parêntesis ao -1, seguindo a regra básica de sinais que é sinal igual é positivo e "
+                "sinais diferentes é negativo.";
+  static const String text3_parentesis = 
+                "Voltando a regra dos parêntesis, o resultado ficaria:";
+  static const String text4_parentesis = 
+                "Assim podemos dar continuidade a resolução.";
+  static const String text5_parentesis = "Reescrevendo a operação com as informações que foram passadas, teremos:";
+  static const String text6_parentesis = "E assim podemos resolver toda a questão da seguinte forma:";
+  static const String text7_parentesis = 
+                "Pode-se notar que o parêntesis é mantido até que se chegue ao resultado final. "
+                "O resultado encontrado é o 7 e só poderemos retirar o parêntesis, após multiplicar o "
+                "valor dentro do parêntesis pelo sinal sinal que se encontra antes dos parêntesis. "
+                "Após retirarmos os parêntesis, poderemos encontrar o resultado de toda a equação.";
+
+  //Expoentes
+  static const String text1_expoentes = 
+                "Os expoentes podem ser um pouco mais complicados de se resolver. Mas ainda assim com "
+                "um pouco de prática é possível passar por isso com tranquilidade. Primeiro vou "
+                "explicar como funcionam os expoentes! Para resolver uma expressão com expoente, "
+                "primeiro é necessário identificar onde se encontra o expoente, nessa expressão "
+                "2³ o expoente é o número 3. O número 3 significa que o número 2 está sendo "
+                "multiplicado 3 vezes por ele mesmo, ou seja, uma expressão 2³ é igual a 2x2x2. "
+                "Como é possível notar, número 2 está sendo multiplicado por ele mesmo na mesma "
+                "quantidade de vez que o expoente. No caso 3! Agora que já entendemos, vamos tentar "
+                "aplicar a nossa explicação.";
+  static const String text2_expoentes = 
+                "Seguindo a regra de parêntesis, vamos primeiro resolver o conteúdo dentro dos parêntesis.";
+  static const String text3_expoentes = 
+                "Agora que temos o resultado dentro dos parêntesis, podemos seguir com a resolução do expoente.";
+  static const String text4_expoentes = 
+                "Como explicado antes, o expoente é o número de vezes que o número da base será multiplicado por "
+                "ele mesmo. Então a expressão 3² é igual a 3x3 e o resultado da expressão é 9.";
+  
+  //Multiplicação e Divisão
+  static const String text1_MultiplicaDiv = '';
+  static const String text2_MultiplicaDiv = '';
+  static const String text3_MultiplicaDiv = '';
+  static const String text4_MultiplicaDiv = '';
+  static const String text5_MultiplicaDiv = '';
+  static const String text6_MultiplicaDiv = '';
+  static const String text7_MultiplicaDiv = '';
+  static const String text8_MultiplicaDiv = '';
+  static const String text9_MultiplicaDiv = '';
+  static const String text10_MultiplicaDiv = '';
+  static const String text11_MultiplicaDiv = '';
+
+  //Soma e Subtração
+  static const String text1_SomaSub = 
+                "Chegamos a última regra básica! Em qualquer operação matemática, somas e "
+                "subtrações isoladas devem ser resolvidas por último, só terão prioridade "
+                "antes de multiplicações ou divisões, caso a soma ou a subtração estejam "
+                "dentro de parêntesis. Outro ponto a se destacar é que para se facilitar "
+                "a resolução de uma expressão matemática, a soma tem prioridade para ser "
+                "resolvida antes de uma subtração.";
+
+  //Regra de Sinal
+  static const String text1_RegraSinal = 
+                "A regra mais conhecida é a regra de sinal, muito utilizada principalmente nas operações "
+                "de multiplicação. Abaixo você pode ver como a regra funciona de forma bem simples!";
+  static const String text2_RegraSinal = 
+                "ou seja um número positivo que multiplica outro número positivo dara um resultado com número positivo.";
+  static const String text3_RegraSinal = 
+                "Veremos agora o outro caso das regras de sinais:";
+  static const String text4_RegraSinal = 
+                "Note que nessa operação o resultado foi negativo. Isso se deve ao fato de que sinais diferentes "
+                "sempre darão um resultado negativo.";
+  static const String text5_RegraSinal = 
+                "Veja outra situação, no qual teremos dois números negativos sendo multiplicados.";
+  static const String text6_RegraSinal = 
+                "Como podem ver, o resultado foi positivo. Mesmo que os números sejam negativos, o que vale é a regra "
+                "de sinal que nos diz que sinais iguais terão resultado positivo.";
+  static const String text7_RegraSinal = 
+                "Lembrem-se sempre dessa informação!!";
+  static const String text8_RegraSinal = 
+                "Um número positivo qualquer que múltiplica um outro número positivo qualquer, terá sempre um resultado POSITIVO.";
+  static const String text9_RegraSinal = 
+                "Um número negativo qualquer que múltiplica um outro número negativo qualquer, terá "
+                "sempre um resultado POSITIVO.";
+  static const String text10_RegraSinal = 
+                "Já no caso de um número positivo que múltiplica um número negativo ou vice-versa, o "
+                "resultado sempre será NEGATIVO.";
+  static const String text11_RegraSinal = 
+                "Obs: Essas regras também são válidas para operações de divisão.";
+  static const String text12_RegraSinal = 
+                "As informações podem parecer repetitivas, mas lembre-se que é assim que você consegue gravar "
+                "uma informação em sua mente.";
+  
+  //Calc Equação de 1º Grau
+  static const String text1_CalcEquacao1 = 
+                "Digite os valores de 'a' e 'b' e clique em 'Montar Equação' para poder ver a equação e depois calcular.";
+  static const String text2_CalcEquacao1 = "ax + b = 0";
 }
