@@ -1,6 +1,6 @@
 import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/model_calc/model_juros_compostos.dart';
-import 'package:exemplifica_git/screens/teste.dart';
+import 'package:exemplifica_git/controller/model_juros_compostos.dart';
+import 'package:exemplifica_git/screens/home_page.dart';
 import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
@@ -46,7 +46,7 @@ class _CalcJurosCState extends State<CalcJurosC> {
             ),
             onPressed: () {
               Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => Teste()),
+                  MaterialPageRoute(builder: (context) => HomePage()),
                   (Route<dynamic> route) => false);
             },
           ),
@@ -58,10 +58,10 @@ class _CalcJurosCState extends State<CalcJurosC> {
           child: SingleChildScrollView(
               child: Column(children: <Widget>[
             Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
               child: Text(
                 "Digite os valores de Capital, taxa mensal de juros e tempo em meses.",
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 18.0),
               ),
             ),
             Container(

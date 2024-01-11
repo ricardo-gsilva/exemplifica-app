@@ -1,6 +1,6 @@
 import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/model_calc/model_equacao_1.dart';
-import 'package:exemplifica_git/screens/teste.dart';
+import 'package:exemplifica_git/controller/model_equacao_1.dart';
+import 'package:exemplifica_git/screens/home_page.dart';
 import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
@@ -45,7 +45,7 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
             ),
             onPressed: () {
               Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context) =>
-                Teste()), (Route<dynamic> route) => false);
+                HomePage()), (Route<dynamic> route) => false);
             },
           ),
         ],
@@ -60,7 +60,7 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
                 padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
                 child: Text(
                   CoreStrings.text1_CalcEquacao1,
-                  style: TextStyle(fontSize: 18.0, color: Colors.red),
+                  style: TextStyle(fontSize: 18.0),
                 ),
               ),
               Padding(

@@ -14,10 +14,12 @@ class RegrasBasicas extends StatefulWidget {
 
 class _RegrasBasicasState extends State<RegrasBasicas> {
   double height = 0.0;
+  double width = 0.0;
 
   @override
   Widget build(BuildContext context) {
-    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width * 0.9;
+    height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade50,
       appBar: AppBar(
@@ -41,57 +43,64 @@ class _RegrasBasicasState extends State<RegrasBasicas> {
         
       ]),
       body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: ButtonBase(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: ButtonBase(
+                  height: height,
+                  width: width,
+                  title: "1º Parêntesis",
+                  onTap: () {
+                    Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => Parentesis())
+                    );
+                  },
+                ),
+              ),
+              ButtonBase(
                 height: height,
-                title: "1º Parêntesis",
+                width: width,
+                title: "2º Expoentes",
                 onTap: () {
                   Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => Parentesis())
+                    context, MaterialPageRoute(builder: (_) => Expoentes())
                   );
                 },
               ),
-            ),
-            ButtonBase(
-              height: height,
-              title: "2º Expoentes",
-              onTap: () {
-                Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => Expoentes())
-                );
-              },
-            ),
-            ButtonBase(
-              height: height,
-              title: "Analisar >>>3º Multiplicações e Divisões",
-              onTap: () {
-                Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => MultiplicaDiv())
-                );
-              },
-            ),
-            ButtonBase(
-              height: height,
-              title: "4º Somas e Subtrações",
-              onTap: () {
-                Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => SomaSubtracao())
-                );
-              },
-            ),
-            ButtonBase(
-              height: height,
-              title: "Regras de Sinais",
-              onTap: () {
-                Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => RegrasSinais())
-                );
-              },
-            ),            
-          ],
+              ButtonBase(
+                height: height,
+                width: width,
+                title: "Analisar >>>3º Multiplicações e Divisões",
+                onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => MultiplicaDiv())
+                  );
+                },
+              ),
+              ButtonBase(
+                height: height,
+                width: width,
+                title: "4º Somas e Subtrações",
+                onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => SomaSubtracao())
+                  );
+                },
+              ),
+              ButtonBase(
+                height: height,
+                width: width,
+                title: "Regras de Sinais",
+                onTap: () {
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => RegrasSinais())
+                  );
+                },
+              ),            
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: SizedBox(height: MediaQuery.of(context).size.height * 0.1),

@@ -1,6 +1,6 @@
-import 'package:exemplifica_git/calculadoras/calc_equacao_1.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/person_icons.dart';
+import 'package:exemplifica_git/screens/calculadoras/calc_equacao_1.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types

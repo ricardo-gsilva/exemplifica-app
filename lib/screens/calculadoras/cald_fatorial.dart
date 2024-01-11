@@ -1,6 +1,6 @@
 import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/model_calc/model_fatorial.dart';
-import 'package:exemplifica_git/screens/teste.dart';
+import 'package:exemplifica_git/controller/model_fatorial.dart';
+import 'package:exemplifica_git/screens/home_page.dart';
 import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
@@ -45,7 +45,7 @@ class _CalcFatorialState extends State<CalcFatorial> {
             ),
             onPressed: () {
               Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => Teste()),
+                  MaterialPageRoute(builder: (context) => HomePage()),
                   (Route<dynamic> route) => false);
             },
           ),
@@ -58,10 +58,10 @@ class _CalcFatorialState extends State<CalcFatorial> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
                 child: Text(
                   "Digite um número para ver o cálculo do fatorial.",
-                  style: TextStyle(fontSize: 20.0),
+                  style: TextStyle(fontSize: 18.0),
                 ),
               ),
               Row(

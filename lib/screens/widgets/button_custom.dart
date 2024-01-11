@@ -13,23 +13,20 @@ class ButtonBase extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color color = Colors.lightBlue.shade200;
-    return Padding(
-      padding: const EdgeInsets.only(top: 2, left: 15, right: 15),
-      child: SizedBox(    
-        height: height,
-        width: width,
-        child: InkWell(
-          onTap: onTap,
-          child: Card(
-            color: color,
-            child: Center(
-              child: Text(
-                title?? '',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold),
-              ),
+    return SizedBox(    
+      height: height,
+      width: width,
+      child: InkWell(
+        onTap: onTap,
+        child: Card(
+          color: color,
+          child: Center(
+            child: Text(
+              title?? '',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
+                fontWeight: FontWeight.bold),
             ),
           ),
         ),

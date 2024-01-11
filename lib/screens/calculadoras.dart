@@ -1,8 +1,6 @@
-// import 'package:exemplifica_git/calculadoras/calc_funcoes.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/screens/calculadoras/calc_equacao_1.dart';
 import 'package:exemplifica_git/screens/calculadoras/calc_equacao_2.dart';
-import 'package:exemplifica_git/screens/calculadoras/calc_funcoes.dart';
 import 'package:exemplifica_git/screens/calculadoras/calc_juros_compostos.dart';
 import 'package:exemplifica_git/screens/calculadoras/calc_juros_simples.dart';
 import 'package:exemplifica_git/screens/calculadoras/calc_mmc.dart';
@@ -51,35 +49,46 @@ class _CalculadorasState extends State<Calculadoras> {
       body: SingleChildScrollView(
         child: Column(children: <Widget>[
           Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: RowCards(
-              titleFirst: "Equação de 1º Grau",
-              titleSecond: "Equação de 2º Grau",
-              onTapFirst: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => CalcEquacao1()));
-              },
-              onTapSecond: () {
+            padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
+            child: ButtonBase(
+              height: height,
+              title: "Tabuada",
+              onTap: () {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => CalcEquacao2()));
+                    context, MaterialPageRoute(builder: (_) => CalcTabuada()));
               },
-              height: height
             ),
           ),
-          ButtonBase(
-            height: height,
-            title: "Fatorial",
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CalcFatorial()));
+          RowCards(
+            titleFirst: "Equação de 1º Grau",
+            titleSecond: "Equação de 2º Grau",
+            onTapFirst: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => CalcEquacao1()));
             },
+            onTapSecond: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => CalcEquacao2()));
+            },
+            height: height
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            child: ButtonBase(
+              height: height,
+              title: "Fatorial",
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => CalcFatorial()));
+              },
+            ),
           ),
           RowCards(
-            titleFirst: "Funções",
+            titleFirst: "Juros Simples",
             titleSecond: "Juros Compostos",
             onTapFirst: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CalcFuncoes()));
+                  context, MaterialPageRoute(builder: (_) => CalcJurosS()));
             },
             onTapSecond: () {
               Navigator.push(
@@ -87,47 +96,40 @@ class _CalculadorasState extends State<Calculadoras> {
             },
             height: height
           ),          
-          ButtonBase(
-            height: height,
-            title: "Juros Simples",
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CalcJurosS()));
-            },
+          Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            child: ButtonBase(
+              height: height,
+              title: "M.D.C",
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => CalcMdc()));
+              },
+            ),
           ),
           RowCards(
-            titleFirst: "M.D.C",
-            titleSecond: "M.M.C",
+            titleFirst: "M.M.C",
+            titleSecond: "Porcentagem",
             onTapFirst: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CalcMdc()));
-            },
-            onTapSecond: () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => CalcMmc()));
             },
-            height: height
-          ),   
-          ButtonBase(
-            height: height,
-            title: "Porcentagem",
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CalcPorcentagem()));
-            },
-          ),
-          RowCards(
-            titleFirst: "Regra de 3",
-            titleSecond: "Tabuada",
-            onTapFirst: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CalcRegraDe3()));
-            },
             onTapSecond: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CalcTabuada()));
+                  context, MaterialPageRoute(builder: (_) => CalcPorcentagem())); 
             },
             height: height
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10, right: 10),
+            child: ButtonBase(
+              height: height,
+              title: "Regra de 3",
+              onTap: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => CalcRegraDe3()));
+              },
+            ),
           ),
         ]),
       ),

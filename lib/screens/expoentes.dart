@@ -1,4 +1,5 @@
 import 'package:exemplifica_git/constants/core_strings.dart';
+import 'package:exemplifica_git/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
 class Expoentes extends StatefulWidget {
@@ -27,7 +28,20 @@ class _ExpoentesState extends State<Expoentes> {
             onPressed: () {
               Navigator.pop(context);
             },
-          )
+          ),
+          actions: [
+            IconButton(
+            icon: Icon(
+              Icons.home,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => HomePage()),
+                  (Route<dynamic> route) => false);
+            },
+          ),
+          ],
       ),
       body: SingleChildScrollView(
         child: Column(

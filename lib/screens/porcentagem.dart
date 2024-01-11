@@ -1,6 +1,6 @@
-import 'package:exemplifica_git/calculadoras/calc_porcentagem.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/person_icons.dart';
+import 'package:exemplifica_git/screens/calculadoras/calc_porcentagem.dart';
 import 'package:flutter/material.dart';
 
 class Porcentagem extends StatefulWidget {

@@ -1,6 +1,6 @@
-import 'package:exemplifica_git/calculadoras/calc_regra_de_3.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/person_icons.dart';
+import 'package:exemplifica_git/screens/calculadoras/calc_regra_de_3.dart';
 import 'package:flutter/material.dart';
 
 class RegraDe3 extends StatefulWidget {

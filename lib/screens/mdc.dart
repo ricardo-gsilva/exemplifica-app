@@ -1,6 +1,6 @@
-import 'package:exemplifica_git/calculadoras/calc_mdc.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/person_icons.dart';
+import 'package:exemplifica_git/screens/calculadoras/cald_mdc.dart';
 import 'package:flutter/material.dart';
 
 class Mdc extends StatefulWidget {

@@ -1,7 +1,7 @@
 import 'package:exemplifica_git/ad_mob/ad_mob.dart';
 import 'package:exemplifica_git/ad_mob/banner_ad_mob.dart';
 import 'package:exemplifica_git/components/drawer_comp/drawer_page.dart';
-import 'package:exemplifica_git/model_calc/model_mmc.dart';
+import 'package:exemplifica_git/controller/model_mmc.dart';
 import 'package:flutter/material.dart';
 
 class CalcMmc extends StatefulWidget {

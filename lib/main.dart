@@ -1,6 +1,4 @@
-// import 'package:admob_flutter/admob_flutter.dart';
-import 'package:exemplifica_git/screens/teste.dart';
-import 'package:exemplifica_git/ui/home_page.dart';
+import 'package:exemplifica_git/screens/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,8 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void splashScreen() {
     Future.delayed(Duration(seconds: 5), (){
-      // Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => HomePage()));
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => Teste()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => HomePage()));
     });
   }
 

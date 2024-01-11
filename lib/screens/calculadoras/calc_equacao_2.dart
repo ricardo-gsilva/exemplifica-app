@@ -1,6 +1,6 @@
 import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/model_calc/model_equacao_2.dart';
-import 'package:exemplifica_git/screens/teste.dart';
+import 'package:exemplifica_git/controller/model_equacao_2.dart';
+import 'package:exemplifica_git/screens/home_page.dart';
 import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
@@ -46,7 +46,7 @@ class _CalcEquacao2State extends State<CalcEquacao2> {
             ),
             onPressed: () {
               Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => Teste()),
+                  MaterialPageRoute(builder: (context) => HomePage()),
                   (Route<dynamic> route) => false);
             },
           ),
@@ -57,8 +57,7 @@ class _CalcEquacao2State extends State<CalcEquacao2> {
         height: MediaQuery.of(context).size.height,
         child: SingleChildScrollView(
           child: Padding(
-            padding:
-                const EdgeInsets.only(top: 10, left: 6, right: 6, bottom: 15),
+            padding: const EdgeInsets.only(left: 10, right: 10, top: 20),                
             child: Column(
               children: <Widget>[
                 Text(

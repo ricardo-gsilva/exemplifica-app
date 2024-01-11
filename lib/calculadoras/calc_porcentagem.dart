@@ -1,7 +1,7 @@
 import 'package:exemplifica_git/ad_mob/ad_mob.dart';
 import 'package:exemplifica_git/ad_mob/banner_ad_mob.dart';
 import 'package:exemplifica_git/components/drawer_comp/drawer_page.dart';
-import 'package:exemplifica_git/model_calc/model_porcentagem.dart';
+import 'package:exemplifica_git/controller/model_porcentagem.dart';
 import 'package:flutter/material.dart';
 
 class CalcPorcentagem extends StatefulWidget {

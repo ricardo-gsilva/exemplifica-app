@@ -5,7 +5,6 @@ import 'package:exemplifica_git/person_icons.dart';
 import 'package:exemplifica_git/screens/equacao_1.dart';
 import 'package:exemplifica_git/screens/equacao_2.dart';
 import 'package:exemplifica_git/screens/fatorial.dart';
-import 'package:exemplifica_git/screens/funcoes.dart';
 import 'package:exemplifica_git/screens/juros_compostos.dart';
 import 'package:exemplifica_git/screens/juros_simples.dart';
 import 'package:exemplifica_git/screens/mdc.dart';
@@ -16,14 +15,14 @@ import 'package:exemplifica_git/screens/regras_basicas.dart';
 import 'package:exemplifica_git/screens/tabuada.dart';
 import 'package:flutter/material.dart';
 
-class Teste extends StatefulWidget {
-  const Teste({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
   @override
-  State<Teste> createState() => _TesteState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _TesteState extends State<Teste> {
+class _HomePageState extends State<HomePage> {
   double height = 0.0;
 
   @override
@@ -141,7 +140,7 @@ class _TesteState extends State<Teste> {
                   RowCards(
                     height: height,
                     titleFirst: 'Fatorial',
-                    titleSecond: 'Funções',
+                    titleSecond: 'Tabuada',
                     onTapFirst: () {
                       Navigator.push(
                         context, MaterialPageRoute(builder: (_) => Fatorial())
@@ -149,7 +148,7 @@ class _TesteState extends State<Teste> {
                     },
                     onTapSecond: () {
                       Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => Funcoes())
+                        context, MaterialPageRoute(builder: (_) => Tabuada())
                       );
                     },
                   ),
@@ -197,37 +196,14 @@ class _TesteState extends State<Teste> {
                         context, MaterialPageRoute(builder: (_) => RegraDe3())
                       );
                     },
-                  ),
-                  SizedBox(
-                    height: height,
-                    width: MediaQuery.of(context).size.width,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context, MaterialPageRoute(builder: (_) => Tabuada())
-                        );
-                      },
-                      child: Card(
-                        color: Colors.lightBlue.shade200,
-                        child: Center(
-                          child: Text(
-                            'Tabuada',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  ),                  
                 ],
               ),
             ),
           )
         ],
       ),
-      bottomNavigationBar: SizedBox(height: MediaQuery.of(context).size.height * 0.1,),
+      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1,),
     );
   }
 }
