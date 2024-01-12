@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="br.com.rgsdreammobile.exemplifica_git">
    <application
-        android:label="exemplifica_git"
+        android:label="Exemplifica"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
