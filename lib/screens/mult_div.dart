@@ -128,11 +128,13 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              "Entre uma multiplicação e uma divisão, a regra é seguir primeiro pela multiplicação e"
-              " depois fazer a divisão. Veja abaixo:",
+              "Quando existir multiplicação e divisão no mesmo nível, a regra é seguir da esquerda "
+              "para a direita. Se a multiplicão estiver primeiro na esquerda, comece por ela e se primeiro "
+              "estiver a divisão, então faça a divisão.",
               style: TextStyle(fontSize: 16.0),
             ),
           ),
+          //fazer imagem de exemplo e apagar o restante
           Padding(
               padding: EdgeInsets.all(10.0),
               child: Container(

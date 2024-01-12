@@ -18,9 +18,6 @@ class CoreStrings {
   static const String titleMultipDiv = 'Multiplicação e Divisão';
   static const String titleSomaSub = 'Somas e Subtrações';
   static const String titleRegraSinal = 'Regras de Sinais';
-  static const String titleCalcEquacao1 = 'Equação de 1º Grau';
-  static const String titleCalcEquacao2 = 'Equação de 2º Grau';
-  static const String titleCalcFatorial = 'Fatorial';
 
   //'Equação de 1º Grau'
   static const String text1_Equacao1 = "A equação de 1º grau é uma sentença matemática que estabelece igualdade entre "
