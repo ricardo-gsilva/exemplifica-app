@@ -1,6 +1,6 @@
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/screens/calculadoras.dart';
-import 'package:exemplifica_git/screens/components/row_cards.dart';
+import 'package:exemplifica_git/screens/components/row_buttons.dart';
 import 'package:exemplifica_git/person_icons.dart';
 import 'package:exemplifica_git/screens/equacao_1.dart';
 import 'package:exemplifica_git/screens/equacao_2.dart';
@@ -24,10 +24,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   double height = 0.0;
+  double width = 0.0;
 
   @override
   Widget build(BuildContext context) {
     height = MediaQuery.of(context).size.height * 0.1;
+    width = MediaQuery.of(context).size.width * 0.47;
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade50,
       appBar: PreferredSize(
@@ -122,8 +124,9 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  RowCards(
+                  RowButtons(
                     height: height,
+                    width: width,
                     titleFirst: CoreStrings.titleEquacao1,
                     titleSecond: CoreStrings.titleEquacao2,
                     onTapFirst: () {
@@ -137,10 +140,11 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                   ),
-                  RowCards(
+                  RowButtons(
                     height: height,
-                    titleFirst: 'Fatorial',
-                    titleSecond: 'Tabuada',
+                    width: width,
+                    titleFirst: CoreStrings.titleFatorial,
+                    titleSecond: CoreStrings.titleTabuada,
                     onTapFirst: () {
                       Navigator.push(
                         context, MaterialPageRoute(builder: (_) => Fatorial())
@@ -152,10 +156,11 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                   ),
-                  RowCards(
+                  RowButtons(
                     height: height,
-                    titleFirst: 'Juros Compostos',
-                    titleSecond: 'Juros Simples',
+                    width: width,
+                    titleFirst: CoreStrings.titleJurosCompostos,
+                    titleSecond: CoreStrings.titleJurosSimples,
                     onTapFirst: () {
                       Navigator.push(
                         context, MaterialPageRoute(builder: (_) => JurosCompostos())
@@ -167,10 +172,11 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                   ),
-                  RowCards(
+                  RowButtons(
                     height: height,
-                    titleFirst: 'M.M.C',
-                    titleSecond: 'M.D.C',
+                    width: width,
+                    titleFirst: CoreStrings.titleMmc,
+                    titleSecond: CoreStrings.titleMdc,
                     onTapFirst: () {
                       Navigator.push(
                         context, MaterialPageRoute(builder: (_) => Mmc())
@@ -182,10 +188,11 @@ class _HomePageState extends State<HomePage> {
                       );
                     },
                   ),
-                  RowCards(
+                  RowButtons(
                     height: height,
-                    titleFirst: 'Porcentagem',
-                    titleSecond: 'Regra de 3',
+                    width: width,
+                    titleFirst: CoreStrings.titlePorcentagem,
+                    titleSecond: CoreStrings.titleRegraDe3,
                     onTapFirst: () {
                       Navigator.push(
                         context, MaterialPageRoute(builder: (_) => Porcentagem())
@@ -196,14 +203,14 @@ class _HomePageState extends State<HomePage> {
                         context, MaterialPageRoute(builder: (_) => RegraDe3())
                       );
                     },
-                  ),                  
+                  ),               
                 ],
               ),
             ),
           )
         ],
       ),
-      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1,),
+      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

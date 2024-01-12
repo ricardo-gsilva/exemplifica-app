@@ -1,10 +1,6 @@
-import 'package:exemplifica_git/ad_mob/ad_mob.dart';
 import 'package:flutter/material.dart';
 
 class ModelMmc {
-
-  // final AdMob adMob = AdMob();
-
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
 
@@ -26,61 +22,60 @@ class ModelMmc {
     } else {
       resultMmc = "";
       resultMmc1 = "";
-      mmc();  
-      // adMob.showInstersticial();
+      mmc();
     }
   }
 
   void mmc(){
       
-        double Valormmc1 = double.parse(val1.text);
-        double Valormmc2 = double.parse(val2.text);
+        double valormmc1 = double.parse(val1.text);
+        double valormmc2 = double.parse(val2.text);
         double div = 2;
         double cache = 1;
-        int valmmc1 = Valormmc1.toInt();
-        int valmmc2 = Valormmc2.toInt();
+        int valmmc1 = valormmc1.toInt();
+        int valmmc2 = valormmc2.toInt();
         int divi = div.toInt();
         int cachei = cache.toInt();
 
 
-        while ((Valormmc1 != 1) || (Valormmc2 != 1)) {
-          while ((Valormmc1 % div != 0) && (Valormmc2 % div != 0)) {
+        while ((valormmc1 != 1) || (valormmc2 != 1)) {
+          while ((valormmc1 % div != 0) && (valormmc2 % div != 0)) {
             div++;
             divi = div.toInt();
           }
           if ((valmmc1 % div == 0) && (valmmc2 % div == 0)) {
             resultMmc =
-                resultMmc + "${valmmc1}" + ", " + "${valmmc2}" + " | " +
-                    "${divi}" + "\n";
-            Valormmc1 = Valormmc1 / div;
-            valmmc1 = Valormmc1.toInt();
-            Valormmc2 = Valormmc2 / div;
-            valmmc2 = Valormmc2.toInt();
-          } else if (((Valormmc1 % div == 0) && (Valormmc2 % div != 0))) {
+                resultMmc + "$valmmc1" + ", " + "$valmmc2" + " | " +
+                    "$divi" + "\n";
+            valormmc1 = valormmc1 / div;
+            valmmc1 = valormmc1.toInt();
+            valormmc2 = valormmc2 / div;
+            valmmc2 = valormmc2.toInt();
+          } else if (((valormmc1 % div == 0) && (valormmc2 % div != 0))) {
             resultMmc =
-                resultMmc + "${valmmc1}" + ", " + "${valmmc2}" + " | " +
-                    "${divi}" + "\n";
-            Valormmc1 = Valormmc1 / div;
-            valmmc1 = Valormmc1.toInt();
-          } else if (((Valormmc1 % div != 0) && (Valormmc2 % div == 0))) {
+                resultMmc + "$valmmc1" + ", " + "$valmmc2" + " | " +
+                    "$divi" + "\n";
+            valormmc1 = valormmc1 / div;
+            valmmc1 = valormmc1.toInt();
+          } else if (((valormmc1 % div != 0) && (valormmc2 % div == 0))) {
             resultMmc =
-                resultMmc + "${valmmc1}" + ", " + "${valmmc2}" + " | " +
-                    "${divi}" + "\n";
-            Valormmc2 = Valormmc2 / div;
-            valmmc2 = Valormmc2.toInt();
+                resultMmc + "$valmmc1" + ", " + "$valmmc2" + " | " +
+                    "$divi" + "\n";
+            valormmc2 = valormmc2 / div;
+            valmmc2 = valormmc2.toInt();
           }
           cache *= div;
           cachei = cache.toInt();
         }
-        if (((Valormmc1 == 1) && (Valormmc2 == 1))) {
+        if (((valormmc1 == 1) && (valormmc2 == 1))) {
           div = 1;
           divi = div.toInt();
           resultMmc =
-              resultMmc + "${valmmc1}" + ", " + "${valmmc2}" + " | " + "\n";
+              resultMmc + "$valmmc1" + ", " + "$valmmc2" + " | " + "\n";
         }
         resultMmc1 = resultMmc1 +
             "Multiplicando todos os valores utilizados para fatoração, temos o"
-                " valor do MMC: " + "${cachei}" + "\n";
+                " valor do MMC: " + "$cachei" + "\n";
   }  
 
 }

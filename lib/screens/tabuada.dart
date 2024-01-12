@@ -109,7 +109,7 @@ class _TabuadaState extends State<Tabuada> {
           ],
         ),
       ),
-      bottomNavigationBar: SizedBox(height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

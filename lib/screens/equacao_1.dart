@@ -132,8 +132,7 @@ class _Equacao_1State extends State<Equacao_1> {
           ],
         ),
       ),
-      //ADMob Banner
-      bottomNavigationBar: SizedBox(height: MediaQuery.of(context).size.height * 0.1,),
+      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

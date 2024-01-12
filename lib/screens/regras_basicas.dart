@@ -72,7 +72,7 @@ class _RegrasBasicasState extends State<RegrasBasicas> {
               ButtonBase(
                 height: height,
                 width: width,
-                title: "Analisar >>>3º Multiplicações e Divisões",
+                title: "3º Multiplicações e Divisões",
                 onTap: () {
                   Navigator.push(
                     context, MaterialPageRoute(builder: (_) => MultiplicaDiv())

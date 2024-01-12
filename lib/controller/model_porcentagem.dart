@@ -1,11 +1,7 @@
-import 'package:exemplifica_git/ad_mob/ad_mob.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class ModelPorcentagem {
-
-  // final AdMob adMob = AdMob();
-
     TextEditingController val1 = TextEditingController();
     TextEditingController val2 = TextEditingController();
 
@@ -23,7 +19,6 @@ class ModelPorcentagem {
       } else {
         resultPorcent = "";
         porcentagem();
-        // adMob.showInstersticial();
       }
     }
 
@@ -62,7 +57,7 @@ class ModelPorcentagem {
       resultf = format2.format((result));
       }
 
-      resultPorcent = resultPorcent + valor2f + " x " + "${comp1}" + " = " + valor1f + " x " + " 'X' " + "\n" +
+      resultPorcent = resultPorcent + valor2f + " x " + "$comp1" + " = " + valor1f + " x " + " 'X' " + "\n" +
       valor1f + ".'X'" + " = " + mult2f + "\n" +
       "X" + " = " + mult2f + "/" + valor1f + "\n" +
       "X" + " = " + resultf;

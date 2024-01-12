@@ -9,8 +9,8 @@ import 'package:exemplifica_git/screens/calculadoras/calc_regra_de_3.dart';
 import 'package:exemplifica_git/screens/calculadoras/cald_fatorial.dart';
 import 'package:exemplifica_git/screens/calculadoras/cald_mdc.dart';
 import 'package:exemplifica_git/screens/calculadoras/cald_tabuada.dart';
+import 'package:exemplifica_git/screens/components/row_buttons.dart';
 import 'package:exemplifica_git/screens/widgets/button_custom.dart';
-import 'package:exemplifica_git/screens/components/row_cards.dart';
 import 'package:flutter/material.dart';
 
 class Calculadoras extends StatefulWidget {
@@ -24,7 +24,7 @@ class _CalculadorasState extends State<Calculadoras> {
 
   @override
   Widget build(BuildContext context) {
-    width = MediaQuery.of(context).size.width * 0.4;
+    width = MediaQuery.of(context).size.width * 0.47;
     height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade50,
@@ -52,16 +52,16 @@ class _CalculadorasState extends State<Calculadoras> {
             padding: const EdgeInsets.only(top: 10, left: 10, right: 10),
             child: ButtonBase(
               height: height,
-              title: "Tabuada",
+              title: CoreStrings.titleTabuada,
               onTap: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (_) => CalcTabuada()));
               },
             ),
           ),
-          RowCards(
-            titleFirst: "Equação de 1º Grau",
-            titleSecond: "Equação de 2º Grau",
+          RowButtons(
+            titleFirst: CoreStrings.titleEquacao1,
+            titleSecond: CoreStrings.titleEquacao2,
             onTapFirst: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (_) => CalcEquacao1()));
@@ -70,22 +70,23 @@ class _CalculadorasState extends State<Calculadoras> {
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => CalcEquacao2()));
             },
-            height: height
+            height: height,
+            width: width,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 10, right: 10),
             child: ButtonBase(
               height: height,
-              title: "Fatorial",
+              title: CoreStrings.titleFatorial,
               onTap: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (_) => CalcFatorial()));
               },
             ),
           ),
-          RowCards(
-            titleFirst: "Juros Simples",
-            titleSecond: "Juros Compostos",
+          RowButtons(
+            titleFirst: CoreStrings.titleJurosSimples,
+            titleSecond: CoreStrings.titleJurosCompostos,
             onTapFirst: () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => CalcJurosS()));
@@ -94,22 +95,23 @@ class _CalculadorasState extends State<Calculadoras> {
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => CalcJurosC()));
             },
-            height: height
+            height: height,
+            width: width,
           ),          
           Padding(
             padding: const EdgeInsets.only(left: 10, right: 10),
             child: ButtonBase(
               height: height,
-              title: "M.D.C",
+              title: CoreStrings.titleMdc,
               onTap: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (_) => CalcMdc()));
               },
             ),
           ),
-          RowCards(
-            titleFirst: "M.M.C",
-            titleSecond: "Porcentagem",
+          RowButtons(
+            titleFirst: CoreStrings.titleMmc,
+            titleSecond: CoreStrings.titlePorcentagem,
             onTapFirst: () {
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => CalcMmc()));
@@ -118,13 +120,14 @@ class _CalculadorasState extends State<Calculadoras> {
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => CalcPorcentagem())); 
             },
-            height: height
+            height: height,
+            width: width,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 10, right: 10),
             child: ButtonBase(
               height: height,
-              title: "Regra de 3",
+              title: CoreStrings.titleRegraDe3,
               onTap: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (_) => CalcRegraDe3()));

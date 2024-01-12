@@ -16,7 +16,6 @@ class ModelEquacao1 {
       resultEq1_1 = "Por favor, preencha os campos!";
     } else {
       _equacao1_1();
-      // adMob.showInstersticial();
     }
   }
 

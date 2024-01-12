@@ -1,7 +1,7 @@
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/controller/model_fatorial.dart';
+import 'package:exemplifica_git/screens/components/row_buttons.dart';
 import 'package:exemplifica_git/screens/home_page.dart';
-import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
 class CalcFatorial extends StatefulWidget {
@@ -10,14 +10,14 @@ class CalcFatorial extends StatefulWidget {
 }
 
 class _CalcFatorialState extends State<CalcFatorial> {
-  // final AdMob adMob = AdMob();
-
   final ModelFatorial modelFatorial = ModelFatorial();
+  double height = 0;
+  double width = 0;
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width * 0.4;
-    double height = MediaQuery.of(context).size.height * 0.1;
+    width = MediaQuery.of(context).size.width * 0.4;
+    height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
       backgroundColor: Colors.lightBlue.shade50,
       appBar: AppBar(
@@ -94,37 +94,24 @@ class _CalcFatorialState extends State<CalcFatorial> {
                     ),
                   ),
                 ],
-              ),              
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                     ButtonBase(
-                  onTap: (() {
-                      setState(() {
-                        modelFatorial.verificarCampos();
-                      });
-                    }
-                  ),
-                  title: 'Calcular',
-                  height: height,
-                  width: width,
-                ),
-                ButtonBase(
-                  onTap: (() {
-                      setState(() {
-                        modelFatorial.resetCampos();
-                      });
-                    }
-                  ),
-                  title: 'Limpar',
-                  height: height,
-                  width: width,
-                ),
-                  ],
-                ),
               ),
+              RowButtons(
+                titleFirst: CoreStrings.calc,
+                titleSecond: CoreStrings.clear,
+                paddingTop: 10,
+                height: height,
+                width: width,
+                onTapFirst: (() {
+                  setState(() {
+                    modelFatorial.verificarCampos();
+                  });
+                }),
+                onTapSecond: (() {
+                  setState(() {
+                    modelFatorial.resetCampos();
+                  });
+                }),
+              ),                
               Padding(
                 padding: EdgeInsets.only(left: 10, right: 10, top: 5),
                 child: Text(

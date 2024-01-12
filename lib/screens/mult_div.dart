@@ -13,43 +13,42 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
     return Scaffold(
         backgroundColor: Colors.lightBlue.shade50,
         appBar: AppBar(
-            backgroundColor: Colors.lightBlue,
-            title: Text(
-              CoreStrings.titleMultipDiv,
-              style: TextStyle(color: Colors.black),
-            ),
-            centerTitle: true,
-            automaticallyImplyLeading: false,
-            leading: IconButton(
-              icon: Icon(
-                Icons.reply,
-                color: Colors.black,
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-            actions: [
-            IconButton(
+          backgroundColor: Colors.lightBlue,
+          title: Text(
+            CoreStrings.titleMultipDiv,
+            style: TextStyle(color: Colors.black),
+          ),
+          centerTitle: true,
+          automaticallyImplyLeading: false,
+          leading: IconButton(
             icon: Icon(
-              Icons.home,
+              Icons.reply,
               color: Colors.black,
             ),
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                  (Route<dynamic> route) => false);
+              Navigator.pop(context);
             },
           ),
+          actions: [
+            IconButton(
+              icon: Icon(
+                Icons.home,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                    (Route<dynamic> route) => false);
+              },
+            ),
           ],
-          ),
+        ),
         body: SingleChildScrollView(
             child: Column(children: <Widget>[
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              "Talvez essa seja a regra que mais confunde as pessoas. Qual é o momento que eu "
-              "resolvo a multiplicação e a divisão? Vamos entender isso agora!",
+              CoreStrings.text1_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -62,18 +61,14 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              "Tenho certeza que em algum momento utilizando alguma rede social, você se"
-              " deparou com algo do tipo. Muitas pessoas por desconhecerem as regras de sinais,"
-              " acabam errando o resultado. Normalmente o que vemos, são pessoas tentando "
-              " resolver primeiro a soma e depois a multiplicação. Mas a multiplicação deve"
-              " ser resolvida primeiro!",
+              CoreStrings.text2_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              "Resolvendo sem o conhecimento de regras matemáticas:",
+              CoreStrings.text3_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -86,7 +81,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              "Resolvendo com conhecimento de regras matemáticas:",
+              CoreStrings.text4_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -99,8 +94,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              "Como todos podem ver, a diferença de resultados é enorme. Lembrem-se, sempre resolvam primeiro"
-              " a multiplicação e o mesmo serve no caso de uma divisão. Veja um exemplo:",
+              CoreStrings.text5_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -113,38 +107,73 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              "Como é notável, multiplicações e divisões, serão sempre operações resolvidas antes de somas"
-              " e subtrações. Mas e se tivermos uma multiplicação e uma divisão ao mesm"
-              " tempo? Veja o exemplo:",
+              CoreStrings.text6_MultiplicaDiv,
+              style: TextStyle(fontSize: 16.0),
+            ),
+          ),
+          // Padding(
+          //   padding: EdgeInsets.all(10.0),
+          //   child: Text(
+          //     "Quando existir multiplicação e divisão no mesmo nível, a regra é seguir da esquerda "
+          //     "para a direita. Se a multiplicão estiver primeiro na esquerda, comece por ela e se primeiro "
+          //     "estiver a divisão, então faça a divisão.",
+          //     style: TextStyle(fontSize: 16.0),
+          //   ),
+          // ),
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              CoreStrings.text7_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
               padding: EdgeInsets.all(10.0),
               child: Container(
-                width: MediaQuery.of(context).size.width * .3,
-                child: Image.asset("images/mult_div/multiplica_divi_6.png"),
+                width: MediaQuery.of(context).size.width * .5,
+                child: Image.asset("images/mult_div/multiplica_divi_11.png"),
               )),
+          Icon(
+            Icons.close,
+            color: Colors.red,
+            size: 50,
+          ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              "Quando existir multiplicação e divisão no mesmo nível, a regra é seguir da esquerda "
-              "para a direita. Se a multiplicão estiver primeiro na esquerda, comece por ela e se primeiro "
-              "estiver a divisão, então faça a divisão.",
+              CoreStrings.text8_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
-          //fazer imagem de exemplo e apagar o restante
           Padding(
               padding: EdgeInsets.all(10.0),
               child: Container(
-                width: MediaQuery.of(context).size.width * .3,
-                child: Image.asset("images/mult_div/multiplica_divi_7.png"),
+                width: MediaQuery.of(context).size.width * .5,
+                child: Image.asset("images/mult_div/multiplica_divi_12.png"),
               )),
+          Icon(
+            Icons.check,
+            color: Colors.red,
+            size: 50,
+          ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              "Vamos dar um exemplo um pouco mais complexo para fixar a compreensão.",
+              CoreStrings.text9_MultiplicaDiv,
+              style: TextStyle(fontSize: 16.0),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              CoreStrings.text10_MultiplicaDiv,
+              style: TextStyle(fontSize: 16.0),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              CoreStrings.text11_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -157,7 +186,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              "Seguimos primeiro resolvendo a multiplicação e logo depois a divisão.",
+              CoreStrings.text12_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -170,8 +199,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              "Após resolver a multiplicação e a divisão, podemos dar continuidade a resolução das outras"
-              " operações. Segue a continuação:",
+              CoreStrings.text13_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -184,12 +212,13 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 40),
             child: Text(
-              "Com isso tivemos uma breve explicação sobre multiplicação e divisão nas regras de matemática."
-              " Lembre-se sempre que primeiro se resolve a multiplicação, depois a divisão e após isso"
-              " faremos as somas e subtrações.",
+              CoreStrings.text14_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
-        ])));
+        ])
+      ),
+      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
+    );
   }
 }

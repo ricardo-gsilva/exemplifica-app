@@ -1,11 +1,7 @@
-import 'package:exemplifica_git/ad_mob/ad_mob.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class ModelFuncoes {
-
-  // final AdMob adMob = AdMob();
-
   TextEditingController a = TextEditingController();
   TextEditingController b = TextEditingController();
   TextEditingController r = TextEditingController();
@@ -34,7 +30,6 @@ class ModelFuncoes {
     } else {
       resultF = "";
       funcoes();
-      // adMob.showInstersticial();
     }
   }
 
@@ -46,9 +41,6 @@ class ModelFuncoes {
         double b2 = -1 * b1;
         double r2 = r1 - (b1);
         double x2 = r2 / a1;
-        double ax = a1 * x2;
-        double ab = ax +(b1);
-        //f(x) = ax + b = ?
 
         String fa2 = "";
         String fb1 = "";
@@ -56,14 +48,6 @@ class ModelFuncoes {
         String fr1 = "";
         String fr2 = "";
         String fx2 = "";
-        String rcapital = "";
-        String fcapital = "";
-        String ftaxa = "";
-        String ftaxa2 = "";
-        String ftaxa3 = "";
-        String ftaxa4 = "";
-        String rmontante = "";
-        String fmontante = "";
 
         //Formatação
         NumberFormat ff1 = new NumberFormat ("+ 0");
@@ -133,19 +117,19 @@ class ModelFuncoes {
 
 
         resultF = "O valor de 'x' na função" "\n"
-            "f(x) ${fa2}x ${fb1} = ${fr1} é: ${fx2}" "\n""\n"
+            "f(x) ${fa2}x $fb1 = $fr1 é: $fx2" "\n""\n"
 
-            "f(x) (${fa2} * x) ${fb1} = ${fr1}" "\n"
-            "f(x) ${fa2} * x = ${fr1} ${fb2}""\n"
-            "f(x) x = ${fr2} / ${fa2}""\n"
-            "f(x) x = ${fx2}""\n"
-            "f(x) = ${fx2}""\n";
+            "f(x) ($fa2 * x) $fb1 = $fr1" "\n"
+            "f(x) $fa2 * x = $fr1 $fb2""\n"
+            "f(x) x = $fr2 / $fa2""\n"
+            "f(x) x = $fx2""\n"
+            "f(x) = $fx2""\n";
 
-        resultF_1 = "Sabendo-se que o valor de X é ${fx2}, vamos tirar a prova e confirmar se o resultado"
-            " será mesmo ${fr1}.""\n""\n"
-            "f(${fx2}) (${fa2} * ${fx2}) ${fb1} = ?" "\n"
-            "f(${fx2}) ${fr2} ${fb1} = ?""\n"
-            "f(${fx2}) = ${fr1}""\n";
+        resultF_1 = "Sabendo-se que o valor de X é $fx2, vamos tirar a prova e confirmar se o resultado"
+            " será mesmo $fr1.""\n""\n"
+            "f($fx2) ($fa2 * $fx2) $fb1 = ?" "\n"
+            "f($fx2) $fr2 $fb1 = ?""\n"
+            "f($fx2) = $fr1""\n";
       
   }
 }

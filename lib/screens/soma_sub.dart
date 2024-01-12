@@ -55,7 +55,8 @@ class _SomaSubtracaoState extends State<SomaSubtracao> {
             ),
           ],
         )
-      )
+      ),
+      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

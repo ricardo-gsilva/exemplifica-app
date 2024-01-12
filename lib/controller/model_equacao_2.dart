@@ -1,13 +1,8 @@
 import 'dart:math';
-
-import 'package:exemplifica_git/ad_mob/ad_mob.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class ModelEquacao2 {
-
-  // final AdMob adMob = AdMob();
-
     TextEditingController val1 = TextEditingController();
     TextEditingController val2 = TextEditingController();
     TextEditingController val3 = TextEditingController();
@@ -34,7 +29,6 @@ class ModelEquacao2 {
       resultEq2 = "Por favor, preencha os campos!";
     } else {
       equacao2();
-      // adMob.showInstersticial();
     }
   }
 
@@ -52,10 +46,10 @@ class ModelEquacao2 {
           double fac = -4 * a * c;
           double a_1 = (2 * a);
           double b_1 = (-1 * b);
-          double raiz_delta_x1 = sqrt(delta);
-          double raiz_delta_x2 = sqrt(delta);
-          double b_raiz_x1 = ((-1 * b) + sqrt(delta));
-          double b_raiz_x2 = ((-1 * b) - sqrt(delta));        
+          double raizDeltaX1 = sqrt(delta);
+          double raizDeltaX2 = sqrt(delta);
+          double bRaizX1 = ((-1 * b) + sqrt(delta));
+          double bRaizX2 = ((-1 * b) - sqrt(delta));
         
           if (a == 0) {
             resultEq2 = "O valor de 'a' não pode ser 0." + "\n";
@@ -66,48 +60,48 @@ class ModelEquacao2 {
             NumberFormat dfEq2 = new NumberFormat ("0");
             NumberFormat dfEq2_1 = new NumberFormat ("");
 
-            String Eq2_a = "";
-            String Eq2_b = "";
-            String Eq2_c = "";
-            String Eq2_delta = "";
-            String Eq2_pot = "";
-            String Eq2_fac = ""; 
+            String eq2A = "";
+            String eq2B = "";
+            String eq2C = "";
+            String eq2Delta = "";
+            String eq2Pot = "";
+            String eq2Fac = ""; 
 
           if (a.floor() >= 0) {
-            Eq2_a = dfEq2_1.format(a);
+            eq2A = dfEq2_1.format(a);
           } else {
-            Eq2_a = dfEq2_1.format(a);
+            eq2A = dfEq2_1.format(a);
           }
           if (b.floor() >= 0) {
-            Eq2_b = dfEq2.format(b);
+            eq2B = dfEq2.format(b);
           } else {
-            Eq2_b = dfEq2_1.format(b);
+            eq2B = dfEq2_1.format(b);
           }
           if (c.floor() >= 0) {
-            Eq2_c = dfEq2.format(c);
+            eq2C = dfEq2.format(c);
           } else {
-            Eq2_c = dfEq2_1.format(c);
+            eq2C = dfEq2_1.format(c);
           }
           if (pot.floor() >= 0) {
-            Eq2_pot = dfEq2.format(pot);
+            eq2Pot = dfEq2.format(pot);
           } else {
-            Eq2_pot = dfEq2_1.format(pot);
+            eq2Pot = dfEq2_1.format(pot);
           }
           if (fac.floor() >= 0) {
-            Eq2_fac = dfEq2.format(fac);
+            eq2Fac = dfEq2.format(fac);
           } else {
-            Eq2_fac = dfEq2_1.format(fac);
+            eq2Fac = dfEq2_1.format(fac);
           }
           if (delta.floor() >= 0) {
-            Eq2_delta = dfEq2.format(delta);
+            eq2Delta = dfEq2.format(delta);
           } else {
-            Eq2_delta = dfEq2_1.format(delta);
+            eq2Delta = dfEq2_1.format(delta);
           }
 
             resultEq2 = "Δ = (b)² - 4 * a * c" + "\n" +
-            "Δ" + " = " + "("+"${Eq2_b}"+")"+"²" + " -4" + " * " + "${Eq2_a}" + " * " + "${Eq2_c}" + "\n" +
-            "Δ" + " = " + "${Eq2_pot}" + " " + "${Eq2_fac}" + "\n" 
-            "Δ" + " = " + "${Eq2_delta}";
+            "Δ" + " = " + "("+"$eq2B"+")"+"²" + " -4" + " * " + "$eq2A" + " * " + "$eq2C" + "\n" +
+            "Δ" + " = " + "$eq2Pot" + " " + "$eq2Fac" + "\n" 
+            "Δ" + " = " + "$eq2Delta";
             
             resultEq2_1 =
             "O valor de Delta é negativo. Portanto, não existem raízes reais!" + "\n";               
@@ -119,103 +113,102 @@ class ModelEquacao2 {
           NumberFormat dfEq2_7 = new NumberFormat ("+ 0");
           NumberFormat dfEq2_1 = new NumberFormat ("");
           NumberFormat dfEq2_2 = new NumberFormat ("- 0");
-          NumberFormat dfEq2_3 = new NumberFormat ("0.00");
           NumberFormat dfEq2_4 = new NumberFormat (" + 0.0000");
           NumberFormat dfEq2_5 = new NumberFormat (" - 0.0000");
           NumberFormat dfEq2_6 = new NumberFormat (" 0.0000");
 
-          String Eq2_a = "";
-          String Eq2_b = "";
-          String Eq2_c = "";
-          String Eq2_delta = "";
-          String Eq2_pot = "";
-          String Eq2_fac = "";
-          String Eq2_a_1 = "";
-          String Eq2_b_1 = "";
-          String Eq2_b_raiz_x1 = "";
-          String Eq2_b_raiz_x2 = "";
-          String Eq2_raiz_delta_x1 = "";
-          String Eq2_raiz_delta_x2 = "";
-          String Eq2_x1 = "";
-          String Eq2_x2 = "";
+          String eq2A = "";
+          String eq2B = "";
+          String eq2C = "";
+          String eq2Delta = "";
+          String eq2Pot = "";
+          String eq2Fac = "";
+          String eq2A1 = "";
+          String eq2B1 = "";
+          String eq2BRaizX1 = "";
+          String eq2BRaizX2 = "";
+          String eq2RaizDeltaX1 = "";
+          String eq2RaizDeltaX2 = "";
+          String eq2X1 = "";
+          String eq2X2 = "";
           
           if (a.floor() >= 0) {
-            Eq2_a = dfEq2_1.format(a);
+            eq2A = dfEq2_1.format(a);
           } else {
-            Eq2_a = dfEq2_1.format(a);
+            eq2A = dfEq2_1.format(a);
           }
           if (b.floor() >= 0) {
-            Eq2_b = dfEq2.format(b);
+            eq2B = dfEq2.format(b);
           } else {
-            Eq2_b = dfEq2_1.format(b);
+            eq2B = dfEq2_1.format(b);
           }
           if (c.floor() >= 0) {
-            Eq2_c = dfEq2.format(c);
+            eq2C = dfEq2.format(c);
           } else {
-            Eq2_c = dfEq2_1.format(c);
+            eq2C = dfEq2_1.format(c);
           }
           if (pot.floor() >= 0) {
-            Eq2_pot = dfEq2.format(pot);
+            eq2Pot = dfEq2.format(pot);
           } else {
-            Eq2_pot = dfEq2_1.format(pot);
+            eq2Pot = dfEq2_1.format(pot);
           }
           if (fac.floor() >= 0) {
-            Eq2_fac = dfEq2.format(fac);
+            eq2Fac = dfEq2.format(fac);
           } else {
-            Eq2_fac = dfEq2_1.format(fac);
+            eq2Fac = dfEq2_1.format(fac);
           }
           if (delta.floor() >= 0) {
-            Eq2_delta = dfEq2.format(delta);
+            eq2Delta = dfEq2.format(delta);
           } else {
-            Eq2_delta = dfEq2_1.format(delta);
+            eq2Delta = dfEq2_1.format(delta);
           }
 
           if (a_1.floor() >= 0) {
-            Eq2_a_1 = dfEq2_1.format(a_1);
+            eq2A1 = dfEq2_1.format(a_1);
           } else {
-            Eq2_a_1 = dfEq2_1.format(a_1);
+            eq2A1 = dfEq2_1.format(a_1);
           }
           if (b_1.floor() >= 0) {
-            Eq2_b_1 = dfEq2.format(b_1);
+            eq2B1 = dfEq2.format(b_1);
           } else {
-            Eq2_b_1 = dfEq2_1.format(b_1);
+            eq2B1 = dfEq2_1.format(b_1);
           }
-          if (raiz_delta_x1 == raiz_delta_x1.floor()) {
-            Eq2_raiz_delta_x1 = dfEq2_7.format(raiz_delta_x1);
+          if (raizDeltaX1 == raizDeltaX1.floor()) {
+            eq2RaizDeltaX1 = dfEq2_7.format(raizDeltaX1);
           } else {
-            Eq2_raiz_delta_x1 = dfEq2_4.format(raiz_delta_x1);
+            eq2RaizDeltaX1 = dfEq2_4.format(raizDeltaX1);
           }
-          if (b_raiz_x1 == b_raiz_x1.floor()) {
-            Eq2_b_raiz_x1 = dfEq2_1.format(b_raiz_x1);
+          if (bRaizX1 == bRaizX1.floor()) {
+            eq2BRaizX1 = dfEq2_1.format(bRaizX1);
           } else {
-            Eq2_b_raiz_x1 = dfEq2_6.format(b_raiz_x1);
+            eq2BRaizX1 = dfEq2_6.format(bRaizX1);
           }
           if (x1 == x1.floor()) {
-            Eq2_x1 = dfEq2_1.format(x1);
+            eq2X1 = dfEq2_1.format(x1);
           } else {
-            Eq2_x1 = dfEq2_6.format(x1);
+            eq2X1 = dfEq2_6.format(x1);
           }
-          if (b_raiz_x2 == b_raiz_x2.floor()) {
-            Eq2_b_raiz_x2 = dfEq2_1.format(b_raiz_x2);
+          if (bRaizX2 == bRaizX2.floor()) {
+            eq2BRaizX2 = dfEq2_1.format(bRaizX2);
           } else {
-            Eq2_b_raiz_x2 = dfEq2_6.format(b_raiz_x2);
+            eq2BRaizX2 = dfEq2_6.format(bRaizX2);
           }
           if (x2 == x2.floor()) {
-            Eq2_x2 = dfEq2_1.format(x2);
+            eq2X2 = dfEq2_1.format(x2);
           } else {
-            Eq2_x2 = dfEq2_6.format(x2);
+            eq2X2 = dfEq2_6.format(x2);
           }
-          if (raiz_delta_x2 == raiz_delta_x2.floor()) {
-            Eq2_raiz_delta_x2 = dfEq2_2.format(raiz_delta_x2);
+          if (raizDeltaX2 == raizDeltaX2.floor()) {
+            eq2RaizDeltaX2 = dfEq2_2.format(raizDeltaX2);
           } else {
-            Eq2_raiz_delta_x2 = dfEq2_5.format(raiz_delta_x2);
+            eq2RaizDeltaX2 = dfEq2_5.format(raizDeltaX2);
           }
 
           //Impressão Delta
           resultEq2 = "Δ = (b)² - 4 * a * c" + "\n" +
-            "Δ" + " = " + "("+"${Eq2_b}"+")"+"²" + " -4" + " * " + "${Eq2_a}" + " * " + "${Eq2_c}" + "\n" +
-            "Δ" + " = " + "${Eq2_pot}" + " " + "${Eq2_fac}" + "\n" 
-            "Δ" + " = " + "${Eq2_delta}"; 
+            "Δ" + " = " + "("+"$eq2B"+")"+"²" + " -4" + " * " + "$eq2A" + " * " + "$eq2C" + "\n" +
+            "Δ" + " = " + "$eq2Pot" + " " + "$eq2Fac" + "\n" 
+            "Δ" + " = " + "$eq2Delta"; 
 
           //______________________________________________________________________                    
 
@@ -225,40 +218,40 @@ class ModelEquacao2 {
 
               resultEq2_2 =  "x = – b ± √Δ / 2.a" + "\n" +
                   "\n" +
-                  "x1" + " = " + "-" + "(" + "${Eq2_b}" + ")" + " + " + "√" + "${Eq2_delta}" + " / " + "(" + "2" + " * " + "${Eq2_a}" + ")" + "\n" +
-                  "x1" + " = " + "(" + "${Eq2_b_1}" + " " + "${Eq2_raiz_delta_x1}" + ")" + " / " + "${Eq2_a_1}" + "\n" +
-                  "x1" + " = " + "${Eq2_b_raiz_x1}" + " / " + "${Eq2_a_1}" + "\n" +
-                  "x1" + " = " + "${Eq2_x1}" + "\n";
+                  "x1" + " = " + "-" + "(" + "$eq2B" + ")" + " + " + "√" + "$eq2Delta" + " / " + "(" + "2" + " * " + "$eq2A" + ")" + "\n" +
+                  "x1" + " = " + "(" + "$eq2B1" + " " + "$eq2RaizDeltaX1" + ")" + " / " + "$eq2A1" + "\n" +
+                  "x1" + " = " + "$eq2BRaizX1" + " / " + "$eq2A1" + "\n" +
+                  "x1" + " = " + "$eq2X1" + "\n";
 
               resultEq2_3 =
-                  "x2" + " = " + "-" + "(" + "${Eq2_b}" + ")" + " - " + "√" + "${Eq2_delta}" + " / " + "(" + "2" + " * " + "${Eq2_a}" + ")" + "\n" +
-                  "x2" + " = " + "(" + "${Eq2_b_1}" + " " + "${Eq2_raiz_delta_x2}" + ")" + " / " + "${Eq2_a_1}" + "\n" +
-                  "x2" + " = " + "${Eq2_b_raiz_x2}" + " / " + "${Eq2_a_1}" + "\n" +
-                  "x2" + " = " + "${Eq2_x2}" + "\n";
+                  "x2" + " = " + "-" + "(" + "$eq2B" + ")" + " - " + "√" + "$eq2Delta" + " / " + "(" + "2" + " * " + "$eq2A" + ")" + "\n" +
+                  "x2" + " = " + "(" + "$eq2B1" + " " + "$eq2RaizDeltaX2" + ")" + " / " + "$eq2A1" + "\n" +
+                  "x2" + " = " + "$eq2BRaizX2" + " / " + "$eq2A1" + "\n" +
+                  "x2" + " = " + "$eq2X2" + "\n";
 
               resultEq2_4 = "As raízes reais encontradas são: " + "\n"
-                  + "x1 = " +"${Eq2_x1}" + " e " + "x2 = " + "${Eq2_x2}" + "\n";
+                  + "x1 = " +"$eq2X1" + " e " + "x2 = " + "$eq2X2" + "\n";
             } else {
               resultEq2_1 = "O valor de Delta é positivo. Portanto, existem duas raízes reais!" +
                       "\n";
 
               resultEq2_2 = "x = – b ± √Δ / 2.a" + "\n" +
                   "\n" +
-                  "x1" + " = " + "(" + "-" + "(" + "${Eq2_b}" + ")" + " + " + "√" + "${Eq2_delta}" + ")" + " / " + "(" + "2" + " * " + "${Eq2_a}" + ")" + "\n" +
-                  "x1" + " = " + "(" + "${Eq2_b_1}" + " " + "${Eq2_raiz_delta_x1}" + ")" + " / " + "${Eq2_a_1}" + "\n" +
-                  "x1" + " = " + "${Eq2_b_raiz_x1}" + " / " + "${Eq2_a_1}" + "\n" +
-                  "x1" + " = " + "${Eq2_x1}" + "\n";
+                  "x1" + " = " + "(" + "-" + "(" + "$eq2B" + ")" + " + " + "√" + "$eq2Delta" + ")" + " / " + "(" + "2" + " * " + "$eq2A" + ")" + "\n" +
+                  "x1" + " = " + "(" + "$eq2B1" + " " + "$eq2RaizDeltaX1" + ")" + " / " + "$eq2A1" + "\n" +
+                  "x1" + " = " + "$eq2BRaizX1" + " / " + "$eq2A1" + "\n" +
+                  "x1" + " = " + "$eq2X1" + "\n";
 
               resultEq2_3 =
-                  "x2" + " = " + "(" + "-" + "(" + "${Eq2_b}" + ")" + " - " + "√" + "${Eq2_delta}" + ")" + " / " + "(" + "2" + " * " + "${Eq2_a}" + ")" + "\n" +
-                      "x2" + " = " + "(" + "${Eq2_b_1}" + " " + "${Eq2_raiz_delta_x2}" + ")" + " / " + "${Eq2_a_1}" + "\n" +
-                      "x2" + " = " + "${Eq2_b_raiz_x2}" + " / " + "${Eq2_a_1}" + "\n" +
-                      "x2" + " = " + "${Eq2_x2}" + "\n";
+                  "x2" + " = " + "(" + "-" + "(" + "$eq2B" + ")" + " - " + "√" + "$eq2Delta" + ")" + " / " + "(" + "2" + " * " + "$eq2A" + ")" + "\n" +
+                      "x2" + " = " + "(" + "$eq2B1" + " " + "$eq2RaizDeltaX2" + ")" + " / " + "$eq2A1" + "\n" +
+                      "x2" + " = " + "$eq2BRaizX2" + " / " + "$eq2A1" + "\n" +
+                      "x2" + " = " + "$eq2X2" + "\n";
 
               resultEq2_4 = "As raízes reais encontradas são: " + "\n"
-                  + "x1 = " +"${Eq2_x1}" +  "\n" +
+                  + "x1 = " +"$eq2X1" +  "\n" +
                   " e " + "\n" +
-                  "x2 = " + "${Eq2_x2}" + "\n";
+                  "x2 = " + "$eq2X2" + "\n";
             }
           } 
         }

@@ -1,7 +1,7 @@
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/controller/model_juros_compostos.dart';
+import 'package:exemplifica_git/screens/components/row_buttons.dart';
 import 'package:exemplifica_git/screens/home_page.dart';
-import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
 class CalcJurosC extends StatefulWidget {
@@ -12,6 +12,7 @@ class CalcJurosC extends StatefulWidget {
 class _CalcJurosCState extends State<CalcJurosC> {
   double height = 0;
   double width = 0;
+  bool visible = false;
 
   final ModelJurosCompostos modelJurosCompostos = ModelJurosCompostos();
 
@@ -185,55 +186,52 @@ class _CalcJurosCState extends State<CalcJurosC> {
                 )
               ],
             ),
-            Padding(
-              padding: EdgeInsets.only(right: 5, left: 5, top: 10),
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      ButtonBase(
-                        onTap: (() {
-                          setState(() {
-                            modelJurosCompostos.verificarCampos();
-                          });
-                        }),
-                        title: 'Calcular',
-                        height: height,
-                        width: width,
-                      ),
-                      ButtonBase(
-                        onTap: (() {
-                          setState(() {
-                            modelJurosCompostos.resetCampos();
-                          });
-                        }),
-                        title: 'Limpar',
-                        height: height,
-                        width: width,
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsets.only(left: 10, right: 10, bottom: 3, top: 30),
-                    child: Text(
-                      modelJurosCompostos.resultjC,
-                      textAlign: TextAlign.left,
-                      style: TextStyle(color: Colors.black, fontSize: 21.0),
-                    ),
-                  ),
-                ],
-              ),
+            RowButtons(
+              titleFirst: CoreStrings.calc,
+              titleSecond: CoreStrings.clear,
+              paddingTop: 10,
+              height: height,
+              width: width,
+              onTapFirst: (() {
+                setState(() {
+                  modelJurosCompostos.verificarCampos();
+                  visible = !visible;
+                });
+              }),
+              onTapSecond: (() {
+                setState(() {
+                  modelJurosCompostos.resetCampos();
+                  visible = !visible;
+                });
+              }),
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 10, right: 10, top: 5),
-              child: Text(
-                modelJurosCompostos.resultjC_1,
-                style: TextStyle(
-                    fontSize: 35.0,
-                    color: Colors.red,
-                    fontWeight: FontWeight.bold),
+            Visibility(
+              visible: visible,
+              child: Padding(
+                padding: EdgeInsets.only(right: 5, left: 5),
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 10, right: 10, bottom: 3, top: 30),
+                      child: Text(
+                        modelJurosCompostos.resultjC,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(color: Colors.black, fontSize: 21.0),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10, top: 5),
+                      child: Text(
+                        modelJurosCompostos.resultjC_1,
+                        style: TextStyle(
+                            fontSize: 35.0,
+                            color: Colors.red,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ]))),

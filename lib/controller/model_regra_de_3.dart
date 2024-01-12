@@ -1,11 +1,7 @@
-import 'package:exemplifica_git/ad_mob/ad_mob.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class ModelRegraDe3 {
-
-  // final AdMob adMob = AdMob();
-
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
   TextEditingController val3 = TextEditingController();
@@ -25,7 +21,6 @@ class ModelRegraDe3 {
     } else {
       resultRegra3 = "";
       regra3();
-      // adMob.showInstersticial();
     }
   }
 

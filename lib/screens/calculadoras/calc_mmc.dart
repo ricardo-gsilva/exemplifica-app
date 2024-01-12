@@ -1,7 +1,7 @@
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/controller/model_mmc.dart';
+import 'package:exemplifica_git/screens/components/row_buttons.dart';
 import 'package:exemplifica_git/screens/home_page.dart';
-import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
 class CalcMmc extends StatefulWidget {
@@ -13,6 +13,7 @@ class _CalcMmcState extends State<CalcMmc> {
   final ModelMmc modelMmc = ModelMmc();
   double height = 0;
   double width = 0;
+  bool visible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -103,56 +104,55 @@ class _CalcMmcState extends State<CalcMmc> {
                   ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    ButtonBase(
-                      onTap: (() {
-                        setState(() {
-                          modelMmc.verificarCampos();
-                        });
-                      }),
-                      title: 'Calcular',
-                      height: height,
-                      width: width,
-                    ),
-                    ButtonBase(
-                      onTap: (() {
-                        setState(() {
-                          modelMmc.resetCampos();
-                        });
-                      }),
-                      title: 'Limpar',
-                      height: height,
-                      width: width,
-                    ),
+              RowButtons(
+                titleFirst: CoreStrings.calc,
+                titleSecond: CoreStrings.clear,
+                paddingTop: 10,
+                height: height,
+                width: width,
+                onTapFirst: (() {
+                  setState(() {
+                    modelMmc.verificarCampos();
+                    visible = !visible;
+                  });
+                }),
+                onTapSecond: (() {
+                  setState(() {
+                    modelMmc.resetCampos();
+                    visible = !visible;
+                  });
+                }),
+              ),
+              Visibility(
+                visible: visible,
+                child: Column(
+                  children: [
+                    Padding(
+                  padding: EdgeInsets.only(left: 10, right: 10, top: 15),
+                  child: Text(
+                    modelMmc.resultMmc,
+                    textAlign: TextAlign.left,
+                    style: TextStyle(color: Colors.black, fontSize: 21.0),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                  child: Text(
+                    modelMmc.resultMmc1,
+                    textAlign: TextAlign.left,
+                    style: TextStyle(color: Colors.black, fontSize: 21.0),
+                  ),
+                ),
                   ],
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(15.0),
-                child: Text(
-                  modelMmc.resultMmc,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.black, fontSize: 21.0),
-                ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 10),
-                child: Text(
-                  modelMmc.resultMmc1,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.black, fontSize: 21.0),
-                ),
-              ),
+              )
             ],
           ),
         ),
       ),
-      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: Container(
+          color: Colors.black,
+          height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

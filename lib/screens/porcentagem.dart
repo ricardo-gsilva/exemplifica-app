@@ -233,6 +233,7 @@ class _PorcentagemState extends State<Porcentagem> {
           ],
         ),
       ),
+      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

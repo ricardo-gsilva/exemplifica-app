@@ -34,10 +34,10 @@ class ModelTabuada {
     } else {
       for (i = 0; i <= 10; i++) {
         infoText = infoText +
-            "${valorTabuada}" +
+            "$valorTabuada" +
             " " +
             "x " +
-            "${i}" +
+            "$i" +
             " = " +
             "${(val * i)}" +
             "\n";

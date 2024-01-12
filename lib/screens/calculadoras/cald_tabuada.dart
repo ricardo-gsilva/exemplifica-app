@@ -1,7 +1,7 @@
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/controller/model_tabuada.dart';
+import 'package:exemplifica_git/screens/components/row_buttons.dart';
 import 'package:exemplifica_git/screens/home_page.dart';
-import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
 class CalcTabuada extends StatefulWidget {
@@ -80,35 +80,24 @@ class _CalcTabuadaState extends State<CalcTabuada> {
                   ),
                 ),
               )),
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                ButtonBase(
-                  onTap: (() {
-                    setState(() {
-                      _modelTabuada.verificarCampo();
-                      visible = !visible;
-                    });
-                  }),
-                  title: 'Calcular',
-                  height: height,
-                  width: width,
-                ),
-                ButtonBase(
-                  onTap: (() {
-                    setState(() {
-                      _modelTabuada.resetCampos();
-                      visible = !visible;
-                    });
-                  }),
-                  title: 'Limpar',
-                  height: height,
-                  width: width,
-                ),
-              ],
-            ),
+          RowButtons(
+            titleFirst: CoreStrings.calc,
+            titleSecond: CoreStrings.clear,
+            paddingTop: 10,
+            height: height,
+            width: width,
+            onTapFirst: (() {
+              setState(() {
+                _modelTabuada.verificarCampo();
+                visible = !visible;
+              });
+            }),
+            onTapSecond: (() {
+              setState(() {
+                _modelTabuada.resetCampos();
+                visible = !visible;
+              });
+            }),
           ),
           Visibility(
             visible: visible,
