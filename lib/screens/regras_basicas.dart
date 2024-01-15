@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/screens/widgets/button_custom.dart';
 import 'package:exemplifica_git/screens/expoentes.dart';
@@ -21,19 +22,19 @@ class _RegrasBasicasState extends State<RegrasBasicas> {
     width = MediaQuery.of(context).size.width * 0.9;
     height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade50,
+      backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
         title: Text(
           CoreStrings.titleRegrasBasicas,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: CoreColors.textPrimary),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
         leading: IconButton(
           icon: Icon(
             Icons.reply,
-            color: Colors.black,
+            color: CoreColors.textPrimary,
           ),
           onPressed: () {
             Navigator.of(context).pop();

@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/screens/home_page.dart';
 import 'package:flutter/material.dart';
@@ -11,19 +12,19 @@ class _ParentesisState extends State<Parentesis> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade50,
+      backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
           backgroundColor: Colors.lightBlue,
           title: Text(
             CoreStrings.titleParentesis,
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: CoreColors.textPrimary),
           ),
           centerTitle: true,
           automaticallyImplyLeading: false,
           leading: IconButton(
             icon: Icon(
               Icons.reply,
-              color: Colors.black,
+              color: CoreColors.textPrimary,
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -33,7 +34,7 @@ class _ParentesisState extends State<Parentesis> {
             IconButton(
             icon: Icon(
               Icons.home,
-              color: Colors.black,
+              color: CoreColors.textPrimary,
             ),
             onPressed: () {
               Navigator.of(context).pushAndRemoveUntil(
@@ -140,7 +141,7 @@ class _ParentesisState extends State<Parentesis> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: Container(color: CoreColors.textPrimary, height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

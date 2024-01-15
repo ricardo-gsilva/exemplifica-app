@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:flutter/material.dart';
 
 class ButtonBase extends StatelessWidget {
@@ -24,7 +25,7 @@ class ButtonBase extends StatelessWidget {
             child: Text(
               title?? '',
               style: TextStyle(
-                color: Colors.black,
+                color: CoreColors.textPrimary,
                 fontSize: 16,
                 fontWeight: FontWeight.bold),
             ),

@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/person_icons.dart';
 import 'package:exemplifica_git/screens/calculadoras/calc_equacao_1.dart';
@@ -14,12 +15,12 @@ class _Equacao_1State extends State<Equacao_1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade50,
+      backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
         title: Text(
           CoreStrings.titleEquacao1,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: CoreColors.textPrimary),
         ),
         automaticallyImplyLeading: false,
         centerTitle: true,
@@ -33,7 +34,7 @@ class _Equacao_1State extends State<Equacao_1> {
           IconButton(
             icon: Icon(
               Person.calc,
-              color: Colors.black
+              color: CoreColors.textPrimary
             ),
             onPressed: () {
               Navigator.push(context,
@@ -132,7 +133,7 @@ class _Equacao_1State extends State<Equacao_1> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: Container(color: CoreColors.textPrimary, height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

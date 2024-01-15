@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/screens/home_page.dart';
 import 'package:flutter/material.dart';
@@ -11,19 +12,19 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlue.shade50,
+        backgroundColor: CoreColors.colorBackground,
         appBar: AppBar(
           backgroundColor: Colors.lightBlue,
           title: Text(
             CoreStrings.titleMultipDiv,
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: CoreColors.textPrimary),
           ),
           centerTitle: true,
           automaticallyImplyLeading: false,
           leading: IconButton(
             icon: Icon(
               Icons.reply,
-              color: Colors.black,
+              color: CoreColors.textPrimary,
             ),
             onPressed: () {
               Navigator.pop(context);
@@ -33,7 +34,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
             IconButton(
               icon: Icon(
                 Icons.home,
-                color: Colors.black,
+                color: CoreColors.textPrimary,
               ),
               onPressed: () {
                 Navigator.of(context).pushAndRemoveUntil(
@@ -111,15 +112,6 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
               style: TextStyle(fontSize: 16.0),
             ),
           ),
-          // Padding(
-          //   padding: EdgeInsets.all(10.0),
-          //   child: Text(
-          //     "Quando existir multiplicação e divisão no mesmo nível, a regra é seguir da esquerda "
-          //     "para a direita. Se a multiplicão estiver primeiro na esquerda, comece por ela e se primeiro "
-          //     "estiver a divisão, então faça a divisão.",
-          //     style: TextStyle(fontSize: 16.0),
-          //   ),
-          // ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
@@ -218,7 +210,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           ),
         ])
       ),
-      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: Container(color: CoreColors.textPrimary, height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/person_icons.dart';
 import 'package:exemplifica_git/screens/calculadoras/cald_mdc.dart';
@@ -12,12 +13,12 @@ class _MdcState extends State<Mdc> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlue.shade50,
+        backgroundColor: CoreColors.colorBackground,
         appBar: AppBar(
           backgroundColor: Colors.lightBlue,
           title: Text(
             CoreStrings.titleMdc,
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: CoreColors.textPrimary),
           ),
           centerTitle: true,
           automaticallyImplyLeading: false,
@@ -31,7 +32,7 @@ class _MdcState extends State<Mdc> {
             IconButton(
               icon: Icon(
                 Person.calc,
-                color: Colors.black,
+                color: CoreColors.textPrimary,
               ),
               onPressed: () {
                 Navigator.push(context,
@@ -91,7 +92,7 @@ class _MdcState extends State<Mdc> {
           ),
         ])
       ),
-      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: Container(color: CoreColors.textPrimary, height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

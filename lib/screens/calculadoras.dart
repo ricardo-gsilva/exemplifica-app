@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/screens/calculadoras/calc_equacao_1.dart';
 import 'package:exemplifica_git/screens/calculadoras/calc_equacao_2.dart';
@@ -27,7 +28,7 @@ class _CalculadorasState extends State<Calculadoras> {
     width = MediaQuery.of(context).size.width * 0.47;
     height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade50,
+      backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
         centerTitle: true,
@@ -35,7 +36,7 @@ class _CalculadorasState extends State<Calculadoras> {
         leading: IconButton(
           icon: Icon(
             Icons.reply,
-            color: Colors.black,
+            color: CoreColors.textPrimary,
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -43,7 +44,7 @@ class _CalculadorasState extends State<Calculadoras> {
         ),
         title: Text(
           CoreStrings.titleCalculadoras,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: CoreColors.textPrimary),
         ),
       ),
       body: SingleChildScrollView(
@@ -136,7 +137,7 @@ class _CalculadorasState extends State<Calculadoras> {
           ),
         ]),
       ),
-      bottomNavigationBar: Container(height: MediaQuery.of(context).size.height * 0.1, color: Colors.black,),
+      bottomNavigationBar: Container(height: MediaQuery.of(context).size.height * 0.1, color: CoreColors.textPrimary,),
     );
   }
 }

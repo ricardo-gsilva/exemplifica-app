@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/person_icons.dart';
 import 'package:exemplifica_git/screens/calculadoras/calc_funcoes.dart';
@@ -12,12 +13,12 @@ class _FuncoesState extends State<Funcoes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade50,
+      backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
         title: Text(
           CoreStrings.titleFuncoes,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: CoreColors.textPrimary),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
@@ -29,7 +30,7 @@ class _FuncoesState extends State<Funcoes> {
         ),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Person.calc, color: Colors.black),
+            icon: Icon(Person.calc, color: CoreColors.textPrimary),
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => CalcFuncoes()));

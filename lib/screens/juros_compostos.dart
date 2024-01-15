@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/person_icons.dart';
 import 'package:exemplifica_git/screens/calculadoras/calc_juros_compostos.dart';
@@ -12,12 +13,12 @@ class _JurosCompostosState extends State<JurosCompostos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlue.shade50,
+        backgroundColor: CoreColors.colorBackground,
         appBar: AppBar(
           backgroundColor: Colors.lightBlue,
           title: Text(
             CoreStrings.titleJurosCompostos,
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: CoreColors.textPrimary),
           ),
           centerTitle: true,
         automaticallyImplyLeading: false,
@@ -31,7 +32,7 @@ class _JurosCompostosState extends State<JurosCompostos> {
             IconButton(
               icon: Icon(
                 Person.calc,
-                color: Colors.black,
+                color: CoreColors.textPrimary,
               ),
               onPressed: () {
                 Navigator.push(context,
@@ -259,7 +260,7 @@ class _JurosCompostosState extends State<JurosCompostos> {
         ]
       )
     ),
-    bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
+    bottomNavigationBar: Container(color: CoreColors.textPrimary, height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

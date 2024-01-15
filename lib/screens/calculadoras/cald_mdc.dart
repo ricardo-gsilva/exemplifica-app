@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/controller/model_mdc.dart';
 import 'package:exemplifica_git/screens/components/row_buttons.dart';
@@ -20,19 +21,19 @@ class _CalcMdcState extends State<CalcMdc> {
     width = MediaQuery.of(context).size.width * 0.35;
     height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade50,
+      backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
         title: Text(
           CoreStrings.titleMdc,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: CoreColors.textPrimary),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
         leading: IconButton(
           icon: Icon(
             Icons.reply,
-            color: Colors.black,
+            color: CoreColors.textPrimary,
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -42,7 +43,7 @@ class _CalcMdcState extends State<CalcMdc> {
           IconButton(
             icon: Icon(
               Icons.home,
-              color: Colors.black,
+              color: CoreColors.textPrimary,
             ),
             onPressed: () {
               Navigator.of(context).pushAndRemoveUntil(
@@ -74,9 +75,9 @@ class _CalcMdcState extends State<CalcMdc> {
                       decoration: InputDecoration(
                           hintText: "Valor 1",
                           labelText: "",
-                          labelStyle: TextStyle(color: Colors.black87)),
+                          labelStyle: TextStyle(color: CoreColors.textPrimary)),
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.black, fontSize: 23.0),
+                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
                       controller: modelMdc.val1,
                       maxLength: 5,
                     ),
@@ -91,9 +92,9 @@ class _CalcMdcState extends State<CalcMdc> {
                       decoration: InputDecoration(
                           hintText: "Valor 2",
                           labelText: "",
-                          labelStyle: TextStyle(color: Colors.black87)),
+                          labelStyle: TextStyle(color: CoreColors.textPrimary)),
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.black, fontSize: 23.0),
+                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
                       controller: modelMdc.val2,
                       maxLength: 5,
                     ),
@@ -129,7 +130,7 @@ class _CalcMdcState extends State<CalcMdc> {
                     child: Text(
                       modelMdc.resultMdc,
                       textAlign: TextAlign.left,
-                      style: TextStyle(color: Colors.black, fontSize: 21.0),
+                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
                     ),
                   ),
                   Padding(
@@ -138,7 +139,7 @@ class _CalcMdcState extends State<CalcMdc> {
                     child: Text(
                       modelMdc.resultMdc1,
                       textAlign: TextAlign.left,
-                      style: TextStyle(color: Colors.black, fontSize: 21.0),
+                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
                     ),
                   ),
                   Padding(
@@ -147,7 +148,7 @@ class _CalcMdcState extends State<CalcMdc> {
                     child: Text(
                       modelMdc.resultMdc2,
                       textAlign: TextAlign.left,
-                      style: TextStyle(color: Colors.black, fontSize: 21.0),
+                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
                     ),
                   ),
                 ],
@@ -157,7 +158,7 @@ class _CalcMdcState extends State<CalcMdc> {
         ),
       ),
       bottomNavigationBar: Container(
-          color: Colors.black,
+          color: CoreColors.textPrimary,
           height: MediaQuery.of(context).size.height * 0.1),
     );
   }

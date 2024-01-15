@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/person_icons.dart';
 import 'package:exemplifica_git/screens/calculadoras/calc_porcentagem.dart';
@@ -12,19 +13,19 @@ class _PorcentagemState extends State<Porcentagem> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade50,
+      backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
         title: Text(
           CoreStrings.titlePorcentagem,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: CoreColors.textPrimary),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
         leading: IconButton(
           icon: Icon(
             Icons.reply,
-            color: Colors.black,
+            color: CoreColors.textPrimary,
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -34,7 +35,7 @@ class _PorcentagemState extends State<Porcentagem> {
           IconButton(
             icon: Icon(
               Person.calc,
-              color: Colors.black,
+              color: CoreColors.textPrimary,
             ),
             onPressed: () {
               Navigator.push(context,
@@ -233,7 +234,7 @@ class _PorcentagemState extends State<Porcentagem> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: Container(color: CoreColors.textPrimary, height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

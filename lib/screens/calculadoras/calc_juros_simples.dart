@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/controller/model_juros_simples.dart';
 import 'package:exemplifica_git/screens/components/row_buttons.dart';
@@ -20,19 +21,19 @@ class _CalcJurosSState extends State<CalcJurosS> {
     width = MediaQuery.of(context).size.width * 0.35;
     height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade50,
+      backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
         title: Text(
           CoreStrings.titleJurosSimples,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: CoreColors.textPrimary),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
         leading: IconButton(
           icon: Icon(
             Icons.reply,
-            color: Colors.black,
+            color: CoreColors.textPrimary,
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -42,7 +43,7 @@ class _CalcJurosSState extends State<CalcJurosS> {
           IconButton(
             icon: Icon(
               Icons.home,
-              color: Colors.black,
+              color: CoreColors.textPrimary,
             ),
             onPressed: () {
               Navigator.of(context).pushAndRemoveUntil(
@@ -74,7 +75,7 @@ class _CalcJurosSState extends State<CalcJurosS> {
                         "Capital:",
                         style: TextStyle(
                             fontSize: 20.0,
-                            color: Colors.black,
+                            color: CoreColors.textPrimary,
                             fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
@@ -84,10 +85,10 @@ class _CalcJurosSState extends State<CalcJurosS> {
                           decoration: InputDecoration(
                               hintText: "capital(R\$)",
                               labelText: "",
-                              labelStyle: TextStyle(color: Colors.black87)),
+                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: Colors.black, fontSize: 23.0),
+                              color: CoreColors.textPrimary, fontSize: 23.0),
                           controller: modelJurosSimples.c,
                           maxLength: 9,
                         ),
@@ -104,7 +105,7 @@ class _CalcJurosSState extends State<CalcJurosS> {
                         "Taxa:",
                         style: TextStyle(
                             fontSize: 20.0,
-                            color: Colors.black,
+                            color: CoreColors.textPrimary,
                             fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
@@ -114,10 +115,10 @@ class _CalcJurosSState extends State<CalcJurosS> {
                           decoration: InputDecoration(
                               hintText: "% a.m",
                               labelText: "",
-                              labelStyle: TextStyle(color: Colors.black87)),
+                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: Colors.black, fontSize: 23.0),
+                              color: CoreColors.textPrimary, fontSize: 23.0),
                           controller: modelJurosSimples.i,
                           maxLength: 4,
                         ),
@@ -138,7 +139,7 @@ class _CalcJurosSState extends State<CalcJurosS> {
                         "Meses:",
                         style: TextStyle(
                             fontSize: 20.0,
-                            color: Colors.black,
+                            color: CoreColors.textPrimary,
                             fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
@@ -148,10 +149,10 @@ class _CalcJurosSState extends State<CalcJurosS> {
                           decoration: InputDecoration(
                               hintText: "Tempo",
                               labelText: "",
-                              labelStyle: TextStyle(color: Colors.black87)),
+                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: Colors.black, fontSize: 23.0),
+                              color: CoreColors.textPrimary, fontSize: 23.0),
                           controller: modelJurosSimples.t,
                           maxLength: 3,
                         ),
@@ -167,7 +168,7 @@ class _CalcJurosSState extends State<CalcJurosS> {
                         "Juros:",
                         style: TextStyle(
                             fontSize: 20.0,
-                            color: Colors.black,
+                            color: CoreColors.textPrimary,
                             fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
@@ -177,10 +178,10 @@ class _CalcJurosSState extends State<CalcJurosS> {
                           decoration: InputDecoration(
                               hintText: "%",
                               labelText: "",
-                              labelStyle: TextStyle(color: Colors.black87)),
+                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              color: Colors.black, fontSize: 23.0),
+                              color: CoreColors.textPrimary, fontSize: 23.0),
                           controller: modelJurosSimples.j,
                           maxLength: 9,
                         ),
@@ -217,7 +218,7 @@ class _CalcJurosSState extends State<CalcJurosS> {
                 child: Text(
                   modelJurosSimples.resultjS,
                   textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.black, fontSize: 20.0),
+                  style: TextStyle(color: CoreColors.textPrimary, fontSize: 20.0),
                 ),
               ),
             ),
@@ -243,7 +244,7 @@ class _CalcJurosSState extends State<CalcJurosS> {
                 child: Text(
                   modelJurosSimples.resultjS_2,
                   textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.black, fontSize: 20.0),
+                  style: TextStyle(color: CoreColors.textPrimary, fontSize: 20.0),
                 ),
               ),
             ],
@@ -252,7 +253,7 @@ class _CalcJurosSState extends State<CalcJurosS> {
       ])
               ),
       bottomNavigationBar: Container(
-          color: Colors.black,
+          color: CoreColors.textPrimary,
           height: MediaQuery.of(context).size.height * 0.1),
     );
   }

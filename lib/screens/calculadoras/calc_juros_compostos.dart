@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/controller/model_juros_compostos.dart';
 import 'package:exemplifica_git/screens/components/row_buttons.dart';
@@ -21,19 +22,19 @@ class _CalcJurosCState extends State<CalcJurosC> {
     width = MediaQuery.of(context).size.width * 0.35;
     height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade50,
+      backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
         title: Text(
           CoreStrings.titleJurosCompostos,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: CoreColors.textPrimary),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
         leading: IconButton(
           icon: Icon(
             Icons.reply,
-            color: Colors.black,
+            color: CoreColors.textPrimary,
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -43,7 +44,7 @@ class _CalcJurosCState extends State<CalcJurosC> {
           IconButton(
             icon: Icon(
               Icons.home,
-              color: Colors.black,
+              color: CoreColors.textPrimary,
             ),
             onPressed: () {
               Navigator.of(context).pushAndRemoveUntil(
@@ -99,7 +100,7 @@ class _CalcJurosCState extends State<CalcJurosC> {
                         "Capital:",
                         style: TextStyle(
                             fontSize: 20.0,
-                            color: Colors.black,
+                            color: CoreColors.textPrimary,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -112,9 +113,9 @@ class _CalcJurosCState extends State<CalcJurosC> {
                           decoration: InputDecoration(
                               hintText: "capital(R\$)",
                               labelText: "",
-                              labelStyle: TextStyle(color: Colors.black87)),
+                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.black, fontSize: 23.0),
+                          style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
                           controller: modelJurosCompostos.c,
                           maxLength: 9,
                         ),
@@ -130,7 +131,7 @@ class _CalcJurosCState extends State<CalcJurosC> {
                         "Taxa:",
                         style: TextStyle(
                             fontSize: 20.0,
-                            color: Colors.black,
+                            color: CoreColors.textPrimary,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -143,9 +144,9 @@ class _CalcJurosCState extends State<CalcJurosC> {
                           decoration: InputDecoration(
                               hintText: "% a.m",
                               labelText: "",
-                              labelStyle: TextStyle(color: Colors.black87)),
+                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.black, fontSize: 23.0),
+                          style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
                           controller: modelJurosCompostos.i,
                           maxLength: 4,
                         ),
@@ -161,7 +162,7 @@ class _CalcJurosCState extends State<CalcJurosC> {
                         "Meses:",
                         style: TextStyle(
                             fontSize: 20.0,
-                            color: Colors.black,
+                            color: CoreColors.textPrimary,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -174,9 +175,9 @@ class _CalcJurosCState extends State<CalcJurosC> {
                           decoration: InputDecoration(
                               hintText: "Tempo",
                               labelText: "",
-                              labelStyle: TextStyle(color: Colors.black87)),
+                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.black, fontSize: 23.0),
+                          style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
                           controller: modelJurosCompostos.t,
                           maxLength: 3,
                         ),
@@ -217,7 +218,7 @@ class _CalcJurosCState extends State<CalcJurosC> {
                       child: Text(
                         modelJurosCompostos.resultjC,
                         textAlign: TextAlign.left,
-                        style: TextStyle(color: Colors.black, fontSize: 21.0),
+                        style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
                       ),
                     ),
                     Padding(
@@ -236,7 +237,7 @@ class _CalcJurosCState extends State<CalcJurosC> {
             ),
           ]))),
       bottomNavigationBar: Container(
-          color: Colors.black,
+          color: CoreColors.textPrimary,
           height: MediaQuery.of(context).size.height * 0.1),
     );
   }

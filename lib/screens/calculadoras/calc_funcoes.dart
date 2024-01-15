@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/controller/model_funcoes.dart';
 import 'package:exemplifica_git/screens/home_page.dart';
@@ -19,19 +20,19 @@ class _CalcFuncoesState extends State<CalcFuncoes> {
     width = MediaQuery.of(context).size.width * 0.35;
     height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade50,
+      backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
         title: Text(
           CoreStrings.titleFuncoes,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: CoreColors.textPrimary),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
         leading: IconButton(
           icon: Icon(
             Icons.reply,
-            color: Colors.black,
+            color: CoreColors.textPrimary,
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -41,7 +42,7 @@ class _CalcFuncoesState extends State<CalcFuncoes> {
           IconButton(
             icon: Icon(
               Icons.home,
-              color: Colors.black,
+              color: CoreColors.textPrimary,
             ),
             onPressed: () {
               Navigator.of(context).pushAndRemoveUntil(
@@ -84,7 +85,7 @@ class _CalcFuncoesState extends State<CalcFuncoes> {
                         "a:",
                         style: TextStyle(
                             fontSize: 25.0,
-                            color: Colors.black,
+                            color: CoreColors.textPrimary,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -97,9 +98,9 @@ class _CalcFuncoesState extends State<CalcFuncoes> {
                           decoration: InputDecoration(
                               hintText: "a",
                               labelText: "",
-                              labelStyle: TextStyle(color: Colors.black87)),
+                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.black, fontSize: 23.0),
+                          style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
                           controller: modelFuncoes.a,
                           maxLength: 6,
                         ),
@@ -111,7 +112,7 @@ class _CalcFuncoesState extends State<CalcFuncoes> {
                         "b:",
                         style: TextStyle(
                             fontSize: 25.0,
-                            color: Colors.black,
+                            color: CoreColors.textPrimary,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -124,9 +125,9 @@ class _CalcFuncoesState extends State<CalcFuncoes> {
                           decoration: InputDecoration(
                               hintText: "b",
                               labelText: "",
-                              labelStyle: TextStyle(color: Colors.black87)),
+                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.black, fontSize: 23.0),
+                          style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
                           controller: modelFuncoes.b,
                           maxLength: 6,
                         ),
@@ -143,7 +144,7 @@ class _CalcFuncoesState extends State<CalcFuncoes> {
                         "Resultado:",
                         style: TextStyle(
                             fontSize: 25.0,
-                            color: Colors.black,
+                            color: CoreColors.textPrimary,
                             fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -156,9 +157,9 @@ class _CalcFuncoesState extends State<CalcFuncoes> {
                           decoration: InputDecoration(
                               hintText: "Tempo",
                               labelText: "",
-                              labelStyle: TextStyle(color: Colors.black87)),
+                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.black, fontSize: 23.0),
+                          style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
                           controller: modelFuncoes.r,
                           maxLength: 9,
                         ),
@@ -200,7 +201,7 @@ class _CalcFuncoesState extends State<CalcFuncoes> {
                   child: Text(
                     modelFuncoes.resultF,
                     textAlign: TextAlign.left,
-                    style: TextStyle(color: Colors.black, fontSize: 25.0),
+                    style: TextStyle(color: CoreColors.textPrimary, fontSize: 25.0),
                   ),
                 ),
               ],
@@ -220,7 +221,7 @@ class _CalcFuncoesState extends State<CalcFuncoes> {
             ),
           ]))),
       bottomNavigationBar: Container(
-          color: Colors.black,
+          color: CoreColors.textPrimary,
           height: MediaQuery.of(context).size.height * 0.1),
     );
   }

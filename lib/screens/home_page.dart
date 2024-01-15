@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/screens/calculadoras.dart';
 import 'package:exemplifica_git/screens/components/row_buttons.dart';
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> {
     height = MediaQuery.of(context).size.height * 0.1;
     width = MediaQuery.of(context).size.width * 0.47;
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade50,
+      backgroundColor: CoreColors.colorBackground,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60),
         child: AppBar(
@@ -67,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                             child: Center(
                               child: ListTile(
                                 title: Icon(
-                                  color: Colors.black,
+                                  color: CoreColors.textPrimary,
                                   size: 45,
                                   Person.calc,
                                 ),
@@ -78,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontSize: 17,
-                                      color: Colors.black,
+                                      color: CoreColors.textPrimary,
                                       fontWeight: FontWeight.bold
                                     ),
                                   ),
@@ -102,7 +103,7 @@ class _HomePageState extends State<HomePage> {
                             child: Center(
                               child: ListTile(
                                 title: Icon(
-                                    color: Colors.black,
+                                    color: CoreColors.textPrimary,
                                     size: 45,
                                     Person.attention),
                                 subtitle: Padding(
@@ -112,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       fontSize: 17,
-                                      color: Colors.black,
+                                      color: CoreColors.textPrimary,
                                       fontWeight: FontWeight.bold
                                     ),
                                   ),
@@ -210,7 +211,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: Container(color: CoreColors.textPrimary, height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }

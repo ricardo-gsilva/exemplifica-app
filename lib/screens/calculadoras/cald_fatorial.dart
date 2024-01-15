@@ -1,3 +1,4 @@
+import 'package:exemplifica_git/constants/core_colors.dart';
 import 'package:exemplifica_git/constants/core_strings.dart';
 import 'package:exemplifica_git/controller/model_fatorial.dart';
 import 'package:exemplifica_git/screens/components/row_buttons.dart';
@@ -19,19 +20,19 @@ class _CalcFatorialState extends State<CalcFatorial> {
     width = MediaQuery.of(context).size.width * 0.4;
     height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
-      backgroundColor: Colors.lightBlue.shade50,
+      backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
         backgroundColor: Colors.lightBlue,
         title: Text(
           CoreStrings.titleFatorial,
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: CoreColors.textPrimary),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
         leading: IconButton(
           icon: Icon(
             Icons.reply,
-            color: Colors.black,
+            color: CoreColors.textPrimary,
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -41,7 +42,7 @@ class _CalcFatorialState extends State<CalcFatorial> {
           IconButton(
             icon: Icon(
               Icons.home,
-              color: Colors.black,
+              color: CoreColors.textPrimary,
             ),
             onPressed: () {
               Navigator.of(context).pushAndRemoveUntil(
@@ -73,7 +74,7 @@ class _CalcFatorialState extends State<CalcFatorial> {
                     child: Text(
                       "Digite o valor:",
                       textAlign: TextAlign.left,
-                      style: TextStyle(color: Colors.black, fontSize: 18.0),
+                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 18.0),
                     ),
                   ),
                   Padding(
@@ -85,9 +86,9 @@ class _CalcFatorialState extends State<CalcFatorial> {
                         decoration: InputDecoration(
                             hintText: "valor",
                             labelText: "",
-                            labelStyle: TextStyle(color: Colors.black87)),
+                            labelStyle: TextStyle(color: CoreColors.textPrimary)),
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.black, fontSize: 23.0),
+                        style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
                         controller: modelFatorial.val1,
                         maxLength: 2,
                       ),
@@ -117,7 +118,7 @@ class _CalcFatorialState extends State<CalcFatorial> {
                 child: Text(
                   modelFatorial.resultFat,
                   textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.black, fontSize: 21.0),
+                  style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
                 ),
               ),
               Padding(
@@ -126,14 +127,14 @@ class _CalcFatorialState extends State<CalcFatorial> {
                 child: Text(
                   modelFatorial.resultFat1,
                   textAlign: TextAlign.left,
-                  style: TextStyle(color: Colors.black, fontSize: 21.0),
+                  style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
                 ),
               ),
             ],
           ),
         ),
       ),
-      bottomNavigationBar: Container(color: Colors.black, height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: Container(color: CoreColors.textPrimary, height: MediaQuery.of(context).size.height * 0.1),
     );
   }
 }
