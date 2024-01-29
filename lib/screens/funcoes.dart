@@ -1,7 +1,7 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/person_icons.dart';
-import 'package:exemplifica_git/screens/calculadoras/calc_funcoes.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/person_icons.dart';
+import 'package:exemplifica/screens/calculadoras/calc_funcoes.dart';
 import 'package:flutter/material.dart';
 
 class Funcoes extends StatefulWidget {
@@ -15,7 +15,7 @@ class _FuncoesState extends State<Funcoes> {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titleFuncoes,
           style: TextStyle(color: CoreColors.textPrimary),

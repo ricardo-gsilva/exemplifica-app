@@ -16,7 +16,10 @@ class ModelJurosCompostos {
   String i1 = "";
   String t1 = "";
 
+  bool visible = false;
+
   void resetCampos() {
+    visible = false;
     c.text = "";
     i.text = "";
     t.text = "";
@@ -43,6 +46,7 @@ class ModelJurosCompostos {
   }
 
   void jurosCompostos() {
+    visible = true;
     c1 = c.text;
     i1 = i.text;
     t1 = t.text;

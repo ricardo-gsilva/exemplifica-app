@@ -1,8 +1,11 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/person_icons.dart';
-import 'package:exemplifica_git/screens/calculadoras/cald_tabuada.dart';
+import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/person_icons.dart';
+import 'package:exemplifica/screens/calculadoras/cald_tabuada.dart';
+import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Tabuada extends StatefulWidget {
   @override
@@ -10,12 +13,14 @@ class Tabuada extends StatefulWidget {
 }
 
 class _TabuadaState extends State<Tabuada> {
+  final controller = Get.put(AdHelper());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titleTabuada,
           style: TextStyle(color: CoreColors.textPrimary),
@@ -110,7 +115,7 @@ class _TabuadaState extends State<Tabuada> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(color: CoreColors.textPrimary, height: MediaQuery.of(context).size.height * 0.1),
-    );
+      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdTabuada, bannerAd: controller.bannerAd),
+      );
   }
 }

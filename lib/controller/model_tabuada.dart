@@ -7,34 +7,38 @@ class ModelTabuada {
 
   String infoText = "";
   String dica = "";
+  bool visible = false;
 
   void verificarCampo() {
     if (nTabuada.text.isEmpty) {
       infoText = "Por favor, preencha os campos!";
     } else {
+      infoText = '';
+      dica = '';
       calcular();
     }
   }
 
   void resetCampos() {
-    nTabuada.text = "";
+    visible = false;
+    nTabuada.clear();
     infoText = "";
     dica = "";
     formKey = GlobalKey<FormState>();
   }
 
   void calcular() {
-    int valorTabuada = int.parse(nTabuada.text);
     int i;
     int val = int.parse(nTabuada.text);
-    if (valorTabuada.toString().isEmpty) {
+    if (val.toString().isEmpty) {
       infoText = "Digite um valor igual ou menor que 99999!" + "\n";
-    } else if (valorTabuada > 99999) {
+    } else if (val > 99999) {
       infoText = "Informe um novo valor menor ou igual a 99999!";
     } else {
+      visible = true;
       for (i = 0; i <= 10; i++) {
         infoText = infoText +
-            "$valorTabuada" +
+            "$val" +
             " " +
             "x " +
             "$i" +

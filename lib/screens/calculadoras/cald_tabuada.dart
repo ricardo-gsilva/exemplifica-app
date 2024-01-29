@@ -1,9 +1,13 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/controller/model_tabuada.dart';
-import 'package:exemplifica_git/screens/components/row_buttons.dart';
-import 'package:exemplifica_git/screens/home_page.dart';
+import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/controller/model_tabuada.dart';
+import 'package:exemplifica/screens/components/row_buttons.dart';
+import 'package:exemplifica/screens/home_page.dart';
+import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/screens/components/text_field_input.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CalcTabuada extends StatefulWidget {
   @override
@@ -12,6 +16,7 @@ class CalcTabuada extends StatefulWidget {
 
 class _CalcTabuadaState extends State<CalcTabuada> {
   final _modelTabuada = ModelTabuada();
+  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
   bool visible = false;
@@ -23,7 +28,7 @@ class _CalcTabuadaState extends State<CalcTabuada> {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titleTabuada,
           style: TextStyle(color: CoreColors.textPrimary),
@@ -63,24 +68,11 @@ class _CalcTabuadaState extends State<CalcTabuada> {
               style: TextStyle(fontSize: 20.0),
             ),
           ),
-          Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Form(
-                key: _modelTabuada.formKey,
-                child: SizedBox(
-                  width: MediaQuery.of(context).size.width * .5,
-                  child: TextFormField(
-                    keyboardType: TextInputType.number,
-                    decoration: InputDecoration(
-                        labelText: "Digite Aqui",
-                        labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                    controller: _modelTabuada.nTabuada,
-                    maxLength: 5,
-                  ),
-                ),
-              )),
+          TextFieldInput(
+            title: "Valor:",
+            hintText: "Digite aqui",
+            controller: _modelTabuada.nTabuada
+          ),          
           RowButtons(
             titleFirst: CoreStrings.calc,
             titleSecond: CoreStrings.clear,
@@ -89,35 +81,42 @@ class _CalcTabuadaState extends State<CalcTabuada> {
             width: width,
             onTapFirst: (() {
               setState(() {
-                _modelTabuada.verificarCampo();
-                visible = !visible;
+                if (controller.calcTab < 6) {
+                  controller.calcTab++;
+                } else {
+                  controller.calcTab = 0.obs;
+                }
+                controller.checkValueForInterstitial(
+                    AdHelper.videoCalcTabuada, controller.calcTab);
+                _modelTabuada.verificarCampo();                
               });
             }),
             onTapSecond: (() {
               setState(() {
                 _modelTabuada.resetCampos();
-                visible = !visible;
               });
             }),
           ),
           Visibility(
-            visible: visible,
+            visible: _modelTabuada.visible,
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.all(15.0),
+                  padding: EdgeInsets.all(5.0),
                   child: Text(
                     _modelTabuada.infoText,
                     textAlign: TextAlign.left,
-                    style: TextStyle(color: CoreColors.textPrimary, fontSize: 25.0),
+                    style: TextStyle(
+                        color: CoreColors.textPrimary, fontSize: 25.0),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(15.0),
+                  padding: EdgeInsets.all(5.0),
                   child: Text(
                     _modelTabuada.dica,
                     textAlign: TextAlign.left,
-                    style: TextStyle(color: CoreColors.textPrimary, fontSize: 25.0),
+                    style: TextStyle(
+                        color: CoreColors.textPrimary, fontSize: 25.0),
                   ),
                 ),
               ],
@@ -125,9 +124,7 @@ class _CalcTabuadaState extends State<CalcTabuada> {
           )
         ]),
       ),
-      bottomNavigationBar: Container(
-          color: CoreColors.textPrimary,
-          height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcTabuada, bannerAd: controller.bannerAd),      
     );
   }
 }

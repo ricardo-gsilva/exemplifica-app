@@ -1,66 +1,33 @@
-import 'package:exemplifica_git/screens/home_page.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
-void main() {
-WidgetsFlutterBinding.ensureInitialized();
+import 'package:exemplifica/screens/splash_screen.dart';
 
-runApp(ScreenExemplifica());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
+  PackageInfo? packageInfo;
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  packageInfo = await PackageInfo.fromPlatform();
+
+  runApp(ScreenExemplifica(version: packageInfo.version));
 }
 
 class ScreenExemplifica extends StatelessWidget {
+  String? version; 
+  ScreenExemplifica({
+    Key? key,
+    this.version,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),      
-    );
-  }
-}
-
-class SplashScreen extends StatefulWidget {
-  @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    splashScreen();
-    
-  }
-
-  void splashScreen() {
-    Future.delayed(Duration(seconds: 5), (){
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => HomePage()));
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            child: Image(image: AssetImage('images/splashapp.png'),
-            fit: BoxFit.cover),
-          ),
-          Container(
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width * .8,
-                child: Image(image: AssetImage('images/exemplo_3.png'),
-                  ),
-                )
-              ],
-            )          
-          ), 
-        ],            
+      home: SplashScreen(version: version),      
     );
   }
 }

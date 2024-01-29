@@ -6,7 +6,10 @@ class ModelFatorial {
   String resultFat = "";
   String resultFat1 = "";
 
+  bool visible = false;
+
   void resetCampos() {
+    visible = false;
     val1.text = "";
     resultFat = "";
     resultFat1 = "";
@@ -25,6 +28,7 @@ class ModelFatorial {
   }
 
   void fatorial() {
+    visible = true;
     int valFatorial = int.parse(val1.text);
     if (valFatorial == 0) {
       resultFat = "Obs: O valor fatorial de 0 será sempre o número 1.";

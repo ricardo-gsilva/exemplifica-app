@@ -1,9 +1,13 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/controller/model_equacao_1.dart';
-import 'package:exemplifica_git/screens/components/row_buttons.dart';
-import 'package:exemplifica_git/screens/home_page.dart';
+import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/controller/model_equacao_1.dart';
+import 'package:exemplifica/screens/components/row_buttons.dart';
+import 'package:exemplifica/screens/components/text_field_input.dart';
+import 'package:exemplifica/screens/home_page.dart';
+import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CalcEquacao1 extends StatefulWidget {
   @override
@@ -12,6 +16,7 @@ class CalcEquacao1 extends StatefulWidget {
 
 class _CalcEquacao1State extends State<CalcEquacao1> {
   final ModelEquacao1 modelCalc1 = ModelEquacao1();
+  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
 
@@ -22,7 +27,7 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titleEquacao1,
           style: TextStyle(color: CoreColors.textPrimary),
@@ -59,74 +64,38 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+                padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
                 child: Text(
                   CoreStrings.text1_CalcEquacao1,
                   style: TextStyle(fontSize: 18.0),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+                padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
                 child: Text(
                   CoreStrings.text2_CalcEquacao1,
                   style: TextStyle(
-                      fontSize: 25.0,
+                      fontSize: 23.0,
                       color: Colors.red,
                       fontWeight: FontWeight.bold),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 20),
+                padding: const EdgeInsets.only(top: 10, bottom: 5),
                 child: Text(
                   "Digite os valores de 'a' e 'b'",
                   style: TextStyle(fontSize: 18),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  SizedBox(
-                    child: Row(
-                      children: [
-                        Text("'a':"),
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * .18,
-                          child: TextField(
-                            keyboardType: TextInputType.number,
-                            decoration: InputDecoration(
-                                hintText: "a",
-                                labelText: "",
-                                labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                            textAlign: TextAlign.center,
-                            style:
-                                TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                            controller: modelCalc1.val1,
-                            maxLength: 4,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      Text("'b':"),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .18,
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              hintText: "b",
-                              labelText: "",
-                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                          controller: modelCalc1.val2,
-                          maxLength: 4,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
+              TextFieldInput(
+                title: "'a':",
+                hintText: "a",
+                controller: modelCalc1.val1
+              ),
+              TextFieldInput(
+                title: "'b':",
+                hintText: "b",
+                controller: modelCalc1.val2
               ),
               RowButtons(
                 titleFirst: CoreStrings.calc,
@@ -136,6 +105,12 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
                 width: width,
                 onTapFirst: (() {
                   setState(() {
+                    if (controller.calcEq1 < 6) {
+                      controller.calcEq1++;
+                    } else {
+                      controller.calcEq1 = 0.obs;
+                    }
+                    controller.checkValueForInterstitial(AdHelper.videoCalcEquacao1, controller.calcEq1);
                     modelCalc1.verificarCampo();
                   });
                 }),
@@ -147,7 +122,7 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
               ),              
               Padding(
                 padding:
-                    EdgeInsets.only(left: 10, right: 10, top: 25, bottom: 5),
+                    EdgeInsets.all(10),
                 child: Text(
                   modelCalc1.resultEq1_1,
                   textAlign: TextAlign.left,
@@ -158,9 +133,7 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-          color: CoreColors.textPrimary,
-          height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcEquacao1, bannerAd: controller.bannerAd),
     );
   }
 }

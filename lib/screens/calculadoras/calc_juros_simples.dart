@@ -1,9 +1,13 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/controller/model_juros_simples.dart';
-import 'package:exemplifica_git/screens/components/row_buttons.dart';
-import 'package:exemplifica_git/screens/home_page.dart';
+import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/controller/model_juros_simples.dart';
+import 'package:exemplifica/screens/components/row_buttons.dart';
+import 'package:exemplifica/screens/home_page.dart';
+import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/screens/components/text_field_input.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CalcJurosS extends StatefulWidget {
   @override
@@ -12,9 +16,9 @@ class CalcJurosS extends StatefulWidget {
 
 class _CalcJurosSState extends State<CalcJurosS> {
   final ModelJurosSimples modelJurosSimples = ModelJurosSimples();
+  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
-  bool visible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class _CalcJurosSState extends State<CalcJurosS> {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titleJurosSimples,
           style: TextStyle(color: CoreColors.textPrimary),
@@ -56,7 +60,7 @@ class _CalcJurosSState extends State<CalcJurosS> {
       body: SingleChildScrollView(
           child: Column(children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+          padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
           child: Text(
             "Digite os valores. Preencha ao menos 3 campos!",
             style: TextStyle(fontSize: 18.0),
@@ -64,133 +68,26 @@ class _CalcJurosSState extends State<CalcJurosS> {
         ),
         Column(
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 5, left: 5),
-                  child: Column(
-                    children: [
-                      Text(
-                        "Capital:",
-                        style: TextStyle(
-                            fontSize: 20.0,
-                            color: CoreColors.textPrimary,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .3,
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              hintText: "capital(R\$)",
-                              labelText: "",
-                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: CoreColors.textPrimary, fontSize: 23.0),
-                          controller: modelJurosSimples.c,
-                          maxLength: 9,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 5, left: 5),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        "Taxa:",
-                        style: TextStyle(
-                            fontSize: 20.0,
-                            color: CoreColors.textPrimary,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .3,
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              hintText: "% a.m",
-                              labelText: "",
-                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: CoreColors.textPrimary, fontSize: 23.0),
-                          controller: modelJurosSimples.i,
-                          maxLength: 4,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            TextFieldInput(
+              title: "Capital:",
+              hintText: "capital(R\$)",
+              controller: modelJurosSimples.c
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(right: 5, left: 5),
-                  child: Column(
-                    children: [
-                      Text(
-                        "Meses:",
-                        style: TextStyle(
-                            fontSize: 20.0,
-                            color: CoreColors.textPrimary,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .3,
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              hintText: "Tempo",
-                              labelText: "",
-                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: CoreColors.textPrimary, fontSize: 23.0),
-                          controller: modelJurosSimples.t,
-                          maxLength: 3,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 5, left: 5),
-                  child: Column(
-                    children: [
-                      Text(
-                        "Juros:",
-                        style: TextStyle(
-                            fontSize: 20.0,
-                            color: CoreColors.textPrimary,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width * .3,
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              hintText: "%",
-                              labelText: "",
-                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: CoreColors.textPrimary, fontSize: 23.0),
-                          controller: modelJurosSimples.j,
-                          maxLength: 9,
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              ],
+            TextFieldInput(
+              title: "Taxa:",
+              hintText: "% a.m",
+              controller: modelJurosSimples.i
             ),
+            TextFieldInput(
+              title: "Meses:",
+              hintText: "Tempo",
+              controller: modelJurosSimples.t
+            ),
+            TextFieldInput(
+              title: "Juros:",
+              hintText: "%",
+              controller: modelJurosSimples.j
+            ),            
             RowButtons(
               titleFirst: CoreStrings.calc,
               titleSecond: CoreStrings.clear,
@@ -199,37 +96,43 @@ class _CalcJurosSState extends State<CalcJurosS> {
               width: width,
               onTapFirst: (() {
                 setState(() {
+                  if (controller.calcJurosS < 6) {
+                    controller.calcJurosS++;
+                  } else {
+                    controller.calcJurosS = 0.obs;
+                  }
+                  controller.checkValueForInterstitial(
+                      AdHelper.videoCalcJurosS, controller.calcJurosS);
                   modelJurosSimples.verificarCampos();
-                  visible = !visible;
                 });
               }),
               onTapSecond: (() {
                 setState(() {
                   modelJurosSimples.resetCampos();
-                  visible = !visible;
                 });
               }),
             ),
             Visibility(
-              visible: visible,
+              visible: modelJurosSimples.visible,
               child: Padding(
                 padding:
-                    EdgeInsets.only(left: 10, right: 10, bottom: 3, top: 30),
+                    EdgeInsets.only(left: 10, right: 10, top: 15),
                 child: Text(
                   modelJurosSimples.resultjS,
                   textAlign: TextAlign.left,
-                  style: TextStyle(color: CoreColors.textPrimary, fontSize: 20.0),
+                  style:
+                      TextStyle(color: CoreColors.textPrimary, fontSize: 20.0),
                 ),
               ),
             ),
           ],
         ),
         Visibility(
-          visible: visible,
+          visible: modelJurosSimples.visible,
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 10, right: 10, top: 5),
+                padding: EdgeInsets.only(left: 10, right: 10),
                 child: Text(
                   modelJurosSimples.resultjS_1,
                   style: TextStyle(
@@ -239,22 +142,20 @@ class _CalcJurosSState extends State<CalcJurosS> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(
-                    left: 10, right: 10, bottom: 30, top: 15),
+                padding:
+                    EdgeInsets.all(10),
                 child: Text(
                   modelJurosSimples.resultjS_2,
                   textAlign: TextAlign.left,
-                  style: TextStyle(color: CoreColors.textPrimary, fontSize: 20.0),
+                  style:
+                      TextStyle(color: CoreColors.textPrimary, fontSize: 20.0),
                 ),
               ),
             ],
           ),
         )
-      ])
-              ),
-      bottomNavigationBar: Container(
-          color: CoreColors.textPrimary,
-          height: MediaQuery.of(context).size.height * 0.1),
+      ])),
+      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcJurosS, bannerAd: controller.bannerAd),      
     );
   }
 }

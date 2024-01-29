@@ -1,9 +1,13 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/controller/model_regra_de_3.dart';
-import 'package:exemplifica_git/screens/components/row_buttons.dart';
-import 'package:exemplifica_git/screens/home_page.dart';
+import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/controller/model_regra_de_3.dart';
+import 'package:exemplifica/screens/components/row_buttons.dart';
+import 'package:exemplifica/screens/home_page.dart';
+import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/screens/widgets/text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CalcRegraDe3 extends StatefulWidget {
   @override
@@ -12,9 +16,9 @@ class CalcRegraDe3 extends StatefulWidget {
 
 class _CalcRegraDe3State extends State<CalcRegraDe3> {
   final ModelRegraDe3 modelRegraDe3 = ModelRegraDe3();
+  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
-  bool visible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class _CalcRegraDe3State extends State<CalcRegraDe3> {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titleRegraDe3,
           style: TextStyle(color: CoreColors.textPrimary),
@@ -57,7 +61,7 @@ class _CalcRegraDe3State extends State<CalcRegraDe3> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+              padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
               child: Text(
                 "Digite os valores nos campos abaixo, para encontrar a proporcionalidade entre eles.",
                 style: TextStyle(fontSize: 18.0),
@@ -87,38 +91,20 @@ class _CalcRegraDe3State extends State<CalcRegraDe3> {
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.only(right: 15, left: 15),
-                  child: SizedBox(
+                  child: TextFieldCustom(
+                    controller: modelRegraDe3.val1,
                     width: width * 0.8,
                     height: height * 1.3,
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          hintText: "Valor 1",
-                          labelText: "",
-                          labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                      controller: modelRegraDe3.val1,
-                      maxLength: 10,
-                    ),
+                    hintText: "Valor 1",
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(right: 15),
-                  child: SizedBox(
+                  padding: EdgeInsets.only(right: 15, left: 15),
+                  child: TextFieldCustom(
+                    controller: modelRegraDe3.val3,
                     width: width * 0.8,
                     height: height * 1.3,
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          hintText: "Valor 3",
-                          labelText: "",
-                          labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                      controller: modelRegraDe3.val3,
-                      maxLength: 10,
-                    ),
+                    hintText: "Valor 3",
                   ),
                 ),
               ],
@@ -128,20 +114,11 @@ class _CalcRegraDe3State extends State<CalcRegraDe3> {
               children: <Widget>[
                 Padding(
                   padding: EdgeInsets.only(right: 15, left: 15),
-                  child: SizedBox(
+                  child: TextFieldCustom(
+                    controller: modelRegraDe3.val2,
                     width: width * 0.8,
                     height: height * 1.3,
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          hintText: "Valor 2",
-                          labelText: "",
-                          labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                      controller: modelRegraDe3.val2,
-                      maxLength: 10,
-                    ),
+                    hintText: "Valor 2",
                   ),
                 ),
                 Padding(
@@ -162,31 +139,37 @@ class _CalcRegraDe3State extends State<CalcRegraDe3> {
               width: width,
               onTapFirst: (() {
                 setState(() {
+                  if (controller.calcRegra3 < 6) {
+                    controller.calcRegra3++;
+                  } else {
+                    controller.calcRegra3 = 0.obs;
+                  }
+                  controller.checkValueForInterstitial(
+                      AdHelper.videoCalcRegrade3, controller.calcRegra3);
                   modelRegraDe3.verificarCampos();
-                  visible = !visible;
                 });
               }),
               onTapSecond: (() {
                 setState(() {
                   modelRegraDe3.resetCampos();
-                  visible = !visible;
                 });
               }),
             ),
-            Padding(
-              padding: EdgeInsets.all(15.0),
-              child: Text(
-                modelRegraDe3.resultRegra3,
-                textAlign: TextAlign.left,
-                style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
+            Visibility(
+              visible:  modelRegraDe3.visible,
+              child: Padding(
+                padding: EdgeInsets.all(5.0),
+                child: Text(
+                  modelRegraDe3.resultRegra3,
+                  textAlign: TextAlign.left,
+                  style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
+                ),
               ),
             ),
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-          color: CoreColors.textPrimary,
-          height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcRegrade3, bannerAd: controller.bannerAd),      
     );
   }
 }

@@ -1,9 +1,13 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/controller/model_mmc.dart';
-import 'package:exemplifica_git/screens/components/row_buttons.dart';
-import 'package:exemplifica_git/screens/home_page.dart';
+import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/controller/model_mmc.dart';
+import 'package:exemplifica/screens/components/row_buttons.dart';
+import 'package:exemplifica/screens/components/text_field_input.dart';
+import 'package:exemplifica/screens/home_page.dart';
+import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CalcMmc extends StatefulWidget {
   @override
@@ -12,9 +16,9 @@ class CalcMmc extends StatefulWidget {
 
 class _CalcMmcState extends State<CalcMmc> {
   final ModelMmc modelMmc = ModelMmc();
+  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
-  bool visible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class _CalcMmcState extends State<CalcMmc> {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titleMmc,
           style: TextStyle(color: CoreColors.textPrimary),
@@ -60,90 +64,73 @@ class _CalcMmcState extends State<CalcMmc> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+                padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
                 child: Text(
                   "Digite 2 números para efetuar o cálculo do MMC!",
                   style: TextStyle(fontSize: 18.0),
                 ),
               ),
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.only(right: 15, left: 15),
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width * .27,
-                      child: TextField(
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                            hintText: "Valor 1",
-                            labelText: "",
-                            labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                        controller: modelMmc.val1,
-                        maxLength: 5,
-                      ),
-                    ),
+                  TextFieldInput(
+                    title: "Valor 1:",
+                    hintText: "",
+                    controller: modelMmc.val1,
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(right: 15),
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width * .27,
-                      child: TextField(
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                            hintText: "Valor 2",
-                            labelText: "",
-                            labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                        controller: modelMmc.val2,
-                        maxLength: 5,
-                      ),
-                    ),
-                  ),
+                  TextFieldInput(
+                    title: "Valor 2:",
+                    hintText: "",
+                    controller: modelMmc.val2,
+                  ),                  
                 ],
               ),
               RowButtons(
                 titleFirst: CoreStrings.calc,
                 titleSecond: CoreStrings.clear,
-                paddingTop: 10,
+                paddingTop: 5,
                 height: height,
                 width: width,
                 onTapFirst: (() {
                   setState(() {
+                    if (controller.calcMmc < 6) {
+                      controller.calcMmc++;
+                    } else {
+                      controller.calcMmc = 0.obs;
+                    }
+                    controller.checkValueForInterstitial(
+                        AdHelper.videoCalcMmc, controller.calcMmc);
                     modelMmc.verificarCampos();
-                    visible = !visible;
                   });
                 }),
                 onTapSecond: (() {
                   setState(() {
                     modelMmc.resetCampos();
-                    visible = !visible;
                   });
                 }),
               ),
               Visibility(
-                visible: visible,
+                visible: modelMmc.visible,
                 child: Column(
                   children: [
                     Padding(
-                  padding: EdgeInsets.only(left: 10, right: 10, top: 15),
-                  child: Text(
-                    modelMmc.resultMmc,
-                    textAlign: TextAlign.left,
-                    style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                  child: Text(
-                    modelMmc.resultMmc1,
-                    textAlign: TextAlign.left,
-                    style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
-                  ),
-                ),
+                      padding: EdgeInsets.only(left: 10, right: 10, top: 5),
+                      child: Text(
+                        modelMmc.resultMmc,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            color: CoreColors.textPrimary, fontSize: 21.0),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                      child: Text(
+                        modelMmc.resultMmc1,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            color: CoreColors.textPrimary, fontSize: 21.0),
+                      ),
+                    ),
                   ],
                 ),
               )
@@ -151,9 +138,7 @@ class _CalcMmcState extends State<CalcMmc> {
           ),
         ),
       ),
-      bottomNavigationBar: Container(
-          color: CoreColors.textPrimary,
-          height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcMmc, bannerAd: controller.bannerAd),      
     );
   }
 }

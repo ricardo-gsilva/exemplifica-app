@@ -15,7 +15,10 @@ class ModelJurosSimples {
   String t1 = "";
   String j1 = "";
 
+  bool visible = false;
+
   void resetCampos() {
+    visible = false;
     c.text = "";
     i.text = "";
     t.text = "";
@@ -60,6 +63,7 @@ class ModelJurosSimples {
   }
 
   void jurosSimples() {
+    visible = true;
     c1 = c.text;
     i1 = i.text;
     t1 = t.text;

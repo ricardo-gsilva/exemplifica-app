@@ -1,12 +1,15 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/screens/widgets/button_custom.dart';
-import 'package:exemplifica_git/screens/expoentes.dart';
-import 'package:exemplifica_git/screens/mult_div.dart';
-import 'package:exemplifica_git/screens/parentesis.dart';
-import 'package:exemplifica_git/screens/regra_sinal.dart';
-import 'package:exemplifica_git/screens/soma_sub.dart';
+import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/screens/widgets/button_custom.dart';
+import 'package:exemplifica/screens/expoentes.dart';
+import 'package:exemplifica/screens/mult_div.dart';
+import 'package:exemplifica/screens/parentesis.dart';
+import 'package:exemplifica/screens/regra_sinal.dart';
+import 'package:exemplifica/screens/soma_sub.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RegrasBasicas extends StatefulWidget {
   @override
@@ -14,8 +17,19 @@ class RegrasBasicas extends StatefulWidget {
 }
 
 class _RegrasBasicasState extends State<RegrasBasicas> {
+  final controller = Get.put(AdHelper());
   double height = 0.0;
   double width = 0.0;
+
+  @override
+  void initState() {
+    controller.loadingBannerParentesis(AdHelper.bannerParentesis);
+    controller.loadingBannerExpoentes(AdHelper.bannerExpoentes);                  
+    controller.loadingBannerMultDiv(AdHelper.bannerMultDiv);                  
+    controller.loadingBannerSomaSub(AdHelper.bannerSomaSub);                  
+    controller.loadingBannerRegrasSinais(AdHelper.bannerRegrasSinais);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +38,7 @@ class _RegrasBasicasState extends State<RegrasBasicas> {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titleRegrasBasicas,
           style: TextStyle(color: CoreColors.textPrimary),
@@ -54,9 +68,7 @@ class _RegrasBasicasState extends State<RegrasBasicas> {
                   width: width,
                   title: "1º Parêntesis",
                   onTap: () {
-                    Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => Parentesis())
-                    );
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => Parentesis()));
                   },
                 ),
               ),
@@ -65,9 +77,7 @@ class _RegrasBasicasState extends State<RegrasBasicas> {
                 width: width,
                 title: "2º Expoentes",
                 onTap: () {
-                  Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => Expoentes())
-                  );
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => Expoentes()));
                 },
               ),
               ButtonBase(
@@ -75,9 +85,7 @@ class _RegrasBasicasState extends State<RegrasBasicas> {
                 width: width,
                 title: "3º Multiplicações e Divisões",
                 onTap: () {
-                  Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => MultiplicaDiv())
-                  );
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => MultiplicaDiv()));
                 },
               ),
               ButtonBase(
@@ -85,9 +93,7 @@ class _RegrasBasicasState extends State<RegrasBasicas> {
                 width: width,
                 title: "4º Somas e Subtrações",
                 onTap: () {
-                  Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => SomaSubtracao())
-                  );
+                 Navigator.push(context, MaterialPageRoute(builder: (_) => SomaSubtracao()));
                 },
               ),
               ButtonBase(
@@ -95,16 +101,14 @@ class _RegrasBasicasState extends State<RegrasBasicas> {
                 width: width,
                 title: "Regras de Sinais",
                 onTap: () {
-                  Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => RegrasSinais())
-                  );
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => RegrasSinais()));
                 },
               ),            
             ],
           ),
         ),
       ),
-      bottomNavigationBar: SizedBox(height: MediaQuery.of(context).size.height * 0.1),
-    );
+      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdRegrasBasicas, bannerAd: controller.bannerAd),
+      );
   }
 }

@@ -1,9 +1,13 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/controller/model_mdc.dart';
-import 'package:exemplifica_git/screens/components/row_buttons.dart';
-import 'package:exemplifica_git/screens/home_page.dart';
+import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/controller/model_mdc.dart';
+import 'package:exemplifica/screens/components/row_buttons.dart';
+import 'package:exemplifica/screens/home_page.dart';
+import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/screens/components/text_field_input.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CalcMdc extends StatefulWidget {
   @override
@@ -12,9 +16,9 @@ class CalcMdc extends StatefulWidget {
 
 class _CalcMdcState extends State<CalcMdc> {
   final ModelMdc modelMdc = ModelMdc();
+  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
-  bool visible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class _CalcMdcState extends State<CalcMdc> {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titleMdc,
           style: TextStyle(color: CoreColors.textPrimary),
@@ -63,45 +67,16 @@ class _CalcMdcState extends State<CalcMdc> {
                 style: TextStyle(fontSize: 20.0),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(right: 15, left: 15),
-                  child: SizedBox(
-                    width: width * 0.8,
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          hintText: "Valor 1",
-                          labelText: "",
-                          labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                      controller: modelMdc.val1,
-                      maxLength: 5,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(right: 15),
-                  child: SizedBox(
-                    width: width * 0.8,
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          hintText: "Valor 2",
-                          labelText: "",
-                          labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                      controller: modelMdc.val2,
-                      maxLength: 5,
-                    ),
-                  ),
-                ),
-              ],
+            TextFieldInput(
+              title: "Valor 1",
+              hintText: "",
+              controller: modelMdc.val1
             ),
+            TextFieldInput(
+              title: "Valor 2",
+              hintText: "",
+              controller: modelMdc.val2
+            ),            
             RowButtons(
               titleFirst: CoreStrings.calc,
               titleSecond: CoreStrings.clear,
@@ -110,45 +85,51 @@ class _CalcMdcState extends State<CalcMdc> {
               width: width,
               onTapFirst: (() {
                 setState(() {
+                  if (controller.calcMdc < 6) {
+                    controller.calcMdc++;
+                  } else {
+                    controller.calcMdc = 0.obs;
+                  }
+                  controller.checkValueForInterstitial(
+                      AdHelper.videoCalcMdc, controller.calcMdc);
                   modelMdc.verificarCampos();
-                  visible = !visible;
                 });
               }),
               onTapSecond: (() {
                 setState(() {
                   modelMdc.resetCampos();
-                  visible = !visible;
                 });
               }),
             ),
             Visibility(
-              visible: visible,
+              visible: modelMdc.visible,
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.all(15.0),
+                    padding: EdgeInsets.all(10.0),
                     child: Text(
                       modelMdc.resultMdc,
                       textAlign: TextAlign.left,
-                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
+                      style: TextStyle(
+                          color: CoreColors.textPrimary, fontSize: 21.0),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(
-                        left: 10, right: 10, top: 5, bottom: 10),
+                    padding: EdgeInsets.only(left: 10, right: 10),
                     child: Text(
                       modelMdc.resultMdc1,
                       textAlign: TextAlign.left,
-                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
+                      style: TextStyle(
+                          color: CoreColors.textPrimary, fontSize: 21.0),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(
-                        left: 10, right: 10, top: 5, bottom: 25),
+                    padding: EdgeInsets.only(left: 10, right: 10),
                     child: Text(
                       modelMdc.resultMdc2,
                       textAlign: TextAlign.left,
-                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
+                      style: TextStyle(
+                          color: CoreColors.textPrimary, fontSize: 21.0),
                     ),
                   ),
                 ],
@@ -157,9 +138,7 @@ class _CalcMdcState extends State<CalcMdc> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-          color: CoreColors.textPrimary,
-          height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcMdc, bannerAd: controller.bannerAd),      
     );
   }
 }

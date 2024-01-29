@@ -1,4 +1,5 @@
 class CoreStrings {
+
   //Títulos
   static const String titleEquacao1 = 'Equação de 1º Grau';
   static const String titleEquacao2 = 'Equação de 2º Grau';

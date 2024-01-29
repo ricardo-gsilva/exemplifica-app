@@ -8,7 +8,10 @@ class ModelMdc {
   String resultMdc1 = "";
   String resultMdc2 = "";
 
+  bool visible = false;
+
   void resetCampos() {
+    visible = false;
     val1.text = "";
     val2.text = "";
     resultMdc = "";
@@ -30,6 +33,7 @@ class ModelMdc {
   }
 
   void mdc() {
+    visible = true;
     double valormdc1 = double.parse(val1.text);
     double valormdc2 = double.parse(val2.text);
     int div = 2;

@@ -1,23 +1,26 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/person_icons.dart';
-import 'package:exemplifica_git/screens/calculadoras/calc_equacao_1.dart';
-import 'package:flutter/material.dart';
+// ignore_for_file: camel_case_types
 
-// ignore: camel_case_types
+import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/person_icons.dart';
+import 'package:exemplifica/screens/calculadoras/calc_equacao_1.dart';
+import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 class Equacao_1 extends StatefulWidget {
   @override
   _Equacao_1State createState() => _Equacao_1State();
 }
-
-// ignore: camel_case_types
 class _Equacao_1State extends State<Equacao_1> {
+  final controller = Get.put(AdHelper());
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titleEquacao1,
           style: TextStyle(color: CoreColors.textPrimary),
@@ -133,7 +136,9 @@ class _Equacao_1State extends State<Equacao_1> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(color: CoreColors.textPrimary, height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: BottomBarBanner(
+        banner: controller.bannerAdEquacao1,
+        bannerAd: controller.bannerAd),
     );
   }
 }

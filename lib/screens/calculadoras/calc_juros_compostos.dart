@@ -1,9 +1,13 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/controller/model_juros_compostos.dart';
-import 'package:exemplifica_git/screens/components/row_buttons.dart';
-import 'package:exemplifica_git/screens/home_page.dart';
+import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/controller/model_juros_compostos.dart';
+import 'package:exemplifica/screens/components/row_buttons.dart';
+import 'package:exemplifica/screens/home_page.dart';
+import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/screens/components/text_field_input.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CalcJurosC extends StatefulWidget {
   @override
@@ -11,11 +15,10 @@ class CalcJurosC extends StatefulWidget {
 }
 
 class _CalcJurosCState extends State<CalcJurosC> {
+  final ModelJurosCompostos modelJurosCompostos = ModelJurosCompostos();
+  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
-  bool visible = false;
-
-  final ModelJurosCompostos modelJurosCompostos = ModelJurosCompostos();
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class _CalcJurosCState extends State<CalcJurosC> {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titleJurosCompostos,
           style: TextStyle(color: CoreColors.textPrimary),
@@ -60,7 +63,7 @@ class _CalcJurosCState extends State<CalcJurosC> {
           child: SingleChildScrollView(
               child: Column(children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+              padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
               child: Text(
                 "Digite os valores de Capital, taxa mensal de juros e tempo em meses.",
                 style: TextStyle(fontSize: 18.0),
@@ -89,104 +92,21 @@ class _CalcJurosCState extends State<CalcJurosC> {
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(right: 5, left: 5, top: 5),
-                      child: Text(
-                        "Capital:",
-                        style: TextStyle(
-                            fontSize: 20.0,
-                            color: CoreColors.textPrimary,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 5, left: 5),
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width * .25,
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              hintText: "capital(R\$)",
-                              labelText: "",
-                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                          controller: modelJurosCompostos.c,
-                          maxLength: 9,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(right: 5, left: 5, top: 5),
-                      child: Text(
-                        "Taxa:",
-                        style: TextStyle(
-                            fontSize: 20.0,
-                            color: CoreColors.textPrimary,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 5, left: 5),
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width * .25,
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              hintText: "% a.m",
-                              labelText: "",
-                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                          controller: modelJurosCompostos.i,
-                          maxLength: 4,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(right: 5, left: 5, top: 5),
-                      child: Text(
-                        "Meses:",
-                        style: TextStyle(
-                            fontSize: 20.0,
-                            color: CoreColors.textPrimary,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(right: 5, left: 5),
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width * .25,
-                        child: TextField(
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
-                              hintText: "Tempo",
-                              labelText: "",
-                              labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                          controller: modelJurosCompostos.t,
-                          maxLength: 3,
-                        ),
-                      ),
-                    ),
-                  ],
-                )
-              ],
+            TextFieldInput(
+              title: "Capital:",
+              hintText: "capital(R\$)",
+              controller: modelJurosCompostos.c
             ),
+            TextFieldInput(
+              title: "Taxa",
+              hintText: "% a.m",
+              controller: modelJurosCompostos.i
+            ),
+            TextFieldInput(
+              title: "Meses",
+              hintText: "Tempo",
+              controller: modelJurosCompostos.t
+            ),            
             RowButtons(
               titleFirst: CoreStrings.calc,
               titleSecond: CoreStrings.clear,
@@ -195,34 +115,38 @@ class _CalcJurosCState extends State<CalcJurosC> {
               width: width,
               onTapFirst: (() {
                 setState(() {
+                  if (controller.calcJurosC < 6) {
+                    controller.calcJurosC++;
+                  } else {
+                    controller.calcJurosC = 0.obs;
+                  }
+                  controller.checkValueForInterstitial(AdHelper.videoCalcJurosC, controller.calcJurosC);
                   modelJurosCompostos.verificarCampos();
-                  visible = !visible;
                 });
               }),
               onTapSecond: (() {
                 setState(() {
                   modelJurosCompostos.resetCampos();
-                  visible = !visible;
                 });
               }),
             ),
             Visibility(
-              visible: visible,
+              visible: modelJurosCompostos.visible,
               child: Padding(
                 padding: EdgeInsets.only(right: 5, left: 5),
                 child: Column(
                   children: <Widget>[
                     Padding(
-                      padding: EdgeInsets.only(
-                          left: 10, right: 10, bottom: 3, top: 30),
+                      padding: EdgeInsets.only(left: 10, right: 10, top: 15),
                       child: Text(
                         modelJurosCompostos.resultjC,
                         textAlign: TextAlign.left,
-                        style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
+                        style: TextStyle(
+                            color: CoreColors.textPrimary, fontSize: 21.0),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 10, right: 10, top: 5),
+                      padding: EdgeInsets.only(left: 10, right: 10),
                       child: Text(
                         modelJurosCompostos.resultjC_1,
                         style: TextStyle(
@@ -236,9 +160,7 @@ class _CalcJurosCState extends State<CalcJurosC> {
               ),
             ),
           ]))),
-      bottomNavigationBar: Container(
-          color: CoreColors.textPrimary,
-          height: MediaQuery.of(context).size.height * 0.1),
+          bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcJurosC, bannerAd: controller.bannerAd),      
     );
   }
 }

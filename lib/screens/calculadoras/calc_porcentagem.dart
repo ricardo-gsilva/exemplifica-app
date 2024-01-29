@@ -1,9 +1,13 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/controller/model_porcentagem.dart';
-import 'package:exemplifica_git/screens/components/row_buttons.dart';
-import 'package:exemplifica_git/screens/home_page.dart';
+import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/controller/model_porcentagem.dart';
+import 'package:exemplifica/screens/components/row_buttons.dart';
+import 'package:exemplifica/screens/home_page.dart';
+import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/screens/widgets/text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CalcPorcentagem extends StatefulWidget {
   @override
@@ -12,9 +16,9 @@ class CalcPorcentagem extends StatefulWidget {
 
 class _CalcPorcentagemState extends State<CalcPorcentagem> {
   final ModelPorcentagem modelPorcentagem = ModelPorcentagem();
+  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
-  bool visible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +27,7 @@ class _CalcPorcentagemState extends State<CalcPorcentagem> {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titlePorcentagem,
           style: TextStyle(color: CoreColors.textPrimary),
@@ -57,54 +61,42 @@ class _CalcPorcentagemState extends State<CalcPorcentagem> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+              padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
               child: Text(
                 "Digite os valores nos campos abaixo para calcular a porcentagem.",
                 style: TextStyle(fontSize: 18.0),
               ),
-            ),              
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(left: 10, top: 20, right: 10),
-                  child: Text(
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 25, top: 10, right: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Text(
                     "Atributo 1",
                     style: TextStyle(fontSize: 20.0),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 10, top: 20, right: 10),
-                  child: Text(
+                  Text(
                     "Atributo 2",
                     style: TextStyle(fontSize: 20.0),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.only(right: 50),
-                  child: SizedBox(
+                  padding: EdgeInsets.only(right: 50, top: 5),
+                  child: TextFieldCustom(
+                    hintText: "Valor 1",
+                    controller: modelPorcentagem.val1,
                     width: width * 0.7,
                     height: height * 1.25,
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          hintText: "Valor 1",
-                          labelText: "",
-                          labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                      controller: modelPorcentagem.val1,
-                      maxLength: 10,
-                    ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 20, right: 30),
+                  padding: EdgeInsets.only(top: 15, right: 30),
                   child: Text(
                     "100",
                     style: TextStyle(fontSize: 23.0),
@@ -116,25 +108,16 @@ class _CalcPorcentagemState extends State<CalcPorcentagem> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Padding(
-                  padding: EdgeInsets.only(right: 70),
-                  child: SizedBox(
+                  padding: EdgeInsets.only(right: 70, top: 5),
+                  child: TextFieldCustom(
+                    hintText: "Valor 2",
+                    controller: modelPorcentagem.val2,
                     width: width * 0.7,
                     height: height * 1.25,
-                    child: TextField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          hintText: "Valor 2",
-                          labelText: "",
-                          labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                      controller: modelPorcentagem.val2,
-                      maxLength: 10,
-                    ),
                   ),
-                ),
+                ),                
                 Padding(
-                  padding: EdgeInsets.only(top: 20, right: 30),
+                  padding: EdgeInsets.only(top: 15, right: 30),
                   child: Text(
                     "X",
                     style: TextStyle(fontSize: 23.0),
@@ -150,34 +133,40 @@ class _CalcPorcentagemState extends State<CalcPorcentagem> {
               width: width,
               onTapFirst: (() {
                 setState(() {
+                  if (controller.calcPorcent < 6) {
+                    controller.calcPorcent++;
+                  } else {
+                    controller.calcPorcent = 0.obs;
+                  }
+                  controller.checkValueForInterstitial(
+                      AdHelper.videoCalcPorcentagem, controller.calcPorcent);
                   modelPorcentagem.verificarCampos();
-                  visible = !visible;
                 });
               }),
               onTapSecond: (() {
                 setState(() {
                   modelPorcentagem.resetCampos();
-                  visible = !visible;
                 });
               }),
             ),
             Visibility(
-              visible: visible,
+              visible: modelPorcentagem.visible,
               child: Padding(
-                padding: EdgeInsets.all(15.0),
+                padding: EdgeInsets.all(5.0),
                 child: Text(
                   modelPorcentagem.resultPorcent,
                   textAlign: TextAlign.left,
-                  style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
+                  style:
+                      TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
                 ),
               ),
             ),
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-          color: CoreColors.textPrimary,
-          height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: BottomBarBanner(
+        banner: controller.bannerAdCalcPorcentagem,
+        bannerAd: controller.bannerAd),      
     );
   }
 }

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class ModelEquacao1 {
-  // final AdMob adMob = AdMob();
-
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
 

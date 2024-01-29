@@ -1,8 +1,8 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/controller/model_funcoes.dart';
-import 'package:exemplifica_git/screens/home_page.dart';
-import 'package:exemplifica_git/screens/widgets/button_custom.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/controller/model_funcoes.dart';
+import 'package:exemplifica/screens/home_page.dart';
+import 'package:exemplifica/screens/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
 class CalcFuncoes extends StatefulWidget {
@@ -22,7 +22,7 @@ class _CalcFuncoesState extends State<CalcFuncoes> {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titleFuncoes,
           style: TextStyle(color: CoreColors.textPrimary),

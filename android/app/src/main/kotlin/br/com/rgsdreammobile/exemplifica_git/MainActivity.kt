@@ -1,4 +1,4 @@
-package br.com.rgsdreammobile.exemplifica_git
+package br.com.rgsdreammobile.exemplifica
 
 import io.flutter.embedding.android.FlutterActivity
 

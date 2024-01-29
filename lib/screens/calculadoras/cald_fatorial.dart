@@ -1,9 +1,13 @@
-import 'package:exemplifica_git/constants/core_colors.dart';
-import 'package:exemplifica_git/constants/core_strings.dart';
-import 'package:exemplifica_git/controller/model_fatorial.dart';
-import 'package:exemplifica_git/screens/components/row_buttons.dart';
-import 'package:exemplifica_git/screens/home_page.dart';
+import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/controller/model_fatorial.dart';
+import 'package:exemplifica/screens/components/row_buttons.dart';
+import 'package:exemplifica/screens/components/text_field_input.dart';
+import 'package:exemplifica/screens/home_page.dart';
+import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CalcFatorial extends StatefulWidget {
   @override
@@ -12,6 +16,7 @@ class CalcFatorial extends StatefulWidget {
 
 class _CalcFatorialState extends State<CalcFatorial> {
   final ModelFatorial modelFatorial = ModelFatorial();
+  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
 
@@ -22,7 +27,7 @@ class _CalcFatorialState extends State<CalcFatorial> {
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: CoreColors.appBarColor,
         title: Text(
           CoreStrings.titleFatorial,
           style: TextStyle(color: CoreColors.textPrimary),
@@ -59,42 +64,16 @@ class _CalcFatorialState extends State<CalcFatorial> {
           child: Column(
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+                padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
                 child: Text(
-                  "Digite um número para ver o cálculo do fatorial.",
+                  "Digite um número para ver o cálculo do fatorial.\n\nObs: O valor máximo da calculadora é 15.",
                   style: TextStyle(fontSize: 18.0),
                 ),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: 10, right: 10, top: 5, bottom: 10),
-                    child: Text(
-                      "Digite o valor:",
-                      textAlign: TextAlign.left,
-                      style: TextStyle(color: CoreColors.textPrimary, fontSize: 18.0),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(right: 15, left: 15),
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width * .27,
-                      child: TextField(
-                        keyboardType: TextInputType.number,
-                        decoration: InputDecoration(
-                            hintText: "valor",
-                            labelText: "",
-                            labelStyle: TextStyle(color: CoreColors.textPrimary)),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
-                        controller: modelFatorial.val1,
-                        maxLength: 2,
-                      ),
-                    ),
-                  ),
-                ],
+              TextFieldInput(
+                title: "Digite o valor:",
+                hintText: "valor",
+                controller: modelFatorial.val1,
               ),
               RowButtons(
                 titleFirst: CoreStrings.calc,
@@ -104,6 +83,13 @@ class _CalcFatorialState extends State<CalcFatorial> {
                 width: width,
                 onTapFirst: (() {
                   setState(() {
+                    if (controller.calcFat < 6) {
+                      controller.calcFat++;
+                    } else {
+                      controller.calcFat = 0.obs;
+                    }
+                    controller.checkValueForInterstitial(
+                        AdHelper.videoCalcFatorial, controller.calcFat);
                     modelFatorial.verificarCampos();
                   });
                 }),
@@ -112,29 +98,39 @@ class _CalcFatorialState extends State<CalcFatorial> {
                     modelFatorial.resetCampos();
                   });
                 }),
-              ),                
-              Padding(
-                padding: EdgeInsets.only(left: 10, right: 10, top: 5),
-                child: Text(
-                  modelFatorial.resultFat,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
-                ),
               ),
-              Padding(
-                padding:
-                    EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                child: Text(
-                  modelFatorial.resultFat1,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
+              Visibility(
+                visible: modelFatorial.visible,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10),
+                      child: Text(
+                        modelFatorial.resultFat,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            color: CoreColors.textPrimary, fontSize: 21.0),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10),
+                      child: Text(
+                        modelFatorial.resultFat1,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            color: CoreColors.textPrimary, fontSize: 21.0),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
+              )
             ],
           ),
         ),
       ),
-      bottomNavigationBar: Container(color: CoreColors.textPrimary, height: MediaQuery.of(context).size.height * 0.1),
+      bottomNavigationBar: BottomBarBanner(
+          banner: controller.bannerAdCalcFatorial,
+          bannerAd: controller.bannerAd),
     );
   }
 }
