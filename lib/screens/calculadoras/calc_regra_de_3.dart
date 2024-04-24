@@ -1,11 +1,11 @@
 import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/screens/components/text_field_input.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/controller/model_regra_de_3.dart';
 import 'package:exemplifica/screens/components/row_buttons.dart';
 import 'package:exemplifica/screens/home_page.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
-import 'package:exemplifica/screens/widgets/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -67,93 +67,92 @@ class _CalcRegraDe3State extends State<CalcRegraDe3> {
                 style: TextStyle(fontSize: 18.0),
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(left: 10, top: 10, right: 10),
-                  child: Text(
-                    "Atributo 1",
-                    style: TextStyle(fontSize: 23.0),
+            Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: CoreColors.appBarColor,
+                borderRadius: BorderRadius.circular(15)
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            "Atributo 1",
+                            style: TextStyle(fontSize: 23.0),
+                          ),
+                          TextFieldInput(
+                            controller: modelRegraDe3.val1,
+                            hintText: "",
+                            title: "",
+                          ),
+                          TextFieldInput(
+                            controller: modelRegraDe3.val2,
+                            hintText: "",
+                            title: "",
+                          ),                      
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Text(
+                              "Atributo 2",
+                              style: TextStyle(fontSize: 23.0),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 30),
+                            child: TextFieldInput(
+                              controller: modelRegraDe3.val3,
+                              hintText: "",
+                              title: "",
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 28),
+                            child: Text(
+                              "X",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 23.0),
+                            ),
+                          ),
+                        ],
+                      ),                                        
+                    ],
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 10, top: 10, right: 10),
-                  child: Text(
-                    "Atributo 2",
-                    style: TextStyle(fontSize: 23.0),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(right: 15, left: 15),
-                  child: TextFieldCustom(
-                    controller: modelRegraDe3.val1,
-                    width: width * 0.8,
-                    height: height * 1.3,
-                    hintText: "Valor 1",
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(right: 15, left: 15),
-                  child: TextFieldCustom(
-                    controller: modelRegraDe3.val3,
-                    width: width * 0.8,
-                    height: height * 1.3,
-                    hintText: "Valor 3",
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(right: 15, left: 15),
-                  child: TextFieldCustom(
-                    controller: modelRegraDe3.val2,
-                    width: width * 0.8,
-                    height: height * 1.3,
-                    hintText: "Valor 2",
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 20, right: 60, left: 45),
-                  child: Text(
-                    "X",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 23.0),
-                  ),
-                ),
-              ],
-            ),
-            RowButtons(
-              titleFirst: CoreStrings.calc,
-              titleSecond: CoreStrings.clear,
-              paddingTop: 10,
-              height: height,
-              width: width,
-              onTapFirst: (() {
-                setState(() {
-                  if (controller.calcRegra3 < 6) {
-                    controller.calcRegra3++;
-                  } else {
-                    controller.calcRegra3 = 0.obs;
-                  }
-                  controller.checkValueForInterstitial(
-                      AdHelper.videoCalcRegrade3, controller.calcRegra3);
-                  modelRegraDe3.verificarCampos();
-                });
-              }),
-              onTapSecond: (() {
-                setState(() {
-                  modelRegraDe3.resetCampos();
-                });
-              }),
+                  RowButtons(
+                        titleFirst: CoreStrings.calc,
+                        titleSecond: CoreStrings.clear,
+                        paddingTop: 10,
+                        height: height,
+                        width: width,
+                        onTapFirst: (() {
+                          setState(() {
+                            if (controller.calcRegra3 < 6) {
+                              controller.calcRegra3++;
+                            } else {
+                              controller.calcRegra3 = 0.obs;
+                            }
+                            controller.checkValueForInterstitial(
+                                AdHelper.videoCalcRegrade3, controller.calcRegra3);
+                            modelRegraDe3.verificarCampos();
+                          });
+                        }),
+                        onTapSecond: (() {
+                          setState(() {
+                            modelRegraDe3.resetCampos();
+                          });
+                        }),
+                      ),
+                ],
+              ),
             ),
             Visibility(
               visible:  modelRegraDe3.visible,

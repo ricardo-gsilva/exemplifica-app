@@ -1,3 +1,4 @@
+import 'package:exemplifica/main.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:get/get.dart';
 
@@ -138,13 +139,15 @@ class AdHelper extends GetxController{
   }
 
   bool checkValueForInterstitial(String videoAdId, RxInt count){
-    loadInterstitialAd(videoAdId);
-    if (count == 5.obs) {      
-      loading = true;
-      interstitialAd?.show();
-    } else {
-      loading = false;
-    }
+    if (releaseMode) {
+      loadInterstitialAd(videoAdId);
+      if (count == 5.obs) {      
+        loading = true;
+        interstitialAd?.show();
+      } else {
+        loading = false;
+      }
+    } 
     return loading;  
   }  
   

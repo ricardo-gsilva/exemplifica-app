@@ -27,7 +27,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void splashScreen() {
     controller.loadingBannerHome(AdHelper.bannerHome);
     Future.delayed(Duration(seconds: 5), (){
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (_) => HomePage()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (_) => HomePage()));
     });
   }
   @override

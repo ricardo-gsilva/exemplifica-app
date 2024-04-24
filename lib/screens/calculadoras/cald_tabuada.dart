@@ -68,34 +68,46 @@ class _CalcTabuadaState extends State<CalcTabuada> {
               style: TextStyle(fontSize: 20.0),
             ),
           ),
-          TextFieldInput(
-            title: "Valor:",
-            hintText: "Digite aqui",
-            controller: _modelTabuada.nTabuada
-          ),          
-          RowButtons(
-            titleFirst: CoreStrings.calc,
-            titleSecond: CoreStrings.clear,
-            paddingTop: 10,
-            height: height,
-            width: width,
-            onTapFirst: (() {
-              setState(() {
-                if (controller.calcTab < 6) {
-                  controller.calcTab++;
-                } else {
-                  controller.calcTab = 0.obs;
-                }
-                controller.checkValueForInterstitial(
-                    AdHelper.videoCalcTabuada, controller.calcTab);
-                _modelTabuada.verificarCampo();                
-              });
-            }),
-            onTapSecond: (() {
-              setState(() {
-                _modelTabuada.resetCampos();
-              });
-            }),
+          Container(
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: CoreColors.appBarColor,
+              borderRadius: BorderRadius.circular(15)
+            ),
+            child: Column(
+              children: [
+                TextFieldInput(
+                  title: "Valor:",
+                  hintText: "Digite aqui",
+                  controller: _modelTabuada.nTabuada
+                ),          
+                RowButtons(
+                  titleFirst: CoreStrings.calc,
+                  titleSecond: CoreStrings.clear,
+                  paddingTop: 10,
+                  height: height,
+                  width: width,
+                  onTapFirst: (() {
+                    setState(() {
+                      if (controller.calcTab < 6) {
+                        controller.calcTab++;
+                      } else {
+                        controller.calcTab = 0.obs;
+                      }
+                      controller.checkValueForInterstitial(
+                          AdHelper.videoCalcTabuada, controller.calcTab);
+                      _modelTabuada.verificarCampo();                
+                    });
+                  }),
+                  onTapSecond: (() {
+                    setState(() {
+                      _modelTabuada.resetCampos();
+                    });
+                  }),
+                ),
+              ],
+            ),
           ),
           Visibility(
             visible: _modelTabuada.visible,

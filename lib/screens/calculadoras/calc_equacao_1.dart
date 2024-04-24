@@ -70,13 +70,22 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
                   style: TextStyle(fontSize: 18.0),
                 ),
               ),
-              Padding(
+              Container(
+                padding: EdgeInsets.all(10),
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: CoreColors.appBarColor,
+                  borderRadius: BorderRadius.circular(15)
+                ),
+                child: Column(
+                  children: [
+                    Padding(
                 padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
                 child: Text(
                   CoreStrings.text2_CalcEquacao1,
                   style: TextStyle(
                       fontSize: 23.0,
-                      color: Colors.red,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -84,7 +93,7 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
                 padding: const EdgeInsets.only(top: 10, bottom: 5),
                 child: Text(
                   "Digite os valores de 'a' e 'b'",
-                  style: TextStyle(fontSize: 18),
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
               ),
               TextFieldInput(
@@ -119,7 +128,10 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
                     modelCalc1.resetCampos();
                   });
                 }),
-              ),              
+              ),         
+                  ],
+                ),
+              ),     
               Padding(
                 padding:
                     EdgeInsets.all(10),

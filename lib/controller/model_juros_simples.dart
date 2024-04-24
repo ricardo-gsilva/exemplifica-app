@@ -10,19 +10,39 @@ class ModelJurosSimples {
   String resultjS = "Digite ao menos 3 valores!";
   String resultjS_1 = "";
   String resultjS_2 = "";
-  String c1 = "";
-  String i1 = "";
-  String t1 = "";
-  String j1 = "";
 
   bool visible = false;
 
+    String fmes = "";
+    String fdias = "";
+    String fjuros = "";
+    String fjuros2 = "";
+    String fjur = "";
+    String fjur2 = "";
+    String rjuros = "";
+    String rjur = "";
+    String rcapital = "";
+    String fcapital = "";
+    String ftaxa = "";
+    String ftax = "";
+    String rmontante = "";
+    String fmontante = "";
+    String fcaptax = "";
+    String fcapmes = "";
+    String ftaxmes = "";
+
+  //Formtação
+    NumberFormat dfJs1 = new NumberFormat("0");
+    NumberFormat dfJs2 = new NumberFormat("0.00");
+    NumberFormat dfJs3 = new NumberFormat("R\$0.00");
+
+
   void resetCampos() {
     visible = false;
-    c.text = "";
-    i.text = "";
-    t.text = "";
-    j.text = "";
+    c.clear();
+    i.clear();
+    t.clear();
+    j.clear();
     resultjS = "";
     resultjS_1 = "";
     resultjS_2 = "";
@@ -34,7 +54,8 @@ class ModelJurosSimples {
         (t.text.isNotEmpty) &&
         (j.text.isNotEmpty)) {
       resultjS =
-          "Somente é possível fazer o cálculo com 3 campos preenchidos. Tire um dos valores para calcular!";
+          "Somente é possível fazer o cálculo com 3 campos preenchidos. Tire um dos "
+          "valores para calcular!";
       resultjS_1 = "";
       resultjS_2 = "";
     } else if ((c.text.isEmpty) &&
@@ -62,38 +83,8 @@ class ModelJurosSimples {
     }
   }
 
-  void jurosSimples() {
-    visible = true;
-    c1 = c.text;
-    i1 = i.text;
-    t1 = t.text;
-    j1 = j.text;
-
-    String fmes = "";
-    String fdias = "";
-    String fjuros = "";
-    String fjuros2 = "";
-    String fjur = "";
-    String fjur2 = "";
-    String rjuros = "";
-    String rjur = "";
-    String rcapital = "";
-    String fcapital = "";
-    String ftaxa = "";
-    String ftax = "";
-    String rmontante = "";
-    String fmontante = "";
-    String fcaptax = "";
-    String fcapmes = "";
-    String ftaxmes = "";
-
-    //Formtação
-    NumberFormat dfJs1 = new NumberFormat("0");
-    NumberFormat dfJs2 = new NumberFormat("0.00");
-    NumberFormat dfJs3 = new NumberFormat("R\$0.00");
-
-    if ((c.text.isNotEmpty) && (i.text.isNotEmpty) && (t.text.isNotEmpty)) {
-      //JUROS
+  void juros(){
+    //JUROS
       double capital = double.parse(c.text);
       double meses = double.parse(t.text);
       double taxa = double.parse(i.text);
@@ -137,51 +128,22 @@ class ModelJurosSimples {
       }
 
       resultjS =
-          "A fórmula para encontrar o valor em juros gerado pelo investimento é:"
-          "\n"
-          "J = (C * i * t) / 100"
-          "\n";
-      resultjS_1 = "J = ($c1 * $i1 * $t1) / 100";
-      resultjS_2 = "J = " +
-          "(" +
-          "$fcapital " +
-          "*" +
-          " $ftaxa " +
-          "*" +
-          " $fmes" +
-          ")" +
-          " / 100" +
-          "\n"
-              "J = " +
-          "$fjur2" +
-          " / 100" +
-          "\n"
-              "J = " +
-          "$jur" +
-          "\n"
-              "\n"
-              "O valor de juros encontrado com a $ftaxa% ao mês, no período de $fmes meses, com a aplicação"
-              " de $rcapital é de: " +
-          "$rjur" +
-          "\n" +
-          "e o valor total encontrado através do montante que é a soma do Capital e do Juros é: " +
-          "\n"
-              "\n"
-              "M = C + J" +
-          "\n"
-              "M = " +
-          "$fcapital" +
-          " + " +
-          "$fjur" +
-          "\n"
-              "M = " +
-          "$fmontante" +
-          "\n"
-              "O montante total é de $rmontante.";
-    } else if ((j.text.isNotEmpty) &&
-        (i.text.isNotEmpty) &&
-        (t.text.isNotEmpty)) {
-      //CAPITAL
+      "A fórmula para encontrar o valor em juros gerado pelo investimento é:""\n"
+      "J = (C * i * t) / 100""\n";
+      resultjS_1 = "J = (${c.text} * ${i.text} * ${t.text}) / 100";
+      resultjS_2 = "J = " + "(" + "$fcapital " + "*" + " $ftaxa " + "*" + " $fmes" + ")" + " / 100" + "\n"
+      "J = " + "$fjur2" + " / 100" + "\n" "J = " + "$jur" + "\n" "\n"
+      "O valor de juros encontrado com a $ftaxa% ao mês, no período de $fmes meses, com a aplicação "
+      "de $rcapital é de: " + "$rjur" + "\n" +
+      "e o valor total encontrado através do montante que é a soma do Capital e do Juros é: " + "\n""\n"
+      "M = C + J" + "\n"
+      "M = " + "$fcapital" + " + " + "$fjur" + "\n"
+      "M = " + "$fmontante" + "\n"
+      "O montante total é de $rmontante.";
+  }
+
+  void capital(){
+    //CAPITAL
       double juros = double.parse(j.text);
       double meses = double.parse(t.text);
       double taxa = double.parse(i.text);
@@ -231,51 +193,24 @@ class ModelJurosSimples {
       }
 
       resultjS =
-          "A fórmula para encontrar o valor em juros gerado pelo investimento é:"
-          "\n"
-          "C = (J * 100) / (i * t)"
-          "\n";
-      resultjS_1 = "C = ($j1 * 100) / ($i1 * $t1)";
-      resultjS_2 = "C = " +
-          "(" +
-          "$fjuros " +
-          "* 100)" +
-          " / " +
-          "($ftaxa " +
-          "*" +
-          " $fmes)" +
-          "\n"
-              "C = " +
-          "$fjuros2" +
-          " / " +
-          "$ftaxmes" +
-          "\n"
-              "C = " +
-          "$fcapital" +
-          "\n"
-              "\n"
-              "O valor do capital aplicado para que se tenha $rjuros de juros, com a taxa de $ftaxa%"
-              " no período de $fmes meses, é de juros é de: " +
-          "$rcapital" +
+          "A fórmula para encontrar o valor em juros gerado pelo investimento é:""\n"
+          "C = (J * 100) / (i * t)""\n";
+      resultjS_1 = "C = (${j.text} * 100) / (${i.text} * ${t.text})";
+      resultjS_2 = 
+        "C = " + "(" + "$fjuros " + "* 100)" + " / " + "($ftaxa " + "*" + " $fmes)" + "\n"
+        "C = " + "$fjuros2" + " / " + "$ftaxmes" + "\n" "C = " + "$fcapital" + "\n" "\n"
+        "O valor do capital aplicado para que se tenha $rjuros de juros, com a taxa de $ftaxa% "
+        "no período de $fmes meses, é de juros é de: " + "$rcapital" +
           "\n" "\n" +
-          "E o valor total encontrado através do montante que é a soma do Capital e do Juros é: " +
-          "\n"
-              "\n"
-              "M = C + J" +
-          "\n"
-              "M = " +
-          "$fcapital" +
-          " + " +
-          "$fjuros" +
-          "\n"
-              "M = " +
-          "$fmontante" +
-          "\n"
-              "O montante total é de $rmontante.";
-    } else if ((j.text.isNotEmpty) &&
-        (c.text.isNotEmpty) &&
-        (t.text.isNotEmpty)) {
-      //TAXA
+        "E o valor total encontrado através do montante que é a soma do Capital e do Juros é: " + "\n""\n"
+        "M = C + J" + "\n"
+        "M = " + "$fcapital" + " + " + "$fjuros" + "\n"
+        "M = " + "$fmontante" + "\n"
+        "O montante total é de $rmontante.";
+  }
+  
+  void taxa(){
+    //TAXA
       double juros = double.parse(j.text);
       double meses = double.parse(t.text);
       double capital = double.parse(c.text);
@@ -318,34 +253,18 @@ class ModelJurosSimples {
       }
 
       resultjS =
-          "A fórmula para encontrar o valor em juros gerado pelo investimento é:"
-          "\n"
-          "i = (J * 100) / (C * t)"
-          "\n";
-      resultjS_1 = "i = ($j1 * 100) / ($c1 * $t1)";
-      resultjS_2 = "i = " +
-          "(" +
-          "$fjuros " +
-          "* 100)" +
-          " / " +
-          "($fcapital " +
-          "*" +
-          " $fmes)" +
-          "\n"
-              "i = " +
-          "$fjuros2" +
-          " / " "$fcapmes" +
-          "\n"
-              "i = " +
-          "$ftax" +
-          "\n"
-              "\n"
-              "A taxa mensal encontrado para o valor aplicado de $rcapital, com rendimento de $rjuros em juros, no período"
-              " de $fmes meses, é de: $ftax%.";
-    } else if ((j.text.isNotEmpty) &&
-        (c.text.isNotEmpty) &&
-        (i.text.isNotEmpty)) {
-      //TEMPO
+          "A fórmula para encontrar o valor em juros gerado pelo investimento é:""\n"
+          "i = (J * 100) / (C * t)""\n";
+      resultjS_1 = "i = (${j.text} * 100) / (${c.text} * ${t.text})";
+      resultjS_2 =
+      "i = " + "(" + "$fjuros " + "* 100)" + " / " + "($fcapital " + "*" + " $fmes)" + "\n"
+      "i = " + "$fjuros2" + " / " "$fcapmes" + "\n" "i = " + "$ftax" + "\n""\n"
+      "A taxa mensal encontrado para o valor aplicado de $rcapital, com rendimento de $rjuros em juros, no período "
+      "de $fmes meses, é de: $ftax%.";
+  }
+
+  void tempo(){
+    //TEMPO
       double capital = double.parse(c.text);
       double taxa = double.parse(i.text);
       double juros = double.parse(j.text);
@@ -390,27 +309,27 @@ class ModelJurosSimples {
       }
 
       resultjS =
-          "A fórmula para encontrar o tempo necessário para o investimento é:"
-          "\n"
-          "t = (J * 100) / (C * i)"
-          "\n";
-      resultjS_1 = "t = ($j1 * 100) / ($c1 * $i1)";
-      resultjS_2 = "t = " +
-          "(" +
-          "$fjuros * 100)" +
-          " / " +
-          "($fcapital * $ftaxa)" +
-          "\n"
-              "t = " +
-          "$fjuros2" +
-          " / " +
-          "$fcaptax" +
-          "\n"
-              "t = " +
-          "$fmes" +
-          "\n""\n"
-              "O número de meses necessário para gerar o juros de $rjuros, com a aplicação de capital no valor de $rcapital, sob"
-              " a taxa mensal de $ftaxa% é: $fmes meses ou o equivalente a $fdias dias.";
+          "A fórmula para encontrar o tempo necessário para o investimento é:""\n"
+          "t = (J * 100) / (C * i)""\n";
+      resultjS_1 = "t = (${j.text} * 100) / (${c.text} * ${i.text})";
+      resultjS_2 =
+      "t = " + "(" + "$fjuros * 100)" + " / " + "($fcapital * $ftaxa)" + "\n"
+      "t = " + "$fjuros2" + " / " + "$fcaptax" + "\n" "t = " + "$fmes" + "\n\n"
+      "O número de meses necessário para gerar o juros de $rjuros, com a aplicação de capital no valor de $rcapital, sob "
+      "a taxa mensal de $ftaxa% é: $fmes meses ou o equivalente a $fdias dias.";
+  }
+
+  void jurosSimples() {
+    visible = true;
+
+    if ((c.text.isNotEmpty) && (i.text.isNotEmpty) && (t.text.isNotEmpty)) {
+      juros();
+    } else if ((j.text.isNotEmpty) && (i.text.isNotEmpty) && (t.text.isNotEmpty)) {
+      capital();
+    } else if ((j.text.isNotEmpty) && (c.text.isNotEmpty) && (t.text.isNotEmpty)) {
+      taxa();
+    } else if ((j.text.isNotEmpty) && (c.text.isNotEmpty) && (i.text.isNotEmpty)) {
+      tempo();
     }
   }
 }

@@ -1,5 +1,6 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:exemplifica/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -10,7 +11,7 @@ class BottomBarBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Builder(builder: (context) {
+    return releaseMode? Builder(builder: (context) {
       banner = bannerAd;
       return SafeArea(
         child: banner == null
@@ -21,6 +22,6 @@ class BottomBarBanner extends StatelessWidget {
                 child: AdWidget(ad: banner!),
               ),
       );
-    });
+    }) : SizedBox();
   }
 }

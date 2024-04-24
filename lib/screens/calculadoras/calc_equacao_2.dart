@@ -70,68 +70,80 @@ class _CalcEquacao2State extends State<CalcEquacao2> {
                   "Digite os valores de 'a', 'b' e 'c' para montar a equação. O valor máximo é de 999 para cada campo.",
                   style: TextStyle(fontSize: 18.0),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "ax² + bx + c = 0",
-                    style: TextStyle(
-                        fontSize: 23.0,
-                        color: Colors.red,
-                        fontWeight: FontWeight.bold),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  margin: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: CoreColors.appBarColor,
+                    borderRadius: BorderRadius.circular(15)
                   ),
-                ),
-                Column(
-                  children: [
-                    TextFieldInput(
-                      title: "Valor de 'a':",
-                      hintText: "a",
-                      controller: modelEquacao2.val1,
-                    ),
-                    TextFieldInput(
-                      title: "Valor de 'b':",
-                      hintText: "b",
-                      controller: modelEquacao2.val2,
-                    ),
-                    TextFieldInput(
-                      title: "Valor de 'c':",
-                      hintText: "c",
-                      controller: modelEquacao2.val3,
-                    ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ButtonBase(
-                      onTap: (() {
-                        setState(() {
-                          if (controller.calcEq2 < 6) {
-                            controller.calcEq2++;
-                          } else {
-                            controller.calcEq2 = 0.obs;
-                          }
-                          controller.checkValueForInterstitial(
-                              AdHelper.videoCalcEquacao2,
-                              controller.calcEq2);
-                          modelEquacao2.verificarCampo();
-                        });
-                      }),
-                      title: 'Calcular',
-                      height: height,
-                      width: width,
-                    ),
-                    ButtonBase(
-                      onTap: (() {
-                        setState(() {
-                          modelEquacao2.resetCampos();
-                          visible = !visible;
-                        });
-                      }),
-                      title: 'Limpar',
-                      height: height,
-                      width: width,
-                    ),
-                  ],
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "ax² + bx + c = 0",
+                          style: TextStyle(
+                              fontSize: 23.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Column(
+                        children: [
+                          TextFieldInput(
+                            title: "'a':",
+                            hintText: "a",
+                            controller: modelEquacao2.val1,
+                          ),
+                          TextFieldInput(
+                            title: "'b':",
+                            hintText: "b",
+                            controller: modelEquacao2.val2,
+                          ),
+                          TextFieldInput(
+                            title: "'c':",
+                            hintText: "c",
+                            controller: modelEquacao2.val3,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          ButtonBase(
+                            onTap: (() {
+                              setState(() {
+                                if (controller.calcEq2 < 6) {
+                                  controller.calcEq2++;
+                                } else {
+                                  controller.calcEq2 = 0.obs;
+                                }
+                                controller.checkValueForInterstitial(
+                                    AdHelper.videoCalcEquacao2,
+                                    controller.calcEq2);
+                                modelEquacao2.verificarCampo();
+                              });
+                            }),
+                            title: 'Calcular',
+                            height: height,
+                            width: width,
+                          ),
+                          ButtonBase(
+                            onTap: (() {
+                              setState(() {
+                                modelEquacao2.resetCampos();
+                                visible = !visible;
+                              });
+                            }),
+                            title: 'Limpar',
+                            height: height,
+                            width: width,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 Visibility(
                   visible: modelEquacao2.visible,

@@ -70,65 +70,77 @@ class _CalcJurosCState extends State<CalcJurosC> {
               ),
             ),
             Container(
-              height: 55,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text(
-                    "M = C(1 + i)",
-                    style: TextStyle(
-                        fontSize: 25.0,
-                        color: Colors.red,
-                        fontWeight: FontWeight.bold),
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: CoreColors.appBarColor,
+                borderRadius: BorderRadius.circular(15)
+              ),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 55,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          "M = C(1 + i)",
+                          style: TextStyle(
+                              fontSize: 25.0,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Align(
+                          alignment: Alignment.topLeft,
+                          child: Text(" t",
+                              style: TextStyle(
+                                  fontSize: 25.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold)),
+                        )
+                      ],
+                    ),
                   ),
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(" t",
-                        style: TextStyle(
-                            fontSize: 25.0,
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold)),
-                  )
+                  TextFieldInput(
+                    title: "Capital:",
+                    hintText: "capital(R\$)",
+                    controller: modelJurosCompostos.c
+                  ),
+                  TextFieldInput(
+                    title: "Taxa",
+                    hintText: "% a.m",
+                    controller: modelJurosCompostos.i
+                  ),
+                  TextFieldInput(
+                    title: "Meses",
+                    hintText: "Tempo",
+                    controller: modelJurosCompostos.t
+                  ),            
+                  RowButtons(
+                    titleFirst: CoreStrings.calc,
+                    titleSecond: CoreStrings.clear,
+                    paddingTop: 10,
+                    height: height,
+                    width: width,
+                    onTapFirst: (() {
+                      setState(() {
+                        if (controller.calcJurosC < 6) {
+                          controller.calcJurosC++;
+                        } else {
+                          controller.calcJurosC = 0.obs;
+                        }
+                        controller.checkValueForInterstitial(AdHelper.videoCalcJurosC, controller.calcJurosC);
+                        modelJurosCompostos.verificarCampos();
+                      });
+                    }),
+                    onTapSecond: (() {
+                      setState(() {
+                        modelJurosCompostos.resetCampos();
+                      });
+                    }),
+                  ),
                 ],
               ),
-            ),
-            TextFieldInput(
-              title: "Capital:",
-              hintText: "capital(R\$)",
-              controller: modelJurosCompostos.c
-            ),
-            TextFieldInput(
-              title: "Taxa",
-              hintText: "% a.m",
-              controller: modelJurosCompostos.i
-            ),
-            TextFieldInput(
-              title: "Meses",
-              hintText: "Tempo",
-              controller: modelJurosCompostos.t
-            ),            
-            RowButtons(
-              titleFirst: CoreStrings.calc,
-              titleSecond: CoreStrings.clear,
-              paddingTop: 10,
-              height: height,
-              width: width,
-              onTapFirst: (() {
-                setState(() {
-                  if (controller.calcJurosC < 6) {
-                    controller.calcJurosC++;
-                  } else {
-                    controller.calcJurosC = 0.obs;
-                  }
-                  controller.checkValueForInterstitial(AdHelper.videoCalcJurosC, controller.calcJurosC);
-                  modelJurosCompostos.verificarCampos();
-                });
-              }),
-              onTapSecond: (() {
-                setState(() {
-                  modelJurosCompostos.resetCampos();
-                });
-              }),
             ),
             Visibility(
               visible: modelJurosCompostos.visible,

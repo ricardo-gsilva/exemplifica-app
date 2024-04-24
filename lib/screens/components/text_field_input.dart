@@ -18,13 +18,13 @@ class TextFieldInput extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20, bottom: 5, top: 5),
       child: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.7,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            title == ''? SizedBox():
             Text(
               title ?? '',
-              style: TextStyle(
+              style: TextStyle(                
                   fontSize: 20.0,
                   color: CoreColors.textPrimary,
                   fontWeight: FontWeight.bold),
@@ -33,19 +33,32 @@ class TextFieldInput extends StatelessWidget {
               width: MediaQuery.of(context).size.width * .3,
               height: 70,
               child: TextField(
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.number,                
                 decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
                     border: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black)),
                     focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.amber)),
+                        borderSide: BorderSide(color: Colors.amber)),                    
+                    errorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red)
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(width: 1, color: Colors.white)),
+                    errorStyle: TextStyle(color: Colors.red),
+                    focusedErrorBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.red)
+                    ),
+                    counterStyle: const TextStyle(color: Colors.white),
                     hintText: hintText,
                     labelText: "",
                     labelStyle: TextStyle(color: CoreColors.textPrimary)),
                 textAlign: TextAlign.center,
+                textAlignVertical: TextAlignVertical.bottom,
                 style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
                 controller: controller,
-                maxLength: 9,
+                maxLength: 9,                
               ),
             ),
           ],

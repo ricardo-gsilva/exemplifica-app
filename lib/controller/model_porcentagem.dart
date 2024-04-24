@@ -11,8 +11,8 @@ class ModelPorcentagem {
 
   void resetCampos() {
     visible = false;
-    val1.text = "";
-    val2.text = "";
+    val1.clear();
+    val2.clear();
     resultPorcent = "";
   }
 
@@ -30,7 +30,7 @@ class ModelPorcentagem {
     double valor1 = double.parse(val1.text);
     double valor2 = double.parse(val2.text);
     double mult2 = valor2 * 100;
-    int comp1 = 100;
+    String comp1 = "100";
     double result = mult2 / valor1;
     String valor1f = "";
     String valor2f = "";
@@ -61,28 +61,10 @@ class ModelPorcentagem {
       resultf = format2.format((result));
     }
 
-    resultPorcent = resultPorcent +
-        valor2f +
-        " x " +
-        "$comp1" +
-        " = " +
-        valor1f +
-        " x " +
-        " 'X' " +
-        "\n" +
-        valor1f +
-        ".'X'" +
-        " = " +
-        mult2f +
-        "\n" +
-        "X" +
-        " = " +
-        mult2f +
-        "/" +
-        valor1f +
-        "\n" +
-        "X" +
-        " = " +
-        resultf;
+    resultPorcent = 
+        valor2f + " x " + comp1 + " = " + valor1f + " x " + "'X'" + "\n" +
+        valor1f + ".'X'" + " = " + mult2f + "\n" +
+        "X" + " = " + mult2f + "/" + valor1f + "\n" + 
+        "X" + " = " + resultf;
   }
 }

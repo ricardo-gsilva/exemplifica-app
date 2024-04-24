@@ -1,11 +1,11 @@
 import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/screens/components/text_field_input.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/controller/model_porcentagem.dart';
 import 'package:exemplifica/screens/components/row_buttons.dart';
 import 'package:exemplifica/screens/home_page.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
-import 'package:exemplifica/screens/widgets/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -67,87 +67,97 @@ class _CalcPorcentagemState extends State<CalcPorcentagem> {
                 style: TextStyle(fontSize: 18.0),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 25, top: 10, right: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Text(
-                    "Atributo 1",
-                    style: TextStyle(fontSize: 20.0),
+            Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: CoreColors.appBarColor,
+                borderRadius: BorderRadius.circular(15)
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 25, top: 10, right: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Text(
+                          "Atributo 1",
+                          style: TextStyle(fontSize: 20.0),
+                        ),
+                        Text(
+                          "Atributo 2",
+                          style: TextStyle(fontSize: 20.0),
+                        ),
+                      ],
+                    ),
                   ),
-                  Text(
-                    "Atributo 2",
-                    style: TextStyle(fontSize: 20.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.only(right: 50, top: 5),
+                        child: TextFieldInput(
+                          hintText: "",
+                          title: "",
+                          controller: modelPorcentagem.val1,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10, right: 30),
+                        child: Text(
+                          "100",
+                          style: TextStyle(fontSize: 23.0),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.only(right: 70, top: 5),
+                        child: TextFieldInput(
+                          hintText: "",
+                          title: "",
+                          controller: modelPorcentagem.val2,
+                        ),
+                      ),                
+                      Padding(
+                        padding: EdgeInsets.only(top: 10, right: 30),
+                        child: Text(
+                          "X",
+                          style: TextStyle(fontSize: 23.0),
+                        ),
+                      ),
+                    ],
+                  ),
+                  RowButtons(
+                    titleFirst: CoreStrings.calc,
+                    titleSecond: CoreStrings.clear,
+                    paddingTop: 10,
+                    height: height,
+                    width: width,
+                    onTapFirst: (() {
+                      setState(() {
+                        if (controller.calcPorcent < 6) {
+                          controller.calcPorcent++;
+                        } else {
+                          controller.calcPorcent = 0.obs;
+                        }
+                        controller.checkValueForInterstitial(
+                            AdHelper.videoCalcPorcentagem, controller.calcPorcent);
+                        modelPorcentagem.verificarCampos();
+                      });
+                    }),
+                    onTapSecond: (() {
+                      setState(() {
+                        modelPorcentagem.resetCampos();
+                      });
+                    }),
                   ),
                 ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(right: 50, top: 5),
-                  child: TextFieldCustom(
-                    hintText: "Valor 1",
-                    controller: modelPorcentagem.val1,
-                    width: width * 0.7,
-                    height: height * 1.25,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 15, right: 30),
-                  child: Text(
-                    "100",
-                    style: TextStyle(fontSize: 23.0),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(right: 70, top: 5),
-                  child: TextFieldCustom(
-                    hintText: "Valor 2",
-                    controller: modelPorcentagem.val2,
-                    width: width * 0.7,
-                    height: height * 1.25,
-                  ),
-                ),                
-                Padding(
-                  padding: EdgeInsets.only(top: 15, right: 30),
-                  child: Text(
-                    "X",
-                    style: TextStyle(fontSize: 23.0),
-                  ),
-                ),
-              ],
-            ),
-            RowButtons(
-              titleFirst: CoreStrings.calc,
-              titleSecond: CoreStrings.clear,
-              paddingTop: 10,
-              height: height,
-              width: width,
-              onTapFirst: (() {
-                setState(() {
-                  if (controller.calcPorcent < 6) {
-                    controller.calcPorcent++;
-                  } else {
-                    controller.calcPorcent = 0.obs;
-                  }
-                  controller.checkValueForInterstitial(
-                      AdHelper.videoCalcPorcentagem, controller.calcPorcent);
-                  modelPorcentagem.verificarCampos();
-                });
-              }),
-              onTapSecond: (() {
-                setState(() {
-                  modelPorcentagem.resetCampos();
-                });
-              }),
+              )
             ),
             Visibility(
               visible: modelPorcentagem.visible,

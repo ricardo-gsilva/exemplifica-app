@@ -70,45 +70,53 @@ class _CalcMmcState extends State<CalcMmc> {
                   style: TextStyle(fontSize: 18.0),
                 ),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  TextFieldInput(
-                    title: "Valor 1:",
-                    hintText: "",
-                    controller: modelMmc.val1,
-                  ),
-                  TextFieldInput(
-                    title: "Valor 2:",
-                    hintText: "",
-                    controller: modelMmc.val2,
-                  ),                  
-                ],
-              ),
-              RowButtons(
-                titleFirst: CoreStrings.calc,
-                titleSecond: CoreStrings.clear,
-                paddingTop: 5,
-                height: height,
-                width: width,
-                onTapFirst: (() {
-                  setState(() {
-                    if (controller.calcMmc < 6) {
-                      controller.calcMmc++;
-                    } else {
-                      controller.calcMmc = 0.obs;
-                    }
-                    controller.checkValueForInterstitial(
-                        AdHelper.videoCalcMmc, controller.calcMmc);
-                    modelMmc.verificarCampos();
-                  });
-                }),
-                onTapSecond: (() {
-                  setState(() {
-                    modelMmc.resetCampos();
-                  });
-                }),
-              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: CoreColors.appBarColor,
+                  borderRadius: BorderRadius.circular(15)
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    TextFieldInput(
+                      title: "Valor 1:",
+                      hintText: "",
+                      controller: modelMmc.val1,
+                    ),
+                    TextFieldInput(
+                      title: "Valor 2:",
+                      hintText: "",
+                      controller: modelMmc.val2,
+                    ),                  
+                    RowButtons(
+                      titleFirst: CoreStrings.calc,
+                      titleSecond: CoreStrings.clear,
+                      paddingTop: 5,
+                      height: height,
+                      width: width,
+                      onTapFirst: (() {
+                        setState(() {
+                          if (controller.calcMmc < 6) {
+                            controller.calcMmc++;
+                          } else {
+                            controller.calcMmc = 0.obs;
+                          }
+                          controller.checkValueForInterstitial(
+                              AdHelper.videoCalcMmc, controller.calcMmc);
+                          modelMmc.verificarCampos();
+                        });
+                      }),
+                      onTapSecond: (() {
+                        setState(() {
+                          modelMmc.resetCampos();
+                        });
+                      }),
+                    ),
+                  ],
+                ),
+              ),              
               Visibility(
                 visible: modelMmc.visible,
                 child: Column(
