@@ -12,9 +12,9 @@ class ModelRegraDe3 {
 
   void resetCampos() {
     visible = false;
-    val1.text = "";
-    val2.text = "";
-    val3.text = "";
+    val1.clear();
+    val2.clear();
+    val3.clear();
     resultRegra3 = "";
   }
 
@@ -70,27 +70,9 @@ class ModelRegraDe3 {
     }
 
     resultRegra3 = resultRegra3 +
-        valor2f +
-        " x " +
-        valor3f +
-        " = " +
-        valor1f +
-        " x " +
-        " 'X' " +
-        "\n" +
-        valor1f +
-        ".'X'" +
-        " = " +
-        mult2f +
-        "\n" +
-        "'X'" +
-        " = " +
-        mult2f +
-        "/" +
-        valor1f +
-        "\n" +
-        "'X'" +
-        " = " +
-        resultf;
+        valor2f + " x " + valor3f + " = " + valor1f + " x " + "'X'" + "\n" +
+        valor1f + ".'X'" + " = " + mult2f + "\n" +
+        "'X'" + " = " + mult2f + "/" + valor1f + "\n" +
+        "'X'" + " = " + resultf;
   }
 }

@@ -67,39 +67,49 @@ class _CalcMdcState extends State<CalcMdc> {
                 style: TextStyle(fontSize: 20.0),
               ),
             ),
-            TextFieldInput(
+            Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: CoreColors.appBarColor,
+                borderRadius: BorderRadius.circular(15)
+              ),
+              child: Column(children: [
+                TextFieldInput(
               title: "Valor 1",
               hintText: "",
               controller: modelMdc.val1
-            ),
-            TextFieldInput(
-              title: "Valor 2",
-              hintText: "",
-              controller: modelMdc.val2
-            ),            
-            RowButtons(
-              titleFirst: CoreStrings.calc,
-              titleSecond: CoreStrings.clear,
-              paddingTop: 10,
-              height: height,
-              width: width,
-              onTapFirst: (() {
-                setState(() {
-                  if (controller.calcMdc < 6) {
-                    controller.calcMdc++;
-                  } else {
-                    controller.calcMdc = 0.obs;
-                  }
-                  controller.checkValueForInterstitial(
-                      AdHelper.videoCalcMdc, controller.calcMdc);
-                  modelMdc.verificarCampos();
-                });
-              }),
-              onTapSecond: (() {
-                setState(() {
-                  modelMdc.resetCampos();
-                });
-              }),
+                ),
+                TextFieldInput(
+                  title: "Valor 2",
+                  hintText: "",
+                  controller: modelMdc.val2
+                ),            
+                RowButtons(
+                  titleFirst: CoreStrings.calc,
+                  titleSecond: CoreStrings.clear,
+                  paddingTop: 10,
+                  height: height,
+                  width: width,
+                  onTapFirst: (() {
+                    setState(() {
+                      if (controller.calcMdc < 6) {
+                        controller.calcMdc++;
+                      } else {
+                        controller.calcMdc = 0.obs;
+                      }
+                      controller.checkValueForInterstitial(
+                          AdHelper.videoCalcMdc, controller.calcMdc);
+                      modelMdc.verificarCampos();
+                    });
+                  }),
+                  onTapSecond: (() {
+                    setState(() {
+                      modelMdc.resetCampos();
+                    });
+                  }),
+                ),
+              ]),
             ),
             Visibility(
               visible: modelMdc.visible,

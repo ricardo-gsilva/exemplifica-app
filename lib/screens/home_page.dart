@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     height = MediaQuery.of(context).size.height * 0.1;
-    width = MediaQuery.of(context).size.width * 0.47;
+    width = MediaQuery.of(context).size.width * 0.444;
     return Scaffold(
       backgroundColor: CoreColors.colorBackground,
       appBar: PreferredSize(
@@ -71,15 +71,20 @@ class _HomePageState extends State<HomePage> {
         slivers: [
           SliverFillRemaining(
             hasScrollBody: false,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 10, right: 10, top: 5),
+            child: Container(
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: CoreColors.appBarColor,
+                borderRadius: BorderRadius.circular(15)
+              ),
               child: Column(
                 children: [
                   Row(
                     children: [
                       SizedBox(
                         height: height * 2.2,
-                        width: MediaQuery.of(context).size.width * 0.47,
+                        width: width,
                         child: ButtonBase(
                           height: height,
                           title: CoreStrings.titleCalculadoras,
@@ -101,7 +106,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       SizedBox(
                         height: height * 2.2,
-                        width: MediaQuery.of(context).size.width * 0.47,
+                        width: width,
                         child: ButtonBase(
                           height: height,
                           title: CoreStrings.titleRegrasBasicas,
@@ -190,7 +195,8 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdHome, bannerAd: controller.bannerAd),      
+      bottomNavigationBar: BottomBarBanner(
+        banner: controller.bannerAdHome, bannerAd: controller.bannerAd),      
     );
   }
 

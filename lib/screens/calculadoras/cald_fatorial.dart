@@ -70,34 +70,46 @@ class _CalcFatorialState extends State<CalcFatorial> {
                   style: TextStyle(fontSize: 18.0),
                 ),
               ),
-              TextFieldInput(
-                title: "Digite o valor:",
-                hintText: "valor",
-                controller: modelFatorial.val1,
-              ),
-              RowButtons(
-                titleFirst: CoreStrings.calc,
-                titleSecond: CoreStrings.clear,
-                paddingTop: 10,
-                height: height,
-                width: width,
-                onTapFirst: (() {
-                  setState(() {
-                    if (controller.calcFat < 6) {
-                      controller.calcFat++;
-                    } else {
-                      controller.calcFat = 0.obs;
-                    }
-                    controller.checkValueForInterstitial(
-                        AdHelper.videoCalcFatorial, controller.calcFat);
-                    modelFatorial.verificarCampos();
-                  });
-                }),
-                onTapSecond: (() {
-                  setState(() {
-                    modelFatorial.resetCampos();
-                  });
-                }),
+              Container(
+                padding: EdgeInsets.all(10),
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: CoreColors.appBarColor,
+                  borderRadius: BorderRadius.circular(15)
+                ),
+                child: Column(
+                  children: [
+                    TextFieldInput(
+                      title: "Digite o valor:",
+                      hintText: "valor",
+                      controller: modelFatorial.val1,
+                    ),
+                    RowButtons(
+                      titleFirst: CoreStrings.calc,
+                      titleSecond: CoreStrings.clear,
+                      paddingTop: 10,
+                      height: height,
+                      width: width,
+                      onTapFirst: (() {
+                        setState(() {
+                          if (controller.calcFat < 6) {
+                            controller.calcFat++;
+                          } else {
+                            controller.calcFat = 0.obs;
+                          }
+                          controller.checkValueForInterstitial(
+                              AdHelper.videoCalcFatorial, controller.calcFat);
+                          modelFatorial.verificarCampos();
+                        });
+                      }),
+                      onTapSecond: (() {
+                        setState(() {
+                          modelFatorial.resetCampos();
+                        });
+                      }),
+                    ),
+                  ],
+                ),
               ),
               Visibility(
                 visible: modelFatorial.visible,

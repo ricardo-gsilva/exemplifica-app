@@ -12,8 +12,8 @@ class ModelMdc {
 
   void resetCampos() {
     visible = false;
-    val1.text = "";
-    val2.text = "";
+    val1.clear();
+    val2.clear();
     resultMdc = "";
     resultMdc1 = "";
     resultMdc2 = "";
@@ -21,9 +21,8 @@ class ModelMdc {
 
   void verificarCampos() {
     if (val1.text.isEmpty || val2.text.isEmpty) {
-      resultMdc = "Por favor, preencha os campos." +
-          "\n" +
-          "Utilize valores até 99999!";
+      resultMdc = "Por favor, preencha os campos." + "\n" +
+      "Utilize valores até 99999!";
     } else {
       resultMdc = "";
       resultMdc1 = "";
@@ -42,8 +41,7 @@ class ModelMdc {
     int rest = 0;
     if ((valormdc1 == 1) && (valormdc2 == 1)) {
       resultMdc = resultMdc +
-          "O MDC de 1 será sempre 1, independente de quantas vezes for utilizado." +
-          "\n";
+          "O MDC de 1 será sempre 1, independente de quantas vezes for utilizado." + "\n";
       resultMdc2 = "";
     } else {
       while (b != 0) {
@@ -58,13 +56,7 @@ class ModelMdc {
           }
           if ((valormdc1 % div == 0) && (valormdc2 % div == 0)) {
             resultMdc = resultMdc +
-                "$mdc1" +
-                ", " +
-                "$mdc2" +
-                " | " +
-                "$div" +
-                " - Ok" +
-                "\n";
+                "$mdc1" + ", " + "$mdc2" + " | " + "$div" + " - Ok" + "\n";
             valormdc1 = valormdc1 / div;
             valormdc2 = valormdc2 / div;
             print("$valormdc1" + " " + "$valormdc2");
@@ -82,21 +74,13 @@ class ModelMdc {
             int mdc22 = valormdc2.toInt();
             div = 1;
             resultMdc = resultMdc +
-                "$mdc11" +
-                ", " +
-                "$mdc22" +
-                " | " +
-                "$div" +
-                " - Ok" +
-                "\n";
+                "$mdc11" + ", " + "$mdc22" + " | " + "$div" + " - Ok" + "\n";
           }
         }
       }
       resultMdc1 = resultMdc1 +
           "Os valores a serem utilizados, serão os que estão com o símbolo de Ok ao lado." +
-          " Multiplicando todos esses valores, temos o valor do MDC: " +
-          "$a" +
-          "\n";
+          " Multiplicando todos esses valores, temos o valor do MDC: " + "$a" + "\n";
     }
   }
 }

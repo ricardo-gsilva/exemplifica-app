@@ -11,17 +11,16 @@ class ModelMmc {
 
   void resetCampos() {
     visible = false;
-    val1.text = "";
-    val2.text = "";
+    val1.clear();
+    val2.clear();
     resultMmc = "";
     resultMmc1 = "";
   }
 
   void verificarCampos() {
     if (val1.text.isEmpty || val2.text.isEmpty) {
-      resultMmc = "Por favor, preencha os campos!" +
-          "\n"
-              "Utilize valores até 99999!";
+      resultMmc = "Por favor, preencha os campos!" + "\n"
+      "Utilize valores até 99999!";
       resultMmc1 = "";
     } else {
       resultMmc = "";
@@ -73,9 +72,7 @@ class ModelMmc {
       resultMmc = resultMmc + "$valmmc1" + ", " + "$valmmc2" + " | " + "\n";
     }
     resultMmc1 = resultMmc1 +
-        "Multiplicando todos os valores utilizados para fatoração, temos o"
-            " valor do MMC: " +
-        "$cachei" +
-        "\n";
+        "Multiplicando todos os valores utilizados para fatoração, temos o "
+        "valor do MMC: " + "$cachei" + "\n";
   }
 }

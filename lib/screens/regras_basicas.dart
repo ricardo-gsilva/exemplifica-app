@@ -58,19 +58,22 @@ class _RegrasBasicasState extends State<RegrasBasicas> {
         
       ]),
       body: SingleChildScrollView(
-        child: Center(
+        child: Container(
+          padding: EdgeInsets.all(10),
+            margin: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: CoreColors.appBarColor,
+              borderRadius: BorderRadius.circular(15)
+            ),
           child: Column(
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: ButtonBase(
-                  height: height,
-                  width: width,
-                  title: "1º Parêntesis",
-                  onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (_) => Parentesis()));
-                  },
-                ),
+              ButtonBase(
+                height: height,
+                width: width,
+                title: "1º Parêntesis",
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => Parentesis()));
+                },
               ),
               ButtonBase(
                 height: height,

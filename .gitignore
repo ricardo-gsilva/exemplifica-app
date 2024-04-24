@@ -48,5 +48,5 @@ app.*.map.json
 android/key.properties
 android/local.properties
 android/app/src/main/res/values/admob.xml
-lib/ad_mob
+lib/ad_mob/
 .vscode/launch.json

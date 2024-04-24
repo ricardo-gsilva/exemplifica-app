@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 class ModelTabuada {
   TextEditingController nTabuada = TextEditingController();
 
-  GlobalKey<FormState> formKey = GlobalKey<FormState>();
-
   String infoText = "";
   String dica = "";
   bool visible = false;
@@ -24,7 +22,6 @@ class ModelTabuada {
     nTabuada.clear();
     infoText = "";
     dica = "";
-    formKey = GlobalKey<FormState>();
   }
 
   void calcular() {
