@@ -1,9 +1,9 @@
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/cald_fatorial.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_fatorial.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +21,7 @@ class _FatorialState extends State<Fatorial> {
       appBar: AppBar(
         backgroundColor: CoreColors.appBarColor,
         title: Text(
-          CoreStrings.titleFatorial,
+          CoreStringsFatorial.titleFatorial,
           style: TextStyle(color: CoreColors.textPrimary),
         ),
         centerTitle: true,
@@ -47,7 +47,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text1_Fatorial,
+            CoreStringsFatorial.text1_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -60,21 +60,21 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text2_Fatorial,
+            CoreStringsFatorial.text2_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text3_Fatorial,
+            CoreStringsFatorial.text3_Fatorial,
             style: TextStyle(fontSize: 20.0, color: Colors.red),
           ),
         ),
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text4_Fatorial,
+            CoreStringsFatorial.text4_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -87,7 +87,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text5_Fatorial,
+            CoreStringsFatorial.text5_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -100,7 +100,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text6_Fatorial,
+            CoreStringsFatorial.text6_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -113,7 +113,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text7_Fatorial,
+            CoreStringsFatorial.text7_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -128,7 +128,7 @@ class _FatorialState extends State<Fatorial> {
             child: Container(
               width: MediaQuery.of(context).size.width,
               child: Text(
-                CoreStrings.text8_Fatorial,
+                CoreStringsFatorial.text8_Fatorial,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
@@ -142,7 +142,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text9_Fatorial,
+            CoreStringsFatorial.text9_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -155,7 +155,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text10_Fatorial,
+            CoreStringsFatorial.text10_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -164,7 +164,7 @@ class _FatorialState extends State<Fatorial> {
             child: Container(
               width: MediaQuery.of(context).size.width,
               child: Text(
-                CoreStrings.text11_Fatorial,
+                CoreStringsFatorial.text11_Fatorial,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
@@ -178,7 +178,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text12_Fatorial,
+            CoreStringsFatorial.text12_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -191,7 +191,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text13_Fatorial,
+            CoreStringsFatorial.text13_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -206,7 +206,7 @@ class _FatorialState extends State<Fatorial> {
             child: Container(
               width: MediaQuery.of(context).size.width,
               child: Text(
-                CoreStrings.text14_Fatorial,
+                CoreStringsFatorial.text14_Fatorial,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
@@ -214,7 +214,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text15_Fatorial,
+            CoreStringsFatorial.text15_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -227,7 +227,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text16_Fatorial,
+            CoreStringsFatorial.text16_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -240,7 +240,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text17_Fatorial,
+            CoreStringsFatorial.text17_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -249,7 +249,7 @@ class _FatorialState extends State<Fatorial> {
             child: Container(
               width: MediaQuery.of(context).size.width,
               child: Text(
-                CoreStrings.text18_Fatorial,
+                CoreStringsFatorial.text18_Fatorial,
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
@@ -257,7 +257,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text19_Fatorial,
+            CoreStringsFatorial.text19_Fatorial,
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -270,7 +270,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text20_Fatorial,            
+            CoreStringsFatorial.text20_Fatorial,            
             style: TextStyle(fontSize: 16.0),
           ),
         ),
@@ -283,7 +283,7 @@ class _FatorialState extends State<Fatorial> {
         Padding(
           padding: EdgeInsets.all(10.0),
           child: Text(
-            CoreStrings.text21_Fatorial,            
+            CoreStringsFatorial.text21_Fatorial,            
             style: TextStyle(fontSize: 16.0),
           ),
         ),

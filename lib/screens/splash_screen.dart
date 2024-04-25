@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/screens/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

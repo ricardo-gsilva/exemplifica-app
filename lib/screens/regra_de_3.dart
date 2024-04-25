@@ -1,9 +1,9 @@
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/calc_regra_de_3.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_regra_de_3.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +22,7 @@ class _RegraDe3State extends State<RegraDe3> {
       appBar: AppBar(
         backgroundColor: CoreColors.appBarColor,
         title: Text(
-          CoreStrings.titleRegraDe3,
+          CoreStringsRegraDe3.titleRegraDe3,
           style: TextStyle(color: CoreColors.textPrimary),
         ),
         centerTitle: true,
@@ -52,7 +52,7 @@ class _RegraDe3State extends State<RegraDe3> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text1_regraDe3,
+                CoreStringsRegraDe3.text1_regraDe3,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -61,7 +61,7 @@ class _RegraDe3State extends State<RegraDe3> {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   child: Text(
-                    CoreStrings.text2_regraDe3,
+                    CoreStringsRegraDe3.text2_regraDe3,
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
@@ -76,7 +76,7 @@ class _RegraDe3State extends State<RegraDe3> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text3_regraDe3,
+                CoreStringsRegraDe3.text3_regraDe3,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -90,14 +90,14 @@ class _RegraDe3State extends State<RegraDe3> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text4_regraDe3,
+                CoreStringsRegraDe3.text4_regraDe3,
                 style: TextStyle(fontSize: 16.0, color: Colors.red.shade400),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text5_regraDe3,
+                CoreStringsRegraDe3.text5_regraDe3,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -111,7 +111,7 @@ class _RegraDe3State extends State<RegraDe3> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text6_regraDe3,
+                CoreStringsRegraDe3.text6_regraDe3,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -125,7 +125,7 @@ class _RegraDe3State extends State<RegraDe3> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text7_regraDe3,
+                CoreStringsRegraDe3.text7_regraDe3,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -134,7 +134,7 @@ class _RegraDe3State extends State<RegraDe3> {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   child: Text(
-                    CoreStrings.text10_regraDe3,
+                    CoreStringsRegraDe3.text10_regraDe3,
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
@@ -142,14 +142,14 @@ class _RegraDe3State extends State<RegraDe3> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text8_regraDe3,
+                CoreStringsRegraDe3.text8_regraDe3,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text9_regraDe3,
+                CoreStringsRegraDe3.text9_regraDe3,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -163,7 +163,7 @@ class _RegraDe3State extends State<RegraDe3> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text11_regraDe3,
+                CoreStringsRegraDe3.text11_regraDe3,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -177,7 +177,7 @@ class _RegraDe3State extends State<RegraDe3> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text12_regraDe3,
+                CoreStringsRegraDe3.text12_regraDe3,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -191,7 +191,7 @@ class _RegraDe3State extends State<RegraDe3> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text13_regraDe3,
+                CoreStringsRegraDe3.text13_regraDe3,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -205,7 +205,7 @@ class _RegraDe3State extends State<RegraDe3> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text14_regraDe3,
+                CoreStringsRegraDe3.text14_regraDe3,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -219,7 +219,7 @@ class _RegraDe3State extends State<RegraDe3> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text15_regraDe3,
+                CoreStringsRegraDe3.text15_regraDe3,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -233,7 +233,7 @@ class _RegraDe3State extends State<RegraDe3> {
             Padding(
               padding: EdgeInsets.fromLTRB(10, 10, 10, 25),
               child: Text(
-                CoreStrings.text16_regraDe3,
+                CoreStringsRegraDe3.text16_regraDe3,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),

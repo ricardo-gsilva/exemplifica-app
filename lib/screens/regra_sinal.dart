@@ -1,8 +1,8 @@
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/screens/home_page.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_regras_sinais.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,7 +20,7 @@ class _RegrasSinaisState extends State<RegrasSinais> {
       appBar: AppBar(
           backgroundColor: CoreColors.appBarColor,
           title: Text(
-            CoreStrings.titleRegraSinal,
+            CoreStringsRegrasSinais.titleRegraSinal,
             style: TextStyle(color: CoreColors.textPrimary),
           ),
           centerTitle: true,
@@ -54,7 +54,7 @@ class _RegrasSinaisState extends State<RegrasSinais> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text1_RegraSinal,
+                CoreStringsRegrasSinais.text1_RegraSinal,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -67,14 +67,14 @@ class _RegrasSinaisState extends State<RegrasSinais> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text2_RegraSinal,
+                CoreStringsRegrasSinais.text2_RegraSinal,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text3_RegraSinal,
+                CoreStringsRegrasSinais.text3_RegraSinal,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -87,14 +87,14 @@ class _RegrasSinaisState extends State<RegrasSinais> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text4_RegraSinal,
+                CoreStringsRegrasSinais.text4_RegraSinal,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text5_RegraSinal,
+                CoreStringsRegrasSinais.text5_RegraSinal,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -107,49 +107,49 @@ class _RegrasSinaisState extends State<RegrasSinais> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text6_RegraSinal,
+                CoreStringsRegrasSinais.text6_RegraSinal,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text7_RegraSinal,
+                CoreStringsRegrasSinais.text7_RegraSinal,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text8_RegraSinal,
+                CoreStringsRegrasSinais.text8_RegraSinal,
                 style: TextStyle(fontSize: 16.0, color: Colors.red),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text9_RegraSinal,
+                CoreStringsRegrasSinais.text9_RegraSinal,
                 style: TextStyle(fontSize: 16.0, color: Colors.red),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text10_RegraSinal,
+                CoreStringsRegrasSinais.text10_RegraSinal,
                 style: TextStyle(fontSize: 16.0, color: Colors.red),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text11_RegraSinal,
+                CoreStringsRegrasSinais.text11_RegraSinal,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.fromLTRB(10, 10, 10, 40),
               child: Text(
-                CoreStrings.text12_RegraSinal,
+                CoreStringsRegrasSinais.text12_RegraSinal,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),

@@ -1,9 +1,9 @@
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/cald_tabuada.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_tabuada.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +22,7 @@ class _TabuadaState extends State<Tabuada> {
       appBar: AppBar(
         backgroundColor: CoreColors.appBarColor,
         title: Text(
-          CoreStrings.titleTabuada,
+          CoreStringsTabuada.titleTabuada,
           style: TextStyle(color: CoreColors.textPrimary),
         ),
         centerTitle: true,
@@ -55,14 +55,14 @@ class _TabuadaState extends State<Tabuada> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text1_tabuada,
+                CoreStringsTabuada.text1_tabuada,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text2_tabuada,
+                CoreStringsTabuada.text2_tabuada,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -75,14 +75,14 @@ class _TabuadaState extends State<Tabuada> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text3_tabuada,
+                CoreStringsTabuada.text3_tabuada,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text4_tabuada,
+                CoreStringsTabuada.text4_tabuada,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -95,7 +95,7 @@ class _TabuadaState extends State<Tabuada> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text5_tabuada,
+                CoreStringsTabuada.text5_tabuada,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -108,7 +108,7 @@ class _TabuadaState extends State<Tabuada> {
             Padding(
               padding: EdgeInsets.fromLTRB(10, 10, 10, 25),
               child: Text(
-                CoreStrings.text6_tabuada,
+                CoreStringsTabuada.text6_tabuada,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
