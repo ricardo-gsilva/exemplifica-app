@@ -1,8 +1,8 @@
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/screens/home_page.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_expoentes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +21,7 @@ class _ExpoentesState extends State<Expoentes> {
       appBar: AppBar(
           backgroundColor: CoreColors.appBarColor,
           title: Text(
-            CoreStrings.titleExpoentes,
+            CoreStringsExpoentes.titleExpoentes,
             style: TextStyle(color: CoreColors.textPrimary),
           ),
           centerTitle: true,
@@ -55,7 +55,7 @@ class _ExpoentesState extends State<Expoentes> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text1_expoentes,
+                CoreStringsExpoentes.text1_expoentes,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -68,7 +68,7 @@ class _ExpoentesState extends State<Expoentes> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text2_expoentes,
+                CoreStringsExpoentes.text2_expoentes,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -81,7 +81,7 @@ class _ExpoentesState extends State<Expoentes> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text3_expoentes,
+                CoreStringsExpoentes.text3_expoentes,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -94,7 +94,7 @@ class _ExpoentesState extends State<Expoentes> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text4_expoentes,
+                CoreStringsExpoentes.text4_expoentes,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),

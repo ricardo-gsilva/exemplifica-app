@@ -1,11 +1,11 @@
 // ignore_for_file: camel_case_types
 
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/calc_equacao_2.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_equacao_2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,7 +24,7 @@ class _Equacao_2State extends State<Equacao_2> {
       appBar: AppBar(
         backgroundColor: CoreColors.appBarColor,
         title: Text(
-          CoreStrings.titleEquacao2,
+          CoreStringsEquacao2.titleEquacao2,
           style: TextStyle(color: CoreColors.textPrimary),
         ),
         leading: IconButton(
@@ -51,7 +51,7 @@ class _Equacao_2State extends State<Equacao_2> {
           children: <Widget>[
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text1_Equacao2,
+              child: Text(CoreStringsEquacao2.text1_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -64,19 +64,19 @@ class _Equacao_2State extends State<Equacao_2> {
                 )),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text2_Equacao2,
+              child: Text(CoreStringsEquacao2.text2_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text3_Equacao2,
+              child: Text(CoreStringsEquacao2.text3_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text4_Equacao2,
+              child: Text(CoreStringsEquacao2.text4_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -89,7 +89,7 @@ class _Equacao_2State extends State<Equacao_2> {
                 )),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text5_Equacao2,
+              child: Text(CoreStringsEquacao2.text5_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -102,7 +102,7 @@ class _Equacao_2State extends State<Equacao_2> {
                 )),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text6_Equacao2,
+              child: Text(CoreStringsEquacao2.text6_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -115,7 +115,7 @@ class _Equacao_2State extends State<Equacao_2> {
                 )),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text7_Equacao2,
+              child: Text(CoreStringsEquacao2.text7_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -128,7 +128,7 @@ class _Equacao_2State extends State<Equacao_2> {
                 )),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text8_Equacao2,                
+              child: Text(CoreStringsEquacao2.text8_Equacao2,                
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -141,7 +141,7 @@ class _Equacao_2State extends State<Equacao_2> {
                 )),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text9_Equacao2,
+              child: Text(CoreStringsEquacao2.text9_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -154,7 +154,7 @@ class _Equacao_2State extends State<Equacao_2> {
                 )),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text10_Equacao2,
+              child: Text(CoreStringsEquacao2.text10_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -167,7 +167,7 @@ class _Equacao_2State extends State<Equacao_2> {
                 )),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text11_Equacao2,
+              child: Text(CoreStringsEquacao2.text11_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -180,13 +180,13 @@ class _Equacao_2State extends State<Equacao_2> {
                 )),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text12_Equacao2,
+              child: Text(CoreStringsEquacao2.text12_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text13_Equacao2,
+              child: Text(CoreStringsEquacao2.text13_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -199,7 +199,7 @@ class _Equacao_2State extends State<Equacao_2> {
                 )),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text14_Equacao2,
+              child: Text(CoreStringsEquacao2.text14_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -212,7 +212,7 @@ class _Equacao_2State extends State<Equacao_2> {
                 )),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text15_Equacao2,
+              child: Text(CoreStringsEquacao2.text15_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -225,7 +225,7 @@ class _Equacao_2State extends State<Equacao_2> {
                 )),
             Padding(
               padding: EdgeInsets.all(10.0),
-              child: Text(CoreStrings.text16_Equacao2,
+              child: Text(CoreStringsEquacao2.text16_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -238,7 +238,7 @@ class _Equacao_2State extends State<Equacao_2> {
                 )),
             Padding(
               padding: EdgeInsets.fromLTRB(10, 10, 10, 25),
-              child: Text(CoreStrings.text17_Equacao2,
+              child: Text(CoreStringsEquacao2.text17_Equacao2,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),

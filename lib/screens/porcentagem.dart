@@ -1,9 +1,9 @@
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/calc_porcentagem.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_porcentagem.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +21,7 @@ class _PorcentagemState extends State<Porcentagem> {
       appBar: AppBar(
         backgroundColor: CoreColors.appBarColor,
         title: Text(
-          CoreStrings.titlePorcentagem,
+          CoreStringsPorcentagem.titlePorcentagem,
           style: TextStyle(color: CoreColors.textPrimary),
         ),
         centerTitle: true,
@@ -56,7 +56,7 @@ class _PorcentagemState extends State<Porcentagem> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  CoreStrings.text1_porcentagem,
+                  CoreStringsPorcentagem.text1_porcentagem,
                   style: TextStyle(fontSize: 16.0),
                 ),
               ),
@@ -66,7 +66,7 @@ class _PorcentagemState extends State<Porcentagem> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  CoreStrings.text2_porcentagem,
+                  CoreStringsPorcentagem.text2_porcentagem,
                   style: TextStyle(fontSize: 16.0),
                 ),
               ),
@@ -84,7 +84,7 @@ class _PorcentagemState extends State<Porcentagem> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  CoreStrings.text3_porcentagem,
+                  CoreStringsPorcentagem.text3_porcentagem,
                   style: TextStyle(fontSize: 16.0),
                 ),
               ),
@@ -102,7 +102,7 @@ class _PorcentagemState extends State<Porcentagem> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  CoreStrings.text4_porcentagem,
+                  CoreStringsPorcentagem.text4_porcentagem,
                   style: TextStyle(fontSize: 16.0),
                 ),
               ),
@@ -120,7 +120,7 @@ class _PorcentagemState extends State<Porcentagem> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  CoreStrings.text5_porcentagem,
+                  CoreStringsPorcentagem.text5_porcentagem,
                   style: TextStyle(fontSize: 16.0),
                 ),
               ),
@@ -138,7 +138,7 @@ class _PorcentagemState extends State<Porcentagem> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  CoreStrings.text6_porcentagem,
+                  CoreStringsPorcentagem.text6_porcentagem,
                   style: TextStyle(fontSize: 16.0),
                 ),
               ),
@@ -148,7 +148,7 @@ class _PorcentagemState extends State<Porcentagem> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  CoreStrings.text7_porcentagem,
+                  CoreStringsPorcentagem.text7_porcentagem,
                   style: TextStyle(fontSize: 16.0),
                 ),
               ),
@@ -158,7 +158,7 @@ class _PorcentagemState extends State<Porcentagem> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  CoreStrings.text8_porcentagem,
+                  CoreStringsPorcentagem.text8_porcentagem,
                   style: TextStyle(fontSize: 16.0),
                 ),
               ),
@@ -176,7 +176,7 @@ class _PorcentagemState extends State<Porcentagem> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  CoreStrings.text9_porcentagem,
+                  CoreStringsPorcentagem.text9_porcentagem,
                   style: TextStyle(fontSize: 16.0),
                 ),
               ),
@@ -194,7 +194,7 @@ class _PorcentagemState extends State<Porcentagem> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  CoreStrings.text10_porcentagem,
+                  CoreStringsPorcentagem.text10_porcentagem,
                   style: TextStyle(fontSize: 16.0),
                 ),
               ),
@@ -212,7 +212,7 @@ class _PorcentagemState extends State<Porcentagem> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  CoreStrings.text11_porcentagem,
+                  CoreStringsPorcentagem.text11_porcentagem,
                   style: TextStyle(fontSize: 16.0),
                 ),
               ),
@@ -230,7 +230,7 @@ class _PorcentagemState extends State<Porcentagem> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Text(
-                  CoreStrings.text12_porcentagem,
+                  CoreStringsPorcentagem.text12_porcentagem,
                   style: TextStyle(fontSize: 16.0),
                 ),
               ),

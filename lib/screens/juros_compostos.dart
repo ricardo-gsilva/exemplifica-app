@@ -1,9 +1,9 @@
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/calc_juros_compostos.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_juros_compostos.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +22,7 @@ class _JurosCompostosState extends State<JurosCompostos> {
         appBar: AppBar(
           backgroundColor: CoreColors.appBarColor,
           title: Text(
-            CoreStrings.titleJurosCompostos,
+            CoreStringsJurosCompostos.titleJurosCompostos,
             style: TextStyle(color: CoreColors.textPrimary),
           ),
           centerTitle: true,
@@ -51,14 +51,14 @@ class _JurosCompostosState extends State<JurosCompostos> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text1_JurosCompostos,              
+              CoreStringsJurosCompostos.text1_JurosCompostos,              
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text2_JurosCompostos,                            
+              CoreStringsJurosCompostos.text2_JurosCompostos,                            
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -67,21 +67,21 @@ class _JurosCompostosState extends State<JurosCompostos> {
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  CoreStrings.text3_JurosCompostos,                  
+                  CoreStringsJurosCompostos.text3_JurosCompostos,                  
                   style: TextStyle(fontSize: 16.0),
                 ),
               )),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text4_JurosCompostos,                                
+              CoreStringsJurosCompostos.text4_JurosCompostos,                                
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text5_JurosCompostos,
+              CoreStringsJurosCompostos.text5_JurosCompostos,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -96,28 +96,28 @@ class _JurosCompostosState extends State<JurosCompostos> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text6_JurosCompostos,              
+              CoreStringsJurosCompostos.text6_JurosCompostos,              
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text7_JurosCompostos,               
+              CoreStringsJurosCompostos.text7_JurosCompostos,               
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text8_JurosCompostos,              
+              CoreStringsJurosCompostos.text8_JurosCompostos,              
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text9_JurosCompostos,
+              CoreStringsJurosCompostos.text9_JurosCompostos,
               textAlign: TextAlign.start,             
               style: TextStyle(fontSize: 16.0),
             ),
@@ -125,7 +125,7 @@ class _JurosCompostosState extends State<JurosCompostos> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text10_JurosCompostos,              
+              CoreStringsJurosCompostos.text10_JurosCompostos,              
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -140,7 +140,7 @@ class _JurosCompostosState extends State<JurosCompostos> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text11_JurosCompostos,
+              CoreStringsJurosCompostos.text11_JurosCompostos,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -155,28 +155,28 @@ class _JurosCompostosState extends State<JurosCompostos> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text12_JurosCompostos,
+              CoreStringsJurosCompostos.text12_JurosCompostos,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text13_JurosCompostos,
+              CoreStringsJurosCompostos.text13_JurosCompostos,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text14_JurosCompostos,
+              CoreStringsJurosCompostos.text14_JurosCompostos,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text15_JurosCompostos,
+              CoreStringsJurosCompostos.text15_JurosCompostos,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -191,14 +191,14 @@ class _JurosCompostosState extends State<JurosCompostos> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text16_JurosCompostos,
+              CoreStringsJurosCompostos.text16_JurosCompostos,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text17_JurosCompostos,
+              CoreStringsJurosCompostos.text17_JurosCompostos,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -213,7 +213,7 @@ class _JurosCompostosState extends State<JurosCompostos> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text18_JurosCompostos,
+              CoreStringsJurosCompostos.text18_JurosCompostos,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -228,7 +228,7 @@ class _JurosCompostosState extends State<JurosCompostos> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text19_JurosCompostos,
+              CoreStringsJurosCompostos.text19_JurosCompostos,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -243,7 +243,7 @@ class _JurosCompostosState extends State<JurosCompostos> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text20_JurosCompostos,
+              CoreStringsJurosCompostos.text20_JurosCompostos,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -258,7 +258,7 @@ class _JurosCompostosState extends State<JurosCompostos> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text21_JurosCompostos,
+              CoreStringsJurosCompostos.text21_JurosCompostos,
               style: TextStyle(fontSize: 16.0),
             ),
           ),

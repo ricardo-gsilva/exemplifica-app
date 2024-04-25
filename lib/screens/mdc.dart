@@ -1,9 +1,9 @@
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/cald_mdc.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_mdc.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,7 +22,7 @@ class _MdcState extends State<Mdc> {
         appBar: AppBar(
           backgroundColor: CoreColors.appBarColor,
           title: Text(
-            CoreStrings.titleMdc,
+            CoreStringsMdc.titleMdc,
             style: TextStyle(color: CoreColors.textPrimary),
           ),
           centerTitle: true,
@@ -51,21 +51,21 @@ class _MdcState extends State<Mdc> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text1_mdc,
+              CoreStringsMdc.text1_mdc,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text2_mdc,
+              CoreStringsMdc.text2_mdc,
               style: TextStyle(fontSize: 16.0, color: Colors.red),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text3_mdc,
+              CoreStringsMdc.text3_mdc,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -78,7 +78,7 @@ class _MdcState extends State<Mdc> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text4_mdc,
+              CoreStringsMdc.text4_mdc,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -91,7 +91,7 @@ class _MdcState extends State<Mdc> {
           Padding(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 25),
             child: Text(
-              CoreStrings.text5_mdc,
+              CoreStringsMdc.text5_mdc,
               style: TextStyle(fontSize: 16.0),
             ),
           ),

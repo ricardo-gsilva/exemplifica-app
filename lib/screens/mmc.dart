@@ -1,9 +1,9 @@
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/calc_mmc.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_mmc.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +21,7 @@ class _MmcState extends State<Mmc> {
         appBar: AppBar(
           backgroundColor: CoreColors.appBarColor,
           title: Text(
-            CoreStrings.titleMmc,
+            CoreStringsMmc.titleMmc,
             style: TextStyle(color: CoreColors.textPrimary),
           ),
           centerTitle: true,
@@ -50,14 +50,14 @@ class _MmcState extends State<Mmc> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text1_mmc,
+                CoreStringsMmc.text1_mmc,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text2_mmc,
+                CoreStringsMmc.text2_mmc,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -70,14 +70,14 @@ class _MmcState extends State<Mmc> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text3_mmc,
+                CoreStringsMmc.text3_mmc,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text4_mmc,
+                CoreStringsMmc.text4_mmc,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -90,7 +90,7 @@ class _MmcState extends State<Mmc> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text5_mmc,
+                CoreStringsMmc.text5_mmc,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -103,7 +103,7 @@ class _MmcState extends State<Mmc> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text6_mmc,
+                CoreStringsMmc.text6_mmc,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -116,7 +116,7 @@ class _MmcState extends State<Mmc> {
             Padding(
               padding: EdgeInsets.fromLTRB(10, 10, 10, 25),
               child: Text(
-                CoreStrings.text7_mmc,
+                CoreStringsMmc.text7_mmc,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),

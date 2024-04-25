@@ -1,8 +1,8 @@
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/screens/home_page.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_mult_div.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +21,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
         appBar: AppBar(
           backgroundColor: CoreColors.appBarColor,
           title: Text(
-            CoreStrings.titleMultipDiv,
+            CoreStringsMultDiv.titleMultipDiv,
             style: TextStyle(color: CoreColors.textPrimary),
           ),
           centerTitle: true,
@@ -54,7 +54,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text1_MultiplicaDiv,
+              CoreStringsMultDiv.text1_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -67,14 +67,14 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text2_MultiplicaDiv,
+              CoreStringsMultDiv.text2_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text3_MultiplicaDiv,
+              CoreStringsMultDiv.text3_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -87,7 +87,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text4_MultiplicaDiv,
+              CoreStringsMultDiv.text4_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -100,7 +100,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text5_MultiplicaDiv,
+              CoreStringsMultDiv.text5_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -113,14 +113,14 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text6_MultiplicaDiv,
+              CoreStringsMultDiv.text6_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text7_MultiplicaDiv,
+              CoreStringsMultDiv.text7_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -138,7 +138,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text8_MultiplicaDiv,
+              CoreStringsMultDiv.text8_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -156,21 +156,21 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text9_MultiplicaDiv,
+              CoreStringsMultDiv.text9_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text10_MultiplicaDiv,
+              CoreStringsMultDiv.text10_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text11_MultiplicaDiv,
+              CoreStringsMultDiv.text11_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -183,7 +183,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text12_MultiplicaDiv,
+              CoreStringsMultDiv.text12_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -196,7 +196,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text13_MultiplicaDiv,
+              CoreStringsMultDiv.text13_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -209,7 +209,7 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
           Padding(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 40),
             child: Text(
-              CoreStrings.text14_MultiplicaDiv,
+              CoreStringsMultDiv.text14_MultiplicaDiv,
               style: TextStyle(fontSize: 16.0),
             ),
           ),

@@ -1,9 +1,9 @@
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/calc_juros_simples.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_juros_simples.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,7 +23,7 @@ class _JurosSimplesState extends State<JurosSimples> {
           backgroundColor: CoreColors.appBarColor,
           automaticallyImplyLeading: false,
           title: Text(
-            CoreStrings.titleJurosSimples,
+            CoreStringsJurosSimples.titleJurosSimples,
             style: TextStyle(color: CoreColors.textPrimary),
           ),
           leading: IconButton(
@@ -53,14 +53,14 @@ class _JurosSimplesState extends State<JurosSimples> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text1_JurosSimples,
+              CoreStringsJurosSimples.text1_JurosSimples,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text2_JurosSimples,
+              CoreStringsJurosSimples.text2_JurosSimples,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -69,14 +69,14 @@ class _JurosSimplesState extends State<JurosSimples> {
               child: Container(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  CoreStrings.text3_JurosSimples,
+                  CoreStringsJurosSimples.text3_JurosSimples,
                   style: TextStyle(fontSize: 16.0),
                 ),
               )),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text4_JurosSimples,
+              CoreStringsJurosSimples.text4_JurosSimples,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -91,14 +91,14 @@ class _JurosSimplesState extends State<JurosSimples> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text5_JurosSimples,
+              CoreStringsJurosSimples.text5_JurosSimples,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text6_JurosSimples,
+              CoreStringsJurosSimples.text6_JurosSimples,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -113,14 +113,14 @@ class _JurosSimplesState extends State<JurosSimples> {
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text7_JurosSimples,
+              CoreStringsJurosSimples.text7_JurosSimples,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
           Padding(
             padding: EdgeInsets.all(10.0),
             child: Text(
-              CoreStrings.text8_JurosSimples,
+              CoreStringsJurosSimples.text8_JurosSimples,
               style: TextStyle(fontSize: 16.0),
             ),
           ),
@@ -151,7 +151,7 @@ class _JurosSimplesState extends State<JurosSimples> {
           Padding(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 25),
             child: Text(
-              CoreStrings.text9_JurosSimples,
+              CoreStringsJurosSimples.text9_JurosSimples,
               style: TextStyle(fontSize: 16.0),
             ),
           ),

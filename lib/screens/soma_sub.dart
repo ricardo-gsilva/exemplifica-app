@@ -1,8 +1,8 @@
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/screens/home_page.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_soma_sub.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +21,7 @@ class _SomaSubtracaoState extends State<SomaSubtracao> {
       appBar: AppBar(
           backgroundColor: CoreColors.appBarColor,
           title: Text(
-            CoreStrings.titleSomaSub,
+            CoreStringsSomaSub.titleSomaSub,
             style: TextStyle(color: CoreColors.textPrimary),
           ),
           centerTitle: true,
@@ -55,7 +55,7 @@ class _SomaSubtracaoState extends State<SomaSubtracao> {
             Padding(
               padding: EdgeInsets.fromLTRB(10, 10, 10, 40),
               child: Text(
-                CoreStrings.text1_SomaSub,
+                CoreStringsSomaSub.text1_SomaSub,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),

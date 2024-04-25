@@ -1,8 +1,8 @@
-import 'package:exemplifica/ad_mob/ad_mob.dart';
+import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/screens/home_page.dart';
 import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/utils/constants/strings/strings_parentesis.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +21,7 @@ class _ParentesisState extends State<Parentesis> {
       appBar: AppBar(
           backgroundColor: CoreColors.appBarColor,
           title: Text(
-            CoreStrings.titleParentesis,
+            CoreStringsParentesis.titleParentesis,
             style: TextStyle(color: CoreColors.textPrimary),
           ),
           centerTitle: true,
@@ -55,7 +55,7 @@ class _ParentesisState extends State<Parentesis> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text1_parentesis,
+                CoreStringsParentesis.text1_parentesis,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -68,7 +68,7 @@ class _ParentesisState extends State<Parentesis> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text2_parentesis,
+                CoreStringsParentesis.text2_parentesis,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -81,7 +81,7 @@ class _ParentesisState extends State<Parentesis> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text3_parentesis,
+                CoreStringsParentesis.text3_parentesis,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -94,7 +94,7 @@ class _ParentesisState extends State<Parentesis> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text4_parentesis,
+                CoreStringsParentesis.text4_parentesis,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -107,7 +107,7 @@ class _ParentesisState extends State<Parentesis> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text5_parentesis,
+                CoreStringsParentesis.text5_parentesis,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -120,7 +120,7 @@ class _ParentesisState extends State<Parentesis> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text6_parentesis,
+                CoreStringsParentesis.text6_parentesis,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
@@ -133,7 +133,7 @@ class _ParentesisState extends State<Parentesis> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: Text(
-                CoreStrings.text7_parentesis,
+                CoreStringsParentesis.text7_parentesis,
                 style: TextStyle(fontSize: 16.0),
               ),
             ),
