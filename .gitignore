@@ -48,5 +48,6 @@ app.*.map.json
 android/key.properties
 android/local.properties
 android/app/src/main/res/values/admob.xml
-lib/services/ad_mob.dart
+lib/services
+exemplifica-app/lib/services
 .vscode/launch.json
