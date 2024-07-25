@@ -1,11 +1,11 @@
 import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
-import 'package:exemplifica/controller/model_equacao_1.dart';
-import 'package:exemplifica/screens/components/row_buttons.dart';
-import 'package:exemplifica/screens/components/text_field_input.dart';
+import 'package:exemplifica/controller/controller_equacao_1.dart';
+import 'package:exemplifica/components/row_buttons.dart';
+import 'package:exemplifica/components/text_field_input.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
+import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,7 +15,7 @@ class CalcEquacao1 extends StatefulWidget {
 }
 
 class _CalcEquacao1State extends State<CalcEquacao1> {
-  final ModelEquacao1 modelCalc1 = ModelEquacao1();
+  final ControllerEquacao1 calcEquacao_1 = ControllerEquacao1();
   final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
@@ -99,12 +99,12 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
               TextFieldInput(
                 title: "'a':",
                 hintText: "a",
-                controller: modelCalc1.val1
+                controller: calcEquacao_1.val1
               ),
               TextFieldInput(
                 title: "'b':",
                 hintText: "b",
-                controller: modelCalc1.val2
+                controller: calcEquacao_1.val2
               ),
               RowButtons(
                 titleFirst: CoreStrings.calc,
@@ -120,12 +120,12 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
                       controller.calcEq1 = 0.obs;
                     }
                     controller.checkValueForInterstitial(AdHelper.videoCalcEquacao1, controller.calcEq1);
-                    modelCalc1.verificarCampo();
+                    calcEquacao_1.verificarCampo();
                   });
                 }),
                 onTapSecond: (() {
                   setState(() {
-                    modelCalc1.resetCampos();
+                    calcEquacao_1.resetCampos();
                   });
                 }),
               ),         
@@ -136,7 +136,7 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
                 padding:
                     EdgeInsets.all(10),
                 child: Text(
-                  modelCalc1.resultEq1_1,
+                  calcEquacao_1.resultEq1_1,
                   textAlign: TextAlign.left,
                   style: TextStyle(color: CoreColors.textPrimary, fontSize: 21.0),
                 ),

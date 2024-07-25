@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:exemplifica/screens/widgets/button_custom.dart';
+import 'package:exemplifica/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
 class RowButtons extends StatelessWidget {

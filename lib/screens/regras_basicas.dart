@@ -1,8 +1,8 @@
 import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
-import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
-import 'package:exemplifica/screens/widgets/button_custom.dart';
+import 'package:exemplifica/widgets/bottombar_banner.dart';
+import 'package:exemplifica/widgets/button_custom.dart';
 import 'package:exemplifica/screens/expoentes.dart';
 import 'package:exemplifica/screens/mult_div.dart';
 import 'package:exemplifica/screens/parentesis.dart';

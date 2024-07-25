@@ -1,8 +1,8 @@
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
-import 'package:exemplifica/controller/model_funcoes.dart';
+import 'package:exemplifica/controller/controller_funcoes.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/screens/widgets/button_custom.dart';
+import 'package:exemplifica/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
 class CalcFuncoes extends StatefulWidget {

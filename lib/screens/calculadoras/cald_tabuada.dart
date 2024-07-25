@@ -1,11 +1,11 @@
 import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
-import 'package:exemplifica/controller/model_tabuada.dart';
-import 'package:exemplifica/screens/components/row_buttons.dart';
+import 'package:exemplifica/controller/controller_tabuada.dart';
+import 'package:exemplifica/components/row_buttons.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
-import 'package:exemplifica/screens/components/text_field_input.dart';
+import 'package:exemplifica/widgets/bottombar_banner.dart';
+import 'package:exemplifica/components/text_field_input.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -80,7 +80,8 @@ class _CalcTabuadaState extends State<CalcTabuada> {
                 TextFieldInput(
                   title: "Valor:",
                   hintText: "Digite aqui",
-                  controller: _modelTabuada.nTabuada
+                  controller: _modelTabuada.nTabuada,
+                  maxLength: 5,
                 ),          
                 RowButtons(
                   titleFirst: CoreStrings.calc,
