@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 class ModelMmc {
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
-
   String resultMmc = "";
   String resultMmc1 = "";
-
   bool visible = false;
 
   void resetCampos() {
@@ -19,8 +17,8 @@ class ModelMmc {
 
   void verificarCampos() {
     if (val1.text.isEmpty || val2.text.isEmpty) {
-      resultMmc = "Por favor, preencha os campos!" + "\n"
-      "Utilize valores até 99999!";
+      visible = true;
+      resultMmc = "Por favor, preencha os campos!\nUtilize valores até 99999!";
       resultMmc1 = "";
     } else {
       resultMmc = "";
@@ -71,8 +69,9 @@ class ModelMmc {
       divi = div.toInt();
       resultMmc = resultMmc + "$valmmc1" + ", " + "$valmmc2" + " | " + "\n";
     }
-    resultMmc1 = resultMmc1 +
-        "Multiplicando todos os valores utilizados para fatoração, temos o "
-        "valor do MMC: " + "$cachei" + "\n";
+    resultMmc1 = 
+      "${resultMmc1}Após chegar ao valor 1, multiplique todos os números que resultaram "
+      "ao lado da barra lateral.\n\n"
+      "Multiplicando todos os valores utilizados para fatoração, temos o valor do MMC: $cachei \n";
   }
 }

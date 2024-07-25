@@ -1,13 +1,10 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/components/text_field_input.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/controller/controller_porcentagem.dart';
 import 'package:exemplifica/components/row_buttons.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CalcPorcentagem extends StatefulWidget {
   @override
@@ -16,7 +13,6 @@ class CalcPorcentagem extends StatefulWidget {
 
 class _CalcPorcentagemState extends State<CalcPorcentagem> {
   final ModelPorcentagem modelPorcentagem = ModelPorcentagem();
-  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
 
@@ -106,7 +102,7 @@ class _CalcPorcentagemState extends State<CalcPorcentagem> {
                       Padding(
                         padding: EdgeInsets.only(top: 10, right: 30),
                         child: Text(
-                          "100",
+                          "100%",
                           style: TextStyle(fontSize: 23.0),
                         ),
                       ),
@@ -126,7 +122,7 @@ class _CalcPorcentagemState extends State<CalcPorcentagem> {
                       Padding(
                         padding: EdgeInsets.only(top: 10, right: 30),
                         child: Text(
-                          "X",
+                          "X   ",
                           style: TextStyle(fontSize: 23.0),
                         ),
                       ),
@@ -140,13 +136,6 @@ class _CalcPorcentagemState extends State<CalcPorcentagem> {
                     width: width,
                     onTapFirst: (() {
                       setState(() {
-                        if (controller.calcPorcent < 6) {
-                          controller.calcPorcent++;
-                        } else {
-                          controller.calcPorcent = 0.obs;
-                        }
-                        controller.checkValueForInterstitial(
-                            AdHelper.videoCalcPorcentagem, controller.calcPorcent);
                         modelPorcentagem.verificarCampos();
                       });
                     }),
@@ -174,9 +163,13 @@ class _CalcPorcentagemState extends State<CalcPorcentagem> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomBarBanner(
-        banner: controller.bannerAdCalcPorcentagem,
-        bannerAd: controller.bannerAd),      
     );
+  }
+
+  @override
+  void dispose() {
+    modelPorcentagem.val1.dispose();
+    modelPorcentagem.val2.dispose();
+    super.dispose();
   }
 }

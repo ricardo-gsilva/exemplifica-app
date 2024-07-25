@@ -1,13 +1,10 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/controller/controller_equacao_1.dart';
 import 'package:exemplifica/components/row_buttons.dart';
 import 'package:exemplifica/components/text_field_input.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CalcEquacao1 extends StatefulWidget {
   @override
@@ -16,7 +13,6 @@ class CalcEquacao1 extends StatefulWidget {
 
 class _CalcEquacao1State extends State<CalcEquacao1> {
   final ControllerEquacao1 calcEquacao_1 = ControllerEquacao1();
-  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
 
@@ -113,13 +109,7 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
                 height: height,
                 width: width,
                 onTapFirst: (() {
-                  setState(() {
-                    if (controller.calcEq1 < 6) {
-                      controller.calcEq1++;
-                    } else {
-                      controller.calcEq1 = 0.obs;
-                    }
-                    controller.checkValueForInterstitial(AdHelper.videoCalcEquacao1, controller.calcEq1);
+                  setState(() {                    
                     calcEquacao_1.verificarCampo();
                   });
                 }),
@@ -145,7 +135,13 @@ class _CalcEquacao1State extends State<CalcEquacao1> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcEquacao1, bannerAd: controller.bannerAd),
     );
+  }
+
+  @override
+  void dispose() {
+    calcEquacao_1.val1.dispose();
+    calcEquacao_1.val2.dispose();
+    super.dispose();
   }
 }

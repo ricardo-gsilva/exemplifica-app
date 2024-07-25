@@ -1,13 +1,10 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/controller/controller_mmc.dart';
 import 'package:exemplifica/components/row_buttons.dart';
 import 'package:exemplifica/components/text_field_input.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CalcMmc extends StatefulWidget {
   @override
@@ -16,7 +13,6 @@ class CalcMmc extends StatefulWidget {
 
 class _CalcMmcState extends State<CalcMmc> {
   final ModelMmc modelMmc = ModelMmc();
-  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
 
@@ -98,13 +94,6 @@ class _CalcMmcState extends State<CalcMmc> {
                       width: width,
                       onTapFirst: (() {
                         setState(() {
-                          if (controller.calcMmc < 6) {
-                            controller.calcMmc++;
-                          } else {
-                            controller.calcMmc = 0.obs;
-                          }
-                          controller.checkValueForInterstitial(
-                              AdHelper.videoCalcMmc, controller.calcMmc);
                           modelMmc.verificarCampos();
                         });
                       }),
@@ -146,7 +135,13 @@ class _CalcMmcState extends State<CalcMmc> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcMmc, bannerAd: controller.bannerAd),      
     );
+  }
+
+  @override
+  void dispose() {
+    modelMmc.val1.dispose();
+    modelMmc.val2.dispose();
+    super.dispose();
   }
 }

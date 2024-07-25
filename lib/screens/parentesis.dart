@@ -1,10 +1,7 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/utils/constants/strings/strings_parentesis.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class Parentesis extends StatefulWidget {
   @override
@@ -12,7 +9,6 @@ class Parentesis extends StatefulWidget {
 }
 
 class _ParentesisState extends State<Parentesis> {
-  final controller = Get.put(AdHelper());
   
   @override
   Widget build(BuildContext context) {
@@ -146,7 +142,6 @@ class _ParentesisState extends State<Parentesis> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdParentesis, bannerAd: controller.bannerAd),
       );
   }
 }

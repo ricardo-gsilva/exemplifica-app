@@ -1,13 +1,10 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/components/text_field_input.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/controller/controller_regra_de_3.dart';
 import 'package:exemplifica/components/row_buttons.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CalcRegraDe3 extends StatefulWidget {
   @override
@@ -16,7 +13,6 @@ class CalcRegraDe3 extends StatefulWidget {
 
 class _CalcRegraDe3State extends State<CalcRegraDe3> {
   final ModelRegraDe3 modelRegraDe3 = ModelRegraDe3();
-  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
 
@@ -135,13 +131,6 @@ class _CalcRegraDe3State extends State<CalcRegraDe3> {
                         width: width,
                         onTapFirst: (() {
                           setState(() {
-                            if (controller.calcRegra3 < 6) {
-                              controller.calcRegra3++;
-                            } else {
-                              controller.calcRegra3 = 0.obs;
-                            }
-                            controller.checkValueForInterstitial(
-                                AdHelper.videoCalcRegrade3, controller.calcRegra3);
                             modelRegraDe3.verificarCampos();
                           });
                         }),
@@ -168,7 +157,14 @@ class _CalcRegraDe3State extends State<CalcRegraDe3> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcRegrade3, bannerAd: controller.bannerAd),      
     );
+  }
+
+  @override
+  void dispose() {
+    modelRegraDe3.val1.dispose();
+    modelRegraDe3.val2.dispose();
+    modelRegraDe3.val3.dispose();
+    super.dispose();
   }
 }

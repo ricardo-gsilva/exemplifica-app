@@ -1,13 +1,10 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/controller/controller_juros_compostos.dart';
 import 'package:exemplifica/components/row_buttons.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/components/text_field_input.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CalcJurosC extends StatefulWidget {
   @override
@@ -16,7 +13,6 @@ class CalcJurosC extends StatefulWidget {
 
 class _CalcJurosCState extends State<CalcJurosC> {
   final ModelJurosCompostos modelJurosCompostos = ModelJurosCompostos();
-  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
 
@@ -124,12 +120,6 @@ class _CalcJurosCState extends State<CalcJurosC> {
                     width: width,
                     onTapFirst: (() {
                       setState(() {
-                        if (controller.calcJurosC < 6) {
-                          controller.calcJurosC++;
-                        } else {
-                          controller.calcJurosC = 0.obs;
-                        }
-                        controller.checkValueForInterstitial(AdHelper.videoCalcJurosC, controller.calcJurosC);
                         modelJurosCompostos.verificarCampos();
                       });
                     }),
@@ -172,7 +162,15 @@ class _CalcJurosCState extends State<CalcJurosC> {
               ),
             ),
           ]))),
-          bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcJurosC, bannerAd: controller.bannerAd),      
     );
+  }
+
+  @override
+  void dispose() {
+    modelJurosCompostos.c.dispose();
+    modelJurosCompostos.i.dispose();
+    modelJurosCompostos.j.dispose();
+    modelJurosCompostos.t.dispose();
+    super.dispose();
   }
 }

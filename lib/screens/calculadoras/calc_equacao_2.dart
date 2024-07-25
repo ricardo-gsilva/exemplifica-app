@@ -1,13 +1,10 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/controller/controller_equacao_2.dart';
 import 'package:exemplifica/components/text_field_input.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CalcEquacao2 extends StatefulWidget {
   @override
@@ -16,7 +13,6 @@ class CalcEquacao2 extends StatefulWidget {
 
 class _CalcEquacao2State extends State<CalcEquacao2> {
   final ModelEquacao2 modelEquacao2 = ModelEquacao2();
-  final controller = Get.put(AdHelper());
   bool visible = false;
   double height = 0;
   double width = 0;
@@ -113,15 +109,7 @@ class _CalcEquacao2State extends State<CalcEquacao2> {
                         children: [
                           ButtonBase(
                             onTap: (() {
-                              setState(() {
-                                if (controller.calcEq2 < 6) {
-                                  controller.calcEq2++;
-                                } else {
-                                  controller.calcEq2 = 0.obs;
-                                }
-                                controller.checkValueForInterstitial(
-                                    AdHelper.videoCalcEquacao2,
-                                    controller.calcEq2);
+                              setState(() {                                
                                 modelEquacao2.verificarCampo();
                               });
                             }),
@@ -207,7 +195,14 @@ class _CalcEquacao2State extends State<CalcEquacao2> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcEquacao2, bannerAd: controller.bannerAd),     
     );
+  }
+
+  @override
+  void dispose() {
+    modelEquacao2.val1.dispose();
+    modelEquacao2.val2.dispose();
+    modelEquacao2.val3.dispose();
+    super.dispose();
   }
 }

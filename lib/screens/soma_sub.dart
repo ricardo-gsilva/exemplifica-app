@@ -1,10 +1,7 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/utils/constants/strings/strings_soma_sub.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SomaSubtracao extends StatefulWidget {
   @override
@@ -12,7 +9,6 @@ class SomaSubtracao extends StatefulWidget {
 }
 
 class _SomaSubtracaoState extends State<SomaSubtracao> {
-  final controller = Get.put(AdHelper());
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +58,6 @@ class _SomaSubtracaoState extends State<SomaSubtracao> {
           ],
         )
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdSomaSub, bannerAd: controller.bannerAd),
       );
   }
 }

@@ -2,7 +2,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import 'package:exemplifica/screens/splash_screen.dart';
@@ -12,7 +11,6 @@ late bool releaseMode;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   releaseMode = kReleaseMode? true : false;
-  MobileAds.instance.initialize();
   PackageInfo? packageInfo;
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   packageInfo = await PackageInfo.fromPlatform();

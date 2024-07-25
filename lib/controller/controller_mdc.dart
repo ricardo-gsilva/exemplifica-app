@@ -21,8 +21,7 @@ class ModelMdc {
 
   void verificarCampos() {
     if (val1.text.isEmpty || val2.text.isEmpty) {
-      resultMdc = "Por favor, preencha os campos." + "\n" +
-      "Utilize valores até 99999!";
+      resultMdc = "Por favor, preencha os campos.\n Utilize valores até 99999!";
     } else {
       resultMdc = "";
       resultMdc1 = "";
@@ -40,8 +39,7 @@ class ModelMdc {
     int b = valormdc2.toInt();
     int rest = 0;
     if ((valormdc1 == 1) && (valormdc2 == 1)) {
-      resultMdc = resultMdc +
-          "O MDC de 1 será sempre 1, independente de quantas vezes for utilizado." + "\n";
+      resultMdc = "O MDC de 1 será sempre 1, independente de quantas vezes for utilizado. \n";
       resultMdc2 = "";
     } else {
       while (b != 0) {
@@ -55,26 +53,21 @@ class ModelMdc {
             div++;
           }
           if ((valormdc1 % div == 0) && (valormdc2 % div == 0)) {
-            resultMdc = resultMdc +
-                "$mdc1" + ", " + "$mdc2" + " | " + "$div" + " - Ok" + "\n";
+            resultMdc = "$resultMdc $mdc1, $mdc2 | $div - Ok \n";
             valormdc1 = valormdc1 / div;
-            valormdc2 = valormdc2 / div;
-            print("$valormdc1" + " " + "$valormdc2");
+            valormdc2 = valormdc2 / div;            
           } else if (((valormdc1 % div == 0) && (valormdc2 % div != 0))) {
-            resultMdc =
-                resultMdc + "$mdc1" + ", " + "$mdc2" + " | " + "$div" + "\n";
+            resultMdc = "$resultMdc $mdc1, $mdc2 | $div \n";
             valormdc1 = valormdc1 / div;
           } else if (((valormdc1 % div != 0) && (valormdc2 % div == 0))) {
-            resultMdc =
-                resultMdc + "$mdc1" + ", " + "$mdc2" + " | " + "$div" + "\n";
+            resultMdc = "$resultMdc $mdc1, $mdc2 | $div \n";
             valormdc2 = valormdc2 / div;
           }
           if (((valormdc1 == 1) && (valormdc2 == 1))) {
             int mdc11 = valormdc1.toInt();
             int mdc22 = valormdc2.toInt();
             div = 1;
-            resultMdc = resultMdc +
-                "$mdc11" + ", " + "$mdc22" + " | " + "$div" + " - Ok" + "\n";
+            resultMdc = "$resultMdc $mdc11, $mdc22 | $div - Ok \n";
           }
         }
       }

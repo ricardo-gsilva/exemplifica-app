@@ -1,11 +1,8 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/cald_tabuada.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/utils/constants/strings/strings_tabuada.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class Tabuada extends StatefulWidget {
   @override
@@ -13,7 +10,6 @@ class Tabuada extends StatefulWidget {
 }
 
 class _TabuadaState extends State<Tabuada> {
-  final controller = Get.put(AdHelper());
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +111,6 @@ class _TabuadaState extends State<Tabuada> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdTabuada, bannerAd: controller.bannerAd),
       );
   }
 }
