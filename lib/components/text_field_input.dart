@@ -6,11 +6,13 @@ import 'package:flutter/material.dart';
 class TextFieldInput extends StatelessWidget {
   String? title;
   String? hintText;
+  int? maxLength;
   TextEditingController? controller;
   TextFieldInput(
       {required this.title,
       required this.hintText,
       required this.controller,
+      this.maxLength = 9,
       super.key});
 
   @override
@@ -58,7 +60,7 @@ class TextFieldInput extends StatelessWidget {
                 textAlignVertical: TextAlignVertical.bottom,
                 style: TextStyle(color: CoreColors.textPrimary, fontSize: 23.0),
                 controller: controller,
-                maxLength: 9,                
+                maxLength: maxLength,                
               ),
             ),
           ],

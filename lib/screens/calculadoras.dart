@@ -11,9 +11,9 @@ import 'package:exemplifica/screens/calculadoras/calc_regra_de_3.dart';
 import 'package:exemplifica/screens/calculadoras/cald_fatorial.dart';
 import 'package:exemplifica/screens/calculadoras/cald_mdc.dart';
 import 'package:exemplifica/screens/calculadoras/cald_tabuada.dart';
-import 'package:exemplifica/screens/components/row_buttons.dart';
-import 'package:exemplifica/screens/widgets/bottombar_banner.dart';
-import 'package:exemplifica/screens/widgets/button_custom.dart';
+import 'package:exemplifica/components/row_buttons.dart';
+import 'package:exemplifica/widgets/bottombar_banner.dart';
+import 'package:exemplifica/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

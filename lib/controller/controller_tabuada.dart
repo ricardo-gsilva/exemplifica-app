@@ -34,14 +34,7 @@ class ModelTabuada {
     } else {
       visible = true;
       for (i = 0; i <= 10; i++) {
-        infoText = infoText +
-            "$val" +
-            " " +
-            "x " +
-            "$i" +
-            " = " +
-            "${(val * i)}" +
-            "\n";
+        infoText = "$infoText $val x $i = ${(val * i)} \n";
         dica =
             "Obs: Lembre-se de como funciona a multiplicação e entenderá os resultados da tabuada. Um valor 2 x 3 = 6"
             " é o mesmo que 2 + 2 + 2 = 6. O primeiro número é o valor da tabuada e o segundo é a quantidade de vezes que é"
