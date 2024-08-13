@@ -21,7 +21,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60),
-        child: CustomAppBar(),
+        child: CustomAppBar(
+          title: Image.asset(
+            'images/exemplo_3.png',
+            height: 45,
+          ),
+        ),
       ),
       body: HomePageButtonsGrid(
         backgroundColorGrid: CoreColors.appBarColor,

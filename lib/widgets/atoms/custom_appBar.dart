@@ -1,19 +1,29 @@
-import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:flutter/material.dart';
 
+import 'package:exemplifica/utils/constants/core_colors.dart';
+
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+  final Widget title;
+  final Widget? leading;
+  final Color? color;
+  final Color? backgroundColorAppBar;
+  const CustomAppBar({
+    Key? key,
+    required this.title,
+    this.color,
+    this.backgroundColorAppBar,
+    this.leading,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: CoreColors.appBarColor,
+      backgroundColor: backgroundColorAppBar?? CoreColors.appBarColor,
       elevation: 2,
       centerTitle: true,
-      title: Image.asset(
-        'images/exemplo_3.png',
-        height: 45,
-      ),
+      automaticallyImplyLeading: false,
+      title: title,
+      leading: leading ?? SizedBox(),
     );
   }
 }

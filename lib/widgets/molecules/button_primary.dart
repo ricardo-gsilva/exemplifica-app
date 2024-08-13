@@ -42,7 +42,8 @@ class ButtonPrimary extends StatelessWidget {
           CustomText(
             title: title,
             color: CoreColors.textPrimary,
-            fontSize: CoreFontSize.h_16,
+            fontSize: CoreFontSize.h_16,            
+            fontWeight: FontWeight.bold,
           ),
         ],
       ),
