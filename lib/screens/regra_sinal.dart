@@ -37,9 +37,9 @@ class _RegrasSinaisState extends State<RegrasSinais> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                  (Route<dynamic> route) => false);
+              // Navigator.of(context).pushAndRemoveUntil(
+              //     MaterialPageRoute(builder: (context) => HomePage()),
+              //     (Route<dynamic> route) => false);
             },
           ),
           ],

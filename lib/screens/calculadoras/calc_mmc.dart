@@ -46,9 +46,9 @@ class _CalcMmcState extends State<CalcMmc> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                  (Route<dynamic> route) => false);
+              // Navigator.of(context).pushAndRemoveUntil(
+              //     MaterialPageRoute(builder: (context) => HomePage()),
+              //     (Route<dynamic> route) => false);
             },
           ),
         ],
@@ -86,7 +86,7 @@ class _CalcMmcState extends State<CalcMmc> {
                       hintText: "",
                       controller: modelMmc.val2,
                     ),                  
-                    RowButtons(
+                    RowButtons1(
                       titleFirst: CoreStrings.calc,
                       titleSecond: CoreStrings.clear,
                       paddingTop: 5,

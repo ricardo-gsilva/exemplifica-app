@@ -38,9 +38,9 @@ class _MultiplicaDivState extends State<MultiplicaDiv> {
                 color: CoreColors.textPrimary,
               ),
               onPressed: () {
-                Navigator.of(context).pushAndRemoveUntil(
-                    MaterialPageRoute(builder: (context) => HomePage()),
-                    (Route<dynamic> route) => false);
+                // Navigator.of(context).pushAndRemoveUntil(
+                //     MaterialPageRoute(builder: (context) => HomePage()),
+                //     (Route<dynamic> route) => false);
               },
             ),
           ],

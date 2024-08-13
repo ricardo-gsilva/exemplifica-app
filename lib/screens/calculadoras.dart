@@ -60,7 +60,7 @@ class _CalculadorasState extends State<Calculadoras> {
                 },
               ),
             ),
-            RowButtons(
+            RowButtons1(
               titleFirst: CoreStrings.titleEquacao1,
               titleSecond: CoreStrings.titleEquacao2,
               onTapFirst: () {
@@ -85,7 +85,7 @@ class _CalculadorasState extends State<Calculadoras> {
                 },
               ),
             ),
-            RowButtons(
+            RowButtons1(
               titleFirst: CoreStrings.titleJurosSimples,
               titleSecond: CoreStrings.titleJurosCompostos,
               onTapFirst: () {
@@ -110,7 +110,7 @@ class _CalculadorasState extends State<Calculadoras> {
                 },
               ),
             ),
-            RowButtons(
+            RowButtons1(
               titleFirst: CoreStrings.titleMmc,
               titleSecond: CoreStrings.titlePorcentagem,
               onTapFirst: () {

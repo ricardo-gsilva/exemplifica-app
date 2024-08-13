@@ -46,9 +46,9 @@ class _CalcRegraDe3State extends State<CalcRegraDe3> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                  (Route<dynamic> route) => false);
+              // Navigator.of(context).pushAndRemoveUntil(
+              //     MaterialPageRoute(builder: (context) => HomePage()),
+              //     (Route<dynamic> route) => false);
             },
           ),
         ],
@@ -123,7 +123,7 @@ class _CalcRegraDe3State extends State<CalcRegraDe3> {
                       ),                                        
                     ],
                   ),
-                  RowButtons(
+                  RowButtons1(
                         titleFirst: CoreStrings.calc,
                         titleSecond: CoreStrings.clear,
                         paddingTop: 10,

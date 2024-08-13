@@ -46,9 +46,9 @@ class _CalcJurosCState extends State<CalcJurosC> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                  (Route<dynamic> route) => false);
+              // Navigator.of(context).pushAndRemoveUntil(
+              //     MaterialPageRoute(builder: (context) => HomePage()),
+              //     (Route<dynamic> route) => false);
             },
           ),
         ],
@@ -112,7 +112,7 @@ class _CalcJurosCState extends State<CalcJurosC> {
                     hintText: "Tempo",
                     controller: modelJurosCompostos.t
                   ),            
-                  RowButtons(
+                  RowButtons1(
                     titleFirst: CoreStrings.calc,
                     titleSecond: CoreStrings.clear,
                     paddingTop: 10,

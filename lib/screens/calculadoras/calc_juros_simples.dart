@@ -46,9 +46,9 @@ class _CalcJurosSState extends State<CalcJurosS> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                  (Route<dynamic> route) => false);
+              // Navigator.of(context).pushAndRemoveUntil(
+              //     MaterialPageRoute(builder: (context) => HomePage()),
+              //     (Route<dynamic> route) => false);
             },
           ),
         ],
@@ -91,7 +91,7 @@ class _CalcJurosSState extends State<CalcJurosS> {
                 hintText: "%",
                 controller: modelJurosSimples.j
               ),            
-              RowButtons(
+              RowButtons1(
                 titleFirst: CoreStrings.calc,
                 titleSecond: CoreStrings.clear,
                 paddingTop: 10,
