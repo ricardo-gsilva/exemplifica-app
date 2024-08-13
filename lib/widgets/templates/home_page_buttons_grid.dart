@@ -1,4 +1,6 @@
 import 'package:exemplifica/person_icons.dart';
+import 'package:exemplifica/screens/calculadoras.dart';
+import 'package:exemplifica/screens/regras_basicas.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/organisms/buttons_grid.dart';
 import 'package:flutter/material.dart';
@@ -24,11 +26,7 @@ class HomePageButtonsGrid extends StatelessWidget {
           hasScrollBody: false,
           child: Container(
             padding: EdgeInsets.all(10),
-            margin: EdgeInsets.all(10),
-            decoration: BoxDecoration(
-                color: backgroundColorGrid,
-                borderRadius: BorderRadius.circular(15)
-              ),
+            margin: EdgeInsets.all(10),            
             child: Column(
               children: [
                 Row(
@@ -38,14 +36,18 @@ class HomePageButtonsGrid extends StatelessWidget {
                       height: height * 2.2, 
                       width: width,
                       icon: Person.calc,
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => Calculadoras()));
+                      },
                     ),
                     ButtonPrimary(
                       title: CoreStrings.titleRegrasBasicas,
                       height: height * 2.2, 
                       width: width,
                       icon: Person.attention,
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => RegrasBasicas()));
+                      },
                     ),
                   ],
                 ),
