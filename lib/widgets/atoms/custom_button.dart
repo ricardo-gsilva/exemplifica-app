@@ -17,11 +17,11 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(      
-      height: height,
-      width: width,
-      child: Padding(
-        padding: const EdgeInsets.all(2.0),
+    return Padding(
+      padding: const EdgeInsets.all(3.0),
+      child: SizedBox(      
+        height: height,
+        width: width,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             backgroundColor: CoreColors.btnColor,
@@ -39,8 +39,8 @@ class CustomButton extends StatelessWidget {
             ),
           ),
           onPressed: onPressed,
-        ),
-      )
+        )
+      ),
     );
   }
 }

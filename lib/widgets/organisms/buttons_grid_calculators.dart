@@ -32,7 +32,7 @@ class ButtonsGridCalculators extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: const EdgeInsets.all(5.0),
           child: CustomButton(
             title: CoreStrings.titleTabuada,
             onPressed: () {
@@ -58,7 +58,7 @@ class ButtonsGridCalculators extends StatelessWidget {
           },
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(5),
           child: CustomButton(
             title: CoreStrings.titleFatorial,
             onPressed: () {
@@ -84,7 +84,7 @@ class ButtonsGridCalculators extends StatelessWidget {
           },
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(5),
           child: CustomButton(
             title: CoreStrings.titleMdc,
             onPressed: () {
@@ -110,7 +110,7 @@ class ButtonsGridCalculators extends StatelessWidget {
           },
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(5),
           child: CustomButton(
             title: CoreStrings.titleRegraDe3,
             onPressed: () {

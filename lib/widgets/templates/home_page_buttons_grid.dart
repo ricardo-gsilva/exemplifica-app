@@ -1,8 +1,8 @@
 import 'package:exemplifica/person_icons.dart';
-import 'package:exemplifica/screens/regras_basicas.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/organisms/buttons_grid.dart';
 import 'package:exemplifica/widgets/page/calculators_page.dart';
+import 'package:exemplifica/widgets/page/regras_basicas_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:exemplifica/widgets/molecules/button_primary.dart';
@@ -25,29 +25,30 @@ class HomePageButtonsGrid extends StatelessWidget {
         SliverFillRemaining(
           hasScrollBody: false,
           child: Container(
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.all(10),            
+            padding: EdgeInsets.all(5),
+            margin: EdgeInsets.all(5),            
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ButtonPrimary(
                       title: CoreStrings.titleCalculadoras, 
                       height: height * 2.2, 
-                      width: width,
+                      width: width * 1.03,
                       icon: Person.calc,
                       onTap: (){
-                        // Navigator.push(context, MaterialPageRoute(builder: (_) => Calculadoras()));
                         Navigator.push(context, MaterialPageRoute(builder: (_) => CalculatorsPage()));
                       },
                     ),
                     ButtonPrimary(
                       title: CoreStrings.titleRegrasBasicas,
                       height: height * 2.2, 
-                      width: width,
+                      width: width * 1.03,
                       icon: Person.attention,
                       onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (_) => RegrasBasicas()));
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => RegrasBasicasPage()));
                       },
                     ),
                   ],
