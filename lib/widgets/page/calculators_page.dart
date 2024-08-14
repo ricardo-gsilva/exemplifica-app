@@ -1,5 +1,6 @@
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/widgets/atoms/custom_icon_button.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
 import 'package:exemplifica/widgets/atoms/custom_appBar.dart';
 import 'package:exemplifica/widgets/organisms/buttons_grid_calculators.dart';
@@ -13,26 +14,15 @@ class CalculatorsPage extends StatefulWidget {
 }
 
 class _CalculatorsPageState extends State<CalculatorsPage> {
-  double height = 0;
-  double width = 0;
-
   @override
   Widget build(BuildContext context) {
-    width = MediaQuery.of(context).size.width;
-    height = MediaQuery.of(context).size.height * 0.1;
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height * 0.1;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(60),
         child: CustomAppBar(
-          leading: IconButton(
-            icon: Icon(
-              Icons.reply,
-              color: CoreColors.textPrimary,
-            ),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
+          leading: CustomIconButton(),
           title: CustomText(
             title: CoreStrings.titleCalculadoras,
             color: CoreColors.textPrimary,

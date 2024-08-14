@@ -2,7 +2,7 @@ import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/atoms/custom_appBar.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
-import 'package:exemplifica/widgets/templates/regras_basicas_grid.dart';
+import 'package:exemplifica/widgets/templates/regras_basicas_template.dart';
 import 'package:flutter/material.dart';
 
 class RegrasBasicasPage extends StatefulWidget {

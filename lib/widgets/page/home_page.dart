@@ -1,6 +1,6 @@
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/widgets/atoms/custom_appBar.dart';
-import 'package:exemplifica/widgets/templates/home_page_buttons_grid.dart';
+import 'package:exemplifica/widgets/templates/home_page_template.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

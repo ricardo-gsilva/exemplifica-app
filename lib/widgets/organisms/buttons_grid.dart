@@ -1,6 +1,3 @@
-import 'package:exemplifica/screens/equacao_1.dart';
-import 'package:exemplifica/screens/equacao_2.dart';
-import 'package:exemplifica/screens/fatorial.dart';
 import 'package:exemplifica/screens/juros_compostos.dart';
 import 'package:exemplifica/screens/juros_simples.dart';
 import 'package:exemplifica/screens/mdc.dart';
@@ -9,6 +6,9 @@ import 'package:exemplifica/screens/porcentagem.dart';
 import 'package:exemplifica/screens/regra_de_3.dart';
 import 'package:exemplifica/screens/tabuada.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/widgets/page/equacao_1_page.dart';
+import 'package:exemplifica/widgets/page/equacao_2_page.dart';
+import 'package:exemplifica/widgets/page/fatorial_page.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/widgets/molecules/row_button.dart';
 
@@ -32,11 +32,11 @@ class ButtonsGrid extends StatelessWidget {
           titleSecond: CoreStrings.titleEquacao2,
           onTapFirst: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (_) => Equacao_1()));
+                context, MaterialPageRoute(builder: (_) => Equacao1Page()));
           },
           onTapSecond: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (_) => Equacao_2()));
+                context, MaterialPageRoute(builder: (_) => Equacao2Page()));
           },
         ),
         RowButtons(
@@ -46,7 +46,7 @@ class ButtonsGrid extends StatelessWidget {
           titleSecond: CoreStrings.titleTabuada,
           onTapFirst: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (_) => Fatorial()));
+                context, MaterialPageRoute(builder: (_) => FatorialPage()));
           },
           onTapSecond: () {
             Navigator.push(
