@@ -1,6 +1,4 @@
-import 'package:exemplifica/screens/juros_simples.dart';
 import 'package:exemplifica/screens/mdc.dart';
-import 'package:exemplifica/screens/mmc.dart';
 import 'package:exemplifica/screens/porcentagem.dart';
 import 'package:exemplifica/screens/regra_de_3.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
@@ -9,6 +7,7 @@ import 'package:exemplifica/widgets/page/equacao_2_page.dart';
 import 'package:exemplifica/widgets/page/fatorial_page.dart';
 import 'package:exemplifica/widgets/page/juros_compostos_page.dart';
 import 'package:exemplifica/widgets/page/juros_simples_page.dart';
+import 'package:exemplifica/widgets/page/mmc_page.dart';
 import 'package:exemplifica/widgets/page/tabuada_page.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/widgets/molecules/row_button.dart';
@@ -74,7 +73,7 @@ class ButtonsGrid extends StatelessWidget {
           titleFirst: CoreStrings.titleMmc,
           titleSecond: CoreStrings.titleMdc,
           onTapFirst: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => Mmc()));
+            Navigator.push(context, MaterialPageRoute(builder: (_) => MmcPage()));
           },
           onTapSecond: () {
             Navigator.push(context, MaterialPageRoute(builder: (_) => Mdc()));
