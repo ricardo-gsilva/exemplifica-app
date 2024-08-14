@@ -20,6 +20,7 @@ class Equacao1Page extends StatelessWidget {
           leading: CustomIconButton(),
           title: CustomText(
             title: CoreStringsEquacao1.titleEquacao1,
+            fontSize: 22,
           ),
         ),
       ),

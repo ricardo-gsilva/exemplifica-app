@@ -20,6 +20,7 @@ class FatorialPage extends StatelessWidget {
           leading: CustomIconButton(),
           title: CustomText(
             title: CoreStringsFatorial.titleFatorial,
+            fontSize: 22,
           ),
         ),
       ),

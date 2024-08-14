@@ -93,7 +93,7 @@ class FatorialTemplate extends StatelessWidget {
           ),
         CustomImageAsset(
             asset: "images/operacoes/fatorial/fatorial_12.png",
-            width: width,
+            width: width * 0.9,
           ),
         CustomText(
             title: CoreStringsFatorial.text12_Fatorial,

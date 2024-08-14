@@ -1,4 +1,3 @@
-import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/atoms/custom_icon_button.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
@@ -25,7 +24,7 @@ class _CalculatorsPageState extends State<CalculatorsPage> {
           leading: CustomIconButton(),
           title: CustomText(
             title: CoreStrings.titleCalculadoras,
-            color: CoreColors.textPrimary,
+            fontSize: 22,
           ),          
         ),
       ),

@@ -29,6 +29,7 @@ class _RegrasBasicasPageState extends State<RegrasBasicasPage> {
           title: CustomText(
             title: CoreStrings.titleRegrasBasicas,
             color: CoreColors.textPrimary,
+            fontSize: 22,
           ),
           leading: IconButton(
             icon: Icon(
