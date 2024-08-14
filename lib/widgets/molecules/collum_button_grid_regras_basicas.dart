@@ -3,6 +3,7 @@ import 'package:exemplifica/screens/mult_div.dart';
 import 'package:exemplifica/screens/parentesis.dart';
 import 'package:exemplifica/screens/regra_sinal.dart';
 import 'package:exemplifica/screens/soma_sub.dart';
+import 'package:exemplifica/widgets/page/parentesis_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:exemplifica/widgets/atoms/custom_button.dart';
@@ -25,7 +26,7 @@ class ButtonGridRegrasBasicas extends StatelessWidget {
           width: width,
           title: "1º Parêntesis",
           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (_) => Parentesis()));
+            Navigator.push(context, MaterialPageRoute(builder: (_) => ParentesisPage()));
           },
         ),
         CustomButton(
