@@ -8,6 +8,7 @@ import 'package:exemplifica/widgets/page/equacao_1_page.dart';
 import 'package:exemplifica/widgets/page/equacao_2_page.dart';
 import 'package:exemplifica/widgets/page/fatorial_page.dart';
 import 'package:exemplifica/widgets/page/juros_compostos_page.dart';
+import 'package:exemplifica/widgets/page/juros_simples_page.dart';
 import 'package:exemplifica/widgets/page/tabuada_page.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/widgets/molecules/row_button.dart';
@@ -64,7 +65,7 @@ class ButtonsGrid extends StatelessWidget {
           },
           onTapSecond: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (_) => JurosSimples()));
+                context, MaterialPageRoute(builder: (_) => JurosSimplesPage()));
           },
         ),
         RowButtons(
