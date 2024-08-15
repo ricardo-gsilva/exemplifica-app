@@ -1,8 +1,7 @@
-import 'package:exemplifica/screens/expoentes.dart';
 import 'package:exemplifica/screens/mult_div.dart';
-import 'package:exemplifica/screens/parentesis.dart';
 import 'package:exemplifica/screens/regra_sinal.dart';
 import 'package:exemplifica/screens/soma_sub.dart';
+import 'package:exemplifica/widgets/page/expoentes_page.dart';
 import 'package:exemplifica/widgets/page/parentesis_page.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +31,7 @@ class ButtonGridRegrasBasicas extends StatelessWidget {
         CustomButton(
           title: "2º Expoentes",
           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (_) => Expoentes()));
+            Navigator.push(context, MaterialPageRoute(builder: (_) => ExpoentesPage()));
           },
           height: height,
           width: width,
