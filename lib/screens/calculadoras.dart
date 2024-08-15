@@ -55,8 +55,8 @@ class _CalculadorasState extends State<Calculadoras> {
                 height: height,
                 title: CoreStrings.titleTabuada,
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => CalcTabuada()));
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (_) => CalcTabuada()));
                 },
               ),
             ),

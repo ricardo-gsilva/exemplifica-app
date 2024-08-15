@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ModelTabuada {
+class ControllerTabuada {
+  static ControllerTabuada? _instance;
+
+  ControllerTabuada._();
+
+  static get instance {
+    _instance ??= ControllerTabuada._();
+    return _instance;
+  }
+
   TextEditingController nTabuada = TextEditingController();
 
   String infoText = "";
@@ -10,6 +19,7 @@ class ModelTabuada {
   void verificarCampo() {
     if (nTabuada.text.isEmpty) {
       infoText = "Por favor, preencha os campos!";
+      visible = true;
     } else {
       infoText = '';
       dica = '';
@@ -27,9 +37,7 @@ class ModelTabuada {
   void calcular() {
     int i;
     int val = int.parse(nTabuada.text);
-    if (val.toString().isEmpty) {
-      infoText = "Digite um valor igual ou menor que 99999!" + "\n";
-    } else if (val > 99999) {
+    if (val > 99999) {
       infoText = "Informe um novo valor menor ou igual a 99999!";
     } else {
       visible = true;

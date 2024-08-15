@@ -7,12 +7,14 @@ class CustomAppBar extends StatelessWidget {
   final Widget? leading;
   final Color? color;
   final Color? backgroundColorAppBar;
+  final List<Widget>? actions;
   const CustomAppBar({
     Key? key,
     required this.title,
     this.color,
     this.backgroundColorAppBar,
     this.leading,
+    this.actions,
   }) : super(key: key);
 
   @override
@@ -24,6 +26,7 @@ class CustomAppBar extends StatelessWidget {
       automaticallyImplyLeading: false,
       title: title,
       leading: leading ?? SizedBox(),
+      actions: actions?? [],
     );
   }
 }

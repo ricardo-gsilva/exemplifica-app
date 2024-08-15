@@ -1,8 +1,9 @@
-import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/utils/constants/strings/strings_mmc.dart';
-import 'package:exemplifica/widgets/atoms/custom_appBar.dart';
+import 'package:exemplifica/person_icons.dart';
+import 'package:exemplifica/screens/calculadoras/calc_mmc.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/atoms/custom_icon_button.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
+import 'package:exemplifica/widgets/molecules/custom_scaffold.dart';
 import 'package:exemplifica/widgets/templates/mmc_template.dart';
 import 'package:flutter/material.dart';
 
@@ -12,21 +13,24 @@ class MmcPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    return Scaffold(
-      backgroundColor: CoreColors.colorBackground,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: CustomAppBar(
-          leading: CustomIconButton(),
-          title: CustomText(
-            title: CoreStringsMmc.titleMmc,
-            fontSize: 22,
-          ),
-        ),
+    return CustomScaffold(
+      titleAppBar: CustomText(
+        title: CoreStrings.titleMmc,
+        fontSize: 22,
       ),
+      leading: true,
+      actions: [
+        CustomIconButton(
+          icon: Person.calc,
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => CalcMmc()));
+          },
+        ),
+      ],
       body: MmcTemplate(
         width: width,
       ),
-    );
+    );   
   }
 }

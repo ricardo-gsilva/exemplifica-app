@@ -9,6 +9,7 @@ import 'package:exemplifica/screens/calculadoras/cald_fatorial.dart';
 import 'package:exemplifica/screens/calculadoras/cald_mdc.dart';
 import 'package:exemplifica/screens/calculadoras/cald_tabuada.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/widgets/page/calc_tabuada_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:exemplifica/widgets/atoms/custom_button.dart';
@@ -37,7 +38,7 @@ class ButtonsGridCalculators extends StatelessWidget {
             title: CoreStrings.titleTabuada,
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CalcTabuada()));
+                  context, MaterialPageRoute(builder: (_) => CalcTabuadaPage()));
             },
             height: height,
             width: customButtonWidth,
