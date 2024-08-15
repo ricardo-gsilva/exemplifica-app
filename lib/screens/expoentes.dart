@@ -1,10 +1,7 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/utils/constants/strings/strings_expoentes.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class Expoentes extends StatefulWidget {
   @override
@@ -12,7 +9,6 @@ class Expoentes extends StatefulWidget {
 }
 
 class _ExpoentesState extends State<Expoentes> {
-  final controller = Get.put(AdHelper());
 
   @override
   Widget build(BuildContext context) {
@@ -42,9 +38,9 @@ class _ExpoentesState extends State<Expoentes> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                  (Route<dynamic> route) => false);
+              // Navigator.of(context).pushAndRemoveUntil(
+              //     MaterialPageRoute(builder: (context) => HomePage()),
+              //     (Route<dynamic> route) => false);
             },
           ),
           ],
@@ -106,11 +102,7 @@ class _ExpoentesState extends State<Expoentes> {
                 )),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomBarBanner(
-        banner: controller.bannerAdExpoentes,
-        bannerAd: controller.bannerAd
-      ),
+      ),      
     );
   }
 }

@@ -3,7 +3,7 @@
 import 'package:exemplifica/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
 
-class RowButtons extends StatelessWidget {
+class RowButtons1 extends StatelessWidget {
   double? height;
   double? width;
   double? paddingTop;
@@ -11,7 +11,7 @@ class RowButtons extends StatelessWidget {
   String? titleSecond;
   void Function()? onTapFirst;
   void Function()? onTapSecond;
-  RowButtons({this.height, this.onTapFirst, this.onTapSecond, this.titleFirst, this.titleSecond, this.width, this.paddingTop = 0, super.key});
+  RowButtons1({this.height, this.onTapFirst, this.onTapSecond, this.titleFirst, this.titleSecond, this.width, this.paddingTop = 0, super.key});
 
   @override
   Widget build(BuildContext context) {

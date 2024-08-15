@@ -1,4 +1,3 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/screens/calculadoras/calc_equacao_1.dart';
@@ -12,10 +11,8 @@ import 'package:exemplifica/screens/calculadoras/cald_fatorial.dart';
 import 'package:exemplifica/screens/calculadoras/cald_mdc.dart';
 import 'package:exemplifica/screens/calculadoras/cald_tabuada.dart';
 import 'package:exemplifica/components/row_buttons.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/widgets/button_custom.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class Calculadoras extends StatefulWidget {
   @override
@@ -23,24 +20,8 @@ class Calculadoras extends StatefulWidget {
 }
 
 class _CalculadorasState extends State<Calculadoras> {
-  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
-
-  @override
-  void initState() {
-    controller.loadingBannerTabuada(AdHelper.bannerCalcTabuada);
-    controller.loadingBannerEquacao1(AdHelper.bannerCalcEquacao1);
-    controller.loadingBannerEquacao2(AdHelper.bannerCalcEquacao2);
-    controller.loadingBannerFatorial(AdHelper.bannerCalcFatorial);
-    controller.loadingBannerJurosSimples(AdHelper.bannerCalcJurosS);
-    controller.loadingBannerJurosCompostos(AdHelper.bannerCalcJurosC);
-    controller.loadingBannerMdc(AdHelper.bannerCalcMmc);
-    controller.loadingBannerMmc(AdHelper.bannerCalcMdc);
-    controller.loadingBannerPorcentagem(AdHelper.bannerCalcPorcentagem);
-    controller.loadingBannerRegraDe3(AdHelper.bannerCalcRegrade3);
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +60,7 @@ class _CalculadorasState extends State<Calculadoras> {
                 },
               ),
             ),
-            RowButtons(
+            RowButtons1(
               titleFirst: CoreStrings.titleEquacao1,
               titleSecond: CoreStrings.titleEquacao2,
               onTapFirst: () {
@@ -104,7 +85,7 @@ class _CalculadorasState extends State<Calculadoras> {
                 },
               ),
             ),
-            RowButtons(
+            RowButtons1(
               titleFirst: CoreStrings.titleJurosSimples,
               titleSecond: CoreStrings.titleJurosCompostos,
               onTapFirst: () {
@@ -129,7 +110,7 @@ class _CalculadorasState extends State<Calculadoras> {
                 },
               ),
             ),
-            RowButtons(
+            RowButtons1(
               titleFirst: CoreStrings.titleMmc,
               titleSecond: CoreStrings.titlePorcentagem,
               onTapFirst: () {
@@ -156,7 +137,6 @@ class _CalculadorasState extends State<Calculadoras> {
             ),
           ]),
         ),
-        bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalc, bannerAd: controller.bannerAd),
       );
   }
 }

@@ -4,25 +4,28 @@ class ModelFatorial {
   TextEditingController val1 = TextEditingController();
 
   String resultFat = "";
-  String resultFat1 = "";
-
+  String resultFinal = "";
+  String infoFatorial = "";  
   bool visible = false;
 
   void resetCampos() {
     visible = false;
-    val1.text = "";
+    val1.clear();
     resultFat = "";
-    resultFat1 = "";
+    resultFinal = "";
+    infoFatorial = "";
   }
 
   void verificarCampos() {
     if (val1.text.isEmpty) {
-      resultFat = "Por favor, preencha o campo com um valor!" +
-          "\n"
+      visible = true;
+      resultFat = "Por favor, preencha o campo com um valor!" + "\n"
               "Obs: Devido a limitações com relação ao tamanho da tela, não podemos"
               " calcular valores acima de 14.";
     } else {
       resultFat = "";
+      resultFinal = "";
+      infoFatorial = "";
       fatorial();
     }
   }
@@ -45,19 +48,12 @@ class ModelFatorial {
 
       for (i = 1; i < fat; i++) {
         c = a * b;
-        resultFat = resultFat +
-            "N!" +
-            " = " +
-            "$a" +
-            " x " +
-            "$b" +
-            " = " +
-            "$c" +
-            "\n";
+        resultFat = "$resultFat ${valFatorial}! = $a x $b = $c\n";
         b++;
         a = c;
       }
-      resultFat1 = "Obs: O valor fatorial de 0 será sempre o número 1.";
+      resultFinal = "${valFatorial}! = $c ";
+      infoFatorial = "Obs: O valor fatorial de 0 será sempre o número 1.";
     }
   }
 }

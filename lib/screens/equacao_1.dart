@@ -1,19 +1,15 @@
 // ignore_for_file: camel_case_types
 
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/calc_equacao_1.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/utils/constants/strings/strings_equacao_1.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 class Equacao_1 extends StatefulWidget {
   @override
   _Equacao_1State createState() => _Equacao_1State();
 }
 class _Equacao_1State extends State<Equacao_1> {
-  final controller = Get.put(AdHelper());
   
   @override
   Widget build(BuildContext context) {
@@ -136,9 +132,6 @@ class _Equacao_1State extends State<Equacao_1> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomBarBanner(
-        banner: controller.bannerAdEquacao1,
-        bannerAd: controller.bannerAd),
     );
   }
 }

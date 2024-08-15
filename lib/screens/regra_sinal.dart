@@ -1,10 +1,7 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/utils/constants/strings/strings_regras_sinais.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class RegrasSinais extends StatefulWidget {
   @override
@@ -12,7 +9,6 @@ class RegrasSinais extends StatefulWidget {
 }
 
 class _RegrasSinaisState extends State<RegrasSinais> {
-  final controller = Get.put(AdHelper());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,9 +37,9 @@ class _RegrasSinaisState extends State<RegrasSinais> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                  (Route<dynamic> route) => false);
+              // Navigator.of(context).pushAndRemoveUntil(
+              //     MaterialPageRoute(builder: (context) => HomePage()),
+              //     (Route<dynamic> route) => false);
             },
           ),
           ],
@@ -156,7 +152,6 @@ class _RegrasSinaisState extends State<RegrasSinais> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdRegrasSinais, bannerAd: controller.bannerAd),      
     );
   }
 }

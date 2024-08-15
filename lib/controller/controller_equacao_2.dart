@@ -29,16 +29,14 @@ class ModelEquacao2 {
 
   void verificarCampo() {
     if (val1.text.isEmpty || val2.text.isEmpty || val3.text.isEmpty) {
+      visible = true;
       resultEq2 = "Por favor, preencha os campos!";
     } else {
       equacao2();
     }
   }
 
-  void equacao2() {
-    if ((val1.text.isEmpty) || (val2.text.isEmpty) || (val3.text.isEmpty)) {
-      resultEq2 = "Por favor preenche com um valor até 99999!" + "\n";
-    } else {
+  void equacao2() {    
       visible = true;
       double a = double.parse(val1.text);
       double b = double.parse(val2.text);
@@ -59,7 +57,7 @@ class ModelEquacao2 {
         resultEq2 = "O valor de 'a' não pode ser 0." + "\n";
       }
 
-      if (delta < 0) {
+      if (delta < 0.0) {
         NumberFormat dfEq2 = new NumberFormat("0");
         NumberFormat dfEq2_1 = new NumberFormat("");
 
@@ -101,33 +99,18 @@ class ModelEquacao2 {
           eq2Delta = dfEq2_1.format(delta);
         }
 
-        resultEq2 = "Δ = (b)² - 4 * a * c" +
-            "\n" +
-            "Δ" +
-            " = " +
-            "(" +
-            "$eq2B" +
-            ")" +
-            "²" +
-            " -4" +
-            " * " +
-            "$eq2A" +
-            " * " +
-            "$eq2C" +
-            "\n" +
-            "Δ" +
-            " = " +
-            "$eq2Pot" +
-            " " +
-            "$eq2Fac" +
-            "\n"
-                "Δ" +
-            " = " +
-            "$eq2Delta";
+        resultEq2 = 
+          "Δ = (b)² - 4 * a * c\n"
+          "Δ = ($eq2B)² -4 * $eq2A * $eq2C\n"
+          "Δ = $eq2Pot $eq2Fac\n"
+          "Δ = $eq2Delta";
 
         resultEq2_1 =
             "O valor de Delta é negativo. Portanto, não existem raízes reais!" +
                 "\n";
+        resultEq2_2 = "";
+        resultEq2_3 = "";
+        resultEq2_4 = "";
       } else {
         //Formatação
         NumberFormat dfEq2 = new NumberFormat("0");
@@ -226,219 +209,36 @@ class ModelEquacao2 {
         }
 
         //Impressão Delta
-        resultEq2 = "Δ = (b)² - 4 * a * c" +
-            "\n" +
-            "Δ" +
-            " = " +
-            "(" +
-            "$eq2B" +
-            ")" +
-            "²" +
-            " -4" +
-            " * " +
-            "$eq2A" +
-            " * " +
-            "$eq2C" +
-            "\n" +
-            "Δ" +
-            " = " +
-            "$eq2Pot" +
-            " " +
-            "$eq2Fac" +
-            "\n"
-                "Δ" +
-            " = " +
-            "$eq2Delta";
+        resultEq2 = 
+          "Δ = (b)² - 4 * a * c\n"
+          "Δ = ($eq2B)² -4 * $eq2A * $eq2C\n"
+          "Δ = $eq2Pot $eq2Fac\n"
+          "Δ = $eq2Delta";
 
         //______________________________________________________________________
 
-        if (delta == 0) {
-          resultEq2_1 =
-              "O valor de Delta é 0. Portanto, existe uma raiz real!" + "\n";
-
-          resultEq2_2 = "x = – b ± √Δ / 2.a" +
-              "\n" +
-              "\n" +
-              "x1" +
-              " = " +
-              "-" +
-              "(" +
-              "$eq2B" +
-              ")" +
-              " + " +
-              "√" +
-              "$eq2Delta" +
-              " / " +
-              "(" +
-              "2" +
-              " * " +
-              "$eq2A" +
-              ")" +
-              "\n" +
-              "x1" +
-              " = " +
-              "(" +
-              "$eq2B1" +
-              " " +
-              "$eq2RaizDeltaX1" +
-              ")" +
-              " / " +
-              "$eq2A1" +
-              "\n" +
-              "x1" +
-              " = " +
-              "$eq2BRaizX1" +
-              " / " +
-              "$eq2A1" +
-              "\n" +
-              "x1" +
-              " = " +
-              "$eq2X1" +
-              "\n";
-
-          resultEq2_3 = "x2" +
-              " = " +
-              "-" +
-              "(" +
-              "$eq2B" +
-              ")" +
-              " - " +
-              "√" +
-              "$eq2Delta" +
-              " / " +
-              "(" +
-              "2" +
-              " * " +
-              "$eq2A" +
-              ")" +
-              "\n" +
-              "x2" +
-              " = " +
-              "(" +
-              "$eq2B1" +
-              " " +
-              "$eq2RaizDeltaX2" +
-              ")" +
-              " / " +
-              "$eq2A1" +
-              "\n" +
-              "x2" +
-              " = " +
-              "$eq2BRaizX2" +
-              " / " +
-              "$eq2A1" +
-              "\n" +
-              "x2" +
-              " = " +
-              "$eq2X2" +
-              "\n";
-
-          resultEq2_4 = "As raízes reais encontradas são: " +
-              "\n" +
-              "x1 = " +
-              "$eq2X1" +
-              " e " +
-              "x2 = " +
-              "$eq2X2" +
-              "\n";
-        } else {
-          resultEq2_1 =
+        resultEq2_1 =
               "O valor de Delta é positivo. Portanto, existem duas raízes reais!" +
                   "\n";
 
-          resultEq2_2 = "x = – b ± √Δ / 2.a" +
-              "\n" +
-              "\n" +
-              "x1" +
-              " = " +
-              "(" +
-              "-" +
-              "(" +
-              "$eq2B" +
-              ")" +
-              " + " +
-              "√" +
-              "$eq2Delta" +
-              ")" +
-              " / " +
-              "(" +
-              "2" +
-              " * " +
-              "$eq2A" +
-              ")" +
-              "\n" +
-              "x1" +
-              " = " +
-              "(" +
-              "$eq2B1" +
-              " " +
-              "$eq2RaizDeltaX1" +
-              ")" +
-              " / " +
-              "$eq2A1" +
-              "\n" +
-              "x1" +
-              " = " +
-              "$eq2BRaizX1" +
-              " / " +
-              "$eq2A1" +
-              "\n" +
-              "x1" +
-              " = " +
-              "$eq2X1" +
-              "\n";
+        resultEq2_2 = 
+            "x = – b ± √Δ / 2.a\n\n"
+            "x1 = (-($eq2B) + √$eq2Delta) / (2 * $eq2A)\n"
+            "x1 = ($eq2B1 $eq2RaizDeltaX1) / $eq2A1\n"
+            "x1 = $eq2BRaizX1 / $eq2A1\n"
+            "x1 = $eq2X1\n";
 
-          resultEq2_3 = "x2" +
-              " = " +
-              "(" +
-              "-" +
-              "(" +
-              "$eq2B" +
-              ")" +
-              " - " +
-              "√" +
-              "$eq2Delta" +
-              ")" +
-              " / " +
-              "(" +
-              "2" +
-              " * " +
-              "$eq2A" +
-              ")" +
-              "\n" +
-              "x2" +
-              " = " +
-              "(" +
-              "$eq2B1" +
-              " " +
-              "$eq2RaizDeltaX2" +
-              ")" +
-              " / " +
-              "$eq2A1" +
-              "\n" +
-              "x2" +
-              " = " +
-              "$eq2BRaizX2" +
-              " / " +
-              "$eq2A1" +
-              "\n" +
-              "x2" +
-              " = " +
-              "$eq2X2" +
-              "\n";
+        resultEq2_3 = 
+            "x2 = (-($eq2B) -  √$eq2Delta) / (2 * $eq2A)\n"
+            "x2 = ($eq2B1 $eq2RaizDeltaX2) / $eq2A1\n"
+            "x2 = $eq2BRaizX2 / $eq2A1\n"
+            "x2 = $eq2X2\n";
 
-          resultEq2_4 = "As raízes reais encontradas são: " +
-              "\n" +
-              "x1 = " +
-              "$eq2X1" +
-              "\n" +
-              " e " +
-              "\n" +
-              "x2 = " +
-              "$eq2X2" +
-              "\n";
+        resultEq2_4 = 
+            "As raízes reais encontradas são:\n"
+            "x1 = $eq2X1\n"
+            " e \n"
+            "x2 = $eq2X2\n";
         }
-      }
-    }
-  }
+      }   
 }

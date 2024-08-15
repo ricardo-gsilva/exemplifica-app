@@ -1,11 +1,8 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/calc_mmc.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/utils/constants/strings/strings_mmc.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class Mmc extends StatefulWidget {
   @override
@@ -13,7 +10,6 @@ class Mmc extends StatefulWidget {
 }
 
 class _MmcState extends State<Mmc> {
-  final controller = Get.put(AdHelper());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,7 +118,6 @@ class _MmcState extends State<Mmc> {
             ),
           ]),
         ),
-        bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdEquacao2, bannerAd: controller.bannerAd),
       );
   }
 }

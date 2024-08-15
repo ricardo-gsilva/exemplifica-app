@@ -1,13 +1,10 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/controller/controller_fatorial.dart';
 import 'package:exemplifica/components/row_buttons.dart';
 import 'package:exemplifica/components/text_field_input.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CalcFatorial extends StatefulWidget {
   @override
@@ -16,7 +13,6 @@ class CalcFatorial extends StatefulWidget {
 
 class _CalcFatorialState extends State<CalcFatorial> {
   final ModelFatorial modelFatorial = ModelFatorial();
-  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
 
@@ -50,9 +46,9 @@ class _CalcFatorialState extends State<CalcFatorial> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                  (Route<dynamic> route) => false);
+              // Navigator.of(context).pushAndRemoveUntil(
+              //     MaterialPageRoute(builder: (context) => HomePage()),
+              //     (Route<dynamic> route) => false);
             },
           ),
         ],
@@ -84,7 +80,7 @@ class _CalcFatorialState extends State<CalcFatorial> {
                       hintText: "valor",
                       controller: modelFatorial.val1,
                     ),
-                    RowButtons(
+                    RowButtons1(
                       titleFirst: CoreStrings.calc,
                       titleSecond: CoreStrings.clear,
                       paddingTop: 10,
@@ -92,13 +88,6 @@ class _CalcFatorialState extends State<CalcFatorial> {
                       width: width,
                       onTapFirst: (() {
                         setState(() {
-                          if (controller.calcFat < 6) {
-                            controller.calcFat++;
-                          } else {
-                            controller.calcFat = 0.obs;
-                          }
-                          controller.checkValueForInterstitial(
-                              AdHelper.videoCalcFatorial, controller.calcFat);
                           modelFatorial.verificarCampos();
                         });
                       }),
@@ -125,9 +114,18 @@ class _CalcFatorialState extends State<CalcFatorial> {
                       ),
                     ),
                     Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+                      child: Text(
+                        modelFatorial.resultFinal,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            color: CoreColors.textPrimary, fontSize: 26.0),
+                      ),
+                    ),
+                    Padding(
                       padding: EdgeInsets.only(left: 10, right: 10),
                       child: Text(
-                        modelFatorial.resultFat1,
+                        modelFatorial.infoFatorial,
                         textAlign: TextAlign.left,
                         style: TextStyle(
                             color: CoreColors.textPrimary, fontSize: 21.0),
@@ -140,9 +138,12 @@ class _CalcFatorialState extends State<CalcFatorial> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomBarBanner(
-          banner: controller.bannerAdCalcFatorial,
-          bannerAd: controller.bannerAd),
     );
+  }
+
+  @override
+  void dispose() {
+    modelFatorial.val1.dispose();
+    super.dispose();
   }
 }

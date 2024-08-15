@@ -1,11 +1,8 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/cald_fatorial.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/utils/constants/strings/strings_fatorial.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class Fatorial extends StatefulWidget {
   @override
@@ -13,7 +10,6 @@ class Fatorial extends StatefulWidget {
 }
 
 class _FatorialState extends State<Fatorial> {
-  final controller = Get.put(AdHelper());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -294,10 +290,6 @@ class _FatorialState extends State<Fatorial> {
               child: Image.asset("images/operacoes/fatorial/fatorial_21.png"),
             )),
       ])),
-      bottomNavigationBar: BottomBarBanner(
-        banner: controller.bannerAdFatorial,
-        bannerAd: controller.bannerAd
-      ),
     );
   }
 }

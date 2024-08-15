@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Iphone SE",
             "request": "launch",
@@ -26,7 +27,7 @@
             "name": "iPhone 14 Pro",
             "request": "launch",
             "type": "dart",
-            "deviceId": "70729D49-812E-470B-AAD6-4997AF25F3B5"
+            "deviceId": "06572F94-23E0-4E31-9DD7-78EF1A0DB78E"
         },
         {
             "name": "Chrome",
