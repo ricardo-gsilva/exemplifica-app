@@ -39,8 +39,8 @@ class _TabuadaState extends State<Tabuada> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => CalcTabuada()));
+              // Navigator.push(context,
+              //     MaterialPageRoute(builder: (context) => CalcTabuada()));
             },
           )
         ],

@@ -46,7 +46,7 @@ class HomePageButtonsGrid extends StatelessWidget {
                       title: CoreStrings.titleRegrasBasicas,
                       height: height * 2.2, 
                       width: width * 1.03,
-                      icon: Person.attention,
+                      icon: Person.book,
                       onTap: (){
                         Navigator.push(context, MaterialPageRoute(builder: (_) => RegrasBasicasPage()));
                       },
