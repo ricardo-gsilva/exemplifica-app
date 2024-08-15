@@ -1,13 +1,10 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/controller/controller_tabuada.dart';
 import 'package:exemplifica/components/row_buttons.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/components/text_field_input.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CalcTabuada extends StatefulWidget {
   @override
@@ -16,7 +13,6 @@ class CalcTabuada extends StatefulWidget {
 
 class _CalcTabuadaState extends State<CalcTabuada> {
   final _modelTabuada = ModelTabuada();
-  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
   bool visible = false;
@@ -51,9 +47,9 @@ class _CalcTabuadaState extends State<CalcTabuada> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                  (Route<dynamic> route) => false);
+              // Navigator.of(context).pushAndRemoveUntil(
+              //     MaterialPageRoute(builder: (context) => HomePage()),
+              //     (Route<dynamic> route) => false);
             },
           ),
         ],
@@ -83,7 +79,7 @@ class _CalcTabuadaState extends State<CalcTabuada> {
                   controller: _modelTabuada.nTabuada,
                   maxLength: 5,
                 ),          
-                RowButtons(
+                RowButtons1(
                   titleFirst: CoreStrings.calc,
                   titleSecond: CoreStrings.clear,
                   paddingTop: 10,
@@ -91,13 +87,6 @@ class _CalcTabuadaState extends State<CalcTabuada> {
                   width: width,
                   onTapFirst: (() {
                     setState(() {
-                      if (controller.calcTab < 6) {
-                        controller.calcTab++;
-                      } else {
-                        controller.calcTab = 0.obs;
-                      }
-                      controller.checkValueForInterstitial(
-                          AdHelper.videoCalcTabuada, controller.calcTab);
                       _modelTabuada.verificarCampo();                
                     });
                   }),
@@ -137,7 +126,12 @@ class _CalcTabuadaState extends State<CalcTabuada> {
           )
         ]),
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcTabuada, bannerAd: controller.bannerAd),      
     );
+  }
+
+  @override
+  void dispose() {
+    _modelTabuada.nTabuada.dispose();
+    super.dispose();
   }
 }

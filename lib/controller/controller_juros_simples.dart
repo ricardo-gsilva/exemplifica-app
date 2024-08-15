@@ -49,29 +49,10 @@ class ModelJurosSimples {
   }
 
   void verificarCampos() {
-    if ((c.text.isNotEmpty) &&
-        (i.text.isNotEmpty) &&
-        (t.text.isNotEmpty) &&
-        (j.text.isNotEmpty)) {
-      resultjS =
-          "Somente é possível fazer o cálculo com 3 campos preenchidos. Tire um dos "
-          "valores para calcular!";
-      resultjS_1 = "";
-      resultjS_2 = "";
-    } else if ((c.text.isEmpty) &&
-        (i.text.isEmpty) &&
-        (t.text.isEmpty) &&
-        (j.text.isEmpty)) {
-      resultjS =
-          "Preencha ao menos 3 dos 4 campos disponíveis para efetuar o cálculo.";
-      resultjS_1 = "";
-      resultjS_2 = "";
-    } else if (((j.text.isEmpty) && (c.text.isEmpty)) ||
-        ((i.text.isEmpty) && (t.text.isEmpty)) ||
-        ((j.text.isEmpty) && (i.text.isEmpty)) ||
-        ((i.text.isEmpty) && (c.text.isEmpty)) ||
-        ((j.text.isEmpty) && (t.text.isEmpty)) ||
-        ((c.text.isEmpty) && (t.text.isEmpty))) {
+    if (((j.text.isEmpty) && (c.text.isEmpty)) || ((i.text.isEmpty) && (t.text.isEmpty)) ||
+        ((j.text.isEmpty) && (i.text.isEmpty)) || ((i.text.isEmpty) && (c.text.isEmpty)) ||
+        ((j.text.isEmpty) && (t.text.isEmpty)) || ((c.text.isEmpty) && (t.text.isEmpty))) {
+      visible = true;
       resultjS = "É necessário que ao menos 3 campos estejam preenchidos.";
       resultjS_1 = "";
       resultjS_2 = "";

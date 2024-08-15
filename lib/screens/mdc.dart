@@ -1,11 +1,8 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/cald_mdc.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/utils/constants/strings/strings_mdc.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class Mdc extends StatefulWidget {
   @override
@@ -13,7 +10,6 @@ class Mdc extends StatefulWidget {
 }
 
 class _MdcState extends State<Mdc> {
-  final controller = Get.put(AdHelper());
   
   @override
   Widget build(BuildContext context) {
@@ -97,7 +93,6 @@ class _MdcState extends State<Mdc> {
           ),
         ])
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdMdc, bannerAd: controller.bannerAd),
       );
   }
 }

@@ -1,9 +1,8 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/screens/home_page.dart';
+import 'package:exemplifica/widgets/page/home_page.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
   String? version;
@@ -16,7 +15,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  final controller = Get.put(AdHelper());
   
   @override
   void initState() {
@@ -25,7 +23,6 @@ class _SplashScreenState extends State<SplashScreen> {
   }  
 
   void splashScreen() {
-    controller.loadingBannerHome(AdHelper.bannerHome);
     Future.delayed(Duration(seconds: 5), (){
       Navigator.of(context).pushReplacement(MaterialPageRoute(
         builder: (_) => HomePage()));

@@ -1,13 +1,10 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/controller/controller_juros_simples.dart';
 import 'package:exemplifica/components/row_buttons.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/components/text_field_input.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CalcJurosS extends StatefulWidget {
   @override
@@ -16,7 +13,6 @@ class CalcJurosS extends StatefulWidget {
 
 class _CalcJurosSState extends State<CalcJurosS> {
   final ModelJurosSimples modelJurosSimples = ModelJurosSimples();
-  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
 
@@ -50,9 +46,9 @@ class _CalcJurosSState extends State<CalcJurosS> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                  (Route<dynamic> route) => false);
+              // Navigator.of(context).pushAndRemoveUntil(
+              //     MaterialPageRoute(builder: (context) => HomePage()),
+              //     (Route<dynamic> route) => false);
             },
           ),
         ],
@@ -95,7 +91,7 @@ class _CalcJurosSState extends State<CalcJurosS> {
                 hintText: "%",
                 controller: modelJurosSimples.j
               ),            
-              RowButtons(
+              RowButtons1(
                 titleFirst: CoreStrings.calc,
                 titleSecond: CoreStrings.clear,
                 paddingTop: 10,
@@ -103,13 +99,6 @@ class _CalcJurosSState extends State<CalcJurosS> {
                 width: width,
                 onTapFirst: (() {
                   setState(() {
-                    if (controller.calcJurosS < 6) {
-                      controller.calcJurosS++;
-                    } else {
-                      controller.calcJurosS = 0.obs;
-                    }
-                    controller.checkValueForInterstitial(
-                        AdHelper.videoCalcJurosS, controller.calcJurosS);
                     modelJurosSimples.verificarCampos();
                   });
                 }),
@@ -118,20 +107,7 @@ class _CalcJurosSState extends State<CalcJurosS> {
                     modelJurosSimples.resetCampos();
                   });
                 }),
-              ),
-              Visibility(
-                visible: modelJurosSimples.visible,
-                child: Padding(
-                  padding:
-                      EdgeInsets.only(left: 10, right: 10, top: 15),
-                  child: Text(
-                    modelJurosSimples.resultjS,
-                    textAlign: TextAlign.left,
-                    style:
-                        TextStyle(color: CoreColors.textPrimary, fontSize: 20.0),
-                  ),
-                ),
-              ),
+              ),              
             ],
           ),
         ),
@@ -139,6 +115,16 @@ class _CalcJurosSState extends State<CalcJurosS> {
           visible: modelJurosSimples.visible,
           child: Column(
             children: [
+              Padding(
+                padding:
+                    EdgeInsets.only(left: 10, right: 10, top: 5),
+                child: Text(
+                  modelJurosSimples.resultjS,
+                  textAlign: TextAlign.left,
+                  style:
+                      TextStyle(color: CoreColors.textPrimary, fontSize: 20.0),
+                ),
+              ),
               Padding(
                 padding: EdgeInsets.only(left: 10, right: 10),
                 child: Text(
@@ -163,7 +149,15 @@ class _CalcJurosSState extends State<CalcJurosS> {
           ),
         )
       ])),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcJurosS, bannerAd: controller.bannerAd),      
     );
+  }
+
+  @override
+  void dispose() {
+    modelJurosSimples.c.dispose();
+    modelJurosSimples.i.dispose();
+    modelJurosSimples.j.dispose();
+    modelJurosSimples.t.dispose();
+    super.dispose();
   }
 }

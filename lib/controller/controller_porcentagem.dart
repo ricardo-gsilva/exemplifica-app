@@ -4,9 +4,7 @@ import 'package:intl/intl.dart';
 class ModelPorcentagem {
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
-
   String resultPorcent = "";
-
   bool visible = false;
 
   void resetCampos() {
@@ -18,6 +16,7 @@ class ModelPorcentagem {
 
   void verificarCampos() {
     if (val1.text.isEmpty || val2.text.isEmpty) {
+      visible = true;
       resultPorcent = "Por favor, preencha os campos!";
     } else {
       resultPorcent = "";
@@ -62,9 +61,9 @@ class ModelPorcentagem {
     }
 
     resultPorcent = 
-        valor2f + " x " + comp1 + " = " + valor1f + " x " + "'X'" + "\n" +
-        valor1f + ".'X'" + " = " + mult2f + "\n" +
-        "X" + " = " + mult2f + "/" + valor1f + "\n" + 
-        "X" + " = " + resultf;
+        "$valor2f x $comp1 = $valor1f x 'X' \n"
+        "$valor1f.'X' = $mult2f \n"
+        "'X' = $mult2f / $valor1f \n"
+        "'X' = $resultf%";
   }
 }

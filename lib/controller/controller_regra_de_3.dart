@@ -5,9 +5,7 @@ class ModelRegraDe3 {
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
   TextEditingController val3 = TextEditingController();
-
   String resultRegra3 = "";
-
   bool visible = false;
 
   void resetCampos() {
@@ -69,10 +67,10 @@ class ModelRegraDe3 {
       resultf = format2.format((result));
     }
 
-    resultRegra3 = resultRegra3 +
-        valor2f + " x " + valor3f + " = " + valor1f + " x " + "'X'" + "\n" +
-        valor1f + ".'X'" + " = " + mult2f + "\n" +
-        "'X'" + " = " + mult2f + "/" + valor1f + "\n" +
-        "'X'" + " = " + resultf;
+    resultRegra3 = 
+      "${resultRegra3}$valor2f x $valor3f = $valor1f x 'X' \n"
+      "$valor1f.'X' = $mult2f \n"
+      "'X' = $mult2f / $valor1f \n"
+      "'X' = $resultf";
   }
 }

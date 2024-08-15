@@ -1,13 +1,10 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/controller/controller_mdc.dart';
 import 'package:exemplifica/components/row_buttons.dart';
 import 'package:exemplifica/screens/home_page.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/components/text_field_input.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CalcMdc extends StatefulWidget {
   @override
@@ -16,7 +13,6 @@ class CalcMdc extends StatefulWidget {
 
 class _CalcMdcState extends State<CalcMdc> {
   final ModelMdc modelMdc = ModelMdc();
-  final controller = Get.put(AdHelper());
   double height = 0;
   double width = 0;
 
@@ -50,9 +46,9 @@ class _CalcMdcState extends State<CalcMdc> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                  (Route<dynamic> route) => false);
+              // Navigator.of(context).pushAndRemoveUntil(
+              //     MaterialPageRoute(builder: (context) => HomePage()),
+              //     (Route<dynamic> route) => false);
             },
           ),
         ],
@@ -85,7 +81,7 @@ class _CalcMdcState extends State<CalcMdc> {
                   hintText: "",
                   controller: modelMdc.val2
                 ),            
-                RowButtons(
+                RowButtons1(
                   titleFirst: CoreStrings.calc,
                   titleSecond: CoreStrings.clear,
                   paddingTop: 10,
@@ -93,13 +89,6 @@ class _CalcMdcState extends State<CalcMdc> {
                   width: width,
                   onTapFirst: (() {
                     setState(() {
-                      if (controller.calcMdc < 6) {
-                        controller.calcMdc++;
-                      } else {
-                        controller.calcMdc = 0.obs;
-                      }
-                      controller.checkValueForInterstitial(
-                          AdHelper.videoCalcMdc, controller.calcMdc);
                       modelMdc.verificarCampos();
                     });
                   }),
@@ -148,7 +137,13 @@ class _CalcMdcState extends State<CalcMdc> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcMdc, bannerAd: controller.bannerAd),      
     );
+  }
+
+  @override
+  void dispose() {
+    modelMdc.val1.dispose();
+    modelMdc.val2.dispose();
+    super.dispose();
   }
 }

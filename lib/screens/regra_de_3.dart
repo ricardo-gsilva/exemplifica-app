@@ -1,11 +1,8 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/calc_regra_de_3.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/utils/constants/strings/strings_regra_de_3.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class RegraDe3 extends StatefulWidget {
   @override
@@ -13,7 +10,6 @@ class RegraDe3 extends StatefulWidget {
 }
 
 class _RegraDe3State extends State<RegraDe3> {
-  final controller = Get.put(AdHelper());
 
   @override
   Widget build(BuildContext context) {
@@ -240,7 +236,6 @@ class _RegraDe3State extends State<RegraDe3> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdRegrade3, bannerAd: controller.bannerAd),
       );
   }
 }

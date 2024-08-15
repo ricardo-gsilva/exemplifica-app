@@ -1,7 +1,5 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/widgets/button_custom.dart';
 import 'package:exemplifica/screens/expoentes.dart';
 import 'package:exemplifica/screens/mult_div.dart';
@@ -9,7 +7,6 @@ import 'package:exemplifica/screens/parentesis.dart';
 import 'package:exemplifica/screens/regra_sinal.dart';
 import 'package:exemplifica/screens/soma_sub.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class RegrasBasicas extends StatefulWidget {
   @override
@@ -17,19 +14,8 @@ class RegrasBasicas extends StatefulWidget {
 }
 
 class _RegrasBasicasState extends State<RegrasBasicas> {
-  final controller = Get.put(AdHelper());
   double height = 0.0;
   double width = 0.0;
-
-  @override
-  void initState() {
-    controller.loadingBannerParentesis(AdHelper.bannerParentesis);
-    controller.loadingBannerExpoentes(AdHelper.bannerExpoentes);                  
-    controller.loadingBannerMultDiv(AdHelper.bannerMultDiv);                  
-    controller.loadingBannerSomaSub(AdHelper.bannerSomaSub);                  
-    controller.loadingBannerRegrasSinais(AdHelper.bannerRegrasSinais);
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +97,6 @@ class _RegrasBasicasState extends State<RegrasBasicas> {
           ),
         ),
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdRegrasBasicas, bannerAd: controller.bannerAd),
       );
   }
 }

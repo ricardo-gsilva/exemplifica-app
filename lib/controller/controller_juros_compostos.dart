@@ -7,7 +7,6 @@ class ModelJurosCompostos {
   TextEditingController i = TextEditingController();
   TextEditingController j = TextEditingController();
   TextEditingController t = TextEditingController();
-  TextEditingController m = TextEditingController();
 
   String resultjC = "";
   String resultjC_1 = "";
@@ -20,10 +19,10 @@ class ModelJurosCompostos {
 
   void resetCampos() {
     visible = false;
-    c.text = "";
-    i.text = "";
-    t.text = "";
-    j.text = "";
+    c.clear();
+    i.clear();
+    t.clear();
+    j.clear();
     resultjC = "";
     resultjC_1 = "";
     resultjC_2 = "";

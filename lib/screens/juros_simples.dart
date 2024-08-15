@@ -1,11 +1,8 @@
-import 'package:exemplifica/services/ad_mob.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/person_icons.dart';
 import 'package:exemplifica/screens/calculadoras/calc_juros_simples.dart';
-import 'package:exemplifica/widgets/bottombar_banner.dart';
 import 'package:exemplifica/utils/constants/strings/strings_juros_simples.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class JurosSimples extends StatefulWidget {
   @override
@@ -13,7 +10,6 @@ class JurosSimples extends StatefulWidget {
 }
 
 class _JurosSimplesState extends State<JurosSimples> {
-  final controller = Get.put(AdHelper());
 
   @override
   Widget build(BuildContext context) {
@@ -157,7 +153,6 @@ class _JurosSimplesState extends State<JurosSimples> {
           ),
         ])
       ),
-      bottomNavigationBar: BottomBarBanner(banner: controller.bannerAdCalcJurosS, bannerAd: controller.bannerAd),
       );
   }
 }
