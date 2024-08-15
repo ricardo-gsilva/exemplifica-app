@@ -1,7 +1,7 @@
-import 'package:exemplifica/screens/mult_div.dart';
 import 'package:exemplifica/screens/regra_sinal.dart';
 import 'package:exemplifica/screens/soma_sub.dart';
 import 'package:exemplifica/widgets/page/expoentes_page.dart';
+import 'package:exemplifica/widgets/page/multiplicacao_divisao_page.dart';
 import 'package:exemplifica/widgets/page/parentesis_page.dart';
 import 'package:flutter/material.dart';
 
@@ -39,7 +39,7 @@ class ButtonGridRegrasBasicas extends StatelessWidget {
         CustomButton(
           title: "3º Multiplicações e Divisões",
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => MultiplicaDiv()));
+            Navigator.push(context, MaterialPageRoute(builder: (_) => MultiplicacaoDivisaoPage()));
           },
           height: height,
           width: width,
