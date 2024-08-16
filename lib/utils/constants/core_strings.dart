@@ -36,4 +36,7 @@ class CoreStrings {
   static const String text1_CalcEquacao2 = 
                 "Digite os valores de 'a', 'b' e 'c' para montar a equação. O valor máximo é de 999 para cada campo.";
   static const String text2_CalcEquacao2 = "ax² + bx + c = 0";
+
+  //Calc Fatorial
+  static const String text1_Fatorial = "Digite um número para ver o cálculo do fatorial.\n\nObs: O valor máximo da calculadora é 15.";
 }
