@@ -12,7 +12,7 @@ class CalcEquacao2 extends StatefulWidget {
 }
 
 class _CalcEquacao2State extends State<CalcEquacao2> {
-  final ModelEquacao2 modelEquacao2 = ModelEquacao2();
+  // final ModelEquacao2 modelEquacao2 = ModelEquacao2();
   bool visible = false;
   double height = 0;
   double width = 0;
@@ -87,21 +87,21 @@ class _CalcEquacao2State extends State<CalcEquacao2> {
                       ),
                       Column(
                         children: [
-                          TextFieldInput(
-                            title: "'a':",
-                            hintText: "a",
-                            controller: modelEquacao2.val1,
-                          ),
-                          TextFieldInput(
-                            title: "'b':",
-                            hintText: "b",
-                            controller: modelEquacao2.val2,
-                          ),
-                          TextFieldInput(
-                            title: "'c':",
-                            hintText: "c",
-                            controller: modelEquacao2.val3,
-                          ),
+                          // TextFieldInput(
+                          //   title: "'a':",
+                          //   hintText: "a",
+                          //   controller: modelEquacao2.val1,
+                          // ),
+                          // TextFieldInput(
+                          //   title: "'b':",
+                          //   hintText: "b",
+                          //   controller: modelEquacao2.val2,
+                          // ),
+                          // TextFieldInput(
+                          //   title: "'c':",
+                          //   hintText: "c",
+                          //   controller: modelEquacao2.val3,
+                          // ),
                         ],
                       ),
                       Row(
@@ -110,7 +110,7 @@ class _CalcEquacao2State extends State<CalcEquacao2> {
                           ButtonBase(
                             onTap: (() {
                               setState(() {                                
-                                modelEquacao2.verificarCampo();
+                                // modelEquacao2.verificarCampo();
                               });
                             }),
                             title: 'Calcular',
@@ -120,7 +120,7 @@ class _CalcEquacao2State extends State<CalcEquacao2> {
                           ButtonBase(
                             onTap: (() {
                               setState(() {
-                                modelEquacao2.resetCampos();
+                                // modelEquacao2.resetCampos();
                                 visible = !visible;
                               });
                             }),
@@ -133,63 +133,63 @@ class _CalcEquacao2State extends State<CalcEquacao2> {
                     ],
                   ),
                 ),
-                Visibility(
-                  visible: modelEquacao2.visible,
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 10, right: 10, top: 5, bottom: 5),
-                        child: Text(
-                          modelEquacao2.resultEq2,
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              color: CoreColors.textPrimary, fontSize: 21.0),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 10, right: 10, top: 5, bottom: 5),
-                        child: Text(
-                          modelEquacao2.resultEq2_1,
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              color: CoreColors.textPrimary, fontSize: 21.0),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 10, right: 10, top: 5, bottom: 5),
-                        child: Text(
-                          modelEquacao2.resultEq2_2,
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              color: CoreColors.textPrimary, fontSize: 21.0),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 10, right: 10, top: 5, bottom: 5),
-                        child: Text(
-                          modelEquacao2.resultEq2_3,
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              color: CoreColors.textPrimary, fontSize: 21.0),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: 10, right: 10, top: 5, bottom: 5),
-                        child: Text(
-                          modelEquacao2.resultEq2_4,
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              color: CoreColors.textPrimary, fontSize: 21.0),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
+                // Visibility(
+                //   visible: modelEquacao2.visible,
+                //   child: Column(
+                //     children: [
+                //       Padding(
+                //         padding: EdgeInsets.only(
+                //             left: 10, right: 10, top: 5, bottom: 5),
+                //         child: Text(
+                //           modelEquacao2.resultEq2,
+                //           textAlign: TextAlign.left,
+                //           style: TextStyle(
+                //               color: CoreColors.textPrimary, fontSize: 21.0),
+                //         ),
+                //       ),
+                //       Padding(
+                //         padding: EdgeInsets.only(
+                //             left: 10, right: 10, top: 5, bottom: 5),
+                //         child: Text(
+                //           modelEquacao2.resultEq2_1,
+                //           textAlign: TextAlign.left,
+                //           style: TextStyle(
+                //               color: CoreColors.textPrimary, fontSize: 21.0),
+                //         ),
+                //       ),
+                //       Padding(
+                //         padding: EdgeInsets.only(
+                //             left: 10, right: 10, top: 5, bottom: 5),
+                //         child: Text(
+                //           modelEquacao2.resultEq2_2,
+                //           textAlign: TextAlign.left,
+                //           style: TextStyle(
+                //               color: CoreColors.textPrimary, fontSize: 21.0),
+                //         ),
+                //       ),
+                //       Padding(
+                //         padding: EdgeInsets.only(
+                //             left: 10, right: 10, top: 5, bottom: 5),
+                //         child: Text(
+                //           modelEquacao2.resultEq2_3,
+                //           textAlign: TextAlign.left,
+                //           style: TextStyle(
+                //               color: CoreColors.textPrimary, fontSize: 21.0),
+                //         ),
+                //       ),
+                //       Padding(
+                //         padding: EdgeInsets.only(
+                //             left: 10, right: 10, top: 5, bottom: 5),
+                //         child: Text(
+                //           modelEquacao2.resultEq2_4,
+                //           textAlign: TextAlign.left,
+                //           style: TextStyle(
+                //               color: CoreColors.textPrimary, fontSize: 21.0),
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // )
               ],
             ),
           ),
@@ -200,9 +200,9 @@ class _CalcEquacao2State extends State<CalcEquacao2> {
 
   @override
   void dispose() {
-    modelEquacao2.val1.dispose();
-    modelEquacao2.val2.dispose();
-    modelEquacao2.val3.dispose();
+    // modelEquacao2.val1.dispose();
+    // modelEquacao2.val2.dispose();
+    // modelEquacao2.val3.dispose();
     super.dispose();
   }
 }

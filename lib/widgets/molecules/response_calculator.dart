@@ -16,14 +16,17 @@ class ResponseCalculator extends StatelessWidget {
       shrinkWrap: true,
       itemCount: response.length,
       itemBuilder: (_, i) {
-        return ListTile(
-          title: Center(
-            child: CustomText(
-              title: response[i],
-              fontSize: 18,
+        if (response[i].isNotEmpty) {
+          return ListTile(
+            title: Center(
+              child: CustomText(
+                title: response[i],
+                fontSize: 18,
+              ),
             ),
-          ),
-        );
+          );
+        } 
+        return SizedBox();
       },
     );
   }
