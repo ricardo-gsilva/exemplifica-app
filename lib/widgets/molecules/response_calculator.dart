@@ -17,10 +17,11 @@ class ResponseCalculator extends StatelessWidget {
       itemCount: response.length,
       itemBuilder: (_, i) {
         return ListTile(
-          title: CustomText(
-            title: response[i],
-            textAlign: TextAlign.center,
-            fontSize: 18,
+          title: Center(
+            child: CustomText(
+              title: response[i],
+              fontSize: 18,
+            ),
           ),
         );
       },

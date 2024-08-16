@@ -2,6 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class ControllerEquacao1 {
+
+  static ControllerEquacao1? _instance;
+  
+  ControllerEquacao1._();
+
+  static get instance {
+    _instance ??= ControllerEquacao1._();
+    return _instance;
+  }
+
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
 
@@ -12,6 +22,7 @@ class ControllerEquacao1 {
   double a = 0;
   double b = 0;
   double r = 0;
+  bool visible = false;
 
   NumberFormat formatEq1_1 = new NumberFormat("0");
   NumberFormat formatEq1_2 = new NumberFormat("0.00");
@@ -24,12 +35,14 @@ class ControllerEquacao1 {
   void verificarCampo() {
     if (val1.text.isEmpty || val2.text.isEmpty) {
       resultEq1_1 = "Por favor, preencha os campos!";
+      visible = true;
     } else {
       _equacao1_1();
     }
   }
 
   void resetCampos() {
+    visible = false;
     val1.clear();
     val2.clear();
     resultEq1_1 = "";
