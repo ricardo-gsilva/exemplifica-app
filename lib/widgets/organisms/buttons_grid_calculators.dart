@@ -1,4 +1,3 @@
-import 'package:exemplifica/screens/calculadoras/calc_equacao_1.dart';
 import 'package:exemplifica/screens/calculadoras/calc_equacao_2.dart';
 import 'package:exemplifica/screens/calculadoras/calc_juros_compostos.dart';
 import 'package:exemplifica/screens/calculadoras/calc_juros_simples.dart';
@@ -8,6 +7,7 @@ import 'package:exemplifica/screens/calculadoras/calc_regra_de_3.dart';
 import 'package:exemplifica/screens/calculadoras/cald_fatorial.dart';
 import 'package:exemplifica/screens/calculadoras/cald_mdc.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/widgets/page/calc_equacao_1_page.dart';
 import 'package:exemplifica/widgets/page/calc_tabuada_page.dart';
 import 'package:flutter/material.dart';
 
@@ -50,7 +50,7 @@ class ButtonsGridCalculators extends StatelessWidget {
           titleSecond: CoreStrings.titleEquacao2,
           onTapFirst: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (_) => CalcEquacao1()));
+                context, MaterialPageRoute(builder: (_) => CalcEquacao1Page()));
           },
           onTapSecond: () {
             Navigator.push(

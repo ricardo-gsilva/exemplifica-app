@@ -26,4 +26,9 @@ class CoreStrings {
   static const String text1_CalcEquacao1 = 
                 "Digite os valores de 'a' e 'b' e clique em 'Montar Equação' para poder ver a equação e depois calcular.";
   static const String text2_CalcEquacao1 = "ax + b = 0";
+
+  //Calc Tabuada
+  static const String text1_CalcTabuada = 
+                "Digite um número no campo abaixo que seja entre 0 e 99999 e use o botão de calcular para que você possa"
+                  " ver a tabuada do número escolhido.";
 }

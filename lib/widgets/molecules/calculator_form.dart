@@ -1,3 +1,4 @@
+import 'package:exemplifica/widgets/atoms/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
@@ -9,6 +10,7 @@ class CalculatorForm extends StatelessWidget {
   final List<String> label;
   final double height;
   final double width;
+  final String? title;
   final void Function() onTapFirst;
   final void Function() onTapSecond;
   const CalculatorForm({
@@ -19,6 +21,7 @@ class CalculatorForm extends StatelessWidget {
     required this.width,
     required this.onTapFirst,
     required this.onTapSecond,
+    this.title,
   }) : super(key: key);
 
   @override
@@ -33,6 +36,7 @@ class CalculatorForm extends StatelessWidget {
           padding: const EdgeInsets.all(25.0),
           child: Column(
             children: [
+              CustomText(title: title??'', fontSize: 22, color: CoreColors.textSecundary),
               ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
@@ -46,8 +50,8 @@ class CalculatorForm extends StatelessWidget {
                 },
               ),
               RowButtons(
-                height: height,
-                width: width,
+                height: height * 0.05,
+                width: width * 0.35,
                 titleFirst: CoreStrings.calc,
                 titleSecond: CoreStrings.clear,
                 onTapFirst: onTapFirst,

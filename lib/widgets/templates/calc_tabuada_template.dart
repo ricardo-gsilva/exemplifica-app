@@ -1,4 +1,5 @@
 import 'package:exemplifica/controller/controller_tabuada.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
 import 'package:exemplifica/widgets/molecules/calculator_form.dart';
 import 'package:exemplifica/widgets/molecules/response_calculator.dart';
@@ -24,9 +25,7 @@ class _CalcTabuadaTemplateState extends State<CalcTabuadaTemplate> {
         child: Column(
           children: <Widget>[
             CustomText(
-              title:
-                  "Digite um número no campo abaixo que seja entre 0 e 99999 e use o botão de calcular para que você possa"
-                  " ver a tabuada do número escolhido.",
+              title: CoreStrings.text1_CalcTabuada,
               fontSize: 20,
             ),            
             CalculatorForm(
