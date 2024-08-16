@@ -31,4 +31,9 @@ class CoreStrings {
   static const String text1_CalcTabuada = 
                 "Digite um número no campo abaixo que seja entre 0 e 99999 e use o botão de calcular para que você possa"
                   " ver a tabuada do número escolhido.";
+
+  //Calc Equação de 2º Grau
+  static const String text1_CalcEquacao2 = 
+                "Digite os valores de 'a', 'b' e 'c' para montar a equação. O valor máximo é de 999 para cada campo.";
+  static const String text2_CalcEquacao2 = "ax² + bx + c = 0";
 }
