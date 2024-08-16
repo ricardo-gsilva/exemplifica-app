@@ -12,7 +12,7 @@ class CalcFatorial extends StatefulWidget {
 }
 
 class _CalcFatorialState extends State<CalcFatorial> {
-  final ModelFatorial modelFatorial = ModelFatorial();
+  // final ModelFatorial modelFatorial = ModelFatorial();
   double height = 0;
   double width = 0;
 
@@ -75,65 +75,65 @@ class _CalcFatorialState extends State<CalcFatorial> {
                 ),
                 child: Column(
                   children: [
-                    TextFieldInput(
-                      title: "Digite o valor:",
-                      hintText: "valor",
-                      controller: modelFatorial.val1,
-                    ),
-                    RowButtons1(
-                      titleFirst: CoreStrings.calc,
-                      titleSecond: CoreStrings.clear,
-                      paddingTop: 10,
-                      height: height,
-                      width: width,
-                      onTapFirst: (() {
-                        setState(() {
-                          modelFatorial.verificarCampos();
-                        });
-                      }),
-                      onTapSecond: (() {
-                        setState(() {
-                          modelFatorial.resetCampos();
-                        });
-                      }),
-                    ),
+                    // TextFieldInput(
+                    //   title: "Digite o valor:",
+                    //   hintText: "valor",
+                    //   controller: modelFatorial.val1,
+                    // ),
+                    // RowButtons1(
+                    //   titleFirst: CoreStrings.calc,
+                    //   titleSecond: CoreStrings.clear,
+                    //   paddingTop: 10,
+                    //   height: height,
+                    //   width: width,
+                    //   onTapFirst: (() {
+                    //     setState(() {
+                    //       modelFatorial.verificarCampos();
+                    //     });
+                    //   }),
+                    //   onTapSecond: (() {
+                    //     setState(() {
+                    //       modelFatorial.resetCampos();
+                    //     });
+                    //   }),
+                    // ),
                   ],
                 ),
               ),
-              Visibility(
-                visible: modelFatorial.visible,
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 10, right: 10),
-                      child: Text(
-                        modelFatorial.resultFat,
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            color: CoreColors.textPrimary, fontSize: 21.0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
-                      child: Text(
-                        modelFatorial.resultFinal,
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            color: CoreColors.textPrimary, fontSize: 26.0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 10, right: 10),
-                      child: Text(
-                        modelFatorial.infoFatorial,
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            color: CoreColors.textPrimary, fontSize: 21.0),
-                      ),
-                    ),
-                  ],
-                ),
-              )
+              // Visibility(
+              //   visible: modelFatorial.visible,
+              //   child: Column(
+              //     children: [
+              //       Padding(
+              //         padding: EdgeInsets.only(left: 10, right: 10),
+              //         child: Text(
+              //           modelFatorial.resultFat,
+              //           textAlign: TextAlign.left,
+              //           style: TextStyle(
+              //               color: CoreColors.textPrimary, fontSize: 21.0),
+              //         ),
+              //       ),
+              //       Padding(
+              //         padding: EdgeInsets.only(left: 10, right: 10, bottom: 10),
+              //         child: Text(
+              //           modelFatorial.resultFinal,
+              //           textAlign: TextAlign.left,
+              //           style: TextStyle(
+              //               color: CoreColors.textPrimary, fontSize: 26.0),
+              //         ),
+              //       ),
+              //       Padding(
+              //         padding: EdgeInsets.only(left: 10, right: 10),
+              //         child: Text(
+              //           modelFatorial.infoFatorial,
+              //           textAlign: TextAlign.left,
+              //           style: TextStyle(
+              //               color: CoreColors.textPrimary, fontSize: 21.0),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // )
             ],
           ),
         ),
@@ -143,7 +143,7 @@ class _CalcFatorialState extends State<CalcFatorial> {
 
   @override
   void dispose() {
-    modelFatorial.val1.dispose();
+    // modelFatorial.val1.dispose();
     super.dispose();
   }
 }
