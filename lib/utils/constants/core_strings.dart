@@ -43,4 +43,8 @@ class CoreStrings {
   //Calc Juros Simples
   static const String text1_JurosSimples = "Digite os valores. Preencha ao menos 3 campos!";
 
+  //Calc Juros Compostos
+  static const String text1_JurosCompostos = "Digite os valores de Capital, taxa mensal de juros e tempo em meses.";
+  static const String text2_JurosCompostos = "M = C(1 + (i / 100))t";
+
 }
