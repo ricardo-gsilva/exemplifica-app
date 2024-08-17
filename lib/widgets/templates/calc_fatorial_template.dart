@@ -25,7 +25,7 @@ class _CalcFatorialTemplateState extends State<CalcFatorialTemplate> {
         child: Column(
           children: <Widget>[
             CustomText(
-              title: CoreStrings.text1_Fatorial,
+              title: CoreStrings.text1_CalcFatorial,
               fontSize: 20,
             ),
             CalculatorForm(
