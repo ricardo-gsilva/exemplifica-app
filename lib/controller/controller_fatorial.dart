@@ -1,6 +1,16 @@
 import 'package:flutter/material.dart';
 
-class ModelFatorial {
+class ControllerFatorial {
+
+  static ControllerFatorial? _instance;
+
+  ControllerFatorial._();
+
+  static get instance {
+    _instance ??= ControllerFatorial._();
+    return _instance;
+  }
+
   TextEditingController val1 = TextEditingController();
 
   String resultFat = "";
@@ -19,9 +29,9 @@ class ModelFatorial {
   void verificarCampos() {
     if (val1.text.isEmpty) {
       visible = true;
-      resultFat = "Por favor, preencha o campo com um valor!" + "\n"
-              "Obs: Devido a limitações com relação ao tamanho da tela, não podemos"
-              " calcular valores acima de 14.";
+      resultFat = "Por favor, preencha o campo com um valor!\n\n"
+              "Obs: Devido a exigência de processamento, não faremos calculos"
+              " com valores acima de 14.";
     } else {
       resultFat = "";
       resultFinal = "";
@@ -37,8 +47,8 @@ class ModelFatorial {
       resultFat = "Obs: O valor fatorial de 0 será sempre o número 1.";
     } else if (valFatorial > 14) {
       resultFat =
-          "Devido a limitações com relação ao tamanho da tela, não podemos"
-          " calcular valores acima de 14.";
+          "Devido a exigência de processamento, não faremos calculos"
+              " com valores acima de 14.";
     } else {
       int fat = valFatorial;
       int i = 1;
@@ -48,11 +58,11 @@ class ModelFatorial {
 
       for (i = 1; i < fat; i++) {
         c = a * b;
-        resultFat = "$resultFat ${valFatorial}! = $a x $b = $c\n";
+        resultFat = "$resultFat $valFatorial! = $a x $b = $c\n";
         b++;
         a = c;
       }
-      resultFinal = "${valFatorial}! = $c ";
+      resultFinal = "$valFatorial! = $c ";
       infoFatorial = "Obs: O valor fatorial de 0 será sempre o número 1.";
     }
   }

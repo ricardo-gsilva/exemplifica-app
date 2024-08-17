@@ -1,19 +1,23 @@
-import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:exemplifica/utils/constants/core_colors.dart';
 
 class CustomIconButton extends StatelessWidget {
-  const CustomIconButton({super.key});
+  final IconData? icon;
+  final void Function()? onPressed;
+  const CustomIconButton({
+    Key? key,
+    this.icon,
+    this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
       icon: Icon(
-        Icons.reply,
+        icon,
         color: CoreColors.textPrimary,
       ),
-      onPressed: () {
-        Navigator.pop(context);
-      },
+      onPressed: onPressed,
     );
   }
 }

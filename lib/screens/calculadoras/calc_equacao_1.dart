@@ -12,7 +12,7 @@ class CalcEquacao1 extends StatefulWidget {
 }
 
 class _CalcEquacao1State extends State<CalcEquacao1> {
-  final ControllerEquacao1 calcEquacao_1 = ControllerEquacao1();
+  final ControllerEquacao1 calcEquacao_1 = ControllerEquacao1.instance();
   double height = 0;
   double width = 0;
 

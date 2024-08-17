@@ -26,4 +26,21 @@ class CoreStrings {
   static const String text1_CalcEquacao1 = 
                 "Digite os valores de 'a' e 'b' e clique em 'Montar Equação' para poder ver a equação e depois calcular.";
   static const String text2_CalcEquacao1 = "ax + b = 0";
+
+  //Calc Tabuada
+  static const String text1_CalcTabuada = 
+                "Digite um número no campo abaixo que seja entre 0 e 99999 e use o botão de calcular para que você possa"
+                  " ver a tabuada do número escolhido.";
+
+  //Calc Equação de 2º Grau
+  static const String text1_CalcEquacao2 = 
+                "Digite os valores de 'a', 'b' e 'c' para montar a equação. O valor máximo é de 999 para cada campo.";
+  static const String text2_CalcEquacao2 = "ax² + bx + c = 0";
+
+  //Calc Fatorial
+  static const String text1_Fatorial = "Digite um número para ver o cálculo do fatorial.\n\nObs: O valor máximo da calculadora é 15.";
+
+  //Calc Juros Simples
+  static const String text1_JurosSimples = "Digite os valores. Preencha ao menos 3 campos!";
+
 }

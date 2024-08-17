@@ -1,5 +1,5 @@
 import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/widgets/atoms/custom_appBar.dart';
+import 'package:exemplifica/widgets/molecules/custom_scaffold.dart';
 import 'package:exemplifica/widgets/templates/home_page_template.dart';
 import 'package:flutter/material.dart';
 
@@ -18,16 +18,12 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     height = MediaQuery.of(context).size.height * 0.1;
     width = MediaQuery.of(context).size.width * 0.42;
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: CustomAppBar(
-          title: Image.asset(
+    return CustomScaffold(
+      titleAppBar: Image.asset(
             'images/exemplo_3.png',
             height: 45,
           ),
-        ),
-      ),
+      leading: false,      
       body: HomePageButtonsGrid(
         backgroundColorGrid: CoreColors.appBarColor,
         height: height,

@@ -1,8 +1,8 @@
-import 'package:exemplifica/screens/regra_sinal.dart';
-import 'package:exemplifica/screens/soma_sub.dart';
 import 'package:exemplifica/widgets/page/expoentes_page.dart';
 import 'package:exemplifica/widgets/page/multiplicacao_divisao_page.dart';
 import 'package:exemplifica/widgets/page/parentesis_page.dart';
+import 'package:exemplifica/widgets/page/regras_sinais_page.dart';
+import 'package:exemplifica/widgets/page/soma_subtracao_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:exemplifica/widgets/atoms/custom_button.dart';
@@ -47,7 +47,7 @@ class ButtonGridRegrasBasicas extends StatelessWidget {
         CustomButton(
           title: "4º Somas e Subtrações",
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => SomaSubtracao()));
+            Navigator.push(context, MaterialPageRoute(builder: (_) => SomaSubtracaoPage()));
           },
           height: height,
           width: width,
@@ -55,7 +55,7 @@ class ButtonGridRegrasBasicas extends StatelessWidget {
         CustomButton(
           title: "Regras de Sinais",
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => RegrasSinais()));
+            Navigator.push(context, MaterialPageRoute(builder: (_) => RegrasSinaisPage()));
           },
           height: height,
           width: width,
