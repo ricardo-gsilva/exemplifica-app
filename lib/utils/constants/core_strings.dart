@@ -39,4 +39,8 @@ class CoreStrings {
 
   //Calc Fatorial
   static const String text1_Fatorial = "Digite um número para ver o cálculo do fatorial.\n\nObs: O valor máximo da calculadora é 15.";
+
+  //Calc Juros Simples
+  static const String text1_JurosSimples = "Digite os valores. Preencha ao menos 3 campos!";
+
 }

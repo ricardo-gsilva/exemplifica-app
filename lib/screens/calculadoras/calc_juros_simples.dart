@@ -12,7 +12,7 @@ class CalcJurosS extends StatefulWidget {
 }
 
 class _CalcJurosSState extends State<CalcJurosS> {
-  final ModelJurosSimples modelJurosSimples = ModelJurosSimples();
+  // final ModelJurosSimples modelJurosSimples = ModelJurosSimples();
   double height = 0;
   double width = 0;
 
@@ -71,26 +71,26 @@ class _CalcJurosSState extends State<CalcJurosS> {
           ),
           child: Column(
             children: <Widget>[
-              TextFieldInput(
-                title: "Capital:",
-                hintText: "capital(R\$)",
-                controller: modelJurosSimples.c
-              ),
-              TextFieldInput(
-                title: "Taxa:",
-                hintText: "% a.m",
-                controller: modelJurosSimples.i
-              ),
-              TextFieldInput(
-                title: "Meses:",
-                hintText: "Tempo",
-                controller: modelJurosSimples.t
-              ),
-              TextFieldInput(
-                title: "Juros:",
-                hintText: "%",
-                controller: modelJurosSimples.j
-              ),            
+              // TextFieldInput(
+              //   title: "Capital:",
+              //   hintText: "capital(R\$)",
+              //   controller: modelJurosSimples.c
+              // ),
+              // TextFieldInput(
+              //   title: "Taxa:",
+              //   hintText: "% a.m",
+              //   controller: modelJurosSimples.i
+              // ),
+              // TextFieldInput(
+              //   title: "Meses:",
+              //   hintText: "Tempo",
+              //   controller: modelJurosSimples.t
+              // ),
+              // TextFieldInput(
+              //   title: "Juros:",
+              //   hintText: "%",
+              //   controller: modelJurosSimples.j
+              // ),            
               RowButtons1(
                 titleFirst: CoreStrings.calc,
                 titleSecond: CoreStrings.clear,
@@ -99,65 +99,65 @@ class _CalcJurosSState extends State<CalcJurosS> {
                 width: width,
                 onTapFirst: (() {
                   setState(() {
-                    modelJurosSimples.verificarCampos();
+                    // modelJurosSimples.verificarCampos();
                   });
                 }),
                 onTapSecond: (() {
                   setState(() {
-                    modelJurosSimples.resetCampos();
+                    // modelJurosSimples.resetCampos();
                   });
                 }),
               ),              
             ],
           ),
         ),
-        Visibility(
-          visible: modelJurosSimples.visible,
-          child: Column(
-            children: [
-              Padding(
-                padding:
-                    EdgeInsets.only(left: 10, right: 10, top: 5),
-                child: Text(
-                  modelJurosSimples.resultjS,
-                  textAlign: TextAlign.left,
-                  style:
-                      TextStyle(color: CoreColors.textPrimary, fontSize: 20.0),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 10, right: 10),
-                child: Text(
-                  modelJurosSimples.resultjS_1,
-                  style: TextStyle(
-                      fontSize: 25.0,
-                      color: Colors.red,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
-              Padding(
-                padding:
-                    EdgeInsets.all(10),
-                child: Text(
-                  modelJurosSimples.resultjS_2,
-                  textAlign: TextAlign.left,
-                  style:
-                      TextStyle(color: CoreColors.textPrimary, fontSize: 20.0),
-                ),
-              ),
-            ],
-          ),
-        )
+        // Visibility(
+        //   visible: modelJurosSimples.visible,
+        //   child: Column(
+        //     children: [
+        //       Padding(
+        //         padding:
+        //             EdgeInsets.only(left: 10, right: 10, top: 5),
+        //         child: Text(
+        //           modelJurosSimples.resultjS,
+        //           textAlign: TextAlign.left,
+        //           style:
+        //               TextStyle(color: CoreColors.textPrimary, fontSize: 20.0),
+        //         ),
+        //       ),
+        //       Padding(
+        //         padding: EdgeInsets.only(left: 10, right: 10),
+        //         child: Text(
+        //           modelJurosSimples.resultjS_1,
+        //           style: TextStyle(
+        //               fontSize: 25.0,
+        //               color: Colors.red,
+        //               fontWeight: FontWeight.bold),
+        //         ),
+        //       ),
+        //       Padding(
+        //         padding:
+        //             EdgeInsets.all(10),
+        //         child: Text(
+        //           modelJurosSimples.resultjS_2,
+        //           textAlign: TextAlign.left,
+        //           style:
+        //               TextStyle(color: CoreColors.textPrimary, fontSize: 20.0),
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // )
       ])),
     );
   }
 
   @override
   void dispose() {
-    modelJurosSimples.c.dispose();
-    modelJurosSimples.i.dispose();
-    modelJurosSimples.j.dispose();
-    modelJurosSimples.t.dispose();
+    // modelJurosSimples.c.dispose();
+    // modelJurosSimples.i.dispose();
+    // modelJurosSimples.j.dispose();
+    // modelJurosSimples.t.dispose();
     super.dispose();
   }
 }

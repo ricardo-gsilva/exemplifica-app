@@ -12,7 +12,6 @@ class ResponseCalculator extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       physics: NeverScrollableScrollPhysics(),
-      scrollDirection: Axis.vertical,
       shrinkWrap: true,
       itemCount: response.length,
       itemBuilder: (_, i) {
@@ -20,6 +19,7 @@ class ResponseCalculator extends StatelessWidget {
           return ListTile(
             title: Center(
               child: CustomText(
+                textAlign: TextAlign.start,
                 title: response[i],
                 fontSize: 18,
               ),
