@@ -36,8 +36,8 @@ class _MdcState extends State<Mdc> {
                 color: CoreColors.textPrimary,
               ),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CalcMdc()));
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => CalcMdc()));
               },
             )
           ],

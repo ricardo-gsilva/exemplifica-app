@@ -38,13 +38,16 @@ class CoreStrings {
   static const String text2_CalcEquacao2 = "ax² + bx + c = 0";
 
   //Calc Fatorial
-  static const String text1_Fatorial = "Digite um número para ver o cálculo do fatorial.\n\nObs: O valor máximo da calculadora é 15.";
+  static const String text1_CalcFatorial = "Digite um número para ver o cálculo do fatorial.\n\nObs: O valor máximo da calculadora é 15.";
 
   //Calc Juros Simples
-  static const String text1_JurosSimples = "Digite os valores. Preencha ao menos 3 campos!";
+  static const String text1_CalcJurosSimples = "Digite os valores. Preencha ao menos 3 campos!";
 
   //Calc Juros Compostos
-  static const String text1_JurosCompostos = "Digite os valores de Capital, taxa mensal de juros e tempo em meses.";
-  static const String text2_JurosCompostos = "M = C(1 + (i / 100))t";
+  static const String text1_CalcJurosCompostos = "Digite os valores de Capital, taxa mensal de juros e tempo em meses.";
+  static const String text2_CalcJurosCompostos = "M = C(1 + (i / 100))t";
+
+  //Calc MDC
+  static const String text1_CalcMdc = "Digite 2 números para efetuar o cálculo do MDC!";
 
 }

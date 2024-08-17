@@ -28,11 +28,11 @@ class _CalcJurosCompostosTemplateState
         child: Column(
           children: <Widget>[
             CustomText(
-              title: CoreStrings.text1_JurosCompostos,
+              title: CoreStrings.text1_CalcJurosCompostos,
               fontSize: 20,
             ),
             CalculatorForm(
-              title: CoreStrings.text2_JurosCompostos,
+              title: CoreStrings.text2_CalcJurosCompostos,
               controller: [
                 jurosCompostos.c,
                 jurosCompostos.i,
