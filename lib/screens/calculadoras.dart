@@ -130,8 +130,8 @@ class _CalculadorasState extends State<Calculadoras> {
                 height: height,
                 title: CoreStrings.titleRegraDe3,
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => CalcRegraDe3()));
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (_) => CalcRegraDe3()));
                 },
               ),
             ),

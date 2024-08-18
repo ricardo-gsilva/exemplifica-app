@@ -56,4 +56,7 @@ class CoreStrings {
   //Calc Porcentagem
   static const String text1_CalcPorcentagem = "Digite os valores nos campos abaixo para calcular a porcentagem.";
 
+  //Calc Regra de 3
+  static const String text1_CalcRegraDe3 = "Digite os valores nos campos abaixo, para encontrar a proporcionalidade entre eles.";
+
 }
