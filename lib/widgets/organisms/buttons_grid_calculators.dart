@@ -1,5 +1,3 @@
-import 'package:exemplifica/screens/calculadoras/calc_mmc.dart';
-import 'package:exemplifica/screens/calculadoras/calc_porcentagem.dart';
 import 'package:exemplifica/screens/calculadoras/calc_regra_de_3.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/page/calc_equacao_1_page.dart';
@@ -8,6 +6,8 @@ import 'package:exemplifica/widgets/page/calc_fatorial_page.dart';
 import 'package:exemplifica/widgets/page/calc_juros_compostos_page.dart';
 import 'package:exemplifica/widgets/page/calc_juros_simples_page.dart';
 import 'package:exemplifica/widgets/page/calc_mdc_page.dart';
+import 'package:exemplifica/widgets/page/calc_mmc_page.dart';
+import 'package:exemplifica/widgets/page/calc_porcentagem_page.dart';
 import 'package:exemplifica/widgets/page/calc_tabuada_page.dart';
 import 'package:flutter/material.dart';
 
@@ -102,11 +102,11 @@ class ButtonsGridCalculators extends StatelessWidget {
           titleSecond: CoreStrings.titlePorcentagem,
           onTapFirst: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (_) => CalcMmc()));
+                context, MaterialPageRoute(builder: (_) => CalcMmcPage()));
           },
           onTapSecond: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (_) => CalcPorcentagem()));
+                context, MaterialPageRoute(builder: (_) => CalcPorcentagemPage()));
           },
         ),
         Padding(

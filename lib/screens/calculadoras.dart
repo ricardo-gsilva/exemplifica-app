@@ -114,12 +114,12 @@ class _CalculadorasState extends State<Calculadoras> {
               titleFirst: CoreStrings.titleMmc,
               titleSecond: CoreStrings.titlePorcentagem,
               onTapFirst: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => CalcMmc()));
+                // Navigator.push(
+                //     context, MaterialPageRoute(builder: (_) => CalcMmc()));
               },
               onTapSecond: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => CalcPorcentagem()));
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (_) => CalcPorcentagem()));
               },
               height: height,
               width: width,
