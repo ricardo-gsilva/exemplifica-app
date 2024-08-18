@@ -1,4 +1,3 @@
-import 'package:exemplifica/screens/calculadoras/calc_regra_de_3.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/page/calc_equacao_1_page.dart';
 import 'package:exemplifica/widgets/page/calc_equacao_2_page.dart';
@@ -8,6 +7,7 @@ import 'package:exemplifica/widgets/page/calc_juros_simples_page.dart';
 import 'package:exemplifica/widgets/page/calc_mdc_page.dart';
 import 'package:exemplifica/widgets/page/calc_mmc_page.dart';
 import 'package:exemplifica/widgets/page/calc_porcentagem_page.dart';
+import 'package:exemplifica/widgets/page/calc_regra_de_3_page.dart';
 import 'package:exemplifica/widgets/page/calc_tabuada_page.dart';
 import 'package:flutter/material.dart';
 
@@ -115,7 +115,7 @@ class ButtonsGridCalculators extends StatelessWidget {
             title: CoreStrings.titleRegraDe3,
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CalcRegraDe3()));
+                  context, MaterialPageRoute(builder: (_) => CalcRegraDe3Page()));
             },
             height: height,
             width: customButtonWidth,

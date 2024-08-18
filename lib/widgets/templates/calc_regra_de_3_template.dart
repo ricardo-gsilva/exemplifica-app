@@ -1,20 +1,19 @@
-import 'package:exemplifica/controller/controller_porcentagem.dart';
+import 'package:exemplifica/controller/controller_regra_de_3.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
 import 'package:exemplifica/widgets/molecules/calculator_form_2.dart';
 import 'package:exemplifica/widgets/molecules/response_calculator.dart';
 import 'package:flutter/material.dart';
 
-class CalcPorcentagemTemplate extends StatefulWidget {
-  const CalcPorcentagemTemplate({super.key});
+class CalcRegraDe3Template extends StatefulWidget {
+  const CalcRegraDe3Template({super.key});
 
   @override
-  State<CalcPorcentagemTemplate> createState() =>
-      _CalcPorcentagemTemplateState();
+  State<CalcRegraDe3Template> createState() => _CalcRegraDe3TemplateState();
 }
 
-class _CalcPorcentagemTemplateState extends State<CalcPorcentagemTemplate> {
-  final ControllerPorcentagem porcentagem = ControllerPorcentagem.instance;
+class _CalcRegraDe3TemplateState extends State<CalcRegraDe3Template> {
+  final ControllerRegraDe3 regraDe3 = ControllerRegraDe3.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -26,30 +25,30 @@ class _CalcPorcentagemTemplateState extends State<CalcPorcentagemTemplate> {
         child: Column(
           children: <Widget>[
             CustomText(
-              title: CoreStrings.text1_CalcPorcentagem,
+              title: CoreStrings.text1_CalcRegraDe3,
               fontSize: 20,
-            ),  
-            CalculatorForm2( 
-              height: height, 
+            ),
+            CalculatorForm2(
+              height: height,
               width: width,
-              controller: [porcentagem.val1, porcentagem.val2],
+              controller: [regraDe3.val1, regraDe3.val2, regraDe3.val3],
               onTapFirst: (() {
                 setState(() {
-                  porcentagem.verificarCampos();
+                  regraDe3.verificarCampos();
                 });
               }),
               onTapSecond: (() {
                 setState(() {
-                  porcentagem.resetCampos();
+                  regraDe3.resetCampos();
                 });
               }),
-            ),           
+            ),
             Visibility(
-              visible: porcentagem.visible,
+              visible: regraDe3.visible,
               child: ResponseCalculator(
-                response: [porcentagem.resultPorcent],
+                response: [regraDe3.resultRegra3],
               ),
-            ),           
+            ),
           ],
         ),
       ),

@@ -36,8 +36,8 @@ class _RegraDe3State extends State<RegraDe3> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => CalcRegraDe3()));
+              // Navigator.push(context,
+              //     MaterialPageRoute(builder: (context) => CalcRegraDe3()));
             },
           )
         ],
