@@ -38,8 +38,8 @@ class _PorcentagemState extends State<Porcentagem> {
               color: CoreColors.textPrimary,
             ),
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => CalcPorcentagem()));
+              // Navigator.push(context,
+              //     MaterialPageRoute(builder: (context) => CalcPorcentagem()));
             },
           )
         ],

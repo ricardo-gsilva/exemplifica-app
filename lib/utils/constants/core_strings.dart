@@ -50,4 +50,10 @@ class CoreStrings {
   //Calc MDC
   static const String text1_CalcMdc = "Digite 2 números para efetuar o cálculo do MDC!";
 
+  //Calc MMC
+  static const String text1_CalcMmc = "Digite 2 números para efetuar o cálculo do MMC!";
+
+  //Calc Porcentagem
+  static const String text1_CalcPorcentagem = "Digite os valores nos campos abaixo para calcular a porcentagem.";
+
 }
