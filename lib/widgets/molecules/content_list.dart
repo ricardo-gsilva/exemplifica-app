@@ -18,17 +18,20 @@ class ContentList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: stringsAndAssets.length,
       itemBuilder: (_, i) {
-        StringsAndAssetsModel stringsAssets = stringsAndAssets[i];        
-        if (stringsAssets.asset.contains(".png")) {
+        StringsAndAssetsModel stringsAssets = stringsAndAssets[i];
+        if (stringsAssets.title.contains(".png")) {
           return CustomImageAsset(
-            asset: stringsAssets.asset,
+            asset: stringsAssets.title,
             width: stringsAssets.width,
             height: stringsAssets.height,
           );
         } else {
           return CustomText(
-            title: stringsAssets.asset,
-            fontSize: 16,
+            title: stringsAssets.title,
+            fontSize: stringsAssets.fontSize,
+            fontWeight: stringsAssets.fontWeight,
+            textAlign: stringsAssets.textAlign,
+            color: stringsAssets.color,
           );
         }
       },
