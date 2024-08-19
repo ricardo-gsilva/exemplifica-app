@@ -1,15 +1,14 @@
-import 'package:exemplifica/widgets/atoms/custom_text.dart';
 import 'package:flutter/material.dart';
 
+import 'package:exemplifica/model/assets_model.dart';
 import 'package:exemplifica/widgets/atoms/custom_image_asset.dart';
+import 'package:exemplifica/widgets/atoms/custom_text.dart';
 
 class ContentList extends StatelessWidget {
-  final double width;
-  final List<String> contentList;
+  final List<StringsAndAssetsModel> stringsAndAssets;
   const ContentList({
     Key? key,
-    required this.width,
-    required this.contentList,
+    required this.stringsAndAssets,
   }) : super(key: key);
 
   @override
@@ -17,16 +16,18 @@ class ContentList extends StatelessWidget {
     return ListView.builder(
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: contentList.length,
+      itemCount: stringsAndAssets.length,
       itemBuilder: (_, i) {
-        if (contentList[i].contains(".png")) {
+        StringsAndAssetsModel stringsAssets = stringsAndAssets[i];        
+        if (stringsAssets.asset.contains(".png")) {
           return CustomImageAsset(
-            asset: contentList[i],
-            width: width,
+            asset: stringsAssets.asset,
+            width: stringsAssets.width,
+            height: stringsAssets.height,
           );
         } else {
           return CustomText(
-            title: contentList[i],
+            title: stringsAssets.asset,
             fontSize: 16,
           );
         }
