@@ -23,5 +23,27 @@ class CoreStringsAssets {
   static const String equacao_2_assets_16 = "images/operacoes/equacao_2/equacao2_16.png";
   static const String equacao_2_assets_17 = "images/operacoes/equacao_2/equacao2_17.png";
 
+  //Fatorial
+  static const String fatorial_assets_2 = "images/operacoes/fatorial/fatorial_2.png";
+  static const String fatorial_assets_4 = "images/operacoes/fatorial/fatorial_4.png";
+  static const String fatorial_assets_5 = "images/operacoes/fatorial/fatorial_5.png";
+  static const String fatorial_assets_6 = "images/operacoes/fatorial/fatorial_6.png";
+  static const String fatorial_assets_7 = "images/operacoes/fatorial/fatorial_7.png";
+  static const String fatorial_assets_9 = "images/operacoes/fatorial/fatorial_9.png";
+  static const String fatorial_assets_10 = "images/operacoes/fatorial/fatorial_10.png";
+  static const String fatorial_assets_12 = "images/operacoes/fatorial/fatorial_12.png";
+  static const String fatorial_assets_13 = "images/operacoes/fatorial/fatorial_13.png";
+  static const String fatorial_assets_14 = "images/operacoes/fatorial/fatorial_14.png";
+  static const String fatorial_assets_16 = "images/operacoes/fatorial/fatorial_16.png";
+  static const String fatorial_assets_17 = "images/operacoes/fatorial/fatorial_17.png";
+  static const String fatorial_assets_19 = "images/operacoes/fatorial/fatorial_19.png";
+  static const String fatorial_assets_20 = "images/operacoes/fatorial/fatorial_20.png";
+  static const String fatorial_assets_21 = "images/operacoes/fatorial/fatorial_21.png";
+
+  //Tabuada
+  static const String tabuada_assets_2 = "images/operacoes/tabuada/tabuada_2.png";
+  static const String tabuada_assets_3 = "images/operacoes/tabuada/tabuada_3.png";
+  static const String tabuada_assets_4 = "images/operacoes/tabuada/tabuada_4.png";
+
 
 }
