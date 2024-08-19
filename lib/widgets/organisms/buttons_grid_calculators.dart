@@ -1,13 +1,13 @@
-import 'package:exemplifica/screens/calculadoras/calc_juros_compostos.dart';
-import 'package:exemplifica/screens/calculadoras/calc_mmc.dart';
-import 'package:exemplifica/screens/calculadoras/calc_porcentagem.dart';
-import 'package:exemplifica/screens/calculadoras/calc_regra_de_3.dart';
-import 'package:exemplifica/screens/calculadoras/cald_mdc.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/page/calc_equacao_1_page.dart';
 import 'package:exemplifica/widgets/page/calc_equacao_2_page.dart';
 import 'package:exemplifica/widgets/page/calc_fatorial_page.dart';
+import 'package:exemplifica/widgets/page/calc_juros_compostos_page.dart';
 import 'package:exemplifica/widgets/page/calc_juros_simples_page.dart';
+import 'package:exemplifica/widgets/page/calc_mdc_page.dart';
+import 'package:exemplifica/widgets/page/calc_mmc_page.dart';
+import 'package:exemplifica/widgets/page/calc_porcentagem_page.dart';
+import 'package:exemplifica/widgets/page/calc_regra_de_3_page.dart';
 import 'package:exemplifica/widgets/page/calc_tabuada_page.dart';
 import 'package:flutter/material.dart';
 
@@ -80,7 +80,7 @@ class ButtonsGridCalculators extends StatelessWidget {
           },
           onTapSecond: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (_) => CalcJurosC()));
+                context, MaterialPageRoute(builder: (_) => CalcJurosCompostosPage()));
           },
         ),
         Padding(
@@ -89,7 +89,7 @@ class ButtonsGridCalculators extends StatelessWidget {
             title: CoreStrings.titleMdc,
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CalcMdc()));
+                  context, MaterialPageRoute(builder: (_) => CalcMdcPage()));
             },
             height: height,
             width: customButtonWidth,
@@ -102,11 +102,11 @@ class ButtonsGridCalculators extends StatelessWidget {
           titleSecond: CoreStrings.titlePorcentagem,
           onTapFirst: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (_) => CalcMmc()));
+                context, MaterialPageRoute(builder: (_) => CalcMmcPage()));
           },
           onTapSecond: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (_) => CalcPorcentagem()));
+                context, MaterialPageRoute(builder: (_) => CalcPorcentagemPage()));
           },
         ),
         Padding(
@@ -115,7 +115,7 @@ class ButtonsGridCalculators extends StatelessWidget {
             title: CoreStrings.titleRegraDe3,
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CalcRegraDe3()));
+                  context, MaterialPageRoute(builder: (_) => CalcRegraDe3Page()));
             },
             height: height,
             width: customButtonWidth,

@@ -1,11 +1,28 @@
 import 'package:flutter/material.dart';
 
-class ModelMmc {
+class ControllerMmc {
+  static ControllerMmc? _instance;
+
+  ControllerMmc._();
+
+  static get instance {
+    return _instance ??= ControllerMmc._();
+  }
+
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
   String resultMmc = "";
   String resultMmc1 = "";
   bool visible = false;
+
+  double valormmc1 = 0;
+  double valormmc2 = 0;
+  double div = 0;
+  double cache = 0;
+  int valmmc1 = 0;
+  int valmmc2 = 0;
+  int divi = 0;
+  int cachei = 0;
 
   void resetCampos() {
     visible = false;
@@ -15,28 +32,32 @@ class ModelMmc {
     resultMmc1 = "";
   }
 
+  void resetResponse() {
+    resultMmc = "";
+    resultMmc1 = "";
+  }
+
   void verificarCampos() {
-    if (val1.text.isEmpty || val2.text.isEmpty) {
-      visible = true;
+    visible = true;
+    if (val1.text.isEmpty || val2.text.isEmpty) {      
       resultMmc = "Por favor, preencha os campos!\nUtilize valores até 99999!";
       resultMmc1 = "";
     } else {
-      resultMmc = "";
-      resultMmc1 = "";
-      mmc();
+      resetResponse();
+      calcularMmc();
     }
   }
 
-  void mmc() {
+  void calcularMmc() {
     visible = true;
-    double valormmc1 = double.parse(val1.text);
-    double valormmc2 = double.parse(val2.text);
-    double div = 2;
-    double cache = 1;
-    int valmmc1 = valormmc1.toInt();
-    int valmmc2 = valormmc2.toInt();
-    int divi = div.toInt();
-    int cachei = cache.toInt();
+    valormmc1 = double.parse(val1.text);
+    valormmc2 = double.parse(val2.text);
+    div = 2;
+    cache = 1;
+    valmmc1 = valormmc1.toInt();
+    valmmc2 = valormmc2.toInt();
+    divi = div.toInt();
+    cachei = cache.toInt();
 
     while ((valormmc1 != 1) || (valormmc2 != 1)) {
       while ((valormmc1 % div != 0) && (valormmc2 % div != 0)) {
@@ -69,9 +90,9 @@ class ModelMmc {
       divi = div.toInt();
       resultMmc = resultMmc + "$valmmc1" + ", " + "$valmmc2" + " | " + "\n";
     }
-    resultMmc1 = 
-      "${resultMmc1}Após chegar ao valor 1, multiplique todos os números que resultaram "
-      "ao lado da barra lateral.\n\n"
-      "Multiplicando todos os valores utilizados para fatoração, temos o valor do MMC: $cachei \n";
+    resultMmc1 =
+        "${resultMmc1}Após chegar ao valor 1, multiplique todos os números que resultaram "
+        "ao lado da barra lateral.\n\n"
+        "Multiplicando todos os valores utilizados para fatoração, temos o valor do MMC: $cachei \n";
   }
 }

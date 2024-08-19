@@ -8,11 +8,13 @@ class TextFieldInput extends StatelessWidget {
   String? hintText;
   int? maxLength;
   TextEditingController? controller;
+  MainAxisAlignment? mainAxisAlignment;
   TextFieldInput(
       {required this.title,
       required this.hintText,
       required this.controller,
       this.maxLength = 9,
+      this.mainAxisAlignment,
       super.key});
 
   @override
@@ -21,7 +23,7 @@ class TextFieldInput extends StatelessWidget {
       padding: const EdgeInsets.only(left: 20, right: 20, bottom: 5, top: 5),
       child: SizedBox(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: mainAxisAlignment?? MainAxisAlignment.spaceBetween,
           children: [
             title == ''? SizedBox():
             Text(

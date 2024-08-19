@@ -13,6 +13,7 @@ class Equacao1Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return CustomScaffold(
       titleAppBar: CustomText(
         title: CoreStrings.titleEquacao1,
@@ -30,6 +31,7 @@ class Equacao1Page extends StatelessWidget {
       ],
       body: Equacao1Template(
         width: width,
+        height: height,
       ),
     );
   }

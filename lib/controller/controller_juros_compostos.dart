@@ -2,7 +2,16 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ModelJurosCompostos {
+class ConstrollerJurosCompostos {
+  static ConstrollerJurosCompostos? _instance;
+
+  ConstrollerJurosCompostos._();
+
+  static get instance {
+    _instance ??= ConstrollerJurosCompostos._();
+    return _instance;
+  }
+
   TextEditingController c = TextEditingController();
   TextEditingController i = TextEditingController();
   TextEditingController j = TextEditingController();
@@ -10,12 +19,38 @@ class ModelJurosCompostos {
 
   String resultjC = "";
   String resultjC_1 = "";
-  String resultjC_2 = "";
   String c1 = "";
   String i1 = "";
   String t1 = "";
 
   bool visible = false;
+
+  String fmes = "";
+  String rjuros = "";
+  String rcapital = "";
+  String fcapital = "";
+  String ftaxa = "";
+  String ftaxa2 = "";
+  String ftaxa3 = "";
+  String ftaxa4 = "";
+  String rmontante = "";
+  String fmontante = "";
+
+  double capital = 0;
+      double meses = 0;
+      double taxa = 0;
+      double montante = 0;
+      double juros = 0;
+      double tax = 0;
+      double tax2 = 0;
+      num tax3 = 0;
+
+  //Formtação
+  NumberFormat dfJs1 = new NumberFormat("0");
+  NumberFormat dfJs2 = new NumberFormat("0.00");
+  NumberFormat dfJs3 = new NumberFormat("R\$0.00");
+
+
 
   void resetCampos() {
     visible = false;
@@ -25,19 +60,17 @@ class ModelJurosCompostos {
     j.clear();
     resultjC = "";
     resultjC_1 = "";
-    resultjC_2 = "";
   }
 
   void verificarCampos() {
+    visible = true;
     if ((c.text.isEmpty) && (i.text.isEmpty) && (t.text.isEmpty)) {
       resultjC = "Preencha os campos disponíveis para efetuar o cálculo!";
       resultjC_1 = "";
-      resultjC_2 = "";
     } else if ((c.text.isEmpty) || (i.text.isEmpty) || (t.text.isEmpty)) {
       resultjC =
           "Um ou mais campos estão vazios. Preencha os campos para efetuar o cálculo!";
       resultjC_1 = "";
-      resultjC_2 = "";
     } else {
       resultjC = "";
       jurosCompostos();
@@ -45,38 +78,19 @@ class ModelJurosCompostos {
   }
 
   void jurosCompostos() {
-    visible = true;
     c1 = c.text;
     i1 = i.text;
     t1 = t.text;
 
-    String fmes = "";
-    String rjuros = "";
-    String rcapital = "";
-    String fcapital = "";
-    String ftaxa = "";
-    String ftaxa2 = "";
-    String ftaxa3 = "";
-    String ftaxa4 = "";
-    String rmontante = "";
-    String fmontante = "";
-
-    //Formtação
-    NumberFormat dfJs1 = new NumberFormat("0");
-    NumberFormat dfJs2 = new NumberFormat("0.00");
-    NumberFormat dfJs3 = new NumberFormat("R\$0.00");
-
-    if ((c.text.isNotEmpty) && (i.text.isNotEmpty) && (t.text.isNotEmpty)) {
-      //JUROS COMPOSTOS
       //M = C(1 + (i / 100))t
-      double capital = double.parse(c.text);
-      double meses = double.parse(t.text);
-      double taxa = double.parse(i.text);
-      double montante = capital * pow(1 + (taxa / 100), meses);
-      double juros = montante - capital;
-      double tax = taxa / 100;
-      double tax2 = tax + 1;
-      num tax3 = pow(tax2, meses);
+      capital = double.parse(c.text);
+      meses = double.parse(t.text);
+      taxa = double.parse(i.text);
+      montante = capital * pow(1 + (taxa / 100), meses);
+      juros = montante - capital;
+      tax = taxa / 100;
+      tax2 = tax + 1;
+      tax3 = pow(tax2, meses);
 
       rjuros = dfJs3.format(juros);
       rcapital = dfJs3.format(capital);
@@ -147,6 +161,5 @@ class ModelJurosCompostos {
           "O valor de juros gerado é de:"
           "\n"
           "$rjuros.";
-    }
   }
 }

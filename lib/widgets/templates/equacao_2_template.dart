@@ -1,13 +1,16 @@
+import 'package:exemplifica/model/assets_model.dart';
+import 'package:exemplifica/utils/constants/core_strings_assets.dart';
+import 'package:exemplifica/widgets/molecules/content_list.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/utils/constants/strings/strings_equacao_2.dart';
-import 'package:exemplifica/widgets/atoms/custom_image_asset.dart';
-import 'package:exemplifica/widgets/atoms/custom_text.dart';
 
 class Equacao2Template extends StatelessWidget {
   final double width;
+  final double height;
   const Equacao2Template({
     Key? key,
     required this.width,
+    required this.height
   }) : super(key: key);
 
   @override
@@ -17,128 +20,39 @@ class Equacao2Template extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            CustomText(
-              title: CoreStringsEquacao2.text1_Equacao2,
-              fontSize: 16,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/equacao_2/equacao2_2.png",
-              width: width * 0.7,
-            ),
-            CustomText(
-              title: CoreStringsEquacao2.text2_Equacao2,
-              fontSize: 16,
-            ),          
-            CustomText(
-              title: CoreStringsEquacao2.text3_Equacao2,
-              fontSize: 16,
-            ),
-            CustomText(
-              title: CoreStringsEquacao2.text4_Equacao2,
-              fontSize: 16,
-            ),  
-            CustomImageAsset(
-              asset: "images/operacoes/equacao_2/equacao2_3.png",
-              width: width * 0.5,
-            ),
-            CustomText(
-              title: CoreStringsEquacao2.text5_Equacao2,
-              fontSize: 16,
-            ),  
-            CustomImageAsset(
-              asset: "images/operacoes/equacao_2/equacao2_4.png",
-              width: width * 0.35,
-            ),
-            CustomText(
-              title: CoreStringsEquacao2.text6_Equacao2,
-              fontSize: 16,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/equacao_2/equacao2_5.png",
-              width: width * 0.35,
-            ),  
-            CustomText(
-              title: CoreStringsEquacao2.text7_Equacao2,
-              fontSize: 16,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/equacao_2/equacao2_6.png",
-              width: width * 0.35,
-            ),
-            CustomText(
-              title: CoreStringsEquacao2.text8_Equacao2,
-              fontSize: 16,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/equacao_2/equacao2_7.png",
-              width: width * 0.35,
-            ), 
-            CustomText(
-              title: CoreStringsEquacao2.text9_Equacao2,
-              fontSize: 16,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/equacao_2/equacao2_8.png",
-              width: width * 0.7,
-            ),
-            CustomText(
-              title: CoreStringsEquacao2.text10_Equacao2,
-              fontSize: 16,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/equacao_2/equacao2_17.png",
-              width: width * 0.7,
-            ),
-            CustomText(
-              title: CoreStringsEquacao2.text11_Equacao2,
-              fontSize: 16,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/equacao_2/equacao2_12.png",
-              width: width * 0.5,
-            ),
-            CustomText(
-              title: CoreStringsEquacao2.text12_Equacao2,
-              fontSize: 16,
-            ),
-            CustomText(
-              title: CoreStringsEquacao2.text13_Equacao2,
-              fontSize: 16,
-            ),          
-            CustomImageAsset(
-              asset: "images/operacoes/equacao_2/equacao2_13.png",
-              width: width * 0.7,
-            ),
-            CustomText(
-              title: CoreStringsEquacao2.text14_Equacao2,
-              fontSize: 16,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/equacao_2/equacao2_14.png",
-              width: width * 0.7,
-            ),
-            CustomText(
-              title: CoreStringsEquacao2.text15_Equacao2,
-              fontSize: 16,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/equacao_2/equacao2_15.png",
-              width: width * 0.7,
-            ),
-            CustomText(
-              title: CoreStringsEquacao2.text16_Equacao2,
-              fontSize: 16,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/equacao_2/equacao2_16.png",
-              width: width * 0.7,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 25),
-              child: CustomText(
-                title: CoreStringsEquacao2.text16_Equacao2,
-                fontSize: 16,
-              ),
+            ContentList(
+              stringsAndAssets: [
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text1_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsAssets.equacao_2_assets_2, width: width, height: height * 0.05),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text2_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text3_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text4_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsAssets.equacao_2_assets_3, width: width, height: height * 0.05),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text5_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsAssets.equacao_2_assets_4, width: width * 0.35, height: height * 0.1),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text6_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsAssets.equacao_2_assets_5, width: width * 0.35, height: height * 0.1),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text7_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsAssets.equacao_2_assets_6, width: width * 0.35, height: height * 0.1),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text8_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsAssets.equacao_2_assets_7, width: width * 0.35, height: height * 0.05),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text9_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsAssets.equacao_2_assets_8, width: width, height: height * 0.05),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text10_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsAssets.equacao_2_assets_17, width: width, height: height * 0.2),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text11_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsAssets.equacao_2_assets_12, width: width * 0.5),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text12_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text13_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsAssets.equacao_2_assets_13, width: width * 0.7, height: height * 0.3),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text14_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsAssets.equacao_2_assets_14, width: width * 0.7, height: height * 0.3),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text15_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsAssets.equacao_2_assets_15, width: width * 0.7, height: height * 0.2),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text16_Equacao2),
+                StringsAndAssetsModel(title: CoreStringsAssets.equacao_2_assets_16, width: width * 0.7, height: height * 0.2),
+                StringsAndAssetsModel(title: CoreStringsEquacao2.text17_Equacao2),
+              ],
             ),
           ],
         ),

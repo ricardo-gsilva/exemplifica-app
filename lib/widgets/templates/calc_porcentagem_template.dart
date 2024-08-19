@@ -1,19 +1,20 @@
-import 'package:exemplifica/controller/controller_fatorial.dart';
+import 'package:exemplifica/controller/controller_porcentagem.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
-import 'package:exemplifica/widgets/molecules/calculator_form.dart';
+import 'package:exemplifica/widgets/molecules/calculator_form_2.dart';
 import 'package:exemplifica/widgets/molecules/response_calculator.dart';
 import 'package:flutter/material.dart';
 
-class CalcFatorialTemplate extends StatefulWidget {
-  const CalcFatorialTemplate({super.key});
+class CalcPorcentagemTemplate extends StatefulWidget {
+  const CalcPorcentagemTemplate({super.key});
 
   @override
-  State<CalcFatorialTemplate> createState() => _CalcFatorialTemplateState();
+  State<CalcPorcentagemTemplate> createState() =>
+      _CalcPorcentagemTemplateState();
 }
 
-class _CalcFatorialTemplateState extends State<CalcFatorialTemplate> {
-  final ControllerFatorial fatorial = ControllerFatorial.instance;
+class _CalcPorcentagemTemplateState extends State<CalcPorcentagemTemplate> {
+  final ControllerPorcentagem porcentagem = ControllerPorcentagem.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -25,30 +26,30 @@ class _CalcFatorialTemplateState extends State<CalcFatorialTemplate> {
         child: Column(
           children: <Widget>[
             CustomText(
-              title: CoreStrings.text1_CalcFatorial,
+              title: CoreStrings.text1_CalcPorcentagem,
               fontSize: 20,
-            ),
-            CalculatorForm(
-              controller: [fatorial.val1],
-              label: ["Valor:"],
-              height: height,
+            ),  
+            CalculatorForm2( 
+              height: height, 
               width: width,
+              controller: [porcentagem.val1, porcentagem.val2],
               onTapFirst: (() {
                 setState(() {
-                  fatorial.verificarCampos();
+                  porcentagem.verificarCampos();
                 });
               }),
               onTapSecond: (() {
                 setState(() {
-                  fatorial.resetCampos();
+                  porcentagem.resetCampos();
                 });
               }),
-            ),
+            ),           
             Visibility(
+              visible: porcentagem.visible,
               child: ResponseCalculator(
-                response: [fatorial.resultFat, fatorial.resultFinal, fatorial.infoFatorial],
+                response: [porcentagem.resultPorcent],
               ),
-            ),                
+            ),           
           ],
         ),
       ),

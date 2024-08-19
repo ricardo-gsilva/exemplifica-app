@@ -105,8 +105,8 @@ class _CalculadorasState extends State<Calculadoras> {
                 height: height,
                 title: CoreStrings.titleMdc,
                 onTap: () {
-                Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => CalcMdc()));
+                // Navigator.push(
+                //   context, MaterialPageRoute(builder: (_) => CalcMdc()));
                 },
               ),
             ),
@@ -114,12 +114,12 @@ class _CalculadorasState extends State<Calculadoras> {
               titleFirst: CoreStrings.titleMmc,
               titleSecond: CoreStrings.titlePorcentagem,
               onTapFirst: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => CalcMmc()));
+                // Navigator.push(
+                //     context, MaterialPageRoute(builder: (_) => CalcMmc()));
               },
               onTapSecond: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => CalcPorcentagem()));
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (_) => CalcPorcentagem()));
               },
               height: height,
               width: width,
@@ -130,8 +130,8 @@ class _CalculadorasState extends State<Calculadoras> {
                 height: height,
                 title: CoreStrings.titleRegraDe3,
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => CalcRegraDe3()));
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (_) => CalcRegraDe3()));
                 },
               ),
             ),

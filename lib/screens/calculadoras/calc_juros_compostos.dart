@@ -12,7 +12,7 @@ class CalcJurosC extends StatefulWidget {
 }
 
 class _CalcJurosCState extends State<CalcJurosC> {
-  final ModelJurosCompostos modelJurosCompostos = ModelJurosCompostos();
+  // final ModelJurosCompostos modelJurosCompostos = ModelJurosCompostos();
   double height = 0;
   double width = 0;
 
@@ -97,80 +97,80 @@ class _CalcJurosCState extends State<CalcJurosC> {
                       ],
                     ),
                   ),
-                  TextFieldInput(
-                    title: "Capital:",
-                    hintText: "capital(R\$)",
-                    controller: modelJurosCompostos.c
-                  ),
-                  TextFieldInput(
-                    title: "Taxa",
-                    hintText: "% a.m",
-                    controller: modelJurosCompostos.i
-                  ),
-                  TextFieldInput(
-                    title: "Meses",
-                    hintText: "Tempo",
-                    controller: modelJurosCompostos.t
-                  ),            
-                  RowButtons1(
-                    titleFirst: CoreStrings.calc,
-                    titleSecond: CoreStrings.clear,
-                    paddingTop: 10,
-                    height: height,
-                    width: width,
-                    onTapFirst: (() {
-                      setState(() {
-                        modelJurosCompostos.verificarCampos();
-                      });
-                    }),
-                    onTapSecond: (() {
-                      setState(() {
-                        modelJurosCompostos.resetCampos();
-                      });
-                    }),
-                  ),
+                  // TextFieldInput(
+                  //   title: "Capital:",
+                  //   hintText: "capital(R\$)",
+                  //   controller: modelJurosCompostos.c
+                  // ),
+                  // TextFieldInput(
+                  //   title: "Taxa",
+                  //   hintText: "% a.m",
+                  //   controller: modelJurosCompostos.i
+                  // ),
+                  // TextFieldInput(
+                  //   title: "Meses",
+                  //   hintText: "Tempo",
+                  //   controller: modelJurosCompostos.t
+                  // ),            
+                  // RowButtons1(
+                  //   titleFirst: CoreStrings.calc,
+                  //   titleSecond: CoreStrings.clear,
+                  //   paddingTop: 10,
+                  //   height: height,
+                  //   width: width,
+                  //   onTapFirst: (() {
+                  //     setState(() {
+                  //       modelJurosCompostos.verificarCampos();
+                  //     });
+                  //   }),
+                  //   onTapSecond: (() {
+                  //     setState(() {
+                  //       modelJurosCompostos.resetCampos();
+                  //     });
+                  //   }),
+                  // ),
                 ],
               ),
             ),
-            Visibility(
-              visible: modelJurosCompostos.visible,
-              child: Padding(
-                padding: EdgeInsets.only(right: 5, left: 5),
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(left: 10, right: 10, top: 15),
-                      child: Text(
-                        modelJurosCompostos.resultjC,
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                            color: CoreColors.textPrimary, fontSize: 21.0),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 10, right: 10),
-                      child: Text(
-                        modelJurosCompostos.resultjC_1,
-                        style: TextStyle(
-                            fontSize: 35.0,
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            // Visibility(
+            //   visible: modelJurosCompostos.visible,
+            //   child: Padding(
+            //     padding: EdgeInsets.only(right: 5, left: 5),
+            //     child: Column(
+            //       children: <Widget>[
+            //         Padding(
+            //           padding: EdgeInsets.only(left: 10, right: 10, top: 15),
+            //           child: Text(
+            //             modelJurosCompostos.resultjC,
+            //             textAlign: TextAlign.left,
+            //             style: TextStyle(
+            //                 color: CoreColors.textPrimary, fontSize: 21.0),
+            //           ),
+            //         ),
+            //         Padding(
+            //           padding: EdgeInsets.only(left: 10, right: 10),
+            //           child: Text(
+            //             modelJurosCompostos.resultjC_1,
+            //             style: TextStyle(
+            //                 fontSize: 35.0,
+            //                 color: Colors.red,
+            //                 fontWeight: FontWeight.bold),
+            //           ),
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
           ]))),
     );
   }
 
   @override
   void dispose() {
-    modelJurosCompostos.c.dispose();
-    modelJurosCompostos.i.dispose();
-    modelJurosCompostos.j.dispose();
-    modelJurosCompostos.t.dispose();
+    // modelJurosCompostos.c.dispose();
+    // modelJurosCompostos.i.dispose();
+    // modelJurosCompostos.j.dispose();
+    // modelJurosCompostos.t.dispose();
     super.dispose();
   }
 }

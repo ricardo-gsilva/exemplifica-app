@@ -26,7 +26,7 @@ class _CalcJurosSimplesTemplateState extends State<CalcJurosSimplesTemplate> {
         child: Column(
           children: <Widget>[
             CustomText(
-              title: CoreStrings.text1_JurosSimples,
+              title: CoreStrings.text1_CalcJurosSimples,
               fontSize: 20,
             ),
             CalculatorForm(
