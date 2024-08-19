@@ -55,5 +55,14 @@ class CoreStringsAssets {
   static const String jurosCompostos_assets_8 = "images/operacoes/juros_compostos/jurosCompostos_8.png"; 
   static const String jurosCompostos_assets_9 = "images/operacoes/juros_compostos/jurosCompostos_9.png"; 
 
+  //Juros Simples
+  static const String jurosSimples_assets_2 = "images/operacoes/juros_simples/jurosSimples_2.png";
+  static const String jurosSimples_assets_3 = "images/operacoes/juros_simples/jurosSimples_3.png";
+  static const String jurosSimples_assets_4 = "images/operacoes/juros_simples/jurosSimples_4.png";
+  static const String jurosSimples_assets_5 = "images/operacoes/juros_simples/jurosSimples_5.png";
+  static const String jurosSimples_assets_6 = "images/operacoes/juros_simples/jurosSimples_6.png";
+  static const String jurosSimples_assets_7 = "images/operacoes/juros_simples/jurosSimples_7.png"; 
+  static const String jurosSimples_assets_8 = "images/operacoes/juros_simples/jurosSimples_8.png"; 
+  static const String jurosSimples_assets_9 = "images/operacoes/juros_simples/jurosSimples_9.png";
 
 }
