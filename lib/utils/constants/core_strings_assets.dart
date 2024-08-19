@@ -65,4 +65,10 @@ class CoreStringsAssets {
   static const String jurosSimples_assets_8 = "images/operacoes/juros_simples/jurosSimples_8.png"; 
   static const String jurosSimples_assets_9 = "images/operacoes/juros_simples/jurosSimples_9.png";
 
+  //MMC
+  static const String mmc_assets_2 = "images/operacoes/mmc/mmc_2.png";
+  static const String mmc_assets_3 = "images/operacoes/mmc/mmc_3.png";
+  static const String mmc_assets_4 = "images/operacoes/mmc/mmc_4.png";
+  static const String mmc_assets_5 = "images/operacoes/mmc/mmc_5.png";
+
 }
