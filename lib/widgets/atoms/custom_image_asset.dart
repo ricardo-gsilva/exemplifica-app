@@ -12,9 +12,9 @@ class CustomImageAsset extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10),
-      child: Container(
-        width: width,
+      padding: EdgeInsets.all(5),
+      child: Container( 
+        height: 130,
         child: Image.asset(asset),
       ),
     );
