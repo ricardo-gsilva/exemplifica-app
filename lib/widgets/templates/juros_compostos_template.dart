@@ -1,13 +1,16 @@
+import 'package:exemplifica/model/assets_model.dart';
+import 'package:exemplifica/utils/constants/core_strings_assets.dart';
+import 'package:exemplifica/widgets/molecules/content_list.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/utils/constants/strings/strings_juros_compostos.dart';
-import 'package:exemplifica/widgets/atoms/custom_image_asset.dart';
-import 'package:exemplifica/widgets/atoms/custom_text.dart';
 
 class JurosCompostosTemplate extends StatelessWidget {
   final double width;
+  final double height;
   const JurosCompostosTemplate({
     Key? key,
     required this.width,
+    required this.height,
   }) : super(key: key);
 
   @override
@@ -17,100 +20,37 @@ class JurosCompostosTemplate extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: <Widget>[
-            CustomText(
-              title: CoreStringsJurosCompostos.text1_JurosCompostos,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text2_JurosCompostos,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text3_JurosCompostos,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text4_JurosCompostos,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text5_JurosCompostos,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/juros_compostos/jurosCompostos_2.png",
-              width: width * 0.6,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text6_JurosCompostos,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text8_JurosCompostos,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text9_JurosCompostos,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text10_JurosCompostos,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/juros_compostos/jurosCompostos_3.png",
-              width: width * 0.8,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text11_JurosCompostos,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/juros_compostos/jurosCompostos_4.png",
-              width: width * 0.8,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text12_JurosCompostos,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text13_JurosCompostos,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text14_JurosCompostos,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text15_JurosCompostos,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/juros_compostos/jurosCompostos_5.png",
-              width: width * 0.8,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text16_JurosCompostos,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text17_JurosCompostos,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/juros_compostos/jurosCompostos_6.png",
-              width: width * 0.45,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text18_JurosCompostos,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/juros_compostos/jurosCompostos_7.png",
-              width: width * 0.5,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text19_JurosCompostos,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/juros_compostos/jurosCompostos_8.png",
-              width: width * 0.65,
-            ),
-            CustomText(
-              title: CoreStringsJurosCompostos.text20_JurosCompostos,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/juros_compostos/jurosCompostos_9.png",
-              width: width * 0.5,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 30),
-              child: CustomText(
-                title: CoreStringsJurosCompostos.text21_JurosCompostos,
-              ),
+            ContentList(
+              stringsAndAssets: [
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text1_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text2_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text3_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text4_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text5_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsAssets.jurosCompostos_assets_2, width: width, height: height * 0.05),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text6_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text8_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text9_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text10_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsAssets.jurosCompostos_assets_3, width: width, height: height * 0.2),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text11_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsAssets.jurosCompostos_assets_4, width: width, height: height * 0.1),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text12_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text13_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text14_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text15_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsAssets.jurosCompostos_assets_5, width: width, height: height * 0.5),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text16_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text17_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsAssets.jurosCompostos_assets_6, width: width, height: height * 0.15),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text18_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsAssets.jurosCompostos_assets_7, width: width, height: height * 0.15),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text19_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsAssets.jurosCompostos_assets_8, width: width, height: height * 0.2),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text20_JurosCompostos),
+                StringsAndAssetsModel(title: CoreStringsAssets.jurosCompostos_assets_9, width: width, height: height * 0.1),
+                StringsAndAssetsModel(title: CoreStringsJurosCompostos.text21_JurosCompostos),
+              ],
             ),
           ],
         ),
