@@ -1,7 +1,8 @@
+import 'package:exemplifica/domain/usecase/control_field.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ControllerRegraDe3 {
+class ControllerRegraDe3 implements ControlField {
   static ControllerRegraDe3? _instance;
 
   ControllerRegraDe3._();
@@ -27,8 +28,9 @@ class ControllerRegraDe3 {
   String resultf = "";
 
   NumberFormat format1 = NumberFormat("0");
-  NumberFormat format2 = NumberFormat("0.00");
-
+  NumberFormat format2 = NumberFormat("0.00");  
+  
+  @override
   void resetCampos() {
     visible = false;
     val1.clear();
@@ -36,17 +38,19 @@ class ControllerRegraDe3 {
     val3.clear();
     resultRegra3 = "";
   }
-
+  
+  @override
   void verificarCampos() {
     if (val1.text.isEmpty || val2.text.isEmpty || val3.text.isEmpty) {
       resultRegra3 = "Por favor, preencha os campos!";
     } else {
       resultRegra3 = "";
-      regra3();
+      calcular();
     }
   }
 
-  void regra3() {
+  @override
+  void calcular() {
     visible = true;
     valor1 = double.parse(val1.text);
     valor2 = double.parse(val2.text);

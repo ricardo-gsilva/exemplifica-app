@@ -1,7 +1,8 @@
+import 'package:exemplifica/domain/usecase/control_field.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ControllerJurosSimples {
+class ControllerJurosSimples implements ControlField {
   static ControllerJurosSimples? _instance;
 
   ControllerJurosSimples._();
@@ -46,21 +47,22 @@ class ControllerJurosSimples {
   NumberFormat dfJs3 = new NumberFormat("R\$0.00");
 
   double capital = 0;
-    double meses = 0;
-    double taxa = 0;
-    double jur2 = 0;
-    double jur = 0;
-    double montante = 0;
-    double juros = 0;
-    double cap = 0;
-    double juros2 = 0;
-    double taxmes = 0;
-    double tax = 0;
-    double capmes = 0;
-    double mes = 0;
-    double dias = 0;
-    double captax = 0;
+  double meses = 0;
+  double taxa = 0;
+  double jur2 = 0;
+  double jur = 0;
+  double montante = 0;
+  double juros = 0;
+  double cap = 0;
+  double juros2 = 0;
+  double taxmes = 0;
+  double tax = 0;
+  double capmes = 0;
+  double mes = 0;
+  double dias = 0;
+  double captax = 0;
 
+  @override
   void resetCampos() {
     visible = false;
     c.clear();
@@ -72,15 +74,12 @@ class ControllerJurosSimples {
     resultjS_2 = "";
   }
 
-  void clearResponse() {
-    resultjS = "";
-    resultjS_1 = "";
-    resultjS_2 = "";
-  }
-
+  @override
   void verificarCampos() {
-    if(j.text.isNotEmpty && 
-    c.text.isNotEmpty && t.text.isNotEmpty && i.text.isNotEmpty){
+    if (j.text.isNotEmpty &&
+        c.text.isNotEmpty &&
+        t.text.isNotEmpty &&
+        i.text.isNotEmpty) {
       visible = true;
       resultjS = "Apenas 3 campos devem ser preenchidos.";
       resultjS_1 = "";
@@ -96,12 +95,12 @@ class ControllerJurosSimples {
       resultjS_1 = "";
       resultjS_2 = "";
     } else {
-      clearResponse();
-      jurosSimples();
+      calcular();
     }
   }
 
-    void jurosSimples() {
+  @override
+  void calcular() {
     visible = true;
 
     if ((c.text.isNotEmpty) && (i.text.isNotEmpty) && (t.text.isNotEmpty)) {
@@ -164,19 +163,32 @@ class ControllerJurosSimples {
       fmontante = dfJs2.format(montante);
     }
 
-    resultjS = "A fórmula para encontrar o valor em JUROS gerado pelo investimento é:""\n"
-        "J = (C * i * t) / 100""\n";
+    resultjS =
+        "A fórmula para encontrar o valor em JUROS gerado pelo investimento é:"
+        "\n"
+        "J = (C * i * t) / 100"
+        "\n";
     resultjS_1 = "J = (${c.text} * ${i.text} * ${t.text}) / 100";
-    resultjS_2 = "J = ($fcapital * $ftaxa * $fmes) / 100""\n"
-            "J = $fjur2 / 100" "\n"
-            "J = $jur""\n""\n"
-            "O valor de juros encontrado com a taxa de $ftaxa% ao mês, no período de $fmes meses, com a aplicação "
-            "de $rcapital, é de: $rjur" "\n"
-            "e o valor total encontrado através do montante que é a soma do Capital e do Juros é: ""\n""\n"
-            "M = C + J""\n"
-            "M = $fcapital + $fjur""\n"
-            "M = $fmontante""\n"
-            "O montante total é de $rmontante.";
+    resultjS_2 = "J = ($fcapital * $ftaxa * $fmes) / 100"
+        "\n"
+        "J = $fjur2 / 100"
+        "\n"
+        "J = $jur"
+        "\n"
+        "\n"
+        "O valor de juros encontrado com a taxa de $ftaxa% ao mês, no período de $fmes meses, com a aplicação "
+        "de $rcapital, é de: $rjur"
+        "\n"
+        "e o valor total encontrado através do montante que é a soma do Capital e do Juros é: "
+        "\n"
+        "\n"
+        "M = C + J"
+        "\n"
+        "M = $fcapital + $fjur"
+        "\n"
+        "M = $fmontante"
+        "\n"
+        "O montante total é de $rmontante.";
   }
 
   void calcularCapital() {
@@ -234,16 +246,27 @@ class ControllerJurosSimples {
         "C = (J * 100) / (i * t)"
         "\n";
     resultjS_1 = "C = (${j.text} * 100) / (${i.text} * ${t.text})";
-    resultjS_2 = "C = ($fjuros * 100) / ($ftaxa * $fmes)""\n"
-            "C = $fjuros2 / $ftaxmes""\n"
-            "C = $fcapital""\n""\n"
-            "O valor do capital aplicado para que se tenha $rjuros de juros, com a taxa de $ftaxa% "
-            "no período de $fmes meses, é de: $rcapital""\n""\n"
-            "E o valor total encontrado através do montante que é a soma do Capital e do Juros é: ""\n""\n"
-            "M = C + J""\n"
-            "M = $fcapital + $fjuros""\n"
-            "M = $fmontante""\n"
-            "O montante total é de $rmontante.";
+    resultjS_2 = "C = ($fjuros * 100) / ($ftaxa * $fmes)"
+        "\n"
+        "C = $fjuros2 / $ftaxmes"
+        "\n"
+        "C = $fcapital"
+        "\n"
+        "\n"
+        "O valor do capital aplicado para que se tenha $rjuros de juros, com a taxa de $ftaxa% "
+        "no período de $fmes meses, é de: $rcapital"
+        "\n"
+        "\n"
+        "E o valor total encontrado através do montante que é a soma do Capital e do Juros é: "
+        "\n"
+        "\n"
+        "M = C + J"
+        "\n"
+        "M = $fcapital + $fjuros"
+        "\n"
+        "M = $fmontante"
+        "\n"
+        "O montante total é de $rmontante.";
   }
 
   void calcularTaxa() {
@@ -288,15 +311,18 @@ class ControllerJurosSimples {
       ftax = dfJs2.format(tax);
     }
 
-    resultjS =
-        "A fórmula para encontrar a TAXA é:"
+    resultjS = "A fórmula para encontrar a TAXA é:"
         "\n"
         "i = (J * 100) / (C * t)"
         "\n";
     resultjS_1 = "i = (${j.text} * 100) / (${c.text} * ${t.text})";
-    resultjS_2 = "i = ($fjuros * 100) / ($fcapital * $fmes)""\n"
-        "i = $fjuros2 / $fcapmes""\n"
-        "i = $ftax""\n""\n"
+    resultjS_2 = "i = ($fjuros * 100) / ($fcapital * $fmes)"
+        "\n"
+        "i = $fjuros2 / $fcapmes"
+        "\n"
+        "i = $ftax"
+        "\n"
+        "\n"
         "A taxa mensal encontrado para o valor aplicado de $rcapital, com rendimento de $rjuros em juros, no período "
         "de $fmes meses, é de: $ftax%.";
   }
@@ -351,10 +377,13 @@ class ControllerJurosSimples {
         "t = (J * 100) / (C * i)"
         "\n";
     resultjS_1 = "t = (${j.text} * 100) / (${c.text} * ${i.text})";
-    resultjS_2 = "t = ($fjuros * 100) / ($fcapital * $ftaxa)""\n"
-            "t = $fjuros2 / $fcaptax""\n"
-            "t = $fmes""\n\n"
-            "O número de meses necessário para gerar o juros de $rjuros, com a aplicação de capital no valor de $rcapital, sob "
-            "a taxa mensal de $ftaxa% é: $fmes meses ou o equivalente a $fdias dias.";
+    resultjS_2 = "t = ($fjuros * 100) / ($fcapital * $ftaxa)"
+        "\n"
+        "t = $fjuros2 / $fcaptax"
+        "\n"
+        "t = $fmes"
+        "\n\n"
+        "O número de meses necessário para gerar o juros de $rjuros, com a aplicação de capital no valor de $rcapital, sob "
+        "a taxa mensal de $ftaxa% é: $fmes meses ou o equivalente a $fdias dias.";
   }
 }

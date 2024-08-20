@@ -1,6 +1,7 @@
+import 'package:exemplifica/domain/usecase/control_field.dart';
 import 'package:flutter/material.dart';
 
-class ControllerTabuada {
+class ControllerTabuada implements ControlField {
   static ControllerTabuada? _instance;
 
   ControllerTabuada._();
@@ -15,8 +16,17 @@ class ControllerTabuada {
   String infoText = "";
   String dica = "";
   bool visible = false;
-
-  void verificarCampo() {
+  
+  @override
+  void resetCampos() {
+    visible = false;
+    nTabuada.clear();
+    infoText = "";
+    dica = "";
+  }
+  
+  @override
+  void verificarCampos() {
     if (nTabuada.text.isEmpty) {
       infoText = "Por favor, preencha os campos!";
       visible = true;
@@ -27,13 +37,7 @@ class ControllerTabuada {
     }
   }
 
-  void resetCampos() {
-    visible = false;
-    nTabuada.clear();
-    infoText = "";
-    dica = "";
-  }
-
+  @override
   void calcular() {
     int i;
     int val = int.parse(nTabuada.text);
