@@ -85,4 +85,16 @@ class CoreStringsAssets {
   static const String porcentagem_assets_8 = "images/operacoes/porcentagem/porcentagem_8.png";
   static const String porcentagem_assets_9 = "images/operacoes/porcentagem/porcentagem_9.png";
 
+  //Regra de 3
+  static const String regra_de3_assets_3 = "images/operacoes/regra_de3/regra_de3_3.png";
+  static const String regra_de3_assets_4 = "images/operacoes/regra_de3/regra_de3_4.png";
+  static const String regra_de3_assets_5 = "images/operacoes/regra_de3/regra_de3_5.png";
+  static const String regra_de3_assets_6 = "images/operacoes/regra_de3/regra_de3_6.png";
+  static const String regra_de3_assets_8 = "images/operacoes/regra_de3/regra_de3_8.png";
+  static const String regra_de3_assets_9 = "images/operacoes/regra_de3/regra_de3_9.png";
+  static const String regra_de3_assets_10 = "images/operacoes/regra_de3/regra_de3_10.png";
+  static const String regra_de3_assets_11 = "images/operacoes/regra_de3/regra_de3_11.png";
+  static const String regra_de3_assets_12 = "images/operacoes/regra_de3/regra_de3_12.png";
+  static const String regra_de3_assets_13 = "images/operacoes/regra_de3/regra_de3_13.png";
+
 }

@@ -13,6 +13,7 @@ class RegraDe3Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return CustomScaffold(
       titleAppBar: CustomText(
         title: CoreStrings.titleRegraDe3,
@@ -30,6 +31,7 @@ class RegraDe3Page extends StatelessWidget {
       ],
       body: RegraDe3Template(
         width: width,
+        height: height,
       ),
     );
   }
