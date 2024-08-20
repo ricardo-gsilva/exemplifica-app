@@ -1,6 +1,7 @@
+import 'package:exemplifica/model/assets_model.dart';
+import 'package:exemplifica/widgets/molecules/content_list.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/utils/constants/strings/strings_soma_sub.dart';
-import 'package:exemplifica/widgets/atoms/custom_text.dart';
 
 class SomaSubtracaoTemplate extends StatelessWidget {
   final double width;
@@ -12,12 +13,19 @@ class SomaSubtracaoTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          CustomText(
-            title: CoreStringsSomaSub.text1_SomaSub,
-          ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: <Widget>[
+            ContentList(
+              stringsAndAssets: [
+                StringsAndAssetsModel(
+                  title: CoreStringsSomaSub.text1_SomaSub,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
