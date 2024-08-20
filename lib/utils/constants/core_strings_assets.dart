@@ -129,4 +129,9 @@ class CoreStringsAssets {
   static const String multiplicacaoDivisao_assets_11 = "images/mult_div/multiplica_divi_11.png";
   static const String multiplicacaoDivisao_assets_12 = "images/mult_div/multiplica_divi_12.png";
 
+  //Regras de Sinais
+  static const String regras_sinais_assets_2 =  "images/regras_sinal/regras_sinais_2.png";
+  static const String regras_sinais_assets_3 =  "images/regras_sinal/regras_sinais_3.png";
+  static const String regras_sinais_assets_5 =  "images/regras_sinal/regras_sinais_5.png";
+
 }
