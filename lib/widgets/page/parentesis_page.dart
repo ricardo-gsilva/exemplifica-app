@@ -13,6 +13,7 @@ class ParentesisPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return CustomScaffold(
       titleAppBar: CustomText(
         title: CoreStrings.titleParentesis,
@@ -30,6 +31,7 @@ class ParentesisPage extends StatelessWidget {
       ],
       body: ParentesisTemplate(
         width: width,
+        height: height,
       ),
     );
   }

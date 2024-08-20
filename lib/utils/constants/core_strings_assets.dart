@@ -103,4 +103,12 @@ class CoreStringsAssets {
   static const String regra_de3_assets_12 = "images/operacoes/regra_de3/regra_de3_12.png";
   static const String regra_de3_assets_13 = "images/operacoes/regra_de3/regra_de3_13.png";
 
+  //Parentesis
+  static const String parentesis_assets_1 = "images/parentesis/parentesis_1.png";
+  static const String parentesis_assets_2 = "images/parentesis/parentesis_2.png";
+  static const String parentesis_assets_3 = "images/parentesis/parentesis_3.png";
+  static const String parentesis_assets_4 = "images/parentesis/parentesis_4.png";
+  static const String parentesis_assets_5 = "images/parentesis/parentesis_5.png";
+  static const String parentesis_assets_6 = "images/parentesis/parentesis_6.png";
+  static const String parentesis_assets_7 = "images/parentesis/parentesis_7.png";
 }

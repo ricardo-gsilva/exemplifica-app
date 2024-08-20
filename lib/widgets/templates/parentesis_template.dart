@@ -1,62 +1,58 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:exemplifica/model/assets_model.dart';
+import 'package:exemplifica/utils/constants/core_strings_assets.dart';
+import 'package:exemplifica/widgets/molecules/content_list.dart';
 import 'package:flutter/material.dart';
-
 import 'package:exemplifica/utils/constants/strings/strings_parentesis.dart';
-import 'package:exemplifica/widgets/atoms/custom_image_asset.dart';
-import 'package:exemplifica/widgets/atoms/custom_text.dart';
 
 class ParentesisTemplate extends StatelessWidget {
   final double width;
+  final double height;
   const ParentesisTemplate({
     Key? key,
     required this.width,
+    required this.height,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           children: <Widget>[
-            CustomText(title: CoreStringsParentesis.text1_parentesis,),
-            CustomImageAsset(
-              asset: "images/parentesis/parentesis_1.png",
-              width: width * 0.6,
+            ContentList(
+              stringsAndAssets: [
+                StringsAndAssetsModel(
+                    title: CoreStringsParentesis.text1_parentesis),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.parentesis_assets_1, height: height * 0.05),
+                StringsAndAssetsModel(
+                    title: CoreStringsParentesis.text2_parentesis),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.parentesis_assets_2, height: height * 0.1),
+                StringsAndAssetsModel(
+                    title: CoreStringsParentesis.text3_parentesis),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.parentesis_assets_3, height: height * 0.1),
+                StringsAndAssetsModel(
+                    title: CoreStringsParentesis.text4_parentesis),
+                StringsAndAssetsModel(
+                    title: CoreStringsParentesis.text5_parentesis),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.parentesis_assets_5, height: height * 0.05),
+                StringsAndAssetsModel(
+                    title: CoreStringsParentesis.text6_parentesis),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.parentesis_assets_6, height: height * 0.05),
+                StringsAndAssetsModel(
+                    title: CoreStringsParentesis.text7_parentesis),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.parentesis_assets_7, height: height * 0.1),
+              ],
             ),
-            CustomText(title: CoreStringsParentesis.text2_parentesis,),
-            CustomImageAsset(
-              asset: "images/parentesis/parentesis_2.png",
-              width: width * 0.7,
-            ),
-            CustomText(title: CoreStringsParentesis.text3_parentesis,),
-            CustomImageAsset(
-              asset: "images/parentesis/parentesis_3.png",
-              width: width * 0.4,
-            ),
-            CustomText(title: CoreStringsParentesis.text4_parentesis,),
-            CustomImageAsset(
-              asset: "images/parentesis/parentesis_4.png",
-              width: width * 0.6,
-            ),
-            CustomText(title: CoreStringsParentesis.text5_parentesis,),
-            CustomImageAsset(
-              asset: "images/parentesis/parentesis_5.png",
-              width: width * 0.6,
-            ),
-            CustomText(title: CoreStringsParentesis.text6_parentesis,),
-            CustomImageAsset(
-              asset: "images/parentesis/parentesis_6.png",
-              width: width * 0.4,
-            ),
-            CustomText(title: CoreStringsParentesis.text7_parentesis,),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 35),
-              child: CustomImageAsset(
-                asset: "images/parentesis/parentesis_7.png",
-                width: width * 0.4,
-              ),
-            ),            
           ],
         ),
-      );
+      ),
+    );
   }
 }
