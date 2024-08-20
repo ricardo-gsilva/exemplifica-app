@@ -24,37 +24,40 @@ class HomePageButtonsGrid extends StatelessWidget {
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ButtonPrimary(
-                    title: CoreStrings.titleCalculadoras, 
-                    height: height * 2.2, 
-                    width: width * 1.03,
-                    icon: Person.calc,
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_) => CalculatorsPage()));
-                    },
-                  ),
-                  ButtonPrimary(
-                    title: CoreStrings.titleRegrasBasicas,
-                    height: height * 2.2, 
-                    width: width * 1.03,
-                    icon: Person.book,
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (_) => RegrasBasicasPage()));
-                    },
-                  ),
-                ],
-              ),
-              ButtonsGrid(
-                height: height,
-                width: width,
-              )
-            ],
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 50),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ButtonPrimary(
+                      title: CoreStrings.titleCalculadoras, 
+                      height: height * 2.2, 
+                      width: width * 1.03,
+                      icon: Person.calc,
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => CalculatorsPage()));
+                      },
+                    ),
+                    ButtonPrimary(
+                      title: CoreStrings.titleRegrasBasicas,
+                      height: height * 2.2, 
+                      width: width * 1.03,
+                      icon: Person.book,
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => RegrasBasicasPage()));
+                      },
+                    ),
+                  ],
+                ),
+                ButtonsGrid(
+                  height: height,
+                  width: width,
+                )
+              ],
+            ),
           ),
         )
       ],

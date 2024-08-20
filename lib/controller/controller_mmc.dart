@@ -41,6 +41,8 @@ class ControllerMmc implements ControlField {
       resultMmc = "Por favor, preencha os campos!\nUtilize valores até 99999!";
       resultMmc1 = "";
     } else {
+      resultMmc = "";
+      resultMmc1 = "";
       calcular();
     }
   }

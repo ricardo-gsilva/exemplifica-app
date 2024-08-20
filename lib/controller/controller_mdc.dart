@@ -42,6 +42,9 @@ class ControllerMdc implements ControlField {
     if (val1.text.isEmpty || val2.text.isEmpty) {
       resultMdc = "Por favor, preencha os campos.\n Utilize valores até 99999!";
     } else {
+      resultMdc = "";
+      resultMdc1 = "";
+      resultMdc2 = "";
       calcular();
     }
   }
