@@ -118,4 +118,15 @@ class CoreStringsAssets {
   static const String expoentes_assets_4 = "images/expoentes/expoentes_4.png";
   static const String expoentes_assets_5 = "images/expoentes/expoentes_5.png";
 
+  //Multiplicacao e Divisao
+  static const String multiplicacaoDivisao_assets_2 = "images/mult_div/multiplica_divi_2.png";
+  static const String multiplicacaoDivisao_assets_3 = "images/mult_div/multiplica_divi_3.png";
+  static const String multiplicacaoDivisao_assets_4 = "images/mult_div/multiplica_divi_4.png";
+  static const String multiplicacaoDivisao_assets_5 = "images/mult_div/multiplica_divi_5.png";
+  static const String multiplicacaoDivisao_assets_8 = "images/mult_div/multiplica_divi_8.png";
+  static const String multiplicacaoDivisao_assets_9 = "images/mult_div/multiplica_divi_9.png";
+  static const String multiplicacaoDivisao_assets_10 = "images/mult_div/multiplica_divi_10.png";
+  static const String multiplicacaoDivisao_assets_11 = "images/mult_div/multiplica_divi_11.png";
+  static const String multiplicacaoDivisao_assets_12 = "images/mult_div/multiplica_divi_12.png";
+
 }

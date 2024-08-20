@@ -1,113 +1,73 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:exemplifica/model/assets_model.dart';
+import 'package:exemplifica/utils/constants/core_strings_assets.dart';
 import 'package:exemplifica/utils/constants/strings/strings_mult_div.dart';
-import 'package:exemplifica/widgets/atoms/custom_image_asset.dart';
-import 'package:exemplifica/widgets/atoms/custom_text.dart';
+import 'package:exemplifica/widgets/molecules/content_list.dart';
 import 'package:flutter/material.dart';
 
 class MultiplicacaoDivisaoTemplate extends StatelessWidget {
+  final double height;
   final double width;
   const MultiplicacaoDivisaoTemplate({
     Key? key,
+    required this.height,
     required this.width,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          CustomText(
-            title: CoreStringsMultDiv.text1_MultiplicaDiv,
-          ),
-          CustomImageAsset(
-            asset: "images/mult_div/multiplica_divi_2.png",
-            width: width * 0.4,
-          ),
-          CustomText(
-            title: CoreStringsMultDiv.text2_MultiplicaDiv,
-          ),
-          CustomText(
-            title: CoreStringsMultDiv.text3_MultiplicaDiv,
-          ),
-          CustomImageAsset(
-            asset: "images/mult_div/multiplica_divi_3.png",
-            width: width * 0.4,
-          ),
-          CustomText(
-            title: CoreStringsMultDiv.text4_MultiplicaDiv,
-          ),
-          CustomImageAsset(
-            asset: "images/mult_div/multiplica_divi_4.png",
-            width: width * 0.4,
-          ),
-          CustomText(
-            title: CoreStringsMultDiv.text5_MultiplicaDiv,
-          ),
-          CustomImageAsset(
-            asset: "images/mult_div/multiplica_divi_5.png",
-            width: width * 0.4,
-          ),
-          CustomText(
-            title: CoreStringsMultDiv.text6_MultiplicaDiv,
-          ),
-          CustomText(
-            title: CoreStringsMultDiv.text7_MultiplicaDiv,
-          ),
-          CustomImageAsset(
-            asset: "images/mult_div/multiplica_divi_11.png",
-            width: width * 0.5,
-          ),
-          Icon(
-            Icons.close,
-            color: Colors.red,
-            size: 50,
-          ),
-          CustomText(
-            title: CoreStringsMultDiv.text8_MultiplicaDiv,
-          ),
-          CustomImageAsset(
-            asset: "images/mult_div/multiplica_divi_12.png",
-            width: width * 0.5,
-          ),
-          Icon(
-            Icons.check,
-            color: Colors.red,
-            size: 50,
-          ),
-          CustomText(
-            title: CoreStringsMultDiv.text9_MultiplicaDiv,
-          ),
-          CustomText(
-            title: CoreStringsMultDiv.text10_MultiplicaDiv,
-          ),
-          CustomText(
-            title: CoreStringsMultDiv.text11_MultiplicaDiv,
-          ),
-          CustomImageAsset(
-            asset: "images/mult_div/multiplica_divi_8.png",
-            width: width * 0.55,
-          ),
-          CustomText(
-            title: CoreStringsMultDiv.text12_MultiplicaDiv,
-          ),
-          CustomImageAsset(
-            asset: "images/mult_div/multiplica_divi_9.png",
-            width: width * 0.35,
-          ),
-          CustomText(
-            title: CoreStringsMultDiv.text13_MultiplicaDiv,
-          ),
-          CustomImageAsset(
-            asset: "images/mult_div/multiplica_divi_10.png",
-            width: width * 0.4,
-          ),
-          Padding(
-            padding: EdgeInsets.only(bottom: 40),
-            child: CustomText(
-              title: CoreStringsMultDiv.text14_MultiplicaDiv,
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: <Widget>[
+            ContentList(
+              stringsAndAssets: [
+                StringsAndAssetsModel(title: CoreStringsMultDiv.text1_MultiplicaDiv),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.multiplicacaoDivisao_assets_2,
+                    height: height * 0.05),
+                StringsAndAssetsModel(title: CoreStringsMultDiv.text2_MultiplicaDiv),
+                StringsAndAssetsModel(title: CoreStringsMultDiv.text3_MultiplicaDiv),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.multiplicacaoDivisao_assets_3,
+                    height: height * 0.1),
+                StringsAndAssetsModel(title: CoreStringsMultDiv.text4_MultiplicaDiv),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.multiplicacaoDivisao_assets_4,
+                    height: height * 0.1),
+                StringsAndAssetsModel(title: CoreStringsMultDiv.text5_MultiplicaDiv),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.multiplicacaoDivisao_assets_5,
+                    height: height * 0.2),
+                StringsAndAssetsModel(title: CoreStringsMultDiv.text6_MultiplicaDiv),
+                StringsAndAssetsModel(title: CoreStringsMultDiv.text7_MultiplicaDiv, textAlign: TextAlign.center),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.multiplicacaoDivisao_assets_11,
+                    height: height * 0.1),
+                StringsAndAssetsModel(
+                    title: CoreStringsMultDiv.text8_MultiplicaDiv, textAlign: TextAlign.center),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.multiplicacaoDivisao_assets_12,
+                    height: height * 0.1),
+                StringsAndAssetsModel(title: CoreStringsMultDiv.text9_MultiplicaDiv),
+                StringsAndAssetsModel(title: CoreStringsMultDiv.text10_MultiplicaDiv),
+                StringsAndAssetsModel(title: CoreStringsMultDiv.text11_MultiplicaDiv),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.multiplicacaoDivisao_assets_8,
+                    height: height * 0.1),
+                StringsAndAssetsModel(title: CoreStringsMultDiv.text12_MultiplicaDiv,),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.multiplicacaoDivisao_assets_9,
+                    height: height * 0.15),
+                StringsAndAssetsModel(title: CoreStringsMultDiv.text13_MultiplicaDiv,),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.multiplicacaoDivisao_assets_10,
+                    height: height * 0.05),
+                StringsAndAssetsModel(title: CoreStringsMultDiv.text14_MultiplicaDiv,),
+              ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
