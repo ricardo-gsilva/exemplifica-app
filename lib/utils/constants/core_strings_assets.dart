@@ -1,4 +1,10 @@
 class CoreStringsAssets {
+
+  //Logotipo
+  static const String logoExemplifica = "images/logotipo_exemplifica.png";
+
+  //SplashScreen
+  static const String splashScreen_background = "images/splashapp.png";
   
   //Equacao 1 Grau  
   static const String equacao_1_assets_2 = "images/operacoes/equacao_1/equacao1_2.png";

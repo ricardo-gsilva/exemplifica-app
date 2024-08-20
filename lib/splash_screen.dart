@@ -1,4 +1,5 @@
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
+import 'package:exemplifica/utils/constants/core_strings_assets.dart';
 import 'package:exemplifica/widgets/page/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -34,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
-              child: Image(image: AssetImage('images/splashapp.png'),
+              child: Image(image: AssetImage(CoreStringsAssets.splashScreen_background),
               fit: BoxFit.cover),
             ),
             Container(
@@ -45,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Container(
                   width: MediaQuery.of(context).size.width * .8,
-                  child: Image(image: AssetImage('images/exemplo_3.png'),
+                  child: Image(image: AssetImage(CoreStringsAssets.logoExemplifica),
                     ),
                   )
                 ],

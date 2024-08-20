@@ -1,4 +1,5 @@
 import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_strings_assets.dart';
 import 'package:exemplifica/widgets/molecules/custom_scaffold.dart';
 import 'package:exemplifica/widgets/templates/home_page_template.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     width = MediaQuery.of(context).size.width * 0.42;
     return CustomScaffold(
       titleAppBar: Image.asset(
-            'images/exemplo_3.png',
+            CoreStringsAssets.logoExemplifica,
             height: 45,
           ),
       leading: false,      
