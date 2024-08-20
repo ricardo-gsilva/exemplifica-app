@@ -16,6 +16,12 @@ class _CalcEquacao2TemplateState extends State<CalcEquacao2Template> {
   final ControllerEquacao2 equacao2 = ControllerEquacao2.instance;
 
   @override
+  void initState() {
+    equacao2.resetCampos();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;

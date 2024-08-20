@@ -17,6 +17,12 @@ class _CalcMdcTemplateState extends State<CalcMdcTemplate> {
   final ControllerMdc mdc = ControllerMdc.instance;
 
   @override
+  void initState() {
+    mdc.resetCampos();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;

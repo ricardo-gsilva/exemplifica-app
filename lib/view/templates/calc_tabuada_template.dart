@@ -17,6 +17,12 @@ class _CalcTabuadaTemplateState extends State<CalcTabuadaTemplate> {
   final ControllerTabuada tabuada = ControllerTabuada.instance;
 
   @override
+  void initState() {
+    tabuada.resetCampos();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;

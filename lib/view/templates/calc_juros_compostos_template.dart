@@ -14,10 +14,14 @@ class CalcJurosCompostosTemplate extends StatefulWidget {
       _CalcJurosCompostosTemplateState();
 }
 
-class _CalcJurosCompostosTemplateState
-    extends State<CalcJurosCompostosTemplate> {
-  final ConstrollerJurosCompostos jurosCompostos =
-      ConstrollerJurosCompostos.instance;
+class _CalcJurosCompostosTemplateState extends State<CalcJurosCompostosTemplate> {
+  final ConstrollerJurosCompostos jurosCompostos = ConstrollerJurosCompostos.instance;
+
+  @override
+  void initState() {
+    jurosCompostos.resetCampos();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

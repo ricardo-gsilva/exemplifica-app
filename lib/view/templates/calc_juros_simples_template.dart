@@ -18,6 +18,12 @@ class _CalcJurosSimplesTemplateState extends State<CalcJurosSimplesTemplate> {
   final ControllerJurosSimples jurosSimples = ControllerJurosSimples.instance;
 
   @override
+  void initState() {
+    jurosSimples.resetCampos();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;

@@ -17,6 +17,12 @@ class _CalcRegraDe3TemplateState extends State<CalcRegraDe3Template> {
   final ControllerRegraDe3 regraDe3 = ControllerRegraDe3.instance;
 
   @override
+  void initState() {
+    regraDe3.resetCampos();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;

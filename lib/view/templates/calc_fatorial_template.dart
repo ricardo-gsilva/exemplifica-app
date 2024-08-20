@@ -17,6 +17,12 @@ class _CalcFatorialTemplateState extends State<CalcFatorialTemplate> {
   final ControllerFatorial fatorial = ControllerFatorial.instance;
 
   @override
+  void initState() {
+    fatorial.resetCampos();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
