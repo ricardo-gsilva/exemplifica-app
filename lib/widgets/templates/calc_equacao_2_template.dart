@@ -36,7 +36,7 @@ class _CalcEquacao2TemplateState extends State<CalcEquacao2Template> {
                 width: width,
                 onTapFirst: () {
                   setState(() {
-                    equacao2.verificarCampo();
+                    equacao2.verificarCampos();
                   });
                 },
                 onTapSecond: () {

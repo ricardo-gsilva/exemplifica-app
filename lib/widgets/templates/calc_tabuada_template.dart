@@ -35,7 +35,7 @@ class _CalcTabuadaTemplateState extends State<CalcTabuadaTemplate> {
               width: width,
               onTapFirst: (() {
                 setState(() {
-                  tabuada.verificarCampo();
+                  tabuada.verificarCampos();
                 });
               }),
               onTapSecond: (() {
