@@ -71,4 +71,14 @@ class CoreStringsAssets {
   static const String mmc_assets_4 = "images/operacoes/mmc/mmc_4.png";
   static const String mmc_assets_5 = "images/operacoes/mmc/mmc_5.png";
 
+  //Porcentagem
+  static const String porcentagem_assets_2 = "images/operacoes/porcentagem/porcentagem_2.png";
+  static const String porcentagem_assets_3 = "images/operacoes/porcentagem/porcentagem_3.png";
+  static const String porcentagem_assets_4 = "images/operacoes/porcentagem/porcentagem_4.png";
+  static const String porcentagem_assets_5 = "images/operacoes/porcentagem/porcentagem_5.png";
+  static const String porcentagem_assets_6 = "images/operacoes/porcentagem/porcentagem_6.png";
+  static const String porcentagem_assets_7 = "images/operacoes/porcentagem/porcentagem_7.png";
+  static const String porcentagem_assets_8 = "images/operacoes/porcentagem/porcentagem_8.png";
+  static const String porcentagem_assets_9 = "images/operacoes/porcentagem/porcentagem_9.png";
+
 }
