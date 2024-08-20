@@ -11,14 +11,12 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  double height = 0.0;
-  double width = 0.0;
+class _HomePageState extends State<HomePage> {  
 
   @override
-  Widget build(BuildContext context) {
-    height = MediaQuery.of(context).size.height * 0.1;
-    width = MediaQuery.of(context).size.width * 0.42;
+  Widget build(BuildContext context) {    
+    double height = MediaQuery.of(context).size.height * 0.1;
+    double width = MediaQuery.of(context).size.width * 0.42;
     return CustomScaffold(
       titleAppBar: Image.asset(
             CoreStringsAssets.logoExemplifica,
