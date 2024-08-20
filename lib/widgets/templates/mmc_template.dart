@@ -1,14 +1,16 @@
-import 'package:exemplifica/widgets/atoms/custom_image_asset.dart';
-import 'package:exemplifica/widgets/atoms/custom_text.dart';
+import 'package:exemplifica/model/assets_model.dart';
+import 'package:exemplifica/utils/constants/core_strings_assets.dart';
+import 'package:exemplifica/widgets/molecules/content_list.dart';
 import 'package:flutter/material.dart';
-
 import 'package:exemplifica/utils/constants/strings/strings_mmc.dart';
 
 class MmcTemplate extends StatelessWidget {
+  final double height;
   final double width;
   const MmcTemplate({
     Key? key,
     required this.width,
+    required this.height,
   }) : super(key: key);
 
   @override
@@ -18,45 +20,20 @@ class MmcTemplate extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: <Widget>[
-            CustomText(
-              title: CoreStringsMmc.text1_mmc,
-            ),
-            CustomText(
-              title: CoreStringsMmc.text2_mmc,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/mmc/mmc_2.png",
-              width: width * 0.9,
-            ),
-            CustomText(
-              title: CoreStringsMmc.text3_mmc,
-            ),
-            CustomText(
-              title: CoreStringsMmc.text4_mmc,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/mmc/mmc_3.png",
-              width: width * 0.45,
-            ),
-            CustomText(
-              title: CoreStringsMmc.text5_mmc,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/mmc/mmc_4.png",
-              width: width * 0.9,
-            ),
-            CustomText(
-              title: CoreStringsMmc.text6_mmc,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/mmc/mmc_5.png",
-              width: width * 0.45,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 25),
-              child: CustomText(
-                title: CoreStringsMmc.text7_mmc,
-              ),
+            ContentList(
+              stringsAndAssets: [
+                StringsAndAssetsModel(title: CoreStringsMmc.text1_mmc),
+                StringsAndAssetsModel(title: CoreStringsMmc.text2_mmc),
+                StringsAndAssetsModel(title: CoreStringsAssets.mmc_assets_2, width: width, height: height * 0.25),
+                StringsAndAssetsModel(title: CoreStringsMmc.text3_mmc),
+                StringsAndAssetsModel(title: CoreStringsMmc.text4_mmc),
+                StringsAndAssetsModel(title: CoreStringsAssets.mmc_assets_3, width: width, height: height * 0.15),
+                StringsAndAssetsModel(title: CoreStringsMmc.text5_mmc),
+                StringsAndAssetsModel(title: CoreStringsAssets.mmc_assets_4, width: width, height: height * 0.3),
+                StringsAndAssetsModel(title: CoreStringsMmc.text6_mmc),
+                StringsAndAssetsModel(title: CoreStringsAssets.mmc_assets_5, width: width, height: height * 0.5),
+                StringsAndAssetsModel(title: CoreStringsMmc.text7_mmc),
+              ],
             ),
           ],
         ),

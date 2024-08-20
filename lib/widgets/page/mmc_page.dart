@@ -13,6 +13,7 @@ class MmcPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
     return CustomScaffold(
       titleAppBar: CustomText(
         title: CoreStrings.titleMmc,
@@ -29,6 +30,7 @@ class MmcPage extends StatelessWidget {
         ),
       ],
       body: MmcTemplate(
+        height: height,
         width: width,
       ),
     );   

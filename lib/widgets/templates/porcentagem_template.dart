@@ -1,12 +1,15 @@
-import 'package:exemplifica/utils/constants/strings/strings_porcentagem.dart';
-import 'package:exemplifica/widgets/atoms/custom_image_asset.dart';
-import 'package:exemplifica/widgets/atoms/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:exemplifica/model/assets_model.dart';
+import 'package:exemplifica/utils/constants/core_strings_assets.dart';
+import 'package:exemplifica/utils/constants/strings/strings_porcentagem.dart';
+import 'package:exemplifica/widgets/molecules/content_list.dart';
 
 class PorcentagemTemplate extends StatelessWidget {
+  final double height;
   final double width;
   const PorcentagemTemplate({
     Key? key,
+    required this.height,
     required this.width,
   }) : super(key: key);
 
@@ -17,77 +20,30 @@ class PorcentagemTemplate extends StatelessWidget {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: <Widget>[
-            CustomText(
-              title: CoreStringsPorcentagem.text1_porcentagem,
-            ),
-            CustomText(
-              title: CoreStringsPorcentagem.text2_porcentagem,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/porcentagem/porcentagem_2.png",
-              width: width * 0.6,
-            ),
-            CustomText(
-              title: CoreStringsPorcentagem.text3_porcentagem,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/porcentagem/porcentagem_3.png",
-              width: width * 0.8,
-            ),
-            CustomText(
-              title: CoreStringsPorcentagem.text4_porcentagem,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/porcentagem/porcentagem_4.png",
-              width: width * 0.55,
-            ),
-            CustomText(
-              title: CoreStringsPorcentagem.text5_porcentagem,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/porcentagem/porcentagem_5.png",
-              width: width * 0.4,
-            ),
-            CustomText(
-              title: CoreStringsPorcentagem.text6_porcentagem,
-            ),
-            CustomText(
-              title: CoreStringsPorcentagem.text7_porcentagem,
-            ),
-            CustomText(
-              title: CoreStringsPorcentagem.text8_porcentagem,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/porcentagem/porcentagem_6.png",
-              width: width * 0.75,
-            ),
-            CustomText(
-              title: CoreStringsPorcentagem.text9_porcentagem,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/porcentagem/porcentagem_7.png",
-              width: width * 0.6,
-            ),
-            CustomText(
-              title: CoreStringsPorcentagem.text10_porcentagem,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/porcentagem/porcentagem_8.png",
-              width: width * 0.8,
-            ),
-            CustomText(
-              title: CoreStringsPorcentagem.text11_porcentagem,
-            ),
-            CustomImageAsset(
-              asset: "images/operacoes/porcentagem/porcentagem_9.png",
-              width: width * 0.7,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 30),
-              child: CustomText(
-                title: CoreStringsPorcentagem.text12_porcentagem,
-              ),
-            ),
+            ContentList(
+              stringsAndAssets: [
+                StringsAndAssetsModel(title: CoreStringsPorcentagem.text1_porcentagem),
+                StringsAndAssetsModel(title: CoreStringsPorcentagem.text2_porcentagem),
+                StringsAndAssetsModel(title: CoreStringsAssets.porcentagem_assets_2, width: width, height: height * 0.15),
+                StringsAndAssetsModel(title: CoreStringsPorcentagem.text3_porcentagem),
+                StringsAndAssetsModel(title: CoreStringsAssets.porcentagem_assets_3, width: width, height: height * 0.05),
+                StringsAndAssetsModel(title: CoreStringsPorcentagem.text4_porcentagem),
+                StringsAndAssetsModel(title: CoreStringsAssets.porcentagem_assets_4, width: width, height: height * 0.05),
+                StringsAndAssetsModel(title: CoreStringsPorcentagem.text5_porcentagem),
+                StringsAndAssetsModel(title: CoreStringsAssets.porcentagem_assets_5, width: width, height: height * 0.2),
+                StringsAndAssetsModel(title: CoreStringsPorcentagem.text6_porcentagem),
+                StringsAndAssetsModel(title: CoreStringsPorcentagem.text7_porcentagem),
+                StringsAndAssetsModel(title: CoreStringsPorcentagem.text8_porcentagem),
+                StringsAndAssetsModel(title: CoreStringsAssets.porcentagem_assets_6, width: width, height: height * 0.15),
+                StringsAndAssetsModel(title: CoreStringsPorcentagem.text9_porcentagem),
+                StringsAndAssetsModel(title: CoreStringsAssets.porcentagem_assets_7, width: width, height: height * 0.2),
+                StringsAndAssetsModel(title: CoreStringsPorcentagem.text10_porcentagem),
+                StringsAndAssetsModel(title: CoreStringsAssets.porcentagem_assets_8, width: width, height: height * 0.15),
+                StringsAndAssetsModel(title: CoreStringsPorcentagem.text11_porcentagem),
+                StringsAndAssetsModel(title: CoreStringsAssets.porcentagem_assets_9, width: width, height: height * 0.2),
+                StringsAndAssetsModel(title: CoreStringsPorcentagem.text12_porcentagem),
+              ],
+            ),            
           ],
         ),
       ),
