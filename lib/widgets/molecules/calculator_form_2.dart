@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
@@ -53,7 +54,7 @@ class CalculatorForm2 extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 50),
                           child: CustomText(
                             title: "100%",
-                            fontSize: 22,
+                            fontSize: CoreFontSize.h_22,
                           ),
                         )
                       : CustomTextField(
@@ -74,7 +75,7 @@ class CalculatorForm2 extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 50),
                     child: CustomText(
                       title: "X",
-                      fontSize: 22,
+                      fontSize: CoreFontSize.h_22,
                     ),
                   )
                 ],

@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:flutter/material.dart';
 
 import 'package:exemplifica/model/assets_model.dart';
@@ -24,17 +25,17 @@ class RegraDe3Template extends StatelessWidget {
             ContentList(
               stringsAndAssets: [
                 StringsAndAssetsModel(title: CoreStringsRegraDe3.text1_regraDe3),
-                StringsAndAssetsModel(title: CoreStringsRegraDe3.text2_regraDe3, textAlign: TextAlign.center, fontSize: 20, fontWeight: FontWeight.bold),
+                StringsAndAssetsModel(title: CoreStringsRegraDe3.text2_regraDe3, textAlign: TextAlign.center, fontSize: CoreFontSize.h_20, fontWeight: FontWeight.bold),
                 StringsAndAssetsModel(title: CoreStringsAssets.regra_de3_assets_3, width: width, height: height * 0.12),
                 StringsAndAssetsModel(title: CoreStringsRegraDe3.text3_regraDe3),
                 StringsAndAssetsModel(title: CoreStringsAssets.regra_de3_assets_4, width: width, height: height * 0.05),
-                StringsAndAssetsModel(title: CoreStringsRegraDe3.text4_regraDe3, color: Colors.red, fontSize: 20),
+                StringsAndAssetsModel(title: CoreStringsRegraDe3.text4_regraDe3, color: Colors.red, fontSize: CoreFontSize.h_20),
                 StringsAndAssetsModel(title: CoreStringsRegraDe3.text5_regraDe3),
                 StringsAndAssetsModel(title: CoreStringsAssets.regra_de3_assets_5, width: width, height: height * 0.15),
                 StringsAndAssetsModel(title: CoreStringsRegraDe3.text6_regraDe3),
                 StringsAndAssetsModel(title: CoreStringsAssets.regra_de3_assets_6, width: width, height: height * 0.05),
                 StringsAndAssetsModel(title: CoreStringsRegraDe3.text7_regraDe3),
-                StringsAndAssetsModel(title: CoreStringsRegraDe3.text10_regraDe3, textAlign: TextAlign.center, fontSize: 20, fontWeight: FontWeight.bold),             
+                StringsAndAssetsModel(title: CoreStringsRegraDe3.text10_regraDe3, textAlign: TextAlign.center, fontSize: CoreFontSize.h_20, fontWeight: FontWeight.bold),             
                 StringsAndAssetsModel(title: CoreStringsRegraDe3.text8_regraDe3),
                 StringsAndAssetsModel(title: CoreStringsRegraDe3.text9_regraDe3),
                 StringsAndAssetsModel(title: CoreStringsAssets.regra_de3_assets_8, width: width, height: height * 0.15),

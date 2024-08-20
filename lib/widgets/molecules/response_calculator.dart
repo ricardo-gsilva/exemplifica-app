@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class ResponseCalculator extends StatelessWidget {
               child: CustomText(
                 textAlign: TextAlign.start,
                 title: response[i],
-                fontSize: 18,
+                fontSize: CoreFontSize.h_18,
               ),
             ),
           );

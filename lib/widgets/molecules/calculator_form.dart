@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
@@ -36,7 +37,7 @@ class CalculatorForm extends StatelessWidget {
           padding: const EdgeInsets.all(25.0),
           child: Column(
             children: [
-              CustomText(title: title??'', fontSize: 22, color: CoreColors.textSecundary, fontWeight: FontWeight.bold,),
+              CustomText(title: title??'', fontSize: CoreFontSize.h_22, color: CoreColors.textSecundary, fontWeight: FontWeight.bold,),
               ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,

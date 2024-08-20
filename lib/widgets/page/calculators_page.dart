@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
 import 'package:exemplifica/widgets/molecules/custom_scaffold.dart';
@@ -19,7 +20,7 @@ class _CalculatorsPageState extends State<CalculatorsPage> {
     return CustomScaffold(
       titleAppBar: CustomText(
         title: CoreStrings.titleCalculadoras,
-        fontSize: 22,),
+        fontSize: CoreFontSize.h_22,),
       leading: true,      
       body: Container(
         child: SingleChildScrollView(
