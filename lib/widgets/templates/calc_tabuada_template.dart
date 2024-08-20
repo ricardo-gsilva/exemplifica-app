@@ -31,7 +31,7 @@ class _CalcTabuadaTemplateState extends State<CalcTabuadaTemplate> {
             ),            
             CalculatorForm(
               controller: [tabuada.nTabuada], 
-              label: ["Valor:"],
+              label: [CoreStrings.valor],
               height: height,
               width: width,
               onTapFirst: (() {

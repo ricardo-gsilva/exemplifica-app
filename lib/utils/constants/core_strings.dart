@@ -21,6 +21,9 @@ class CoreStrings {
   static const String titleRegrasBasicas = 'Regras Básicas';
   static const String calc = 'Calcular';
   static const String clear = 'Limpar';
+  static const String valor = 'Valor:';
+  static const String valor1 = 'Valor 1:';
+  static const String valor2 = 'Valor 2:';
   
   //Calc Equação de 1º Grau
   static const String text1_CalcEquacao1 = 

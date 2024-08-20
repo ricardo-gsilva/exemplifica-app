@@ -31,7 +31,7 @@ class _CalcFatorialTemplateState extends State<CalcFatorialTemplate> {
             ),
             CalculatorForm(
               controller: [fatorial.val1],
-              label: ["Valor:"],
+              label: [CoreStrings.valor],
               height: height,
               width: width,
               onTapFirst: (() {

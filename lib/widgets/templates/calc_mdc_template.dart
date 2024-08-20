@@ -31,7 +31,7 @@ class _CalcMdcTemplateState extends State<CalcMdcTemplate> {
               ),            
               CalculatorForm(
                 controller: [mdc.val1, mdc.val2], 
-                label: ["Valor 1:", "Valor 2:"],
+                label: [CoreStrings.valor1, CoreStrings.valor2],
                 height: height,
                 width: width,
                 onTapFirst: (() {
