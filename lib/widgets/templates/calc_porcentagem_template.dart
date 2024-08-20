@@ -1,4 +1,5 @@
 import 'package:exemplifica/controller/controller_porcentagem.dart';
+import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
 import 'package:exemplifica/widgets/molecules/calculator_form_2.dart';
@@ -27,7 +28,7 @@ class _CalcPorcentagemTemplateState extends State<CalcPorcentagemTemplate> {
           children: <Widget>[
             CustomText(
               title: CoreStrings.text1_CalcPorcentagem,
-              fontSize: 20,
+              fontSize: CoreFontSize.h_20,
             ),  
             CalculatorForm2( 
               height: height, 

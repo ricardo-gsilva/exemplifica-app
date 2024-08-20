@@ -1,4 +1,5 @@
 import 'package:exemplifica/controller/controller_regra_de_3.dart';
+import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
 import 'package:exemplifica/widgets/molecules/calculator_form_2.dart';
@@ -26,7 +27,7 @@ class _CalcRegraDe3TemplateState extends State<CalcRegraDe3Template> {
           children: <Widget>[
             CustomText(
               title: CoreStrings.text1_CalcRegraDe3,
-              fontSize: 20,
+              fontSize: CoreFontSize.h_20,
             ),
             CalculatorForm2(
               height: height,

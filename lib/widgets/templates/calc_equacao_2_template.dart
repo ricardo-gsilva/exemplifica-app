@@ -1,4 +1,5 @@
 import 'package:exemplifica/controller/controller_equacao_2.dart';
+import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/molecules/calculator_form.dart';
 import 'package:exemplifica/widgets/molecules/response_calculator.dart';
@@ -26,7 +27,7 @@ class _CalcEquacao2TemplateState extends State<CalcEquacao2Template> {
             children: <Widget>[
               Text(
                 CoreStrings.text1_CalcEquacao2,
-                style: TextStyle(fontSize: 18.0),
+                style: TextStyle(fontSize: CoreFontSize.h_18),
               ),
               CalculatorForm(
                 title: CoreStrings.text2_CalcEquacao2,

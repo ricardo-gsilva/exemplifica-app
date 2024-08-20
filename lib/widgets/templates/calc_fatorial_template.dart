@@ -1,4 +1,5 @@
 import 'package:exemplifica/controller/controller_fatorial.dart';
+import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
 import 'package:exemplifica/widgets/molecules/calculator_form.dart';
@@ -26,7 +27,7 @@ class _CalcFatorialTemplateState extends State<CalcFatorialTemplate> {
           children: <Widget>[
             CustomText(
               title: CoreStrings.text1_CalcFatorial,
-              fontSize: 20,
+              fontSize: CoreFontSize.h_20,
             ),
             CalculatorForm(
               controller: [fatorial.val1],

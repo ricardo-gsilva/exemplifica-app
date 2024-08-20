@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/atoms/custom_icon_button.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
@@ -14,7 +15,7 @@ class MultiplicacaoDivisaoPage extends StatelessWidget {
     return CustomScaffold(
       titleAppBar: CustomText(
         title: CoreStrings.titleMultipDiv,
-        fontSize: 20,
+        fontSize: CoreFontSize.h_20,
       ),
       leading: true,
       actions: [

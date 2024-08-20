@@ -1,11 +1,9 @@
-// ignore_for_file: must_be_immutable
-
-import 'package:exemplifica/screens/home_page.dart';
+import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:exemplifica/widgets/page/home_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
-  String? version;
+  final String? version;
   SplashScreen({
     this.version,
     super.key});
@@ -58,7 +56,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: SizedBox(
                 child: Text(
                   'Versão: ${widget.version?? ''}',
-                  style: TextStyle(fontSize: 22),
+                  style: TextStyle(fontSize: CoreFontSize.h_22),
                 ),
               ),
             )
