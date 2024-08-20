@@ -71,6 +71,10 @@ class CoreStringsAssets {
   static const String mmc_assets_4 = "images/operacoes/mmc/mmc_4.png";
   static const String mmc_assets_5 = "images/operacoes/mmc/mmc_5.png";
 
+  //MDC
+  static const String mdc_assets_2 = "images/operacoes/mdc/mdc_2.png";
+  static const String mdc_assets_3 = "images/operacoes/mdc/mdc_3.png";
+
   //Porcentagem
   static const String porcentagem_assets_2 = "images/operacoes/porcentagem/porcentagem_2.png";
   static const String porcentagem_assets_3 = "images/operacoes/porcentagem/porcentagem_3.png";
