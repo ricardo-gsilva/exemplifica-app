@@ -84,4 +84,5 @@ class CoreStringsAssets {
   static const String porcentagem_assets_7 = "images/operacoes/porcentagem/porcentagem_7.png";
   static const String porcentagem_assets_8 = "images/operacoes/porcentagem/porcentagem_8.png";
   static const String porcentagem_assets_9 = "images/operacoes/porcentagem/porcentagem_9.png";
+  
 }
