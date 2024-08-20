@@ -1,9 +1,9 @@
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
+import 'package:exemplifica/widgets/molecules/text_field_input.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/atoms/custom_text.dart';
-import 'package:exemplifica/widgets/atoms/custom_text_field.dart';
 import 'package:exemplifica/widgets/molecules/row_button.dart';
 
 class CalculatorForm2 extends StatelessWidget {
@@ -44,7 +44,7 @@ class CalculatorForm2 extends StatelessWidget {
               ),
               Row(
                 children: [
-                  CustomTextField(
+                  CustomTextFieldInput(
                       controller: controller[0],
                       mainAxisAlignment: MainAxisAlignment.start,
                       title: "",
@@ -57,7 +57,7 @@ class CalculatorForm2 extends StatelessWidget {
                             fontSize: CoreFontSize.h_22,
                           ),
                         )
-                      : CustomTextField(
+                      : CustomTextFieldInput(
                           controller: controller[2],
                           mainAxisAlignment: MainAxisAlignment.start,
                           title: "",
@@ -66,7 +66,7 @@ class CalculatorForm2 extends StatelessWidget {
               ),
               Row(
                 children: [
-                  CustomTextField(
+                  CustomTextFieldInput(
                       controller: controller[1],
                       mainAxisAlignment: MainAxisAlignment.start,
                       title: "",
