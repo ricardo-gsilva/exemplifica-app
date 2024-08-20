@@ -1,6 +1,7 @@
+import 'package:exemplifica/domain/usecase/control_field.dart';
 import 'package:flutter/material.dart';
 
-class ControllerFatorial {
+class ControllerFatorial implements ControlField{
 
   static ControllerFatorial? _instance;
 
@@ -16,8 +17,9 @@ class ControllerFatorial {
   String resultFat = "";
   String resultFinal = "";
   String infoFatorial = "";  
-  bool visible = false;
-
+  bool visible = false;  
+  
+  @override
   void resetCampos() {
     visible = false;
     val1.clear();
@@ -25,7 +27,8 @@ class ControllerFatorial {
     resultFinal = "";
     infoFatorial = "";
   }
-
+  
+  @override
   void verificarCampos() {
     if (val1.text.isEmpty) {
       visible = true;
@@ -36,11 +39,12 @@ class ControllerFatorial {
       resultFat = "";
       resultFinal = "";
       infoFatorial = "";
-      fatorial();
+      calcular();
     }
   }
 
-  void fatorial() {
+  @override
+  void calcular() {
     visible = true;
     int valFatorial = int.parse(val1.text);
     if (valFatorial == 0) {

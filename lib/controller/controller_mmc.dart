@@ -1,6 +1,7 @@
+import 'package:exemplifica/domain/usecase/control_field.dart';
 import 'package:flutter/material.dart';
 
-class ControllerMmc {
+class ControllerMmc implements ControlField {
   static ControllerMmc? _instance;
 
   ControllerMmc._();
@@ -24,6 +25,7 @@ class ControllerMmc {
   int divi = 0;
   int cachei = 0;
 
+  @override
   void resetCampos() {
     visible = false;
     val1.clear();
@@ -31,24 +33,20 @@ class ControllerMmc {
     resultMmc = "";
     resultMmc1 = "";
   }
-
-  void resetResponse() {
-    resultMmc = "";
-    resultMmc1 = "";
-  }
-
+  
+  @override
   void verificarCampos() {
     visible = true;
     if (val1.text.isEmpty || val2.text.isEmpty) {      
       resultMmc = "Por favor, preencha os campos!\nUtilize valores até 99999!";
       resultMmc1 = "";
     } else {
-      resetResponse();
-      calcularMmc();
+      calcular();
     }
   }
-
-  void calcularMmc() {
+  
+  @override
+  void calcular() {
     visible = true;
     valormmc1 = double.parse(val1.text);
     valormmc2 = double.parse(val2.text);

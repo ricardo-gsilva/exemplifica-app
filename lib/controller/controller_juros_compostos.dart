@@ -1,8 +1,9 @@
 import 'dart:math';
+import 'package:exemplifica/domain/usecase/control_field.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ConstrollerJurosCompostos {
+class ConstrollerJurosCompostos implements ControlField {
   static ConstrollerJurosCompostos? _instance;
 
   ConstrollerJurosCompostos._();
@@ -50,8 +51,8 @@ class ConstrollerJurosCompostos {
   NumberFormat dfJs2 = new NumberFormat("0.00");
   NumberFormat dfJs3 = new NumberFormat("R\$0.00");
 
-
-
+   
+  @override
   void resetCampos() {
     visible = false;
     c.clear();
@@ -61,7 +62,8 @@ class ConstrollerJurosCompostos {
     resultjC = "";
     resultjC_1 = "";
   }
-
+  
+  @override
   void verificarCampos() {
     visible = true;
     if ((c.text.isEmpty) && (i.text.isEmpty) && (t.text.isEmpty)) {
@@ -73,11 +75,12 @@ class ConstrollerJurosCompostos {
       resultjC_1 = "";
     } else {
       resultjC = "";
-      jurosCompostos();
+      calcular();
     }
   }
 
-  void jurosCompostos() {
+  @override
+  void calcular() {
     c1 = c.text;
     i1 = i.text;
     t1 = t.text;

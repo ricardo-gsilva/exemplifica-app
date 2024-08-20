@@ -1,7 +1,8 @@
+import 'package:exemplifica/domain/usecase/control_field.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ControllerPorcentagem {
+class ControllerPorcentagem implements ControlField {
   static ControllerPorcentagem? _instance;
 
   ControllerPorcentagem._();
@@ -25,26 +26,29 @@ class ControllerPorcentagem {
   String resultf = "";
 
   NumberFormat format1 = NumberFormat("0");
-  NumberFormat format2 = NumberFormat("0.00");
-
+  NumberFormat format2 = NumberFormat("0.00");  
+  
+  @override
   void resetCampos() {
     visible = false;
     val1.clear();
     val2.clear();
     resultPorcent = "";
   }
-
+  
+  @override
   void verificarCampos() {
     visible = true;
     if (val1.text.isEmpty || val2.text.isEmpty) {      
       resultPorcent = "Por favor, preencha os campos!";
     } else {
       resultPorcent = "";
-      calcularPorcentagem();
+      calcular();
     }
   }
 
-  void calcularPorcentagem() {
+  @override
+  void calcular() {
     visible = true;
     valor1 = double.parse(val1.text);
     valor2 = double.parse(val2.text);

@@ -1,8 +1,9 @@
 import 'dart:math';
+import 'package:exemplifica/domain/usecase/control_field.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ControllerEquacao2 {
+class ControllerEquacao2 implements ControlField{
   static ControllerEquacao2? _instance;
 
   ControllerEquacao2._();
@@ -62,6 +63,7 @@ class ControllerEquacao2 {
 
   bool visible = false;
 
+  @override
   void resetCampos() {
     visible = false;
     val1.clear();
@@ -73,17 +75,19 @@ class ControllerEquacao2 {
     resultEq2_3 = "";
     resultEq2_4 = "";
   }
-
-  void verificarCampo() {
+  
+  @override
+  void verificarCampos() {
     if (val1.text.isEmpty || val2.text.isEmpty || val3.text.isEmpty) {
       visible = true;
       resultEq2 = "Por favor, preencha os campos!";
     } else {
-      calcularEquacao2();
+      calcular();
     }
   }
 
-  void calcularEquacao2() {
+  @override
+  void calcular() {
     visible = true;
     a = double.parse(val1.text);
     b = double.parse(val2.text);
@@ -257,4 +261,6 @@ class ControllerEquacao2 {
         " e \n"
         "x2 = $eq2X2\n";
   }
+  
+  
 }
