@@ -1,4 +1,4 @@
-import 'package:exemplifica/person_icons.dart';
+import 'package:exemplifica/utils/person_icons.dart';
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/widgets/atoms/custom_icon_button.dart';
