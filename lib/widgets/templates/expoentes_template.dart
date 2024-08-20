@@ -15,37 +15,40 @@ class ExpoentesTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[
-          ContentList(
-            stringsAndAssets: [
-              StringsAndAssetsModel(
-                title: CoreStringsExpoentes.text1_expoentes,
-              ),
-              StringsAndAssetsModel(
-                  title: CoreStringsAssets.expoentes_assets_2,
-                  height: height * 0.05),
-              StringsAndAssetsModel(
-                title: CoreStringsExpoentes.text2_expoentes,
-              ),
-              StringsAndAssetsModel(
-                  title: CoreStringsAssets.expoentes_assets_3,
-                  height: height * 0.05),
-              StringsAndAssetsModel(
-                title: CoreStringsExpoentes.text3_expoentes,
-              ),
-              StringsAndAssetsModel(
-                  title: CoreStringsAssets.expoentes_assets_4,
-                  height: height * 0.05),
-              StringsAndAssetsModel(
-                title: CoreStringsExpoentes.text4_expoentes,
-              ),
-              StringsAndAssetsModel(
-                  title: CoreStringsAssets.expoentes_assets_5,
-                  height: height * 0.05),
-            ],
-          ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: <Widget>[
+            ContentList(
+              stringsAndAssets: [
+                StringsAndAssetsModel(
+                  title: CoreStringsExpoentes.text1_expoentes,
+                ),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.expoentes_assets_2,
+                    height: height * 0.1),
+                StringsAndAssetsModel(
+                  title: CoreStringsExpoentes.text2_expoentes,
+                ),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.expoentes_assets_3,
+                    height: height * 0.04),
+                StringsAndAssetsModel(
+                  title: CoreStringsExpoentes.text3_expoentes,
+                ),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.expoentes_assets_4,
+                    height: height * 0.05),
+                StringsAndAssetsModel(
+                  title: CoreStringsExpoentes.text4_expoentes,
+                ),
+                StringsAndAssetsModel(
+                    title: CoreStringsAssets.expoentes_assets_5,
+                    height: height * 0.05),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
