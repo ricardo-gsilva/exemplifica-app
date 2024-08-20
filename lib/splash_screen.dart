@@ -1,6 +1,6 @@
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:exemplifica/utils/constants/core_strings_assets.dart';
-import 'package:exemplifica/widgets/page/home_page.dart';
+import 'package:exemplifica/view/page/home_page.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
