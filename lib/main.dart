@@ -1,9 +1,8 @@
+import 'package:exemplifica/view/page/splash_screen_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-
-import 'package:exemplifica/splash_screen.dart';
 
 late bool releaseMode;
 
@@ -28,8 +27,7 @@ class ScreenExemplifica extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: Container(),
-      home: SplashScreen(version: version),   
+      home: SplashScreenPage(version: version),   
     );
   }
 }
