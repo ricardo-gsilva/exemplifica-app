@@ -31,16 +31,15 @@ void main() {
     test(
       "Testando resultado do metodo calcular",
       () {
-        equacao1.val1.text = "6";
-        equacao1.val2.text = "16";
-        equacao1.calcular();
         double a = double.parse(equacao1.val1.text);
         double b = double.parse(equacao1.val2.text);
+        a = 6;
+        b = 16;
+        equacao1.calcular();
+        
         String valorX = equacao1.valorX(a, b);
         expect(valorX, "2.67");
       },
     );
-
-
   });
 }
