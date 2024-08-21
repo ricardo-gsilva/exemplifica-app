@@ -44,9 +44,9 @@ class ControllerEquacao1 implements ControlField{
   
   @override
   void verificarCampos() {
+    visible = true;
     if (val1.text.isEmpty || val2.text.isEmpty) {
-      resultEq1_1 = "Por favor, preencha os campos!";
-      visible = true;
+      resultEq1_1 = "Por favor, preencha os campos!";      
     } else {
       calcular();
     }
@@ -54,8 +54,8 @@ class ControllerEquacao1 implements ControlField{
 
   @override
   void calcular(){
-    double a = double.parse(val1.text);
-    double b = double.parse(val2.text);
+    a = double.parse(val1.text);
+    b = double.parse(val2.text);
 
     format_a = val1.text;
     format_r = formatEq1_1.format(r);
