@@ -16,6 +16,8 @@ class ControllerTabuada implements ControlField {
   String infoText = "";
   String dica = "";
   bool visible = false;
+  int i = 0;
+  int val = 0; 
   
   @override
   void resetCampos() {
@@ -39,8 +41,7 @@ class ControllerTabuada implements ControlField {
 
   @override
   void calcular() {
-    int i;
-    int val = int.parse(nTabuada.text);
+    val = int.parse(nTabuada.text);
     if (val > 99999) {
       infoText = "Informe um novo valor menor ou igual a 99999!";
     } else {

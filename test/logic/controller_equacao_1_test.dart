@@ -22,9 +22,18 @@ void main() {
     test(
       "Testando verificação de campos na calculadora de Equação de 1 Grau",
       () {
+        equacao1.val1.text = "";
+        equacao1.val2.text = "";
         equacao1.verificarCampos();
+
         expect(equacao1.resultEq1_1, "Por favor, preencha os campos!");
         expect(equacao1.visible, true);
+
+        equacao1.val1.text = "2";
+        equacao1.val2.text = "3";
+        equacao1.verificarCampos();
+        var teste = equacao1.calcular;
+        expect(teste, equacao1.calcular);
       },
     );
 
