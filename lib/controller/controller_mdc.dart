@@ -23,6 +23,7 @@ class ControllerMdc implements ControlField {
   int a = 0;
   int b = 0;
   int rest = 0;
+  int mdc = 0;
 
   bool visible = false;
   
@@ -91,9 +92,10 @@ class ControllerMdc implements ControlField {
           }
         }
       }
+      mdc = a;
       resultMdc1 = resultMdc1 +
           "Os valores a serem utilizados, serão os que estão com o símbolo de Ok ao lado."
-              " Multiplicando todos esses valores, temos o valor do MDC: $a"
+              " Multiplicando todos esses valores, temos o valor do MDC: $mdc"
               "\n";
     }
   }

@@ -45,13 +45,13 @@ class ControllerRegraDe3 implements ControlField {
       resultRegra3 = "Por favor, preencha os campos!";
     } else {
       resultRegra3 = "";
+      visible = true;
       calcular();
     }
   }
 
   @override
-  void calcular() {
-    visible = true;
+  void calcular() {    
     valor1 = double.parse(val1.text);
     valor2 = double.parse(val2.text);
     valor3 = double.parse(val3.text);

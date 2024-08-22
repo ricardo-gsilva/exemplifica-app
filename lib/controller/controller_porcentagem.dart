@@ -49,7 +49,6 @@ class ControllerPorcentagem implements ControlField {
 
   @override
   void calcular() {
-    visible = true;
     valor1 = double.parse(val1.text);
     valor2 = double.parse(val2.text);
     mult2 = valor2 * 100;
@@ -58,7 +57,7 @@ class ControllerPorcentagem implements ControlField {
     valor1f = "";
     valor2f = "";
     mult2f = "";
-    String resultf = "";
+    resultf = "";
 
     if (valor1 == valor1.floor()) {
       valor1f = format1.format((valor1));

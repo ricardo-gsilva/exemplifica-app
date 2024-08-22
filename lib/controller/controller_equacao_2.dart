@@ -82,13 +82,13 @@ class ControllerEquacao2 implements ControlField{
       visible = true;
       resultEq2 = "Por favor, preencha os campos!";
     } else {
+      visible = true;
       calcular();
     }
   }
 
   @override
   void calcular() {
-    visible = true;
     a = double.parse(val1.text);
     b = double.parse(val2.text);
     c = double.parse(val3.text);
@@ -105,7 +105,7 @@ class ControllerEquacao2 implements ControlField{
     bRaizX2 = ((-1 * b) - sqrt(delta));
 
     if (a == 0) {
-      resultEq2 = "O valor de 'a' não pode ser 0." + "\n";
+      resultEq2 = "O valor de 'a' não pode ser 0.""\n";
     } else {
       if (delta < 0.0) {
         deltaMenorQueZero();
@@ -153,8 +153,7 @@ class ControllerEquacao2 implements ControlField{
         "Δ = $eq2Delta";
 
     resultEq2_1 =
-        "O valor de Delta é negativo. Portanto, não existem raízes reais!" +
-            "\n";
+        "O valor de Delta é negativo. Portanto, não existem raízes reais!""\n";
     resultEq2_2 = "";
     resultEq2_3 = "";
     resultEq2_4 = "";
@@ -240,10 +239,12 @@ class ControllerEquacao2 implements ControlField{
         "Δ = $eq2Delta";
 
     //______________________________________________________________________
-
-    resultEq2_1 =
-        "O valor de Delta é positivo. Portanto, existem duas raízes reais!" +
-            "\n";
+    if(delta == 0){
+      resultEq2_1 = "O valor de delta é 0. Portanto, existe uma raiz real.""\n";
+    } else {
+      resultEq2_1 =
+        "O valor de Delta é positivo. Portanto, existem duas raízes reais!""\n";  
+    }
 
     resultEq2_2 = "x = – b ± √Δ / 2.a\n\n"
         "x1 = (-($eq2B) + √$eq2Delta) / (2 * $eq2A)\n"
