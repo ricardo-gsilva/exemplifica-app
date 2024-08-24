@@ -1,4 +1,3 @@
-import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/utils/person_icons.dart';
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
@@ -32,7 +31,6 @@ class JurosCompostosPage extends StatelessWidget {
         ),
       ],
       body: JurosCompostosTemplate(
-        key: Key(CoreKeys.jurosCompostosTemplate),
         width: width,
         height: height,
       ),

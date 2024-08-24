@@ -1,22 +1,22 @@
 import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/utils/constants/core_strings_assets.dart';
-import 'package:exemplifica/utils/constants/strings/strings_tabuada.dart';
+import 'package:exemplifica/utils/constants/strings/strings_mdc.dart';
 import 'package:exemplifica/utils/person_icons.dart';
 import 'package:exemplifica/view/page/home_page.dart';
-import 'package:exemplifica/view/page/tabuada_page.dart';
+import 'package:exemplifica/view/page/mdc_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group(
-    "Testes para a tela de Fatorial",
+    "Testes para a tela de Mdc",
     () {
       testWidgets(
-        "Teste de widgets da tela de Tabuada",
+        "Teste de widgets da tela de Mdc",
         (WidgetTester tester) async {
           await tester.pumpWidget(MaterialApp(
-            home: TabuadaPage(),
+            home: MdcPage(),
           ));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
@@ -28,54 +28,49 @@ void main() {
           expect(iconsHome, findsOneWidget);
           expect(iconsReply, findsOneWidget);
           expect(contentList, findsOneWidget);
-          expect(customImageAsset, findsNWidgets(3));
-          expect(customText, findsNWidgets(7));
+          expect(customImageAsset, findsNWidgets(2));
+          expect(customText, findsNWidgets(6));
         },
       );
 
       testWidgets(
-        "Teste de conteudo carregado na tela de Tabuada",
+        "Teste de conteudo carregado na tela de Mdc",
         (WidgetTester tester) async {
           await tester.pumpWidget(MaterialApp(
-            home: TabuadaPage(),
+            home: MdcPage(),
           ));
-
-          final textTabuada1 = find.text(CoreStringsTabuada.text1_tabuada);
-          final textTabuada2 = find.text(CoreStringsTabuada.text2_tabuada);
-          final textTabuada3 = find.text(CoreStringsTabuada.text3_tabuada);
-          final textTabuada4 = find.text(CoreStringsTabuada.text4_tabuada);
-          final textTabuada5 = find.text(CoreStringsTabuada.text5_tabuada);
-          final textTabuada6 = find.text(CoreStringsTabuada.text6_tabuada);
+              
+          final textMdc1 = find.text(CoreStringsMdc.text1_mdc);
+          final textMdc2 = find.text(CoreStringsMdc.text2_mdc);
+          final textMdc3 = find.text(CoreStringsMdc.text3_mdc);
+          final textMdc4 = find.text(CoreStringsMdc.text4_mdc);
+          final textMdc5 = find.text(CoreStringsMdc.text5_mdc);
 
           final textAssetImage2 =
-              find.image(AssetImage(CoreStringsAssets.tabuada_assets_2));
+              find.image(AssetImage(CoreStringsAssets.mdc_assets_2));
           final textAssetImage3 =
-              find.image(AssetImage(CoreStringsAssets.tabuada_assets_3));
-          final textAssetImage5 =
-              find.image(AssetImage(CoreStringsAssets.tabuada_assets_4));;
+              find.image(AssetImage(CoreStringsAssets.mdc_assets_3));
 
-          expect(textTabuada1, findsOneWidget);
-          expect(textTabuada2, findsOneWidget);
-          expect(textTabuada3, findsOneWidget);
-          expect(textTabuada4, findsOneWidget);
-          expect(textTabuada5, findsOneWidget);
-          expect(textTabuada6, findsOneWidget);
-
+          expect(textMdc1, findsOneWidget);
+          expect(textMdc2, findsOneWidget);
+          expect(textMdc3, findsOneWidget);
+          expect(textMdc4, findsOneWidget);
+          expect(textMdc5, findsOneWidget);
+          
           expect(textAssetImage2, findsOneWidget);
           expect(textAssetImage3, findsOneWidget);
-          expect(textAssetImage5, findsOneWidget);
         },
       );
 
       testWidgets(
-        "Testando os botōes da AppBar na tela de Tabuada",
+        "Testando os botōes da AppBar na tela de Mdc",
         (WidgetTester tester) async {
           await tester.pumpWidget(MaterialApp(
             home: HomePage(),
           ));
 
           await tester.tap(find.text(
-            CoreStrings.titleTabuada,
+            CoreStrings.titleMdc,
           ));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
@@ -86,15 +81,14 @@ void main() {
           expect(homePageTemplate, findsOneWidget);
 
           await tester.tap(find.text(
-            CoreStrings.titleTabuada,
+            CoreStrings.titleMdc,
           ));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.byIcon(Person.calc));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          final calcTabuadaTemplate =
-              find.byKey(Key(CoreKeys.calcTabuadaTemplate));
-          expect(calcTabuadaTemplate, findsOneWidget);
+          final calcMdcTemplate = find.byKey(Key(CoreKeys.calcMdcTemplate));
+          expect(calcMdcTemplate, findsOneWidget);
         },
       );
     },

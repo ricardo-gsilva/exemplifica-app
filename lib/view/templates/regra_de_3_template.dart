@@ -1,4 +1,5 @@
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:flutter/material.dart';
 
 import 'package:exemplifica/model/assets_model.dart';
@@ -18,6 +19,7 @@ class RegraDe3Template extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      key: Key(CoreKeys.regraDe3Template),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
