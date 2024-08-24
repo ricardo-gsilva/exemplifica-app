@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/view/atoms/custom_image_asset.dart';
 import 'package:exemplifica/view/atoms/custom_text.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,9 @@ class _SplashScreenTemplateState extends State<SplashScreenTemplate> {
         Container(
           width: width,
           height: height,
-          child: Image(image: AssetImage(CoreStringsAssets.splashScreen_background),
+          child: Image(
+            key: Key(CoreKeys.bakcgroundSplashScreen),
+            image: AssetImage(CoreStringsAssets.splashScreen_background),
               fit: BoxFit.cover),
         ),
         Container(
@@ -50,7 +53,9 @@ class _SplashScreenTemplateState extends State<SplashScreenTemplate> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width * .8,
-                child: CustomImageAsset(asset: CoreStringsAssets.logoExemplifica),
+                child: CustomImageAsset(
+                  key: Key(CoreKeys.logoExemplifica),
+                  asset: CoreStringsAssets.logoExemplifica),
               )
             ],
           ),

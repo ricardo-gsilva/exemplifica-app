@@ -29,7 +29,7 @@ class RegrasSinaisPage extends StatelessWidget {
           },
         ),
       ],
-      body: RegrasSinaisTemplate(
+      body: RegrasSinaisTemplate(        
         width: width,
         height: height,
       ),

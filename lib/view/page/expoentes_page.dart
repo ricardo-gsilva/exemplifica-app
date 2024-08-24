@@ -29,7 +29,7 @@ class ExpoentesPage extends StatelessWidget {
           },
         ),
       ],
-      body: ExpoentesTemplate(
+      body: ExpoentesTemplate(        
         width: width,
         height: height,
       ),

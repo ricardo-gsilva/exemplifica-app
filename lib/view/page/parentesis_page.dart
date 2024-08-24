@@ -29,7 +29,7 @@ class ParentesisPage extends StatelessWidget {
           },
         ),
       ],
-      body: ParentesisTemplate(
+      body: ParentesisTemplate(        
         width: width,
         height: height,
       ),

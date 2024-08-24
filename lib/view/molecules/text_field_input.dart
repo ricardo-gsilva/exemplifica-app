@@ -1,5 +1,6 @@
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/view/atoms/custom_text.dart';
 import 'package:exemplifica/view/atoms/custom_text_field.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +21,7 @@ class CustomTextFieldInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
+      key: Key(CoreKeys.textFieldInput),
       padding: const EdgeInsets.only(left: 15, right: 15, bottom: 5, top: 5),
       child: SizedBox(
         child: Row(

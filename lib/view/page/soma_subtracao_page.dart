@@ -28,7 +28,7 @@ class SomaSubtracaoPage extends StatelessWidget {
           },
         ),
       ],
-      body: SomaSubtracaoTemplate(
+      body: SomaSubtracaoTemplate(        
         width: width,
       ),
     );

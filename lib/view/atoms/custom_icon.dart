@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:flutter/material.dart';
 
 class CustomIcon extends StatelessWidget {
@@ -15,6 +16,7 @@ class CustomIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Icon(
+      key: Key(CoreKeys.customIcon),
       icon,
       color: color,
       size: sizeIcon,

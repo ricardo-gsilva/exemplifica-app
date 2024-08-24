@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
@@ -18,6 +19,7 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
+      key: Key(CoreKeys.customCard),
       height: height,
       width: width,
       child: InkWell(

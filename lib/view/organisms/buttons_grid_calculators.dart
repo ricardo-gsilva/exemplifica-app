@@ -1,4 +1,6 @@
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
+import 'package:exemplifica/view/molecules/row_buttons.dart';
 import 'package:exemplifica/view/page/calc_equacao_1_page.dart';
 import 'package:exemplifica/view/page/calc_equacao_2_page.dart';
 import 'package:exemplifica/view/page/calc_fatorial_page.dart';
@@ -10,9 +12,7 @@ import 'package:exemplifica/view/page/calc_porcentagem_page.dart';
 import 'package:exemplifica/view/page/calc_regra_de_3_page.dart';
 import 'package:exemplifica/view/page/calc_tabuada_page.dart';
 import 'package:flutter/material.dart';
-
 import 'package:exemplifica/view/atoms/custom_button.dart';
-import 'package:exemplifica/view/molecules/row_button_calculators.dart';
 
 class ButtonsGridCalculators extends StatelessWidget {
   final double height;
@@ -29,6 +29,7 @@ class ButtonsGridCalculators extends StatelessWidget {
     double customButtonWidth = width;
     double rowButtonWidth = width * 0.47;
     return Column(
+      key: Key(CoreKeys.buttonsGridCalculators),
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Padding(
@@ -43,7 +44,7 @@ class ButtonsGridCalculators extends StatelessWidget {
             width: customButtonWidth,
           ),
         ),
-        RowButtonCalculators(
+        RowButtons(
           height: height,
           width: rowButtonWidth,
           titleFirst: CoreStrings.titleEquacao1,
@@ -69,7 +70,7 @@ class ButtonsGridCalculators extends StatelessWidget {
             width: customButtonWidth,
           ),
         ),
-        RowButtonCalculators(
+        RowButtons(
           height: height,
           width: rowButtonWidth,
           titleFirst: CoreStrings.titleJurosSimples,
@@ -95,7 +96,7 @@ class ButtonsGridCalculators extends StatelessWidget {
             width: customButtonWidth,
           ),
         ),
-        RowButtonCalculators(
+        RowButtons(
           height: height,
           width: rowButtonWidth,
           titleFirst: CoreStrings.titleMmc,

@@ -1,5 +1,6 @@
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -18,6 +19,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      key: Key(CoreKeys.customTextField),
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
           filled: true,

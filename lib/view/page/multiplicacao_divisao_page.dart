@@ -28,7 +28,7 @@ class MultiplicacaoDivisaoPage extends StatelessWidget {
           },
         ),
       ],
-      body: MultiplicacaoDivisaoTemplate(
+      body: MultiplicacaoDivisaoTemplate(        
         width: width,
         height: height,
       ),

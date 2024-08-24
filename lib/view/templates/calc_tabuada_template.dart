@@ -1,5 +1,6 @@
 import 'package:exemplifica/controller/controller_tabuada.dart';
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/view/atoms/custom_text.dart';
 import 'package:exemplifica/view/molecules/calculator_form.dart';
@@ -27,6 +28,7 @@ class _CalcTabuadaTemplateState extends State<CalcTabuadaTemplate> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return SingleChildScrollView(
+      key: Key(CoreKeys.calcTabuadaTemplate),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(

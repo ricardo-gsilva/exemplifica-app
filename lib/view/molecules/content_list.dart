@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:flutter/material.dart';
 
 import 'package:exemplifica/model/assets_model.dart';
@@ -14,6 +15,7 @@ class ContentList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      key: Key(CoreKeys.contentList),
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemCount: stringsAndAssets.length,

@@ -1,5 +1,6 @@
 import 'package:exemplifica/model/assets_model.dart';
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/utils/constants/core_strings_assets.dart';
 import 'package:exemplifica/utils/constants/strings/strings_fatorial.dart';
 import 'package:exemplifica/view/molecules/content_list.dart';
@@ -17,6 +18,7 @@ class FatorialTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      key: Key(CoreKeys.fatorialTemplate),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
@@ -56,7 +58,7 @@ class FatorialTemplate extends StatelessWidget {
                 StringsAndAssetsModel(title: CoreStringsAssets.fatorial_assets_19, width: width, height: height * 0.15),
                 StringsAndAssetsModel(title: CoreStringsFatorial.text20_Fatorial, textAlign: TextAlign.center),
                 StringsAndAssetsModel(title: CoreStringsAssets.fatorial_assets_20, width: width, height: height * 0.15),
-                StringsAndAssetsModel(title: CoreStringsFatorial.text21_Fatorial, textAlign: TextAlign.center),
+                StringsAndAssetsModel(title: CoreStringsFatorial.text13_Fatorial, textAlign: TextAlign.center),
                 StringsAndAssetsModel(title: CoreStringsAssets.fatorial_assets_21, width: width, height: height * 0.15),
               ],
             ),          

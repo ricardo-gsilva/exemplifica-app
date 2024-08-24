@@ -1,4 +1,5 @@
 import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:flutter/material.dart';
 
 class CustomText extends StatelessWidget {
@@ -20,6 +21,7 @@ class CustomText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
+      key: Key(CoreKeys.customText),
       padding: const EdgeInsets.all(5.0),
       child: Text(
         title,

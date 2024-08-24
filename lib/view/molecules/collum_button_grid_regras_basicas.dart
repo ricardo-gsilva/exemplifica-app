@@ -1,3 +1,5 @@
+import 'package:exemplifica/utils/constants/core_keys.dart';
+import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/view/page/expoentes_page.dart';
 import 'package:exemplifica/view/page/multiplicacao_divisao_page.dart';
 import 'package:exemplifica/view/page/parentesis_page.dart';
@@ -19,17 +21,18 @@ class ButtonGridRegrasBasicas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      key: Key(CoreKeys.buttonGridRegrasBasicas),
       children: <Widget>[
         CustomButton(
           height: height,
           width: width,
-          title: "1º Parêntesis",
+          title: CoreStrings.titleButtonParentesis,
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (_) => ParentesisPage()));
           },
         ),
         CustomButton(
-          title: "2º Expoentes",
+          title: CoreStrings.titleButtonExpoentes,
           onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (_) => ExpoentesPage()));
           },
@@ -37,7 +40,7 @@ class ButtonGridRegrasBasicas extends StatelessWidget {
           width: width,
         ),
         CustomButton(
-          title: "3º Multiplicações e Divisões",
+          title: CoreStrings.titleButtonMultipDiv,
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (_) => MultiplicacaoDivisaoPage()));
           },
@@ -45,7 +48,7 @@ class ButtonGridRegrasBasicas extends StatelessWidget {
           width: width,
         ),
         CustomButton(
-          title: "4º Somas e Subtrações",
+          title: CoreStrings.titleButtonSomaSub,
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (_) => SomaSubtracaoPage()));
           },
@@ -53,7 +56,7 @@ class ButtonGridRegrasBasicas extends StatelessWidget {
           width: width,
         ),
         CustomButton(
-          title: "Regras de Sinais",
+          title: CoreStrings.titleButtonRegraSinal,
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (_) => RegrasSinaisPage()));
           },

@@ -1,4 +1,5 @@
 import 'package:exemplifica/model/assets_model.dart';
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/view/molecules/content_list.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/utils/constants/strings/strings_soma_sub.dart';
@@ -13,6 +14,7 @@ class SomaSubtracaoTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      key: Key(CoreKeys.somaSubtracaoTemplate),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(

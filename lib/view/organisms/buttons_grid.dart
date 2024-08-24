@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/view/page/equacao_1_page.dart';
 import 'package:exemplifica/view/page/equacao_2_page.dart';
@@ -10,7 +11,7 @@ import 'package:exemplifica/view/page/porcentagem_page.dart';
 import 'package:exemplifica/view/page/regra_de_3_page.dart';
 import 'package:exemplifica/view/page/tabuada_page.dart';
 import 'package:flutter/material.dart';
-import 'package:exemplifica/view/molecules/row_button.dart';
+import 'package:exemplifica/view/molecules/row_buttons.dart';
 
 class ButtonsGrid extends StatelessWidget {
   final double height;
@@ -24,6 +25,7 @@ class ButtonsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      key: Key(CoreKeys.buttonsGrid),
       children: [
         RowButtons(
           height: height,

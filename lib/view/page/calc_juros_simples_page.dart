@@ -1,4 +1,5 @@
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/view/atoms/custom_appBar.dart';
 import 'package:exemplifica/view/atoms/custom_icon_button.dart';
@@ -31,7 +32,9 @@ class CalcJurosSimplesPage extends StatelessWidget {
           },
         )
       ],
-      body: CalcJurosSimplesTemplate(),
+      body: CalcJurosSimplesTemplate(
+        key: Key(CoreKeys.calcJurosSimplesTemplate),
+      ),
     );
   }
 }

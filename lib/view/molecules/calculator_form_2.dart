@@ -1,10 +1,11 @@
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/view/molecules/text_field_input.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/view/atoms/custom_text.dart';
-import 'package:exemplifica/view/molecules/row_button.dart';
+import 'package:exemplifica/view/molecules/row_buttons.dart';
 
 class CalculatorForm2 extends StatelessWidget {
   final double height;
@@ -24,6 +25,7 @@ class CalculatorForm2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
+      key: Key(CoreKeys.calculatorForm2),
       padding: const EdgeInsets.only(top: 10),
       child: Container(
         decoration: BoxDecoration(

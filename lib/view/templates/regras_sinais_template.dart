@@ -1,5 +1,6 @@
 import 'package:exemplifica/model/assets_model.dart';
 import 'package:exemplifica/utils/constants/core_colors.dart';
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/utils/constants/core_strings_assets.dart';
 import 'package:exemplifica/utils/constants/strings/strings_regras_sinais.dart';
 import 'package:exemplifica/view/molecules/content_list.dart';
@@ -17,6 +18,7 @@ class RegrasSinaisTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      key: Key(CoreKeys.regrasSinaisTemplate),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
