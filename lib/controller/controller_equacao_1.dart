@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 
-class ControllerEquacao1 implements ControlFieldWithLabel {  
+class ControllerEquacao1 implements ControlFieldWithLabel{  
 
   static ControllerEquacao1? _instance;
   

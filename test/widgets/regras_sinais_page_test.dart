@@ -3,7 +3,6 @@ import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/utils/constants/core_strings_assets.dart';
 import 'package:exemplifica/utils/constants/strings/strings_regras_sinais.dart';
 import 'package:exemplifica/view/page/regras_basicas_page.dart';
-import 'package:exemplifica/view/page/regras_sinais_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 

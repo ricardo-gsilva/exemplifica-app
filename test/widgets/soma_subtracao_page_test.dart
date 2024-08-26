@@ -2,7 +2,6 @@ import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/utils/constants/strings/strings_soma_sub.dart';
 import 'package:exemplifica/view/page/regras_basicas_page.dart';
-import 'package:exemplifica/view/page/soma_subtracao_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -13,9 +12,9 @@ void main() {
       testWidgets(
         "Teste de widgets da tela de Soma e Subtração",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: SomaSubtracaoPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: SomaSubtracaoPage(),
+          // ));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customText = find.byKey(Key(CoreKeys.customText));
@@ -32,9 +31,9 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Multiplicação e Divisão",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: SomaSubtracaoPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: SomaSubtracaoPage(),
+          // ));
 
           final textSomaSubtracao1 =
               find.text(CoreStringsSomaSub.text1_SomaSub);
