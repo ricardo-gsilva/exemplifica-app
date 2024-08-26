@@ -1,9 +1,9 @@
 import 'dart:math';
-import 'package:exemplifica/domain/usecase/control_field.dart';
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ControllerEquacao2 implements ControlField{
+class ControllerEquacao2 implements ControlFieldWithLabel {
   static ControllerEquacao2? _instance;
 
   ControllerEquacao2._();
@@ -261,6 +261,27 @@ class ControllerEquacao2 implements ControlField{
         "x1 = $eq2X1\n"
         " e \n"
         "x2 = $eq2X2\n";
+  }
+  
+  @override
+  List<String> responseList() {
+    return [
+      resultEq2,
+      resultEq2_1,
+      resultEq2_2,
+      resultEq2_3,
+      resultEq2_4
+    ];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [val1, val2, val3];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["a:", "b:", "c:"];
   }
   
   

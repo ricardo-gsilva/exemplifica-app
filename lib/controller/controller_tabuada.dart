@@ -1,7 +1,7 @@
-import 'package:exemplifica/domain/usecase/control_field.dart';
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 
-class ControllerTabuada implements ControlField {
+class ControllerTabuada implements ControlFieldWithLabel {
   static ControllerTabuada? _instance;
 
   ControllerTabuada._();
@@ -54,5 +54,20 @@ class ControllerTabuada implements ControlField {
             " somado por ele mesmo.";
       }
     }
+  }
+  
+  @override
+  List<String> responseList() {
+    return [infoText, dica];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [nTabuada];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["Valor:"];
   }
 }

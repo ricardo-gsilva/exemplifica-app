@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:flutter/material.dart';
 
 import 'package:exemplifica/view/templates/splash_screen_template.dart';
@@ -12,7 +13,9 @@ class SplashScreenPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SplashScreenTemplate(version: version,),
+      body: SplashScreenTemplate(
+        key: Key(CoreKeys.splashScreenTemplate),
+        version: version,),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/view/atoms/custom_button.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,7 @@ class RowButtons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      key: Key(CoreKeys.rowButtons),
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         CustomButton(

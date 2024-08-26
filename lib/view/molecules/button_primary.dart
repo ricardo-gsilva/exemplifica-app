@@ -1,5 +1,6 @@
 import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/view/atoms/custom_card.dart';
 import 'package:exemplifica/view/atoms/custom_icon.dart';
 import 'package:exemplifica/view/atoms/custom_text.dart';
@@ -24,6 +25,7 @@ class ButtonPrimary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomCard(
+      key: Key(CoreKeys.buttonPrimary),
       height: height,
       width: width,
       onTap: onTap,

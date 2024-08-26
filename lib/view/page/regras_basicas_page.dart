@@ -27,7 +27,7 @@ class _RegrasBasicasPageState extends State<RegrasBasicasPage> {
       body: Container(
         padding: EdgeInsets.all(10),
         margin: EdgeInsets.all(10),
-        child: RegrasBasicasGrid(
+        child: RegrasBasicasGridTemplate(          
           height: height,
           width: width,
         ),

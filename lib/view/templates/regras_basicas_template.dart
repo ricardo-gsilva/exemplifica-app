@@ -1,10 +1,11 @@
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/view/molecules/collum_button_grid_regras_basicas.dart';
 
-class RegrasBasicasGrid extends StatelessWidget {
+class RegrasBasicasGridTemplate extends StatelessWidget {
   final double height;
   final double width;
-  const RegrasBasicasGrid({
+  const RegrasBasicasGridTemplate({
     Key? key,
     required this.height,
     required this.width,
@@ -13,6 +14,7 @@ class RegrasBasicasGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      key: Key(CoreKeys.regrasBasicasTemplate),
       child: ButtonGridRegrasBasicas(
         height: height,
         width: width,

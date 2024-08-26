@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:flutter/material.dart';
 
 import 'package:exemplifica/model/assets_model.dart';
@@ -14,16 +15,20 @@ class ContentList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      key: Key(CoreKeys.contentList),
       physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       itemCount: stringsAndAssets.length,
       itemBuilder: (_, i) {
         StringsAndAssetsModel stringsAssets = stringsAndAssets[i];
         if (stringsAssets.title.contains(".png")) {
-          return CustomImageAsset(
-            asset: stringsAssets.title,
-            width: stringsAssets.width,
-            height: stringsAssets.height,
+          return FittedBox(
+            fit: BoxFit.scaleDown,
+            child: CustomImageAsset(
+              asset: stringsAssets.title,
+              // width: stringsAssets.width,
+              // height: stringsAssets.height,
+            ),
           );
         } else {
           return CustomText(

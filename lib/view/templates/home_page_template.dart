@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/utils/person_icons.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/view/organisms/buttons_grid.dart';
@@ -7,11 +8,11 @@ import 'package:flutter/material.dart';
 
 import 'package:exemplifica/view/molecules/button_primary.dart';
 
-class HomePageButtonsGrid extends StatelessWidget {
+class HomePageButtonsGridTemplate extends StatelessWidget {
   final Color backgroundColorGrid;
   final double height;
   final double width;
-  const HomePageButtonsGrid({
+  const HomePageButtonsGridTemplate({
     Key? key,
     required this.backgroundColorGrid,
     required this.height,
@@ -21,6 +22,7 @@ class HomePageButtonsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      key: Key(CoreKeys.homePageButtonsGridTemplate),
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,

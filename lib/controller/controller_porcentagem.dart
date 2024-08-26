@@ -85,4 +85,14 @@ class ControllerPorcentagem implements ControlField {
         "'X' = $mult2f / $valor1f \n"
         "'X' = $resultf%";
   }
+  
+  @override
+  List<String> responseList() {
+    return [resultPorcent];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [val1, val2];
+  }
 }

@@ -1,9 +1,9 @@
 import 'dart:math';
-import 'package:exemplifica/domain/usecase/control_field.dart';
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ConstrollerJurosCompostos implements ControlField {
+class ConstrollerJurosCompostos implements ControlFieldWithLabel {
   static ConstrollerJurosCompostos? _instance;
 
   ConstrollerJurosCompostos._();
@@ -158,5 +158,20 @@ class ConstrollerJurosCompostos implements ControlField {
         "O valor de juros gerado é de:"
         "\n"
         "$rjuros.";
+  }
+  
+  @override
+  List<String> responseList() {
+    return [resultjC, resultjC_1];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [c, i, t];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["Capita:", "Taxa:", "Meses:"];
   }
 }

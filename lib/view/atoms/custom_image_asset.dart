@@ -1,3 +1,4 @@
+import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:flutter/material.dart';
 
 class CustomImageAsset extends StatelessWidget {
@@ -16,6 +17,7 @@ class CustomImageAsset extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
+      key: Key(CoreKeys.customImageAsset),
       padding: EdgeInsets.all(15),
       child: Container( 
         height: height,

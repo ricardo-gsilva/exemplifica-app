@@ -1,9 +1,9 @@
-import 'package:exemplifica/domain/usecase/control_field.dart';
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 
-class ControllerEquacao1 implements ControlField{  
+class ControllerEquacao1 implements ControlFieldWithLabel {  
 
   static ControllerEquacao1? _instance;
   
@@ -54,6 +54,7 @@ class ControllerEquacao1 implements ControlField{
 
   @override
   void calcular(){
+    visible = true;
     a = double.parse(val1.text);
     b = double.parse(val2.text);
 
@@ -78,6 +79,7 @@ class ControllerEquacao1 implements ControlField{
         x = ${resultRBLineFour(b, r)} / $format_a
         x = ${valorX(a, b)}
         """;
+        print(resultEq1_1);
   }
 
   String formatNumberBLineTwo(String linha2) {
@@ -132,5 +134,20 @@ class ControllerEquacao1 implements ControlField{
     }
 
     return format_rb;
+  }
+  
+  @override
+  List<String> responseList() {
+    return [resultEq1_1];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [val1, val2];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["a:", "b:"];
   }
 }

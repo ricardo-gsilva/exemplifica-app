@@ -1,7 +1,7 @@
-import 'package:exemplifica/domain/usecase/control_field.dart';
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 
-class ControllerMdc implements ControlField {
+class ControllerMdc implements ControlFieldWithLabel {
   static ControllerMdc? _instance;
 
   ControllerMdc._();
@@ -98,5 +98,20 @@ class ControllerMdc implements ControlField {
               " Multiplicando todos esses valores, temos o valor do MDC: $mdc"
               "\n";
     }
+  }
+  
+  @override
+  List<String> responseList() {
+    return [resultMdc, resultMdc1, resultMdc2];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [val1, val2];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["Valor 1:", "Valor 2:"];
   }
 }
