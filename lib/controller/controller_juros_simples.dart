@@ -1,8 +1,8 @@
-import 'package:exemplifica/domain/usecase/control_field.dart';
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ControllerJurosSimples implements ControlField {
+class ControllerJurosSimples implements ControlFieldWithLabel {
   static ControllerJurosSimples? _instance;
 
   ControllerJurosSimples._();
@@ -385,5 +385,20 @@ class ControllerJurosSimples implements ControlField {
         "\n\n"
         "O número de meses necessário para gerar o juros de $rjuros, com a aplicação de capital no valor de $rcapital, sob "
         "a taxa mensal de $ftaxa% é: $fmes meses ou o equivalente a $fdias dias.";
+  }
+  
+  @override
+  List<String> responseList() {
+    return [resultjS, resultjS_1, resultjS_2];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [c, i, t, j];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["Capital:", "Taxa:", "Meses:", "Juros:"];
   }
 }

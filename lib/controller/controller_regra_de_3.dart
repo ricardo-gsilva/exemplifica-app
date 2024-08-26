@@ -94,4 +94,14 @@ class ControllerRegraDe3 implements ControlField {
         "'X' = $mult2f / $valor1f \n"
         "'X' = $resultf";
   }
+  
+  @override
+  List<String> responseList() {
+    return [resultRegra3];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [val1, val2, val3];
+  }
 }

@@ -30,6 +30,8 @@ class CoreKeys {
   static const String buttonsGrid = "buttonsGrid";
 
   //Templates
+  static const String pageTemplate = "pageTemplate";
+  static const String calculatorTemplate = "calculatorTemplate";
   static const String calcEquacao1Template = "calcEquacao1Template";
   static const String calcEquacao2Template = "calcEquacao2Template";
   static const String calcFatorialTemplate = "calcFatorialTemplate";

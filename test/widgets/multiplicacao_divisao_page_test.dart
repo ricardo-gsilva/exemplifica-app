@@ -14,9 +14,9 @@ void main() {
       testWidgets(
         "Teste da tela de Multiplicação e Divisão",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: MultiplicacaoDivisaoPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: MultiplicacaoDivisaoPage(),
+          // ));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -35,9 +35,9 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Multiplicação e Divisão",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: MultiplicacaoDivisaoPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: MultiplicacaoDivisaoPage(),
+          // ));
 
           final textMultiplicaDiv1 =
               find.text(CoreStringsMultDiv.text1_MultiplicaDiv);

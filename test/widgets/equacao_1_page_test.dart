@@ -3,7 +3,6 @@ import 'package:exemplifica/utils/constants/core_strings.dart';
 import 'package:exemplifica/utils/constants/core_strings_assets.dart';
 import 'package:exemplifica/utils/constants/strings/strings_equacao_1.dart';
 import 'package:exemplifica/utils/person_icons.dart';
-import 'package:exemplifica/view/page/equacao_1_page.dart';
 import 'package:exemplifica/view/page/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -16,8 +15,14 @@ void main() {
         "Teste de widgets da tela de Equação de 1 Grau",
         (WidgetTester tester) async {
           await tester.pumpWidget(MaterialApp(
-            home: Equacao1Page(),
+            home: HomePage(),
           ));
+
+          await tester.tap(find.text(CoreStrings.titleEquacao1));
+          await tester.pumpAndSettle(Duration(seconds: 1));
+
+          final text = find.text(CoreStrings.titleEquacao1);
+          expect(text, findsOneWidget);
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -37,8 +42,11 @@ void main() {
         "Teste de conteudo carregado na tela de Equação de 1 Grau",
         (WidgetTester tester) async {
           await tester.pumpWidget(MaterialApp(
-            home: Equacao1Page(),
+            home: HomePage(),
           ));
+
+          await tester.tap(find.text(CoreStrings.titleEquacao1));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final textEquacao1_1 = find.text(CoreStringsEquacao1.text1_Equacao1);
           final textEquacao1_2 = find.text(CoreStringsEquacao1.text2_Equacao1);
@@ -79,9 +87,7 @@ void main() {
             home: HomePage(),
           ));
 
-          await tester.tap(find.text(
-            CoreStrings.titleEquacao1,
-          ));
+          await tester.tap(find.text(CoreStrings.titleEquacao1,));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.byIcon(Icons.reply));

@@ -1,7 +1,7 @@
-import 'package:exemplifica/domain/usecase/control_field.dart';
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 
-class ControllerFatorial implements ControlField {
+class ControllerFatorial implements ControlFieldWithLabel {
   static ControllerFatorial? _instance;
 
   ControllerFatorial._();
@@ -72,5 +72,24 @@ class ControllerFatorial implements ControlField {
       resultFinal = "$valFatorial! = $c ";
       infoFatorial = "Obs: O valor fatorial de 0 será sempre o número 1.";
     }
+  }
+  
+  @override
+  List<String> responseList() {
+    return [
+      resultFat,
+      resultFinal,
+      infoFatorial
+    ];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [val1];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["Fatorial:"];
   }
 }

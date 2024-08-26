@@ -1,7 +1,7 @@
-import 'package:exemplifica/domain/usecase/control_field.dart';
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 
-class ControllerMmc implements ControlField {
+class ControllerMmc implements ControlFieldWithLabel {
   static ControllerMmc? _instance;
 
   ControllerMmc._();
@@ -88,11 +88,26 @@ class ControllerMmc implements ControlField {
     if (((valormmc1 == 1) && (valormmc2 == 1))) {
       div = 1;
       divi = div.toInt();
-      resultMmc = resultMmc + "$valmmc1" + ", " + "$valmmc2" + " | " + "\n";
+      resultMmc = resultMmc + "$valmmc1" + ", " + "$valmmc2" + " | " + "$divi" + "\n";
     }
     resultMmc1 =
         "${resultMmc1}Após chegar ao valor 1, multiplique todos os números que resultaram "
         "ao lado da barra lateral.\n\n"
         "Multiplicando todos os valores utilizados para fatoração, temos o valor do MMC: $cachei \n";
+  }
+  
+  @override
+  List<String> responseList() {
+    return [resultMmc, resultMmc1];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [val1, val2];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["Valor 1:", "Valor 2:"];
   }
 }

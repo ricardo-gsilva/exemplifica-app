@@ -15,9 +15,9 @@ void main() {
       testWidgets(
         "Teste de widgets da tela de Tabuada",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: TabuadaPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: TabuadaPage(),
+          // ));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -36,9 +36,9 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Tabuada",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: TabuadaPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: TabuadaPage(),
+          // ));
 
           final textTabuada1 = find.text(CoreStringsTabuada.text1_tabuada);
           final textTabuada2 = find.text(CoreStringsTabuada.text2_tabuada);

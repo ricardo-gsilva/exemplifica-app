@@ -1,10 +1,11 @@
 import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/utils/constants/core_strings.dart';
-import 'package:exemplifica/view/page/expoentes_page.dart';
-import 'package:exemplifica/view/page/multiplicacao_divisao_page.dart';
-import 'package:exemplifica/view/page/parentesis_page.dart';
-import 'package:exemplifica/view/page/regras_sinais_page.dart';
-import 'package:exemplifica/view/page/soma_subtracao_page.dart';
+import 'package:exemplifica/utils/content_list/content_list_expoentes.dart';
+import 'package:exemplifica/utils/content_list/content_list_multiplicacao_divisao.dart';
+import 'package:exemplifica/utils/content_list/content_list_parentesis.dart';
+import 'package:exemplifica/utils/content_list/content_list_regras_sinais.dart';
+import 'package:exemplifica/utils/content_list/content_list_soma_subtracao.dart';
+import 'package:exemplifica/view/page/content_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:exemplifica/view/atoms/custom_button.dart';
@@ -28,13 +29,29 @@ class ButtonGridRegrasBasicas extends StatelessWidget {
           width: width,
           title: CoreStrings.titleButtonParentesis,
           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (_) => ParentesisPage()));
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ContentPage(
+                  contentList: ContentListParentesis.contentListParentesis,
+                  titleAppBar: CoreStrings.titleParentesis,
+                ),
+              ),
+            );
           },
         ),
         CustomButton(
           title: CoreStrings.titleButtonExpoentes,
           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (_) => ExpoentesPage()));
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ContentPage(
+                  contentList: ContentListExpoentes.contentListExpoentes,
+                  titleAppBar: CoreStrings.titleExpoentes,
+                ),
+              ),
+            );
           },
           height: height,
           width: width,
@@ -42,7 +59,15 @@ class ButtonGridRegrasBasicas extends StatelessWidget {
         CustomButton(
           title: CoreStrings.titleButtonMultipDiv,
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => MultiplicacaoDivisaoPage()));
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ContentPage(
+                  contentList: ContentListMultiplicacaoDivisao.contentListMultiplicacaoDivisao,
+                  titleAppBar: CoreStrings.titleMultipDiv,
+                ),
+              ),
+            );
           },
           height: height,
           width: width,
@@ -50,7 +75,15 @@ class ButtonGridRegrasBasicas extends StatelessWidget {
         CustomButton(
           title: CoreStrings.titleButtonSomaSub,
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => SomaSubtracaoPage()));
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ContentPage(
+                  contentList: ContentListSomaSubtracao.contentListSomaSubtracao,
+                  titleAppBar: CoreStrings.titleSomaSub,
+                ),
+              ),
+            );
           },
           height: height,
           width: width,
@@ -58,7 +91,15 @@ class ButtonGridRegrasBasicas extends StatelessWidget {
         CustomButton(
           title: CoreStrings.titleButtonRegraSinal,
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => RegrasSinaisPage()));
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => ContentPage(
+                  contentList: ContentListRegrasSinais.contentListRegrasSinais,
+                  titleAppBar: CoreStrings.titleRegraSinal,
+                ),
+              ),
+            );
           },
           height: height,
           width: width,

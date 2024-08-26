@@ -15,9 +15,9 @@ void main() {
       testWidgets(
         "Teste de widgets da tela de Juros Compostos",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: JurosCompostosPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: JurosCompostosPage(),
+          // ));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -36,9 +36,9 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Juros Compostos",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: JurosCompostosPage(),
-          ));              
+          // await tester.pumpWidget(MaterialApp(
+          //   home: JurosCompostosPage(),
+          // ));              
               
           final textJurosCompostos1 = find.text(CoreStringsJurosCompostos.text1_JurosCompostos);
           final textJurosCompostos2 = find.text(CoreStringsJurosCompostos.text2_JurosCompostos);

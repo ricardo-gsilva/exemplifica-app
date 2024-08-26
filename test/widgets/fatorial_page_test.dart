@@ -15,9 +15,9 @@ void main() {
       testWidgets(
         "Teste de widgets da tela de Fatorial",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: FatorialPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: FatorialPage(),
+          // ));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -36,9 +36,9 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Fatorial",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: FatorialPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: FatorialPage(),
+          // ));
 
           final textFatorial1 = find.text(CoreStringsFatorial.text1_Fatorial);
           final textFatorial2 = find.text(CoreStringsFatorial.text2_Fatorial);

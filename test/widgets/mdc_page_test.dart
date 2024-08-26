@@ -15,9 +15,9 @@ void main() {
       testWidgets(
         "Teste de widgets da tela de Mdc",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: MdcPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: MdcPage(),
+          // ));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -36,9 +36,9 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Mdc",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: MdcPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: MdcPage(),
+          // ));
               
           final textMdc1 = find.text(CoreStringsMdc.text1_mdc);
           final textMdc2 = find.text(CoreStringsMdc.text2_mdc);

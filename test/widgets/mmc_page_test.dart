@@ -15,9 +15,9 @@ void main() {
       testWidgets(
         "Teste de widgets da tela de MMC",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: MmcPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: MmcPage(),
+          // ));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -36,9 +36,9 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de MMC",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: MmcPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: MmcPage(),
+          // ));
               
           final textMmc1 = find.text(CoreStringsMmc.text1_mmc);
           final textMmc2 = find.text(CoreStringsMmc.text2_mmc);

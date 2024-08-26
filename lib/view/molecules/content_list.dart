@@ -22,10 +22,13 @@ class ContentList extends StatelessWidget {
       itemBuilder: (_, i) {
         StringsAndAssetsModel stringsAssets = stringsAndAssets[i];
         if (stringsAssets.title.contains(".png")) {
-          return CustomImageAsset(
-            asset: stringsAssets.title,
-            width: stringsAssets.width,
-            height: stringsAssets.height,
+          return FittedBox(
+            fit: BoxFit.scaleDown,
+            child: CustomImageAsset(
+              asset: stringsAssets.title,
+              // width: stringsAssets.width,
+              // height: stringsAssets.height,
+            ),
           );
         } else {
           return CustomText(

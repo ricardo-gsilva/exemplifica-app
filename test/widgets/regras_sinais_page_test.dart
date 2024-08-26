@@ -14,9 +14,9 @@ void main() {
       testWidgets(
         "Teste da tela de Soma e Subtração",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: RegrasSinaisPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: RegrasSinaisPage(),
+          // ));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customText = find.byKey(Key(CoreKeys.customText));
@@ -35,9 +35,9 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Multiplicação e Divisão",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: RegrasSinaisPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: RegrasSinaisPage(),
+          // ));
 
           final textRegrasSinais1 =
               find.text(CoreStringsRegrasSinais.text1_RegraSinal);

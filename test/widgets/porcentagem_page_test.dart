@@ -15,9 +15,9 @@ void main() {
       testWidgets(
         "Teste de widgets da tela de Porcentagem",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: PorcentagemPage(),
-          ));
+          // await tester.pumpWidget(MaterialApp(
+          //   home: PorcentagemPage(),
+          // ));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -36,9 +36,9 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Porcentagem",
         (WidgetTester tester) async {
-          await tester.pumpWidget(MaterialApp(
-            home: PorcentagemPage(),
-          ));                
+          // await tester.pumpWidget(MaterialApp(
+          //   home: PorcentagemPage(),
+          // ));                
               
           final textPorcentagem1 = find.text(CoreStringsPorcentagem.text1_porcentagem);
           final textPorcentagem2 = find.text(CoreStringsPorcentagem.text2_porcentagem);

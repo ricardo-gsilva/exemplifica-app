@@ -2,29 +2,28 @@ import 'package:exemplifica/model/assets_model.dart';
 import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/view/molecules/content_list.dart';
 import 'package:flutter/material.dart';
-import 'package:exemplifica/utils/constants/strings/strings_soma_sub.dart';
 
-class SomaSubtracaoTemplate extends StatelessWidget {
+class PageTemplate extends StatelessWidget {
   final double width;
-  const SomaSubtracaoTemplate({
+  final double height;
+  final List<StringsAndAssetsModel> stringsAndAssetsList;
+  const PageTemplate({
     Key? key,
     required this.width,
+    required this.height,
+    required this.stringsAndAssetsList,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      key: Key(CoreKeys.somaSubtracaoTemplate),
+      key: Key(CoreKeys.pageTemplate),
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: <Widget>[
             ContentList(
-              stringsAndAssets: [
-                StringsAndAssetsModel(
-                  title: CoreStringsSomaSub.text1_SomaSub,
-                ),
-              ],
+              stringsAndAssets: stringsAndAssetsList,              
             ),
           ],
         ),
