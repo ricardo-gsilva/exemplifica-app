@@ -4,7 +4,6 @@ import 'package:exemplifica/utils/constants/core_strings_assets.dart';
 import 'package:exemplifica/utils/constants/strings/strings_mdc.dart';
 import 'package:exemplifica/utils/person_icons.dart';
 import 'package:exemplifica/view/page/home_page.dart';
-import 'package:exemplifica/view/page/mdc_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
