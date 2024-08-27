@@ -1,4 +1,5 @@
 import 'package:exemplifica/controller/controller_equacao_2.dart';
+import 'package:flutter/material.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -10,7 +11,6 @@ void main() {
       equacao2.resultEq2_2 = "Teste";
       equacao2.resultEq2_3 = "Teste";
       equacao2.resultEq2_4 = "Teste";
-      equacao2.visible = true;
       equacao2.val1.text = "Teste";
       equacao2.val2.text = "Teste";
       equacao2.val3.text = "Teste";
@@ -21,7 +21,6 @@ void main() {
       expect(equacao2.resultEq2_2, "");
       expect(equacao2.resultEq2_3, "");
       expect(equacao2.resultEq2_4, "");
-      expect(equacao2.visible, false);
       expect(equacao2.val1.text, "");
       expect(equacao2.val2.text, "");
       expect(equacao2.val3.text, "");
@@ -31,11 +30,9 @@ void main() {
       equacao2.val1.text = "";
       equacao2.val2.text = "";
       equacao2.val3.text = "";
-      equacao2.visible = false;
 
       equacao2.verificarCampos();
 
-      expect(equacao2.visible, true);
       expect(equacao2.resultEq2, "Por favor, preencha os campos!");
     });
 
@@ -58,9 +55,10 @@ void main() {
         }
 
         expect(equacao2.eq2Delta, "0");
-        expect(equacao2.resultEq2_1, "O valor de delta é 0. Portanto, existe uma raiz real.""\n");
+        expect(equacao2.resultEq2_1,
+            "O valor de delta é 0. Portanto, existe uma raiz real." "\n");
         expect(equacao2.eq2X1, "-1");
-        expect(equacao2.eq2X2, "-1"); 
+        expect(equacao2.eq2X2, "-1");
       });
 
       test("Teste com delta maior que 0", () {
@@ -73,9 +71,12 @@ void main() {
         }
 
         expect(equacao2.eq2Delta, "9");
-        expect(equacao2.resultEq2_1, "O valor de Delta é positivo. Portanto, existem duas raízes reais!""\n");
+        expect(
+            equacao2.resultEq2_1,
+            "O valor de Delta é positivo. Portanto, existem duas raízes reais!"
+            "\n");
         expect(equacao2.eq2X1, "- 0.5000");
-        expect(equacao2.eq2X2, "-2");        
+        expect(equacao2.eq2X2, "-2");
       });
 
       test("Teste com delta menor do que 0.", () {
@@ -88,11 +89,55 @@ void main() {
         }
 
         expect(equacao2.eq2Delta, "-167");
-        expect(equacao2.resultEq2_1, "O valor de Delta é negativo. Portanto, não existem raízes reais!""\n");
+        expect(
+            equacao2.resultEq2_1,
+            "O valor de Delta é negativo. Portanto, não existem raízes reais!"
+            "\n");
         expect(equacao2.resultEq2_2, "");
         expect(equacao2.resultEq2_3, "");
-        expect(equacao2.resultEq2_4, "");        
+        expect(equacao2.resultEq2_4, "");
       });
+
+      test(
+        "Testando lista de respostas da calculadora de Equacao de 2 Grau",
+        () {
+          equacao2.val1.text = "16";
+          equacao2.val2.text = "6";
+          equacao2.val3.text = "6";
+
+          equacao2.calcular();
+
+          expect(equacao2.responseList(), [
+            equacao2.resultEq2,
+            equacao2.resultEq2_1,
+            equacao2.resultEq2_2,
+            equacao2.resultEq2_3,
+            equacao2.resultEq2_4
+          ]);
+        },
+      );
+
+      test(
+        "Testando lista de controllers da calculadora de Equacao de 2 Grau",
+        () {
+          List<TextEditingController> listController = [
+            equacao2.val1,
+            equacao2.val2,
+            equacao2.val3
+          ];
+
+          expect(listController, equacao2.controllerList());
+        },
+      );
+
+      test(
+        "Testando lista de labels da calculadora de Equacao de 2 Grau",
+        () {
+          List<String> listLabels = ["a:", "b:", "c:"];
+
+          expect(listLabels, equacao2.labelList());
+        },
+      );
     });
   });
 }

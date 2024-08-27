@@ -61,11 +61,8 @@ class ControllerEquacao2 implements ControlFieldWithLabel {
   String eq2X1 = "";
   String eq2X2 = "";
 
-  bool visible = false;
-
   @override
   void resetCampos() {
-    visible = false;
     val1.clear();
     val2.clear();
     val3.clear();
@@ -79,10 +76,8 @@ class ControllerEquacao2 implements ControlFieldWithLabel {
   @override
   void verificarCampos() {
     if (val1.text.isEmpty || val2.text.isEmpty || val3.text.isEmpty) {
-      visible = true;
       resultEq2 = "Por favor, preencha os campos!";
     } else {
-      visible = true;
       calcular();
     }
   }

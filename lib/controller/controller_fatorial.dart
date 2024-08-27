@@ -16,7 +16,6 @@ class ControllerFatorial implements ControlFieldWithLabel {
   String resultFat = "";
   String resultFinal = "";
   String infoFatorial = "";
-  bool visible = false;
   int fat = 0;
   int i = 0;
   int a = 0;
@@ -25,7 +24,6 @@ class ControllerFatorial implements ControlFieldWithLabel {
 
   @override
   void resetCampos() {
-    visible = false;
     val1.clear();
     resultFat = "";
     resultFinal = "";
@@ -35,7 +33,6 @@ class ControllerFatorial implements ControlFieldWithLabel {
   @override
   void verificarCampos() {
     if (val1.text.isEmpty) {
-      visible = true;
       resultFat = "Por favor, preencha o campo com um valor!\n\n"
           "Obs: Devido a exigência de processamento, não faremos calculos"
           " com valores acima de 14.";
@@ -49,7 +46,6 @@ class ControllerFatorial implements ControlFieldWithLabel {
 
   @override
   void calcular() {
-    visible = true;
     int valFatorial = int.parse(val1.text);
     if (valFatorial == 0) {
       resultFat = "Obs: O valor fatorial de 0 será sempre o número 1.";

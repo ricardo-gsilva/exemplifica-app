@@ -15,13 +15,11 @@ class ControllerTabuada implements ControlFieldWithLabel {
 
   String infoText = "";
   String dica = "";
-  bool visible = false;
   int i = 0;
   int val = 0; 
   
   @override
   void resetCampos() {
-    visible = false;
     nTabuada.clear();
     infoText = "";
     dica = "";
@@ -31,7 +29,6 @@ class ControllerTabuada implements ControlFieldWithLabel {
   void verificarCampos() {
     if (nTabuada.text.isEmpty) {
       infoText = "Por favor, preencha os campos!";
-      visible = true;
     } else {
       infoText = '';
       dica = '';
@@ -45,7 +42,6 @@ class ControllerTabuada implements ControlFieldWithLabel {
     if (val > 99999) {
       infoText = "Informe um novo valor menor ou igual a 99999!";
     } else {
-      visible = true;
       for (i = 0; i <= 10; i++) {
         infoText = "$infoText $val x $i = ${(val * i)} \n";
         dica =

@@ -1,4 +1,5 @@
 import 'package:exemplifica/controller/controller_equacao_1.dart';
+import 'package:flutter/material.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -8,12 +9,10 @@ void main() {
       "Testando reset de campos da calculadora de Equação de 1 Grau",
       () {
         equacao1.resultEq1_1 = "Teste";
-        equacao1.visible = true;
         equacao1.val1.text = "5";
         equacao1.val2.text = "6";
         equacao1.resetCampos();
         expect(equacao1.resultEq1_1, "");
-        expect(equacao1.visible, false);
         expect(equacao1.val1.text, "");
         expect(equacao1.val2.text, "");
       },
@@ -27,13 +26,12 @@ void main() {
         equacao1.verificarCampos();
 
         expect(equacao1.resultEq1_1, "Por favor, preencha os campos!");
-        expect(equacao1.visible, true);
 
-        equacao1.val1.text = "2";
-        equacao1.val2.text = "3";
+        double val1 = double.parse(equacao1.val1.text = "2");
+        double val2 = double.parse(equacao1.val2.text = "3");
         equacao1.verificarCampos();
-        var teste = equacao1.calcular;
-        expect(teste, equacao1.calcular);
+        var num = equacao1.valorX(val1, val2);
+        expect(num, "1.50");
       },
     );
 
@@ -48,6 +46,36 @@ void main() {
         
         String valorX = equacao1.valorX(a, b);
         expect(valorX, "2.67");
+      },
+    );
+
+    test(
+      "Testando lista de respostas da calculadora de Equacao de 1 Grau",
+      () {
+        equacao1.val1.text = "16";
+        equacao1.val2.text = "6";
+
+        equacao1.calcular();        
+
+        expect(equacao1.responseList(), [equacao1.resultEq1_1]);
+      },
+    );
+
+    test(
+      "Testando lista de controllers da calculadora de Equacao de 1 Grau",
+      () {
+        List<TextEditingController> listController = [equacao1.val1, equacao1.val2];
+
+        expect(listController, equacao1.controllerList());
+      },
+    );
+
+    test(
+      "Testando lista de labels da calculadora de Equacao de 1 Grau",
+      () {
+        List<String> listLabels = ["a:", "b:"];
+
+        expect(listLabels, equacao1.labelList());
       },
     );
   });

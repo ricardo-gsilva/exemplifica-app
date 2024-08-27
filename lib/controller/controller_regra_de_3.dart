@@ -15,7 +15,6 @@ class ControllerRegraDe3 implements ControlField {
   TextEditingController val2 = TextEditingController();
   TextEditingController val3 = TextEditingController();
   String resultRegra3 = "";
-  bool visible = false;
   double valor1 = 0;
   double valor2 = 0;
   double valor3 = 0;
@@ -32,7 +31,6 @@ class ControllerRegraDe3 implements ControlField {
   
   @override
   void resetCampos() {
-    visible = false;
     val1.clear();
     val2.clear();
     val3.clear();
@@ -45,7 +43,6 @@ class ControllerRegraDe3 implements ControlField {
       resultRegra3 = "Por favor, preencha os campos!";
     } else {
       resultRegra3 = "";
-      visible = true;
       calcular();
     }
   }

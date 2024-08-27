@@ -24,7 +24,6 @@ class ControllerEquacao1 implements ControlFieldWithLabel{
   double a = 0;
   double b = 0;
   double r = 0;
-  bool visible = false;
 
   NumberFormat formatEq1_1 = new NumberFormat("0");
   NumberFormat formatEq1_2 = new NumberFormat("0.00");
@@ -36,7 +35,6 @@ class ControllerEquacao1 implements ControlFieldWithLabel{
 
   @override
   void resetCampos() {
-    visible = false;
     val1.clear();
     val2.clear();
     resultEq1_1 = "";
@@ -44,7 +42,6 @@ class ControllerEquacao1 implements ControlFieldWithLabel{
   
   @override
   void verificarCampos() {
-    visible = true;
     if (val1.text.isEmpty || val2.text.isEmpty) {
       resultEq1_1 = "Por favor, preencha os campos!";      
     } else {
@@ -54,7 +51,6 @@ class ControllerEquacao1 implements ControlFieldWithLabel{
 
   @override
   void calcular(){
-    visible = true;
     a = double.parse(val1.text);
     b = double.parse(val2.text);
 
@@ -79,7 +75,6 @@ class ControllerEquacao1 implements ControlFieldWithLabel{
         x = ${resultRBLineFour(b, r)} / $format_a
         x = ${valorX(a, b)}
         """;
-        print(resultEq1_1);
   }
 
   String formatNumberBLineTwo(String linha2) {

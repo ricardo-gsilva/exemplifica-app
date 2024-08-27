@@ -52,7 +52,6 @@ class ConstrollerJurosCompostos implements ControlFieldWithLabel {
 
   @override
   void resetCampos() {
-    visible = false;
     c.clear();
     i.clear();
     t.clear();
@@ -62,7 +61,6 @@ class ConstrollerJurosCompostos implements ControlFieldWithLabel {
 
   @override
   void verificarCampos() {
-    visible = true;
     if ((c.text.isEmpty) || (i.text.isEmpty) || (t.text.isEmpty)) {
       resultjC =
           "Um ou mais campos estão vazios. Preencha todos os campos para efetuar o cálculo!";
@@ -172,6 +170,6 @@ class ConstrollerJurosCompostos implements ControlFieldWithLabel {
   
   @override
   List<String> labelList() {
-    return ["Capita:", "Taxa:", "Meses:"];
+    return ["Capital:", "Taxa:", "Meses:"];
   }
 }

@@ -14,7 +14,6 @@ class ControllerMmc implements ControlFieldWithLabel {
   TextEditingController val2 = TextEditingController();
   String resultMmc = "";
   String resultMmc1 = "";
-  bool visible = false;
 
   double valormmc1 = 0;
   double valormmc2 = 0;
@@ -27,7 +26,6 @@ class ControllerMmc implements ControlFieldWithLabel {
 
   @override
   void resetCampos() {
-    visible = false;
     val1.clear();
     val2.clear();
     resultMmc = "";
@@ -36,7 +34,6 @@ class ControllerMmc implements ControlFieldWithLabel {
   
   @override
   void verificarCampos() {
-    visible = true;
     if (val1.text.isEmpty || val2.text.isEmpty) {      
       resultMmc = "Por favor, preencha os campos!\nUtilize valores até 99999!";
       resultMmc1 = "";
@@ -49,7 +46,6 @@ class ControllerMmc implements ControlFieldWithLabel {
   
   @override
   void calcular() {
-    visible = true;
     valormmc1 = double.parse(val1.text);
     valormmc2 = double.parse(val2.text);
     div = 2;
