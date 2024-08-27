@@ -21,8 +21,6 @@ class ControllerJurosSimples implements ControlFieldWithLabel {
   String resultjS_1 = "";
   String resultjS_2 = "";
 
-  bool visible = false;
-
   String fmes = "";
   String fdias = "";
   String fjuros = "";
@@ -64,7 +62,6 @@ class ControllerJurosSimples implements ControlFieldWithLabel {
 
   @override
   void resetCampos() {
-    visible = false;
     c.clear();
     i.clear();
     t.clear();
@@ -80,7 +77,6 @@ class ControllerJurosSimples implements ControlFieldWithLabel {
         c.text.isNotEmpty &&
         t.text.isNotEmpty &&
         i.text.isNotEmpty) {
-      visible = true;
       resultjS = "Apenas 3 campos devem ser preenchidos.";
       resultjS_1 = "";
       resultjS_2 = "";
@@ -90,7 +86,6 @@ class ControllerJurosSimples implements ControlFieldWithLabel {
         ((i.text.isEmpty) && (c.text.isEmpty)) ||
         ((j.text.isEmpty) && (t.text.isEmpty)) ||
         ((c.text.isEmpty) && (t.text.isEmpty))) {
-      visible = true;
       resultjS = "É necessário que ao menos 3 campos estejam preenchidos.";
       resultjS_1 = "";
       resultjS_2 = "";
@@ -101,8 +96,6 @@ class ControllerJurosSimples implements ControlFieldWithLabel {
 
   @override
   void calcular() {
-    visible = true;
-
     if ((c.text.isNotEmpty) && (i.text.isNotEmpty) && (t.text.isNotEmpty)) {
       calcularJuros();
     } else if ((j.text.isNotEmpty) &&

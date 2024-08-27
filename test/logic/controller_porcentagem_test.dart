@@ -1,4 +1,5 @@
 import 'package:exemplifica/controller/controller_porcentagem.dart';
+import 'package:flutter/material.dart';
 import 'package:test/test.dart';
 
 void main() {
@@ -10,14 +11,12 @@ void main() {
       test(
         "Teste para resetar campos",
         () {
-          porcentagem.visible = true;
           porcentagem.val1.text = "Teste";
           porcentagem.val2.text = "Teste";
           porcentagem.resultPorcent = "Teste";
 
           porcentagem.resetCampos();
 
-          expect(porcentagem.visible, false);
           expect(porcentagem.val1.text, "");
           expect(porcentagem.val2.text, "");
           expect(porcentagem.resultPorcent, "");
@@ -45,6 +44,27 @@ void main() {
           porcentagem.calcular();
 
           expect(porcentagem.resultf, "50");
+        },
+      );
+
+      test(
+        "Testando lista de respostas da calculadora de Porcentagem",
+        () {
+          porcentagem.val1.text = "8";
+          porcentagem.val2.text = "4";
+
+          porcentagem.calcular();
+
+          expect(porcentagem.responseList(), [porcentagem.resultPorcent]);
+        },
+      );
+
+      test(
+        "Testando lista de controllers da calculadora de Porcentagem",
+        () {
+          List<TextEditingController> listController = [porcentagem.val1, porcentagem.val2];
+
+          expect(listController, porcentagem.controllerList());
         },
       );
     },

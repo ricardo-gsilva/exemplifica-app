@@ -14,7 +14,6 @@ class ControllerPorcentagem implements ControlField {
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
   String resultPorcent = "";
-  bool visible = false;
   double valor1 = 0;
   double valor2 = 0;
   double mult2 = 0;
@@ -30,7 +29,6 @@ class ControllerPorcentagem implements ControlField {
   
   @override
   void resetCampos() {
-    visible = false;
     val1.clear();
     val2.clear();
     resultPorcent = "";
@@ -38,7 +36,6 @@ class ControllerPorcentagem implements ControlField {
   
   @override
   void verificarCampos() {
-    visible = true;
     if (val1.text.isEmpty || val2.text.isEmpty) {      
       resultPorcent = "Por favor, preencha os campos!";
     } else {

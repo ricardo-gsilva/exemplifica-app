@@ -24,12 +24,9 @@ class ControllerMdc implements ControlFieldWithLabel {
   int b = 0;
   int rest = 0;
   int mdc = 0;
-
-  bool visible = false;
   
   @override
   void resetCampos() {
-    visible = false;
     val1.clear();
     val2.clear();
     resultMdc = "";
@@ -39,7 +36,6 @@ class ControllerMdc implements ControlFieldWithLabel {
   
   @override
   void verificarCampos() {
-    visible = true;
     if (val1.text.isEmpty || val2.text.isEmpty) {
       resultMdc = "Por favor, preencha os campos.\n Utilize valores até 99999!";
     } else {
