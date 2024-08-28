@@ -13,9 +13,12 @@ void main() {
       testWidgets(
         "Teste de widgets da tela de Expoentes",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: ExpoentesPage(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: RegrasBasicasPage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleButtonExpoentes));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -34,9 +37,12 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Expoentes",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: ExpoentesPage(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: RegrasBasicasPage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleButtonExpoentes));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final textExpoentes1 =
               find.text(CoreStringsExpoentes.text1_expoentes);
@@ -74,9 +80,7 @@ void main() {
             home: RegrasBasicasPage(),
           ));
 
-          await tester.tap(find.text(
-            CoreStrings.titleButtonExpoentes,
-          ));
+          await tester.tap(find.text(CoreStrings.titleButtonExpoentes));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.byIcon(Icons.reply));

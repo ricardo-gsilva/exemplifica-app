@@ -14,9 +14,12 @@ void main() {
       testWidgets(
         "Teste de widgets da tela de Regra de 3",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: RegraDe3Page(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: HomePage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleRegraDe3));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -35,9 +38,12 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Regra de 3",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: RegraDe3Page(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: HomePage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleRegraDe3));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final textRegraDe3_1 = find.text(CoreStringsRegraDe3.text1_regraDe3);
           final textRegraDe3_2 = find.text(CoreStringsRegraDe3.text2_regraDe3);
@@ -114,9 +120,7 @@ void main() {
             home: HomePage(),
           ));
 
-          await tester.tap(find.text(
-            CoreStrings.titleRegraDe3,
-          ));
+          await tester.tap(find.text(CoreStrings.titleRegraDe3));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.byIcon(Icons.reply));
@@ -133,7 +137,7 @@ void main() {
           await tester.tap(find.byIcon(Person.calc));
           await tester.pumpAndSettle(Duration(seconds: 1));
           final calcRegraDe3Template =
-              find.byKey(Key(CoreKeys.calcRegraDe3Template));
+              find.byKey(Key(CoreKeys.calculatorTemplate));
           expect(calcRegraDe3Template, findsOneWidget);
         },
       );

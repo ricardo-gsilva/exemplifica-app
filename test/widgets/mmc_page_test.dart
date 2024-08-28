@@ -14,9 +14,12 @@ void main() {
       testWidgets(
         "Teste de widgets da tela de MMC",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: MmcPage(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: HomePage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleMmc));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -35,9 +38,12 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de MMC",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: MmcPage(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: HomePage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleMmc));
+          await tester.pumpAndSettle(Duration(seconds: 1));
               
           final textMmc1 = find.text(CoreStringsMmc.text1_mmc);
           final textMmc2 = find.text(CoreStringsMmc.text2_mmc);
@@ -78,9 +84,7 @@ void main() {
             home: HomePage(),
           ));
 
-          await tester.tap(find.text(
-            CoreStrings.titleMmc,
-          ));
+          await tester.tap(find.text(CoreStrings.titleMmc));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.byIcon(Icons.reply));
@@ -96,7 +100,7 @@ void main() {
 
           await tester.tap(find.byIcon(Person.calc));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          final calcMmcTemplate = find.byKey(Key(CoreKeys.calcMmcTemplate));
+          final calcMmcTemplate = find.byKey(Key(CoreKeys.calculatorTemplate));
           expect(calcMmcTemplate, findsOneWidget);
         },
       );

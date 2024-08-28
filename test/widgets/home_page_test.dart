@@ -104,63 +104,61 @@ void main() {
 
           await tester.tap(find.text(CoreStrings.titleEquacao1));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.equacao1Template)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.text(CoreStrings.titleEquacao2));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.equacao2Template)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.text(CoreStrings.titleFatorial));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.fatorialTemplate)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.text(CoreStrings.titleTabuada));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.tabuadaTemplate)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.text(CoreStrings.titleJurosCompostos));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(
-              find.byKey(Key(CoreKeys.jurosCompostosTemplate)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.text(CoreStrings.titleJurosSimples));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(
-              find.byKey(Key(CoreKeys.jurosSimplesTemplate)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.text(CoreStrings.titleMmc));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.mmcTemplate)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.text(CoreStrings.titleMdc));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.mdcTemplate)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.text(CoreStrings.titlePorcentagem));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.porcentagemTemplate)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.text(CoreStrings.titleRegraDe3));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.regraDe3Template)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
         },

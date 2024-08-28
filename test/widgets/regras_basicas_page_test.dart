@@ -42,7 +42,7 @@ void main() {
           CoreStrings.titleButtonParentesis,
         ));
         await tester.pumpAndSettle(Duration(seconds: 1));
-        expect(find.byKey(Key(CoreKeys.parentesisTemplate)), findsOneWidget);
+        expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
         await tester.tap(find.byIcon(Icons.reply));
         await tester.pumpAndSettle(Duration(seconds: 1));
 
@@ -50,7 +50,7 @@ void main() {
           CoreStrings.titleButtonExpoentes,
         ));
         await tester.pumpAndSettle(Duration(seconds: 1));
-        expect(find.byKey(Key(CoreKeys.expoentesTemplate)), findsOneWidget);
+        expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
         await tester.tap(find.byIcon(Icons.reply));
         await tester.pumpAndSettle(Duration(seconds: 1));
 
@@ -58,7 +58,7 @@ void main() {
           CoreStrings.titleButtonMultipDiv,
         ));
         await tester.pumpAndSettle(Duration(seconds: 1));
-        expect(find.byKey(Key(CoreKeys.multiplicacaoDivisaoTemplate)),
+        expect(find.byKey(Key(CoreKeys.pageTemplate)),
             findsOneWidget);
         await tester.tap(find.byIcon(Icons.reply));
         await tester.pumpAndSettle(Duration(seconds: 1));
@@ -67,7 +67,7 @@ void main() {
           CoreStrings.titleButtonSomaSub,
         ));
         await tester.pumpAndSettle(Duration(seconds: 1));
-        expect(find.byKey(Key(CoreKeys.somaSubtracaoTemplate)), findsOneWidget);
+        expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
         await tester.tap(find.byIcon(Icons.reply));
         await tester.pumpAndSettle(Duration(seconds: 1));
 
@@ -75,7 +75,7 @@ void main() {
           CoreStrings.titleButtonRegraSinal,
         ));
         await tester.pumpAndSettle(Duration(seconds: 1));
-        expect(find.byKey(Key(CoreKeys.regrasSinaisTemplate)), findsOneWidget);
+        expect(find.byKey(Key(CoreKeys.pageTemplate)), findsOneWidget);
         await tester.tap(find.byIcon(Icons.reply));
         await tester.pumpAndSettle(Duration(seconds: 1));
 
