@@ -14,9 +14,12 @@ void main() {
       testWidgets(
         "Teste de widgets da tela de Juros Simples",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: JurosSimplesPage(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: HomePage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleJurosSimples));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -35,10 +38,12 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Juros Simples",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: JurosSimplesPage(),
-          // ));              
-                
+          await tester.pumpWidget(MaterialApp(
+            home: HomePage(),
+          ));    
+
+          await tester.tap(find.text(CoreStrings.titleJurosSimples));
+          await tester.pumpAndSettle(Duration(seconds: 1));
               
           final textJurosSimples1 = find.text(CoreStringsJurosSimples.text1_JurosSimples);
           final textJurosSimples2 = find.text(CoreStringsJurosSimples.text2_JurosSimples);
@@ -86,9 +91,7 @@ void main() {
             home: HomePage(),
           ));
 
-          await tester.tap(find.text(
-            CoreStrings.titleJurosSimples,
-          ));
+          await tester.tap(find.text(CoreStrings.titleJurosSimples));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.byIcon(Icons.reply));
@@ -104,7 +107,7 @@ void main() {
 
           await tester.tap(find.byIcon(Person.calc));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          final calcJurosSimplesTemplate = find.byKey(Key(CoreKeys.calcJurosSimplesTemplate));
+          final calcJurosSimplesTemplate = find.byKey(Key(CoreKeys.calculatorTemplate));
           expect(calcJurosSimplesTemplate, findsOneWidget);
         },
       );

@@ -9,14 +9,17 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group(
-    "Testes para a tela de Fatorial",
+    "Testes para a tela de Tabuada",
     () {
       testWidgets(
         "Teste de widgets da tela de Tabuada",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: TabuadaPage(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: HomePage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleTabuada));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -35,9 +38,12 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Tabuada",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: TabuadaPage(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: HomePage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleTabuada));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final textTabuada1 = find.text(CoreStringsTabuada.text1_tabuada);
           final textTabuada2 = find.text(CoreStringsTabuada.text2_tabuada);
@@ -73,9 +79,7 @@ void main() {
             home: HomePage(),
           ));
 
-          await tester.tap(find.text(
-            CoreStrings.titleTabuada,
-          ));
+          await tester.tap(find.text(CoreStrings.titleTabuada));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.byIcon(Icons.reply));
@@ -92,7 +96,7 @@ void main() {
           await tester.tap(find.byIcon(Person.calc));
           await tester.pumpAndSettle(Duration(seconds: 1));
           final calcTabuadaTemplate =
-              find.byKey(Key(CoreKeys.calcTabuadaTemplate));
+              find.byKey(Key(CoreKeys.calculatorTemplate));
           expect(calcTabuadaTemplate, findsOneWidget);
         },
       );

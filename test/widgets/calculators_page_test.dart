@@ -40,7 +40,7 @@ void main() {
             CoreStrings.titleTabuada,
           ));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.calcTabuadaTemplate)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.calculatorTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
@@ -48,8 +48,7 @@ void main() {
             CoreStrings.titleFatorial,
           ));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(
-              find.byKey(Key(CoreKeys.calcFatorialTemplate)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.calculatorTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
@@ -57,8 +56,7 @@ void main() {
             CoreStrings.titleEquacao1,
           ));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(
-              find.byKey(Key(CoreKeys.calcEquacao1Template)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.calculatorTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
@@ -66,8 +64,7 @@ void main() {
             CoreStrings.titleEquacao2,
           ));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(
-              find.byKey(Key(CoreKeys.calcEquacao2Template)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.calculatorTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
@@ -75,8 +72,7 @@ void main() {
             CoreStrings.titleJurosCompostos,
           ));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.calcJurosCompostosTemplate)),
-              findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.calculatorTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
@@ -84,8 +80,7 @@ void main() {
             CoreStrings.titleJurosSimples,
           ));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.calcJurosSimplesTemplate)),
-              findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.calculatorTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
@@ -93,7 +88,7 @@ void main() {
             CoreStrings.titleMmc,
           ));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.calcMmcTemplate)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.calculatorTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
@@ -101,7 +96,7 @@ void main() {
             CoreStrings.titleMdc,
           ));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.calcMdcTemplate)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.calculatorTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
@@ -109,8 +104,7 @@ void main() {
             CoreStrings.titlePorcentagem,
           ));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(find.byKey(Key(CoreKeys.calcPorcentagemTemplate)),
-              findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.calculatorTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
@@ -118,8 +112,7 @@ void main() {
             CoreStrings.titleRegraDe3,
           ));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          expect(
-              find.byKey(Key(CoreKeys.calcRegraDe3Template)), findsOneWidget);
+          expect(find.byKey(Key(CoreKeys.calculatorTemplate)), findsOneWidget);
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
         },

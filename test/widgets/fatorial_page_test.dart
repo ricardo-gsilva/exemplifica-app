@@ -14,9 +14,12 @@ void main() {
       testWidgets(
         "Teste de widgets da tela de Fatorial",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: FatorialPage(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: HomePage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleFatorial));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -35,9 +38,12 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Fatorial",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: FatorialPage(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: HomePage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleFatorial));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final textFatorial1 = find.text(CoreStringsFatorial.text1_Fatorial);
           final textFatorial2 = find.text(CoreStringsFatorial.text2_Fatorial);
@@ -154,7 +160,7 @@ void main() {
           await tester.tap(find.byIcon(Person.calc));
           await tester.pumpAndSettle(Duration(seconds: 1));
           final calcFatorialTemplate =
-              find.byKey(Key(CoreKeys.calcFatorialTemplate));
+              find.byKey(Key(CoreKeys.calculatorTemplate));
           expect(calcFatorialTemplate, findsOneWidget);
         },
       );

@@ -14,9 +14,12 @@ void main() {
       testWidgets(
         "Teste de widgets da tela de Juros Compostos",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: JurosCompostosPage(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: HomePage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleJurosCompostos));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -35,9 +38,12 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Juros Compostos",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: JurosCompostosPage(),
-          // ));              
+          await tester.pumpWidget(MaterialApp(
+            home: HomePage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleJurosCompostos));
+          await tester.pumpAndSettle(Duration(seconds: 1));           
               
           final textJurosCompostos1 = find.text(CoreStringsJurosCompostos.text1_JurosCompostos);
           final textJurosCompostos2 = find.text(CoreStringsJurosCompostos.text2_JurosCompostos);
@@ -116,25 +122,20 @@ void main() {
             home: HomePage(),
           ));
 
-          await tester.tap(find.text(
-            CoreStrings.titleJurosCompostos,
-          ));
+          await tester.tap(find.text(CoreStrings.titleJurosCompostos));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.byIcon(Icons.reply));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          final homePageTemplate =
-              find.byKey(Key(CoreKeys.homePageButtonsGridTemplate));
+          final homePageTemplate = find.byKey(Key(CoreKeys.homePageButtonsGridTemplate));
           expect(homePageTemplate, findsOneWidget);
 
-          await tester.tap(find.text(
-            CoreStrings.titleJurosCompostos,
-          ));
+          await tester.tap(find.text(CoreStrings.titleJurosCompostos));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.byIcon(Person.calc));
           await tester.pumpAndSettle(Duration(seconds: 1));
-          final calcJurosCompostosTemplate = find.byKey(Key(CoreKeys.calcJurosCompostosTemplate));
+          final calcJurosCompostosTemplate = find.byKey(Key(CoreKeys.calculatorTemplate));
           expect(calcJurosCompostosTemplate, findsOneWidget);
         },
       );

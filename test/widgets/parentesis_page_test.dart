@@ -13,9 +13,12 @@ void main() {
       testWidgets(
         "Teste da tela de Parentesis",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: ParentesisPage(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: RegrasBasicasPage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleButtonParentesis));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final contentList = find.byKey(Key(CoreKeys.contentList));
           final customImageAsset = find.byKey(Key(CoreKeys.customImageAsset));
@@ -34,9 +37,12 @@ void main() {
       testWidgets(
         "Teste de conteudo carregado na tela de Parêntesis",
         (WidgetTester tester) async {
-          // await tester.pumpWidget(MaterialApp(
-          //   home: ParentesisPage(),
-          // ));
+          await tester.pumpWidget(MaterialApp(
+            home: RegrasBasicasPage(),
+          ));
+
+          await tester.tap(find.text(CoreStrings.titleButtonParentesis));
+          await tester.pumpAndSettle(Duration(seconds: 1));
 
           final textParentesis1 =
               find.text(CoreStringsParentesis.text1_parentesis);
@@ -89,9 +95,7 @@ void main() {
             home: RegrasBasicasPage(),
           ));
 
-          await tester.tap(find.text(
-            CoreStrings.titleButtonParentesis,
-          ));
+          await tester.tap(find.text(CoreStrings.titleButtonParentesis));
           await tester.pumpAndSettle(Duration(seconds: 1));
 
           await tester.tap(find.byIcon(Icons.reply));

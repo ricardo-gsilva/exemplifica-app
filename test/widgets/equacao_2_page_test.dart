@@ -153,7 +153,7 @@ void main() {
           await tester.tap(find.byIcon(Person.calc));
           await tester.pumpAndSettle(Duration(seconds: 1));
           final calcEquacao2Template =
-              find.byKey(Key(CoreKeys.calcEquacao2Template));
+              find.byKey(Key(CoreKeys.calculatorTemplate));
           expect(calcEquacao2Template, findsOneWidget);
         },
       );
