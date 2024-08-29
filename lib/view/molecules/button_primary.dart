@@ -29,7 +29,7 @@ class ButtonPrimary extends StatelessWidget {
       height: height,
       width: width,
       onTap: onTap,
-      colorCard: CoreColors.btnColor,
+      colorCard: CoreColors.btnBakcgroundColor,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -43,7 +43,7 @@ class ButtonPrimary extends StatelessWidget {
           ),
           CustomText(
             title: title,
-            color: CoreColors.textPrimary,
+            // color: CoreColors.textPrimary,
             fontSize: CoreFontSize.h_16,            
             fontWeight: FontWeight.bold,
           ),

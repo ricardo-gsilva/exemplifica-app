@@ -1,8 +1,6 @@
 import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:flutter/material.dart';
 
-import 'package:exemplifica/utils/constants/core_colors.dart';
-
 class CustomAppBar extends StatelessWidget {
   final Widget title;
   final Widget? leading;
@@ -22,7 +20,6 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       key: Key(CoreKeys.appBar),
-      backgroundColor: backgroundColorAppBar?? CoreColors.appBarColor,
       elevation: 2,
       centerTitle: true,
       automaticallyImplyLeading: false,

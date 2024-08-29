@@ -1,4 +1,3 @@
-import 'package:exemplifica/utils/constants/core_colors.dart';
 import 'package:exemplifica/utils/constants/core_keys.dart';
 import 'package:exemplifica/utils/constants/core_strings_assets.dart';
 import 'package:exemplifica/view/molecules/custom_scaffold.dart';
@@ -25,7 +24,6 @@ class _HomePageState extends State<HomePage> {
       ),
       leading: false,
       body: HomePageButtonsGridTemplate(
-        backgroundColorGrid: CoreColors.appBarColor,
         height: height,
         width: width,
       ),

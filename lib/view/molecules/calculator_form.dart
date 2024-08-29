@@ -39,7 +39,12 @@ class CalculatorForm extends StatelessWidget {
           padding: const EdgeInsets.all(25.0),
           child: Column(
             children: [
-              CustomText(title: title??'', fontSize: CoreFontSize.h_22, color: CoreColors.textSecundary, fontWeight: FontWeight.bold,),
+              CustomText(
+                title: title ?? '',
+                fontSize: CoreFontSize.h_22,
+                color: CoreColors.textSecundary,
+                fontWeight: FontWeight.bold,
+              ),
               ListView.builder(
                 physics: NeverScrollableScrollPhysics(),
                 shrinkWrap: true,

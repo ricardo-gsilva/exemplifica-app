@@ -18,7 +18,6 @@ class CustomIcon extends StatelessWidget {
     return Icon(
       key: Key(CoreKeys.customIcon),
       icon,
-      color: color,
       size: sizeIcon,
     );
   }

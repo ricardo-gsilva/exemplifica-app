@@ -5,16 +5,13 @@ import 'package:exemplifica/view/organisms/buttons_grid.dart';
 import 'package:exemplifica/view/page/calculators_page.dart';
 import 'package:exemplifica/view/page/regras_basicas_page.dart';
 import 'package:flutter/material.dart';
-
 import 'package:exemplifica/view/molecules/button_primary.dart';
 
 class HomePageButtonsGridTemplate extends StatelessWidget {
-  final Color backgroundColorGrid;
   final double height;
   final double width;
   const HomePageButtonsGridTemplate({
     Key? key,
-    required this.backgroundColorGrid,
     required this.height,
     required this.width,
   }) : super(key: key);
