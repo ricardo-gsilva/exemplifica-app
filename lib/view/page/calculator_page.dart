@@ -1,7 +1,6 @@
 import 'package:exemplifica/utils/enum_calculator.dart';
 import 'package:flutter/material.dart';
 import 'package:exemplifica/utils/constants/core_fontSize.dart';
-import 'package:exemplifica/view/atoms/custom_appBar.dart';
 import 'package:exemplifica/view/atoms/custom_icon_button.dart';
 import 'package:exemplifica/view/atoms/custom_text.dart';
 import 'package:exemplifica/view/molecules/custom_scaffold.dart';
@@ -24,11 +23,9 @@ class CalculatorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
-      titleAppBar: CustomAppBar(
-        title: CustomText(
-          title: titleAppBar,
-          fontSize: CoreFontSize.h_22,
-        ),
+      titleAppBar: CustomText(
+        title: titleAppBar,
+        fontSize: CoreFontSize.h_22,
       ),
       leading: true,
       actions: [
