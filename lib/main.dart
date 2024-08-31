@@ -31,12 +31,14 @@ class ScreenExemplifica extends StatelessWidget {
         iconTheme: IconThemeData(color: CoreColors.colorIcon),
         scaffoldBackgroundColor: CoreColors.colorBackground,
         elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-          backgroundColor: CoreColors.btnBakcgroundColor,
-        )),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: CoreColors.btnBakcgroundColor,
+          ),
+        ),
         appBarTheme: AppBarTheme(
-            backgroundColor: CoreColors.appBarColor,
-            actionsIconTheme: IconThemeData(color: CoreColors.colorIcon)),
+          backgroundColor: CoreColors.appBarColor,
+          actionsIconTheme: IconThemeData(color: CoreColors.colorIcon),
+        ),
       ),
       debugShowCheckedModeBanner: false,
       home: SplashScreenPage(version: version),
