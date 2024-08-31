@@ -1,7 +1,9 @@
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ControllerEquacao1 {
+
+class ControllerEquacao1 implements ControlFieldWithLabel{  
 
   static ControllerEquacao1? _instance;
   
@@ -22,7 +24,6 @@ class ControllerEquacao1 {
   double a = 0;
   double b = 0;
   double r = 0;
-  bool visible = false;
 
   NumberFormat formatEq1_1 = new NumberFormat("0");
   NumberFormat formatEq1_2 = new NumberFormat("0.00");
@@ -32,20 +33,48 @@ class ControllerEquacao1 {
   NumberFormat formatEq1_6 = new NumberFormat(" 0.00");
   NumberFormat formatEq1_7 = new NumberFormat(" 0");
 
-  void verificarCampo() {
-    if (val1.text.isEmpty || val2.text.isEmpty) {
-      resultEq1_1 = "Por favor, preencha os campos!";
-      visible = true;
-    } else {
-      _equacao1_1();
-    }
-  }
-
+  @override
   void resetCampos() {
-    visible = false;
     val1.clear();
     val2.clear();
     resultEq1_1 = "";
+  }
+  
+  @override
+  void verificarCampos() {
+    if (val1.text.isEmpty || val2.text.isEmpty) {
+      resultEq1_1 = "Por favor, preencha os campos!";      
+    } else {
+      calcular();
+    }
+  }
+
+  @override
+  void calcular(){
+    a = double.parse(val1.text);
+    b = double.parse(val2.text);
+
+    format_a = val1.text;
+    format_r = formatEq1_1.format(r);
+
+    if ((b == b.floor()) && (b < 0)) {
+      format_b = formatEq1_3.format(b);
+    } else if ((b == b.floor() && (b >= 0))) {
+      format_b = formatEq1_1.format(b);
+    } else if ((b != b.floor() && (b < 0))) {
+      format_b = formatEq1_2.format(b);
+    } else {
+      format_b = formatEq1_2.format(b);
+    }    
+
+    resultEq1_1 = """ 
+        ${format_a}x + ($format_b) = $format_r
+        ${format_a}x ${formatNumberBLineTwo(format_b)} = $format_r
+        ${format_a}x = $format_r ${formatNumberBLineThree(format_b)}
+        ${format_a}x = ${resultRBLineFour(b, r)}
+        x = ${resultRBLineFour(b, r)} / $format_a
+        x = ${valorX(a, b)}
+        """;
   }
 
   String formatNumberBLineTwo(String linha2) {
@@ -101,35 +130,19 @@ class ControllerEquacao1 {
 
     return format_rb;
   }
-
-  void _equacao1_1() {
-    double a = double.parse(val1.text);
-    double b = double.parse(val2.text);
-
-    format_a = val1.text;
-    format_r = formatEq1_1.format(r);
-
-    if ((b == b.floor()) && (b < 0)) {
-      print('11');
-      format_b = formatEq1_3.format(b);
-    } else if ((b == b.floor() && (b >= 0))) {
-      print('22');
-      format_b = formatEq1_1.format(b);
-    } else if ((b != b.floor() && (b < 0))) {
-      print('33');
-      format_b = formatEq1_2.format(b);
-    } else {
-      print('44');
-      format_b = formatEq1_2.format(b);
-    }    
-
-    resultEq1_1 = """ 
-        ${format_a}x + ($format_b) = $format_r
-        ${format_a}x ${formatNumberBLineTwo(format_b)} = $format_r
-        ${format_a}x = $format_r ${formatNumberBLineThree(format_b)}
-        ${format_a}x = ${resultRBLineFour(b, r)}
-        x = ${resultRBLineFour(b, r)} / $format_a
-        x = ${valorX(a, b)}
-        """;
+  
+  @override
+  List<String> responseList() {
+    return [resultEq1_1];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [val1, val2];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["a:", "b:"];
   }
 }

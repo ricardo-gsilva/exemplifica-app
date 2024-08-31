@@ -1,4 +1,10 @@
 class CoreStringsAssets {
+
+  //Logotipo
+  static const String logoExemplifica = "images/logotipo_exemplifica.png";
+
+  //SplashScreen
+  static const String splashScreen_background = "images/splashapp.png";
   
   //Equacao 1 Grau  
   static const String equacao_1_assets_2 = "images/operacoes/equacao_1/equacao1_2.png";
@@ -84,5 +90,48 @@ class CoreStringsAssets {
   static const String porcentagem_assets_7 = "images/operacoes/porcentagem/porcentagem_7.png";
   static const String porcentagem_assets_8 = "images/operacoes/porcentagem/porcentagem_8.png";
   static const String porcentagem_assets_9 = "images/operacoes/porcentagem/porcentagem_9.png";
+
+  //Regra de 3
+  static const String regra_de3_assets_3 = "images/operacoes/regra_de3/regra_de3_3.png";
+  static const String regra_de3_assets_4 = "images/operacoes/regra_de3/regra_de3_4.png";
+  static const String regra_de3_assets_5 = "images/operacoes/regra_de3/regra_de3_5.png";
+  static const String regra_de3_assets_6 = "images/operacoes/regra_de3/regra_de3_6.png";
+  static const String regra_de3_assets_8 = "images/operacoes/regra_de3/regra_de3_8.png";
+  static const String regra_de3_assets_9 = "images/operacoes/regra_de3/regra_de3_9.png";
+  static const String regra_de3_assets_10 = "images/operacoes/regra_de3/regra_de3_10.png";
+  static const String regra_de3_assets_11 = "images/operacoes/regra_de3/regra_de3_11.png";
+  static const String regra_de3_assets_12 = "images/operacoes/regra_de3/regra_de3_12.png";
+  static const String regra_de3_assets_13 = "images/operacoes/regra_de3/regra_de3_13.png";
+
+  //Parentesis
+  static const String parentesis_assets_1 = "images/parentesis/parentesis_1.png";
+  static const String parentesis_assets_2 = "images/parentesis/parentesis_2.png";
+  static const String parentesis_assets_3 = "images/parentesis/parentesis_3.png";
+  static const String parentesis_assets_4 = "images/parentesis/parentesis_4.png";
+  static const String parentesis_assets_5 = "images/parentesis/parentesis_5.png";
+  static const String parentesis_assets_6 = "images/parentesis/parentesis_6.png";
+  static const String parentesis_assets_7 = "images/parentesis/parentesis_7.png";
+
+  //Expoentes
+  static const String expoentes_assets_2 = "images/expoentes/expoentes_2.png";
+  static const String expoentes_assets_3 = "images/expoentes/expoentes_3.png";
+  static const String expoentes_assets_4 = "images/expoentes/expoentes_4.png";
+  static const String expoentes_assets_5 = "images/expoentes/expoentes_5.png";
+
+  //Multiplicacao e Divisao
+  static const String multiplicacaoDivisao_assets_2 = "images/mult_div/multiplica_divi_2.png";
+  static const String multiplicacaoDivisao_assets_3 = "images/mult_div/multiplica_divi_3.png";
+  static const String multiplicacaoDivisao_assets_4 = "images/mult_div/multiplica_divi_4.png";
+  static const String multiplicacaoDivisao_assets_5 = "images/mult_div/multiplica_divi_5.png";
+  static const String multiplicacaoDivisao_assets_8 = "images/mult_div/multiplica_divi_8.png";
+  static const String multiplicacaoDivisao_assets_9 = "images/mult_div/multiplica_divi_9.png";
+  static const String multiplicacaoDivisao_assets_10 = "images/mult_div/multiplica_divi_10.png";
+  static const String multiplicacaoDivisao_assets_11 = "images/mult_div/multiplica_divi_11.png";
+  static const String multiplicacaoDivisao_assets_12 = "images/mult_div/multiplica_divi_12.png";
+
+  //Regras de Sinais
+  static const String regras_sinais_assets_2 =  "images/regras_sinal/regras_sinais_2.png";
+  static const String regras_sinais_assets_3 =  "images/regras_sinal/regras_sinais_3.png";
+  static const String regras_sinais_assets_5 =  "images/regras_sinal/regras_sinais_5.png";
 
 }

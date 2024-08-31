@@ -1,8 +1,9 @@
 import 'dart:math';
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ControllerEquacao2 {
+class ControllerEquacao2 implements ControlFieldWithLabel {
   static ControllerEquacao2? _instance;
 
   ControllerEquacao2._();
@@ -60,10 +61,8 @@ class ControllerEquacao2 {
   String eq2X1 = "";
   String eq2X2 = "";
 
-  bool visible = false;
-
+  @override
   void resetCampos() {
-    visible = false;
     val1.clear();
     val2.clear();
     val3.clear();
@@ -73,18 +72,18 @@ class ControllerEquacao2 {
     resultEq2_3 = "";
     resultEq2_4 = "";
   }
-
-  void verificarCampo() {
+  
+  @override
+  void verificarCampos() {
     if (val1.text.isEmpty || val2.text.isEmpty || val3.text.isEmpty) {
-      visible = true;
       resultEq2 = "Por favor, preencha os campos!";
     } else {
-      calcularEquacao2();
+      calcular();
     }
   }
 
-  void calcularEquacao2() {
-    visible = true;
+  @override
+  void calcular() {
     a = double.parse(val1.text);
     b = double.parse(val2.text);
     c = double.parse(val3.text);
@@ -101,7 +100,7 @@ class ControllerEquacao2 {
     bRaizX2 = ((-1 * b) - sqrt(delta));
 
     if (a == 0) {
-      resultEq2 = "O valor de 'a' não pode ser 0." + "\n";
+      resultEq2 = "O valor de 'a' não pode ser 0.""\n";
     } else {
       if (delta < 0.0) {
         deltaMenorQueZero();
@@ -149,8 +148,7 @@ class ControllerEquacao2 {
         "Δ = $eq2Delta";
 
     resultEq2_1 =
-        "O valor de Delta é negativo. Portanto, não existem raízes reais!" +
-            "\n";
+        "O valor de Delta é negativo. Portanto, não existem raízes reais!""\n";
     resultEq2_2 = "";
     resultEq2_3 = "";
     resultEq2_4 = "";
@@ -236,10 +234,12 @@ class ControllerEquacao2 {
         "Δ = $eq2Delta";
 
     //______________________________________________________________________
-
-    resultEq2_1 =
-        "O valor de Delta é positivo. Portanto, existem duas raízes reais!" +
-            "\n";
+    if(delta == 0){
+      resultEq2_1 = "O valor de delta é 0. Portanto, existe uma raiz real.""\n";
+    } else {
+      resultEq2_1 =
+        "O valor de Delta é positivo. Portanto, existem duas raízes reais!""\n";  
+    }
 
     resultEq2_2 = "x = – b ± √Δ / 2.a\n\n"
         "x1 = (-($eq2B) + √$eq2Delta) / (2 * $eq2A)\n"
@@ -257,4 +257,27 @@ class ControllerEquacao2 {
         " e \n"
         "x2 = $eq2X2\n";
   }
+  
+  @override
+  List<String> responseList() {
+    return [
+      resultEq2,
+      resultEq2_1,
+      resultEq2_2,
+      resultEq2_3,
+      resultEq2_4
+    ];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [val1, val2, val3];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["a:", "b:", "c:"];
+  }
+  
+  
 }

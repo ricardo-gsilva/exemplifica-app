@@ -1,7 +1,8 @@
+import 'package:exemplifica/domain/usecase/control_field.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class ControllerPorcentagem {
+class ControllerPorcentagem implements ControlField {
   static ControllerPorcentagem? _instance;
 
   ControllerPorcentagem._();
@@ -13,7 +14,6 @@ class ControllerPorcentagem {
   TextEditingController val1 = TextEditingController();
   TextEditingController val2 = TextEditingController();
   String resultPorcent = "";
-  bool visible = false;
   double valor1 = 0;
   double valor2 = 0;
   double mult2 = 0;
@@ -25,27 +25,27 @@ class ControllerPorcentagem {
   String resultf = "";
 
   NumberFormat format1 = NumberFormat("0");
-  NumberFormat format2 = NumberFormat("0.00");
-
+  NumberFormat format2 = NumberFormat("0.00");  
+  
+  @override
   void resetCampos() {
-    visible = false;
     val1.clear();
     val2.clear();
     resultPorcent = "";
   }
-
+  
+  @override
   void verificarCampos() {
-    visible = true;
     if (val1.text.isEmpty || val2.text.isEmpty) {      
       resultPorcent = "Por favor, preencha os campos!";
     } else {
       resultPorcent = "";
-      calcularPorcentagem();
+      calcular();
     }
   }
 
-  void calcularPorcentagem() {
-    visible = true;
+  @override
+  void calcular() {
     valor1 = double.parse(val1.text);
     valor2 = double.parse(val2.text);
     mult2 = valor2 * 100;
@@ -54,7 +54,7 @@ class ControllerPorcentagem {
     valor1f = "";
     valor2f = "";
     mult2f = "";
-    String resultf = "";
+    resultf = "";
 
     if (valor1 == valor1.floor()) {
       valor1f = format1.format((valor1));
@@ -81,5 +81,15 @@ class ControllerPorcentagem {
         "$valor1f.'X' = $mult2f \n"
         "'X' = $mult2f / $valor1f \n"
         "'X' = $resultf%";
+  }
+  
+  @override
+  List<String> responseList() {
+    return [resultPorcent];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [val1, val2];
   }
 }

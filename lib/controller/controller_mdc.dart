@@ -1,6 +1,7 @@
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 
-class ControllerMdc {
+class ControllerMdc implements ControlFieldWithLabel {
   static ControllerMdc? _instance;
 
   ControllerMdc._();
@@ -22,34 +23,31 @@ class ControllerMdc {
   int a = 0;
   int b = 0;
   int rest = 0;
-
-  bool visible = false;
-
+  int mdc = 0;
+  
+  @override
   void resetCampos() {
-    visible = false;
     val1.clear();
     val2.clear();
     resultMdc = "";
     resultMdc1 = "";
     resultMdc2 = "";
   }
-
-  void resetResponse() {
-    resultMdc = "";
-    resultMdc1 = "";
-    resultMdc2 = "";
-  }
-
+  
+  @override
   void verificarCampos() {
-    visible = true;
     if (val1.text.isEmpty || val2.text.isEmpty) {
       resultMdc = "Por favor, preencha os campos.\n Utilize valores até 99999!";
     } else {
-      mdc();
+      resultMdc = "";
+      resultMdc1 = "";
+      resultMdc2 = "";
+      calcular();
     }
   }
 
-  void mdc() {
+  @override
+  void calcular() {
     valormdc1 = double.parse(val1.text);
     valormdc2 = double.parse(val2.text);
     div = 2;
@@ -90,10 +88,26 @@ class ControllerMdc {
           }
         }
       }
+      mdc = a;
       resultMdc1 = resultMdc1 +
           "Os valores a serem utilizados, serão os que estão com o símbolo de Ok ao lado."
-              " Multiplicando todos esses valores, temos o valor do MDC: $a"
+              " Multiplicando todos esses valores, temos o valor do MDC: $mdc"
               "\n";
     }
+  }
+  
+  @override
+  List<String> responseList() {
+    return [resultMdc, resultMdc1, resultMdc2];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [val1, val2];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["Valor 1:", "Valor 2:"];
   }
 }

@@ -1,7 +1,7 @@
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 
-class ControllerFatorial {
-
+class ControllerFatorial implements ControlFieldWithLabel {
   static ControllerFatorial? _instance;
 
   ControllerFatorial._();
@@ -15,46 +15,49 @@ class ControllerFatorial {
 
   String resultFat = "";
   String resultFinal = "";
-  String infoFatorial = "";  
-  bool visible = false;
+  String infoFatorial = "";
+  int fat = 0;
+  int i = 0;
+  int a = 0;
+  int b = 0;
+  int c = 0;
 
+  @override
   void resetCampos() {
-    visible = false;
     val1.clear();
     resultFat = "";
     resultFinal = "";
     infoFatorial = "";
   }
 
+  @override
   void verificarCampos() {
     if (val1.text.isEmpty) {
-      visible = true;
       resultFat = "Por favor, preencha o campo com um valor!\n\n"
-              "Obs: Devido a exigência de processamento, não faremos calculos"
-              " com valores acima de 14.";
+          "Obs: Devido a exigência de processamento, não faremos calculos"
+          " com valores acima de 14.";
     } else {
       resultFat = "";
       resultFinal = "";
       infoFatorial = "";
-      fatorial();
+      calcular();
     }
   }
 
-  void fatorial() {
-    visible = true;
+  @override
+  void calcular() {
     int valFatorial = int.parse(val1.text);
     if (valFatorial == 0) {
       resultFat = "Obs: O valor fatorial de 0 será sempre o número 1.";
     } else if (valFatorial > 14) {
-      resultFat =
-          "Devido a exigência de processamento, não faremos calculos"
-              " com valores acima de 14.";
+      resultFat = "Devido a exigência de processamento, não faremos calculos"
+          " com valores acima de 14.";
     } else {
-      int fat = valFatorial;
-      int i = 1;
-      int a = 1;
-      int b = 2;
-      int c = 1;
+      fat = valFatorial;
+      i = 1;
+      a = 1;
+      b = 2;
+      c = 1;
 
       for (i = 1; i < fat; i++) {
         c = a * b;
@@ -65,5 +68,24 @@ class ControllerFatorial {
       resultFinal = "$valFatorial! = $c ";
       infoFatorial = "Obs: O valor fatorial de 0 será sempre o número 1.";
     }
+  }
+  
+  @override
+  List<String> responseList() {
+    return [
+      resultFat,
+      resultFinal,
+      infoFatorial
+    ];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [val1];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["Fatorial:"];
   }
 }

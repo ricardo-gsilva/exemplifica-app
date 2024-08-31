@@ -39,5 +39,4 @@ class CoreStringsFatorial {
   static const String text18_Fatorial = "Operações com Fatorial: Multiplicação";
   static const String text19_Fatorial = "A multiplicação segue da mesma forma que adição e subtração:";
   static const String text20_Fatorial = "Logo teremos o resultado:";
-  static const String text21_Fatorial = "ou se preferir";
 }

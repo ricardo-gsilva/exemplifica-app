@@ -1,6 +1,7 @@
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 
-class ControllerTabuada {
+class ControllerTabuada implements ControlFieldWithLabel {
   static ControllerTabuada? _instance;
 
   ControllerTabuada._();
@@ -14,12 +15,20 @@ class ControllerTabuada {
 
   String infoText = "";
   String dica = "";
-  bool visible = false;
-
-  void verificarCampo() {
+  int i = 0;
+  int val = 0; 
+  
+  @override
+  void resetCampos() {
+    nTabuada.clear();
+    infoText = "";
+    dica = "";
+  }
+  
+  @override
+  void verificarCampos() {
     if (nTabuada.text.isEmpty) {
       infoText = "Por favor, preencha os campos!";
-      visible = true;
     } else {
       infoText = '';
       dica = '';
@@ -27,20 +36,12 @@ class ControllerTabuada {
     }
   }
 
-  void resetCampos() {
-    visible = false;
-    nTabuada.clear();
-    infoText = "";
-    dica = "";
-  }
-
+  @override
   void calcular() {
-    int i;
-    int val = int.parse(nTabuada.text);
+    val = int.parse(nTabuada.text);
     if (val > 99999) {
       infoText = "Informe um novo valor menor ou igual a 99999!";
     } else {
-      visible = true;
       for (i = 0; i <= 10; i++) {
         infoText = "$infoText $val x $i = ${(val * i)} \n";
         dica =
@@ -49,5 +50,20 @@ class ControllerTabuada {
             " somado por ele mesmo.";
       }
     }
+  }
+  
+  @override
+  List<String> responseList() {
+    return [infoText, dica];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [nTabuada];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["Valor:"];
   }
 }

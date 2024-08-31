@@ -14,13 +14,21 @@ class CoreStrings {
   static const String titleJurosSimples = 'Juros Simples';  
   static const String titleCalculadoras = 'Calculadoras';
   static const String titleParentesis = 'Parêntesis';
+  static const String titleButtonParentesis = '1º Parêntesis';
   static const String titleExpoentes = 'Expoentes';
+  static const String titleButtonExpoentes = '2º Expoentes';
   static const String titleMultipDiv = 'Multiplicação e Divisão';
+  static const String titleButtonMultipDiv = '3º Multiplicação e Divisão';
   static const String titleSomaSub = 'Somas e Subtrações';
+  static const String titleButtonSomaSub = '4º Somas e Subtrações';
   static const String titleRegraSinal = 'Regras de Sinais';
+  static const String titleButtonRegraSinal = '5º Regras de Sinais';
   static const String titleRegrasBasicas = 'Regras Básicas';
   static const String calc = 'Calcular';
   static const String clear = 'Limpar';
+  static const String valor = 'Valor:';
+  static const String valor1 = 'Valor 1:';
+  static const String valor2 = 'Valor 2:';
   
   //Calc Equação de 1º Grau
   static const String text1_CalcEquacao1 = 

@@ -1,6 +1,7 @@
+import 'package:exemplifica/domain/usecase/control_field_with_label.dart';
 import 'package:flutter/material.dart';
 
-class ControllerMmc {
+class ControllerMmc implements ControlFieldWithLabel {
   static ControllerMmc? _instance;
 
   ControllerMmc._();
@@ -13,7 +14,6 @@ class ControllerMmc {
   TextEditingController val2 = TextEditingController();
   String resultMmc = "";
   String resultMmc1 = "";
-  bool visible = false;
 
   double valormmc1 = 0;
   double valormmc2 = 0;
@@ -24,32 +24,28 @@ class ControllerMmc {
   int divi = 0;
   int cachei = 0;
 
+  @override
   void resetCampos() {
-    visible = false;
     val1.clear();
     val2.clear();
     resultMmc = "";
     resultMmc1 = "";
   }
-
-  void resetResponse() {
-    resultMmc = "";
-    resultMmc1 = "";
-  }
-
+  
+  @override
   void verificarCampos() {
-    visible = true;
     if (val1.text.isEmpty || val2.text.isEmpty) {      
       resultMmc = "Por favor, preencha os campos!\nUtilize valores até 99999!";
       resultMmc1 = "";
     } else {
-      resetResponse();
-      calcularMmc();
+      resultMmc = "";
+      resultMmc1 = "";
+      calcular();
     }
   }
-
-  void calcularMmc() {
-    visible = true;
+  
+  @override
+  void calcular() {
     valormmc1 = double.parse(val1.text);
     valormmc2 = double.parse(val2.text);
     div = 2;
@@ -88,11 +84,26 @@ class ControllerMmc {
     if (((valormmc1 == 1) && (valormmc2 == 1))) {
       div = 1;
       divi = div.toInt();
-      resultMmc = resultMmc + "$valmmc1" + ", " + "$valmmc2" + " | " + "\n";
+      resultMmc = resultMmc + "$valmmc1" + ", " + "$valmmc2" + " | " + "$divi" + "\n";
     }
     resultMmc1 =
         "${resultMmc1}Após chegar ao valor 1, multiplique todos os números que resultaram "
         "ao lado da barra lateral.\n\n"
         "Multiplicando todos os valores utilizados para fatoração, temos o valor do MMC: $cachei \n";
+  }
+  
+  @override
+  List<String> responseList() {
+    return [resultMmc, resultMmc1];
+  }
+  
+  @override
+  List<TextEditingController> controllerList() {
+    return [val1, val2];
+  }
+  
+  @override
+  List<String> labelList() {
+    return ["Valor 1:", "Valor 2:"];
   }
 }
