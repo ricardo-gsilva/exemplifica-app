@@ -39,6 +39,7 @@ def keystoreProperties = new Properties()
 
 android {
     compileSdkVersion 34
+    namespace 'br.com.rgsdreammobile.exemplifica'
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
