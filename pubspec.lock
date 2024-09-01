@@ -93,10 +93,10 @@ packages:
     dependency: "direct main"
     description:
       name: cupertino_icons
-      sha256: "486b7bc707424572cdf7bd7e812a0c146de3fd47ecadf070254cc60383f21dd8"
+      sha256: ba631d1c7f7bef6b729a622b7b752645a2d076dba9976925b8f25725a30e1ee6
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.3"
+    version: "1.0.8"
   fake_async:
     dependency: transitive
     description:
@@ -252,10 +252,10 @@ packages:
     dependency: transitive
     description:
       name: mime
-      sha256: "2e123074287cc9fd6c09de8336dae606d1ddb88d9ac47358826db698c176a1f2"
+      sha256: "801fd0b26f14a4a58ccb09d5892c3fbdeff209594300a542492cf13fba9d247a"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.5"
+    version: "1.0.6"
   node_preamble:
     dependency: transitive
     description:
@@ -510,5 +510,5 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.2.0 <4.0.0"
+  dart: ">=3.2.3 <4.0.0"
   flutter: ">=3.6.0"
