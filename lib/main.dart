@@ -29,7 +29,7 @@ class ScreenExemplifica extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         iconTheme: IconThemeData(color: CoreColors.colorIcon),
-        scaffoldBackgroundColor: CoreColors.colorBackground,
+        scaffoldBackgroundColor: CoreColors.errorAlert,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: CoreColors.btnBakcgroundColor,
