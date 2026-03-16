@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- primeiro número -->
+  <rect x="4" y="10" width="20" height="20" rx="3" stroke-width="1.5"/>
+  <text x="14" y="25" font-size="15" text-anchor="middle" fill="black" stroke="none">3</text>
+
+  <!-- símbolo multiplicação -->
+  <text x="33" y="25" font-size="16" text-anchor="middle" fill="black" stroke="none">×</text>
+
+  <!-- segundo número -->
+  <rect x="42" y="10" width="20" height="20" rx="3" stroke-width="1.5"/>
+  <text x="52" y="25" font-size="15" text-anchor="middle" fill="black" stroke="none">4</text>
+
+  <!-- resultado desconhecido -->
+  <text x="32" y="50" font-size="24" text-anchor="middle" fill="black" stroke="none">?</text>
+
+</svg>

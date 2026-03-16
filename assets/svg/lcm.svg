@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+
+  <!-- linhas (um pouco menores) -->
+  <line x1="88" y1="35" x2="70" y2="55" stroke="black" stroke-width="4" stroke-linecap="round"/>
+  <line x1="110" y1="35" x2="128" y2="55" stroke="black" stroke-width="4" stroke-linecap="round"/>
+
+  <line x1="50" y1="90" x2="35" y2="113" stroke="black" stroke-width="4" stroke-linecap="round"/>
+  <line x1="70" y1="90" x2="85" y2="113" stroke="black" stroke-width="4" stroke-linecap="round"/>
+
+  <line x1="130" y1="90" x2="115" y2="113" stroke="black" stroke-width="4" stroke-linecap="round"/>
+  <line x1="150" y1="90" x2="165" y2="113" stroke="black" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- números maiores -->
+  <text x="100" y="30" font-size="35" text-anchor="middle" font-family="Arial">6</text>
+
+  <text x="60" y="85" font-size="35" text-anchor="middle" font-family="Arial">2</text>
+  <text x="140" y="85" font-size="35" text-anchor="middle" font-family="Arial">3</text>
+
+  <text x="32" y="145" font-size="35" text-anchor="middle" font-family="Arial">1</text>
+  <text x="88" y="145" font-size="35" text-anchor="middle" font-family="Arial">3</text>
+  <text x="112" y="145" font-size="35" text-anchor="middle" font-family="Arial">4</text>
+  <text x="168" y="145" font-size="35" text-anchor="middle" font-family="Arial">2</text>
+
+</svg>

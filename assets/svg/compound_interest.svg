@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none"
+     stroke="black" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+
+  <!-- eixos -->
+  <path d="M10 54 V10"/>
+  <path d="M10 54 H56"/>
+
+  <!-- barras com crescimento exponencial -->
+  <rect x="18" y="44" width="6" height="10" rx="2"/>
+  <rect x="28" y="40" width="6" height="14" rx="2"/>
+  <rect x="38" y="34" width="6" height="20" rx="2"/>
+  <rect x="48" y="22" width="6" height="32" rx="2"/>
+
+  <!-- curva mais acentuada -->
+  <path d="M18 42 C28 40, 34 34, 40 28 S48 18, 52 10"/>
+
+  <!-- cabeça da seta alinhada com a curva -->
+  <path d="M53 16 L52 10"/>
+  <path d="M46 12 L52 10"/>
+
+</svg>
