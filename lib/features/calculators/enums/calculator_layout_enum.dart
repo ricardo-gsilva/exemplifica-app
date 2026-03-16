@@ -1,0 +1,4 @@
+enum CalculatorLayoutEnum {
+  defaultForm,
+  proportionForm
+}
