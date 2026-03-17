@@ -25,28 +25,31 @@ jobs:
         run: flutter pub get
 
       - name: Build APK
-        run: flutter build apk --release
+        run: flutter build apk --release --split-per-abi
 
       - name: Get app version
         run: |
           VERSION=$(grep '^version:' pubspec.yaml | sed 's/version: //')
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
-      - name: Rename APK
+      - name: Rename APKs
         run: |
-          mv build/app/outputs/flutter-apk/app-release.apk \
-          build/app/outputs/flutter-apk/exemplifica_v${VERSION}.apk
+          cd build/app/outputs/flutter-apk
 
-      - name: Upload Artifact (Actions)
+          mv app-arm64-v8a-release.apk exemplifica-v${VERSION}-arm64-v8a.apk
+          mv app-armeabi-v7a-release.apk exemplifica-v${VERSION}-armeabi-v7a.apk
+          mv app-x86_64-release.apk exemplifica-v${VERSION}-x86_64.apk
+
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: exemplifica_v${{ env.VERSION }}
-          path: build/app/outputs/flutter-apk/exemplifica_v${{ env.VERSION }}.apk
-          
+          path: build/app/outputs/flutter-apk/*.apk
+
       - name: Create Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: build/app/outputs/flutter-apk/exemplifica_v${{ env.VERSION }}.apk
+          files: build/app/outputs/flutter-apk/*.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
