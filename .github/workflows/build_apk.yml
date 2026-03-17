@@ -24,6 +24,16 @@ jobs:
       - name: Get dependencies
         run: flutter pub get
       
+      - name: Decode keystore
+        run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/exemplifica-new.jks
+
+      - name: Create key.properties
+        run: |
+          echo "storePassword=${{ secrets.KEYSTORE_PASSWORD }}" > android/key.properties
+          echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> android/key.properties
+          echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> android/key.properties
+          echo "storeFile=exemplifica.jks" >> android/key.properties
+      
       - name: Determine version (tag or pubspec)
         shell: bash
         run: |

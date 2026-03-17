@@ -33,6 +33,7 @@ ios/Flutter/ephemeral/
 /android/app/release
 android/local.properties
 android/key.properties
+keystore.txt
 android/app/*.jks
 android/*.jks
 
