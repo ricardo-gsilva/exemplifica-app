@@ -25,9 +25,11 @@ jobs:
         run: flutter pub get
       
       - name: Decode keystore
-        run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/exemplifica-new.jks
+        if: startsWith(github.ref, 'refs/tags/')
+        run: echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > android/exemplifica.jks
 
       - name: Create key.properties
+        if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo "storePassword=${{ secrets.KEYSTORE_PASSWORD }}" > android/key.properties
           echo "keyPassword=${{ secrets.KEY_PASSWORD }}" >> android/key.properties
