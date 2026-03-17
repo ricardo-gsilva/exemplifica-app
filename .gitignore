@@ -33,6 +33,8 @@ ios/Flutter/ephemeral/
 /android/app/release
 android/local.properties
 android/key.properties
+android/app/*.jks
+android/*.jks
 
 # Web
 lib/generated_plugin_registrant.dart
