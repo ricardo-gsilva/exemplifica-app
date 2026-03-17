@@ -3,7 +3,7 @@ description: Aprenda matemática de um jeito simples.
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 9.0.3+16
+version: 3.0.1+1
 
 environment:
   sdk: ">=3.2.3 <4.0.0"
@@ -14,6 +14,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   intl: ^0.19.0
   package_info_plus: ^8.0.2
+  flutter_svg: ^2.0.10
 
 dev_dependencies:
   flutter_test:
@@ -21,38 +22,41 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   test: ^1.24.9
 
-flutter:
+flutter-assets:
+  auto-generate: false
+  assets-path: assets
+  output-path: lib/assets
+  ignore-ext: false
 
+flutter:
   uses-material-design: true
 
   assets:
-    - images/
-    - images/expoentes/
-    - images/mult_div/
-    - images/parentesis/
-    - images/regras_sinal/
-    - images/soma_sub/
-    - images/operacoes/equacao_1/
-    - images/operacoes/equacao_2/
-    - images/operacoes/fatorial/
-    - images/operacoes/funcoes/
-    - images/operacoes/juros_compostos/
-    - images/operacoes/juros_simples/
-    - images/operacoes/mdc/
-    - images/operacoes/mmc/
-    - images/operacoes/porcentagem/
-    - images/operacoes/raiz_quadrada/
-    - images/operacoes/regra_de3/
-    - images/operacoes/tabuada/
-    - images/calculadoras/
-    - images/calculadoras_1.png
-    - images/simbolos.png
-    - images/logotipo_exemplifica.png
+    - assets/
+    - assets/images/
+    - assets/images/expoentes/
+    - assets/images/mult_div/
+    - assets/images/parentesis/
+    - assets/images/regras_sinal/
+    - assets/images/soma_sub/
+    - assets/images/operacoes/
+    - assets/images/operacoes/equacao_1/
+    - assets/images/operacoes/equacao_2/
+    - assets/images/operacoes/fatorial/
+    - assets/images/operacoes/juros_compostos/
+    - assets/images/operacoes/juros_simples/
+    - assets/images/operacoes/mdc/
+    - assets/images/operacoes/mmc/
+    - assets/images/operacoes/porcentagem/
+    - assets/images/operacoes/regra_de3/
+    - assets/images/operacoes/tabuada/
+    - assets/icons/
+    - assets/svg/
 
   fonts:
     - family: Person
       fonts:
-        - asset: icons/Person.ttf
+        - asset: assets/icons/Person.ttf
   # fonts:
   #   - family: Schyler
   #     fonts:

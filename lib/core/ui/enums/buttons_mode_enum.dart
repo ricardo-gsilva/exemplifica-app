@@ -1,0 +1,4 @@
+enum ButtonModeEnum {
+  learning,
+  calculator,
+}

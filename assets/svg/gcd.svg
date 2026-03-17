@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 471 622">
+
+  <!-- linhas superiores -->
+  <line x1="135" y1="130" x2="200" y2="200" stroke="black" stroke-width="12" stroke-linecap="round"/>
+  <line x1="340" y1="130" x2="280" y2="200" stroke="black" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- linhas inferiores -->
+  <line x1="200" y1="340" x2="135" y2="410" stroke="black" stroke-width="12" stroke-linecap="round"/>
+  <line x1="280" y1="340" x2="340" y2="410" stroke="black" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- números superiores -->
+  <text x="120" y="110" font-size="120" text-anchor="middle" font-family="Arial">1</text>
+  <text x="235" y="110" font-size="120" text-anchor="middle" font-family="Arial">2</text>
+  <text x="350" y="110" font-size="120" text-anchor="middle" font-family="Arial">3</text>
+
+  <!-- números centrais -->
+  <text x="120" y="320" font-size="120" text-anchor="middle" font-family="Arial">4</text>
+  <text x="235" y="320" font-size="120" text-anchor="middle" font-family="Arial">5</text>
+  <text x="350" y="320" font-size="120" text-anchor="middle" font-family="Arial">6</text>
+
+  <!-- números inferiores -->
+  <text x="235" y="530" font-size="120" text-anchor="middle" font-family="Arial">1</text>
+  <text x="350" y="530" font-size="120" text-anchor="middle" font-family="Arial">2</text>
+
+</svg>

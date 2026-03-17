@@ -1,5 +1,5 @@
-import 'package:exemplifica/utils/constants/core_colors.dart';
-import 'package:exemplifica/view/page/splash_screen_page.dart';
+import 'package:exemplifica/core/navigation/app_generate_route.dart';
+import 'package:exemplifica/features/splash/presentation/pages/splash_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -14,12 +14,12 @@ void main() async {
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
   packageInfo = await PackageInfo.fromPlatform();
 
-  runApp(ScreenExemplifica(version: packageInfo.version));
+  runApp(AppExemplifica(version: packageInfo.version));
 }
 
-class ScreenExemplifica extends StatelessWidget {
+class AppExemplifica extends StatelessWidget {
   final String? version;
-  ScreenExemplifica({
+  AppExemplifica({
     Key? key,
     this.version,
   }) : super(key: key);
@@ -27,21 +27,9 @@ class ScreenExemplifica extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        iconTheme: IconThemeData(color: CoreColors.colorIcon),
-        scaffoldBackgroundColor: CoreColors.colorBackground,
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: CoreColors.btnBakcgroundColor,
-          ),
-        ),
-        appBarTheme: AppBarTheme(
-          backgroundColor: CoreColors.appBarColor,
-          actionsIconTheme: IconThemeData(color: CoreColors.colorIcon),
-        ),
-      ),
+      onGenerateRoute: AppGenerateRoute.generateRoute,      
       debugShowCheckedModeBanner: false,
-      home: SplashScreenPage(version: version),
+      home: SplashPage(version: version),
     );
   }
 }

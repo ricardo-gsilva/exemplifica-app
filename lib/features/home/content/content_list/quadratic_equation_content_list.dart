@@ -1,0 +1,36 @@
+import 'package:exemplifica/core/ui/models/content_model.dart';
+import 'package:exemplifica/core/constants/core_assets_strings.dart';
+import 'package:exemplifica/features/home/content/strings/quadratic_equation_strings.dart';
+
+final List<ContentModel> quadraticEquationContentList = [
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText1),
+  ContentModel.image(CoreAssetsStrings.quadraticEquationAsset2),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText2),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText3),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText4),
+  ContentModel.image(CoreAssetsStrings.quadraticEquationAsset3),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText5),
+  ContentModel.image(CoreAssetsStrings.quadraticEquationAsset4),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText6),
+  ContentModel.image(CoreAssetsStrings.quadraticEquationAsset5),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText7),
+  ContentModel.image(CoreAssetsStrings.quadraticEquationAsset6),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText8),
+  ContentModel.image(CoreAssetsStrings.quadraticEquationAsset7),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText9),
+  ContentModel.image(CoreAssetsStrings.quadraticEquationAsset8),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText10),
+  ContentModel.image(CoreAssetsStrings.quadraticEquationAsset17),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText11),
+  ContentModel.image(CoreAssetsStrings.quadraticEquationAsset12),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText12),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText13),
+  ContentModel.image(CoreAssetsStrings.quadraticEquationAsset13),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText14),
+  ContentModel.image(CoreAssetsStrings.quadraticEquationAsset14),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText15),
+  ContentModel.image(CoreAssetsStrings.quadraticEquationAsset15),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText16),
+  ContentModel.image(CoreAssetsStrings.quadraticEquationAsset16),
+  ContentModel.text(QuadraticEquationStrings.quadraticEquationText17),
+];

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"
+    fill="black">
+
+  <text x="6" y="54"
+        font-size="60"
+        font-family="Arial"
+        letter-spacing="2">
+    n!
+  </text>
+
+</svg>
